@@ -1,0 +1,23 @@
+binaryninja.update.UpdateProgressCallback
+=========================================
+
+.. currentmodule:: binaryninja.update
+
+.. autoclass:: UpdateProgressCallback
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UpdateProgressCallback.__init__
+      ~UpdateProgressCallback.callback
+   
+   
+
+   
+   
+   

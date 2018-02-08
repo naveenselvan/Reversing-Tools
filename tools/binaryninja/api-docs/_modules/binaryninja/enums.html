@@ -1,0 +1,943 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.enums &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.enums</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.enums</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">enum</span>
+
+<div class="viewcode-block" id="ActionType"><a class="viewcode-back" href="../../binaryninja.enums.ActionType.html#binaryninja.architecture.ActionType">[docs]</a><span class="k">class</span> <span class="nc">ActionType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">TemporaryAction</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">DataModificationAction</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">AnalysisAction</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">DataModificationAndAnalysisAction</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="AnalysisState"><a class="viewcode-back" href="../../binaryninja.enums.AnalysisState.html#binaryninja.architecture.AnalysisState">[docs]</a><span class="k">class</span> <span class="nc">AnalysisState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">IdleState</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">DisassembleState</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">AnalyzeState</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="BranchType"><a class="viewcode-back" href="../../binaryninja.enums.BranchType.html#binaryninja.architecture.BranchType">[docs]</a><span class="k">class</span> <span class="nc">BranchType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">UnconditionalBranch</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">FalseBranch</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">TrueBranch</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">CallDestination</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">FunctionReturn</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">SystemCall</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">IndirectBranch</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">UnresolvedBranch</span> <span class="o">=</span> <span class="mi">127</span></div>
+
+
+<div class="viewcode-block" id="CallingConventionName"><a class="viewcode-back" href="../../binaryninja.enums.CallingConventionName.html#binaryninja.architecture.CallingConventionName">[docs]</a><span class="k">class</span> <span class="nc">CallingConventionName</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoCallingConvention</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">CdeclCallingConvention</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">PascalCallingConvention</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ThisCallCallingConvention</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">STDCallCallingConvention</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">FastcallCallingConvention</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">CLRCallCallingConvention</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">EabiCallCallingConvention</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">VectorCallCallingConvention</span> <span class="o">=</span> <span class="mi">8</span></div>
+
+
+<div class="viewcode-block" id="DisassemblyOption"><a class="viewcode-back" href="../../binaryninja.enums.DisassemblyOption.html#binaryninja.architecture.DisassemblyOption">[docs]</a><span class="k">class</span> <span class="nc">DisassemblyOption</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">ShowAddress</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ShowOpcode</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ExpandLongOpcode</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ShowVariablesAtTopOfGraph</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">ShowVariableTypesWhenAssigned</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">ShowDefaultRegisterTypes</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">ShowCallParameterNames</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">GroupLinearDisassemblyFunctions</span> <span class="o">=</span> <span class="mi">64</span>
+	<span class="n">ShowFlagUsage</span> <span class="o">=</span> <span class="mi">128</span></div>
+
+
+<div class="viewcode-block" id="Endianness"><a class="viewcode-back" href="../../binaryninja.enums.Endianness.html#binaryninja.architecture.Endianness">[docs]</a><span class="k">class</span> <span class="nc">Endianness</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">LittleEndian</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">BigEndian</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="FindFlag"><a class="viewcode-back" href="../../binaryninja.enums.FindFlag.html#binaryninja.architecture.FindFlag">[docs]</a><span class="k">class</span> <span class="nc">FindFlag</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoFindFlags</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">FindCaseInsensitive</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="FlagRole"><a class="viewcode-back" href="../../binaryninja.enums.FlagRole.html#binaryninja.architecture.FlagRole">[docs]</a><span class="k">class</span> <span class="nc">FlagRole</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">SpecialFlagRole</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ZeroFlagRole</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">PositiveSignFlagRole</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">NegativeSignFlagRole</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">CarryFlagRole</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">OverflowFlagRole</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">HalfCarryFlagRole</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">EvenParityFlagRole</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">OddParityFlagRole</span> <span class="o">=</span> <span class="mi">8</span></div>
+
+
+<div class="viewcode-block" id="FormInputFieldType"><a class="viewcode-back" href="../../binaryninja.enums.FormInputFieldType.html#binaryninja.architecture.FormInputFieldType">[docs]</a><span class="k">class</span> <span class="nc">FormInputFieldType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">LabelFormField</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">SeparatorFormField</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">TextLineFormField</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">MultilineTextFormField</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">IntegerFormField</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">AddressFormField</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">ChoiceFormField</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">OpenFileNameFormField</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">SaveFileNameFormField</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">DirectoryNameFormField</span> <span class="o">=</span> <span class="mi">9</span></div>
+
+
+<div class="viewcode-block" id="FunctionGraphType"><a class="viewcode-back" href="../../binaryninja.enums.FunctionGraphType.html#binaryninja.architecture.FunctionGraphType">[docs]</a><span class="k">class</span> <span class="nc">FunctionGraphType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NormalFunctionGraph</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">LowLevelILFunctionGraph</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">LiftedILFunctionGraph</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">LowLevelILSSAFormFunctionGraph</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">MediumLevelILFunctionGraph</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">MediumLevelILSSAFormFunctionGraph</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">MappedMediumLevelILFunctionGraph</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">MappedMediumLevelILSSAFormFunctionGraph</span> <span class="o">=</span> <span class="mi">7</span></div>
+
+
+<div class="viewcode-block" id="HighlightColorStyle"><a class="viewcode-back" href="../../binaryninja.enums.HighlightColorStyle.html#binaryninja.architecture.HighlightColorStyle">[docs]</a><span class="k">class</span> <span class="nc">HighlightColorStyle</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">StandardHighlightColor</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">MixedHighlightColor</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">CustomHighlightColor</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="HighlightStandardColor"><a class="viewcode-back" href="../../binaryninja.enums.HighlightStandardColor.html#binaryninja.architecture.HighlightStandardColor">[docs]</a><span class="k">class</span> <span class="nc">HighlightStandardColor</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoHighlightColor</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">BlueHighlightColor</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">GreenHighlightColor</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">CyanHighlightColor</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">RedHighlightColor</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">MagentaHighlightColor</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">YellowHighlightColor</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">OrangeHighlightColor</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">WhiteHighlightColor</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">BlackHighlightColor</span> <span class="o">=</span> <span class="mi">9</span></div>
+
+
+<div class="viewcode-block" id="ILBranchDependence"><a class="viewcode-back" href="../../binaryninja.enums.ILBranchDependence.html#binaryninja.architecture.ILBranchDependence">[docs]</a><span class="k">class</span> <span class="nc">ILBranchDependence</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NotBranchDependent</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">TrueBranchDependent</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">FalseBranchDependent</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="ImplicitRegisterExtend"><a class="viewcode-back" href="../../binaryninja.enums.ImplicitRegisterExtend.html#binaryninja.architecture.ImplicitRegisterExtend">[docs]</a><span class="k">class</span> <span class="nc">ImplicitRegisterExtend</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoExtend</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ZeroExtendToFullWidth</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">SignExtendToFullWidth</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="InstructionTextTokenContext"><a class="viewcode-back" href="../../binaryninja.enums.InstructionTextTokenContext.html#binaryninja.architecture.InstructionTextTokenContext">[docs]</a><span class="k">class</span> <span class="nc">InstructionTextTokenContext</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoTokenContext</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">LocalVariableTokenContext</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">DataVariableTokenContext</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">FunctionReturnTokenContext</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="InstructionTextTokenType"><a class="viewcode-back" href="../../binaryninja.enums.InstructionTextTokenType.html#binaryninja.architecture.InstructionTextTokenType">[docs]</a><span class="k">class</span> <span class="nc">InstructionTextTokenType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">TextToken</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">InstructionToken</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">OperandSeparatorToken</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">RegisterToken</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">IntegerToken</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">PossibleAddressToken</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">BeginMemoryOperandToken</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">EndMemoryOperandToken</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">FloatingPointToken</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">AnnotationToken</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">CodeRelativeAddressToken</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">ArgumentNameToken</span> <span class="o">=</span> <span class="mi">11</span>
+	<span class="n">HexDumpByteValueToken</span> <span class="o">=</span> <span class="mi">12</span>
+	<span class="n">HexDumpSkippedByteToken</span> <span class="o">=</span> <span class="mi">13</span>
+	<span class="n">HexDumpInvalidByteToken</span> <span class="o">=</span> <span class="mi">14</span>
+	<span class="n">HexDumpTextToken</span> <span class="o">=</span> <span class="mi">15</span>
+	<span class="n">OpcodeToken</span> <span class="o">=</span> <span class="mi">16</span>
+	<span class="n">StringToken</span> <span class="o">=</span> <span class="mi">17</span>
+	<span class="n">CharacterConstantToken</span> <span class="o">=</span> <span class="mi">18</span>
+	<span class="n">KeywordToken</span> <span class="o">=</span> <span class="mi">19</span>
+	<span class="n">TypeNameToken</span> <span class="o">=</span> <span class="mi">20</span>
+	<span class="n">FieldNameToken</span> <span class="o">=</span> <span class="mi">21</span>
+	<span class="n">CodeSymbolToken</span> <span class="o">=</span> <span class="mi">64</span>
+	<span class="n">DataSymbolToken</span> <span class="o">=</span> <span class="mi">65</span>
+	<span class="n">LocalVariableToken</span> <span class="o">=</span> <span class="mi">66</span>
+	<span class="n">ImportToken</span> <span class="o">=</span> <span class="mi">67</span>
+	<span class="n">AddressDisplayToken</span> <span class="o">=</span> <span class="mi">68</span>
+	<span class="n">IndirectImportToken</span> <span class="o">=</span> <span class="mi">69</span></div>
+
+
+<div class="viewcode-block" id="IntegerDisplayType"><a class="viewcode-back" href="../../binaryninja.enums.IntegerDisplayType.html#binaryninja.architecture.IntegerDisplayType">[docs]</a><span class="k">class</span> <span class="nc">IntegerDisplayType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">DefaultIntegerDisplayType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">BinaryDisplayType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">SignedOctalDisplayType</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">UnsignedOctalDisplayType</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">SignedDecimalDisplayType</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">UnsignedDecimalDisplayType</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">SignedHexadecimalDisplayType</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">UnsignedHexadecimalDisplayType</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">CharacterConstantDisplayType</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">PointerDisplayType</span> <span class="o">=</span> <span class="mi">9</span></div>
+
+
+<div class="viewcode-block" id="LinearDisassemblyLineType"><a class="viewcode-back" href="../../binaryninja.enums.LinearDisassemblyLineType.html#binaryninja.architecture.LinearDisassemblyLineType">[docs]</a><span class="k">class</span> <span class="nc">LinearDisassemblyLineType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">BlankLineType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">CodeDisassemblyLineType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">DataVariableLineType</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">HexDumpLineType</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">FunctionHeaderLineType</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">FunctionHeaderStartLineType</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">FunctionHeaderEndLineType</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">FunctionContinuationLineType</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">LocalVariableLineType</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">LocalVariableListEndLineType</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">FunctionEndLineType</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">NoteStartLineType</span> <span class="o">=</span> <span class="mi">11</span>
+	<span class="n">NoteLineType</span> <span class="o">=</span> <span class="mi">12</span>
+	<span class="n">NoteEndLineType</span> <span class="o">=</span> <span class="mi">13</span>
+	<span class="n">SectionStartLineType</span> <span class="o">=</span> <span class="mi">14</span>
+	<span class="n">SectionEndLineType</span> <span class="o">=</span> <span class="mi">15</span>
+	<span class="n">SectionSeparatorLineType</span> <span class="o">=</span> <span class="mi">16</span>
+	<span class="n">NonContiguousSeparatorLineType</span> <span class="o">=</span> <span class="mi">17</span></div>
+
+
+<div class="viewcode-block" id="LogLevel"><a class="viewcode-back" href="../../binaryninja.enums.LogLevel.html#binaryninja.architecture.LogLevel">[docs]</a><span class="k">class</span> <span class="nc">LogLevel</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">DebugLog</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">InfoLog</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">WarningLog</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ErrorLog</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">AlertLog</span> <span class="o">=</span> <span class="mi">4</span></div>
+
+
+<div class="viewcode-block" id="LowLevelILFlagCondition"><a class="viewcode-back" href="../../binaryninja.enums.LowLevelILFlagCondition.html#binaryninja.architecture.LowLevelILFlagCondition">[docs]</a><span class="k">class</span> <span class="nc">LowLevelILFlagCondition</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">LLFC_E</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">LLFC_NE</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">LLFC_SLT</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">LLFC_ULT</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">LLFC_SLE</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">LLFC_ULE</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">LLFC_SGE</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">LLFC_UGE</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">LLFC_SGT</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">LLFC_UGT</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">LLFC_NEG</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">LLFC_POS</span> <span class="o">=</span> <span class="mi">11</span>
+	<span class="n">LLFC_O</span> <span class="o">=</span> <span class="mi">12</span>
+	<span class="n">LLFC_NO</span> <span class="o">=</span> <span class="mi">13</span></div>
+
+
+<div class="viewcode-block" id="LowLevelILOperation"><a class="viewcode-back" href="../../binaryninja.enums.LowLevelILOperation.html#binaryninja.architecture.LowLevelILOperation">[docs]</a><span class="k">class</span> <span class="nc">LowLevelILOperation</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">LLIL_NOP</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">LLIL_SET_REG</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">LLIL_SET_REG_SPLIT</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">LLIL_SET_FLAG</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">LLIL_LOAD</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">LLIL_STORE</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">LLIL_PUSH</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">LLIL_POP</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">LLIL_REG</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">LLIL_CONST</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">LLIL_CONST_PTR</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">LLIL_FLAG</span> <span class="o">=</span> <span class="mi">11</span>
+	<span class="n">LLIL_FLAG_BIT</span> <span class="o">=</span> <span class="mi">12</span>
+	<span class="n">LLIL_ADD</span> <span class="o">=</span> <span class="mi">13</span>
+	<span class="n">LLIL_ADC</span> <span class="o">=</span> <span class="mi">14</span>
+	<span class="n">LLIL_SUB</span> <span class="o">=</span> <span class="mi">15</span>
+	<span class="n">LLIL_SBB</span> <span class="o">=</span> <span class="mi">16</span>
+	<span class="n">LLIL_AND</span> <span class="o">=</span> <span class="mi">17</span>
+	<span class="n">LLIL_OR</span> <span class="o">=</span> <span class="mi">18</span>
+	<span class="n">LLIL_XOR</span> <span class="o">=</span> <span class="mi">19</span>
+	<span class="n">LLIL_LSL</span> <span class="o">=</span> <span class="mi">20</span>
+	<span class="n">LLIL_LSR</span> <span class="o">=</span> <span class="mi">21</span>
+	<span class="n">LLIL_ASR</span> <span class="o">=</span> <span class="mi">22</span>
+	<span class="n">LLIL_ROL</span> <span class="o">=</span> <span class="mi">23</span>
+	<span class="n">LLIL_RLC</span> <span class="o">=</span> <span class="mi">24</span>
+	<span class="n">LLIL_ROR</span> <span class="o">=</span> <span class="mi">25</span>
+	<span class="n">LLIL_RRC</span> <span class="o">=</span> <span class="mi">26</span>
+	<span class="n">LLIL_MUL</span> <span class="o">=</span> <span class="mi">27</span>
+	<span class="n">LLIL_MULU_DP</span> <span class="o">=</span> <span class="mi">28</span>
+	<span class="n">LLIL_MULS_DP</span> <span class="o">=</span> <span class="mi">29</span>
+	<span class="n">LLIL_DIVU</span> <span class="o">=</span> <span class="mi">30</span>
+	<span class="n">LLIL_DIVU_DP</span> <span class="o">=</span> <span class="mi">31</span>
+	<span class="n">LLIL_DIVS</span> <span class="o">=</span> <span class="mi">32</span>
+	<span class="n">LLIL_DIVS_DP</span> <span class="o">=</span> <span class="mi">33</span>
+	<span class="n">LLIL_MODU</span> <span class="o">=</span> <span class="mi">34</span>
+	<span class="n">LLIL_MODU_DP</span> <span class="o">=</span> <span class="mi">35</span>
+	<span class="n">LLIL_MODS</span> <span class="o">=</span> <span class="mi">36</span>
+	<span class="n">LLIL_MODS_DP</span> <span class="o">=</span> <span class="mi">37</span>
+	<span class="n">LLIL_NEG</span> <span class="o">=</span> <span class="mi">38</span>
+	<span class="n">LLIL_NOT</span> <span class="o">=</span> <span class="mi">39</span>
+	<span class="n">LLIL_SX</span> <span class="o">=</span> <span class="mi">40</span>
+	<span class="n">LLIL_ZX</span> <span class="o">=</span> <span class="mi">41</span>
+	<span class="n">LLIL_LOW_PART</span> <span class="o">=</span> <span class="mi">42</span>
+	<span class="n">LLIL_JUMP</span> <span class="o">=</span> <span class="mi">43</span>
+	<span class="n">LLIL_JUMP_TO</span> <span class="o">=</span> <span class="mi">44</span>
+	<span class="n">LLIL_CALL</span> <span class="o">=</span> <span class="mi">45</span>
+	<span class="n">LLIL_CALL_STACK_ADJUST</span> <span class="o">=</span> <span class="mi">46</span>
+	<span class="n">LLIL_RET</span> <span class="o">=</span> <span class="mi">47</span>
+	<span class="n">LLIL_NORET</span> <span class="o">=</span> <span class="mi">48</span>
+	<span class="n">LLIL_IF</span> <span class="o">=</span> <span class="mi">49</span>
+	<span class="n">LLIL_GOTO</span> <span class="o">=</span> <span class="mi">50</span>
+	<span class="n">LLIL_FLAG_COND</span> <span class="o">=</span> <span class="mi">51</span>
+	<span class="n">LLIL_CMP_E</span> <span class="o">=</span> <span class="mi">52</span>
+	<span class="n">LLIL_CMP_NE</span> <span class="o">=</span> <span class="mi">53</span>
+	<span class="n">LLIL_CMP_SLT</span> <span class="o">=</span> <span class="mi">54</span>
+	<span class="n">LLIL_CMP_ULT</span> <span class="o">=</span> <span class="mi">55</span>
+	<span class="n">LLIL_CMP_SLE</span> <span class="o">=</span> <span class="mi">56</span>
+	<span class="n">LLIL_CMP_ULE</span> <span class="o">=</span> <span class="mi">57</span>
+	<span class="n">LLIL_CMP_SGE</span> <span class="o">=</span> <span class="mi">58</span>
+	<span class="n">LLIL_CMP_UGE</span> <span class="o">=</span> <span class="mi">59</span>
+	<span class="n">LLIL_CMP_SGT</span> <span class="o">=</span> <span class="mi">60</span>
+	<span class="n">LLIL_CMP_UGT</span> <span class="o">=</span> <span class="mi">61</span>
+	<span class="n">LLIL_TEST_BIT</span> <span class="o">=</span> <span class="mi">62</span>
+	<span class="n">LLIL_BOOL_TO_INT</span> <span class="o">=</span> <span class="mi">63</span>
+	<span class="n">LLIL_ADD_OVERFLOW</span> <span class="o">=</span> <span class="mi">64</span>
+	<span class="n">LLIL_SYSCALL</span> <span class="o">=</span> <span class="mi">65</span>
+	<span class="n">LLIL_BP</span> <span class="o">=</span> <span class="mi">66</span>
+	<span class="n">LLIL_TRAP</span> <span class="o">=</span> <span class="mi">67</span>
+	<span class="n">LLIL_UNDEF</span> <span class="o">=</span> <span class="mi">68</span>
+	<span class="n">LLIL_UNIMPL</span> <span class="o">=</span> <span class="mi">69</span>
+	<span class="n">LLIL_UNIMPL_MEM</span> <span class="o">=</span> <span class="mi">70</span>
+	<span class="n">LLIL_SET_REG_SSA</span> <span class="o">=</span> <span class="mi">71</span>
+	<span class="n">LLIL_SET_REG_SSA_PARTIAL</span> <span class="o">=</span> <span class="mi">72</span>
+	<span class="n">LLIL_SET_REG_SPLIT_SSA</span> <span class="o">=</span> <span class="mi">73</span>
+	<span class="n">LLIL_REG_SPLIT_DEST_SSA</span> <span class="o">=</span> <span class="mi">74</span>
+	<span class="n">LLIL_REG_SSA</span> <span class="o">=</span> <span class="mi">75</span>
+	<span class="n">LLIL_REG_SSA_PARTIAL</span> <span class="o">=</span> <span class="mi">76</span>
+	<span class="n">LLIL_SET_FLAG_SSA</span> <span class="o">=</span> <span class="mi">77</span>
+	<span class="n">LLIL_FLAG_SSA</span> <span class="o">=</span> <span class="mi">78</span>
+	<span class="n">LLIL_FLAG_BIT_SSA</span> <span class="o">=</span> <span class="mi">79</span>
+	<span class="n">LLIL_CALL_SSA</span> <span class="o">=</span> <span class="mi">80</span>
+	<span class="n">LLIL_SYSCALL_SSA</span> <span class="o">=</span> <span class="mi">81</span>
+	<span class="n">LLIL_CALL_PARAM_SSA</span> <span class="o">=</span> <span class="mi">82</span>
+	<span class="n">LLIL_CALL_STACK_SSA</span> <span class="o">=</span> <span class="mi">83</span>
+	<span class="n">LLIL_CALL_OUTPUT_SSA</span> <span class="o">=</span> <span class="mi">84</span>
+	<span class="n">LLIL_LOAD_SSA</span> <span class="o">=</span> <span class="mi">85</span>
+	<span class="n">LLIL_STORE_SSA</span> <span class="o">=</span> <span class="mi">86</span>
+	<span class="n">LLIL_REG_PHI</span> <span class="o">=</span> <span class="mi">87</span>
+	<span class="n">LLIL_FLAG_PHI</span> <span class="o">=</span> <span class="mi">88</span>
+	<span class="n">LLIL_MEM_PHI</span> <span class="o">=</span> <span class="mi">89</span></div>
+
+
+<div class="viewcode-block" id="MediumLevelILOperation"><a class="viewcode-back" href="../../binaryninja.enums.MediumLevelILOperation.html#binaryninja.architecture.MediumLevelILOperation">[docs]</a><span class="k">class</span> <span class="nc">MediumLevelILOperation</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">MLIL_NOP</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">MLIL_SET_VAR</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">MLIL_SET_VAR_FIELD</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">MLIL_SET_VAR_SPLIT</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">MLIL_LOAD</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">MLIL_LOAD_STRUCT</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">MLIL_STORE</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">MLIL_STORE_STRUCT</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">MLIL_VAR</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">MLIL_VAR_FIELD</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">MLIL_ADDRESS_OF</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">MLIL_ADDRESS_OF_FIELD</span> <span class="o">=</span> <span class="mi">11</span>
+	<span class="n">MLIL_CONST</span> <span class="o">=</span> <span class="mi">12</span>
+	<span class="n">MLIL_CONST_PTR</span> <span class="o">=</span> <span class="mi">13</span>
+	<span class="n">MLIL_IMPORT</span> <span class="o">=</span> <span class="mi">14</span>
+	<span class="n">MLIL_ADD</span> <span class="o">=</span> <span class="mi">15</span>
+	<span class="n">MLIL_ADC</span> <span class="o">=</span> <span class="mi">16</span>
+	<span class="n">MLIL_SUB</span> <span class="o">=</span> <span class="mi">17</span>
+	<span class="n">MLIL_SBB</span> <span class="o">=</span> <span class="mi">18</span>
+	<span class="n">MLIL_AND</span> <span class="o">=</span> <span class="mi">19</span>
+	<span class="n">MLIL_OR</span> <span class="o">=</span> <span class="mi">20</span>
+	<span class="n">MLIL_XOR</span> <span class="o">=</span> <span class="mi">21</span>
+	<span class="n">MLIL_LSL</span> <span class="o">=</span> <span class="mi">22</span>
+	<span class="n">MLIL_LSR</span> <span class="o">=</span> <span class="mi">23</span>
+	<span class="n">MLIL_ASR</span> <span class="o">=</span> <span class="mi">24</span>
+	<span class="n">MLIL_ROL</span> <span class="o">=</span> <span class="mi">25</span>
+	<span class="n">MLIL_RLC</span> <span class="o">=</span> <span class="mi">26</span>
+	<span class="n">MLIL_ROR</span> <span class="o">=</span> <span class="mi">27</span>
+	<span class="n">MLIL_RRC</span> <span class="o">=</span> <span class="mi">28</span>
+	<span class="n">MLIL_MUL</span> <span class="o">=</span> <span class="mi">29</span>
+	<span class="n">MLIL_MULU_DP</span> <span class="o">=</span> <span class="mi">30</span>
+	<span class="n">MLIL_MULS_DP</span> <span class="o">=</span> <span class="mi">31</span>
+	<span class="n">MLIL_DIVU</span> <span class="o">=</span> <span class="mi">32</span>
+	<span class="n">MLIL_DIVU_DP</span> <span class="o">=</span> <span class="mi">33</span>
+	<span class="n">MLIL_DIVS</span> <span class="o">=</span> <span class="mi">34</span>
+	<span class="n">MLIL_DIVS_DP</span> <span class="o">=</span> <span class="mi">35</span>
+	<span class="n">MLIL_MODU</span> <span class="o">=</span> <span class="mi">36</span>
+	<span class="n">MLIL_MODU_DP</span> <span class="o">=</span> <span class="mi">37</span>
+	<span class="n">MLIL_MODS</span> <span class="o">=</span> <span class="mi">38</span>
+	<span class="n">MLIL_MODS_DP</span> <span class="o">=</span> <span class="mi">39</span>
+	<span class="n">MLIL_NEG</span> <span class="o">=</span> <span class="mi">40</span>
+	<span class="n">MLIL_NOT</span> <span class="o">=</span> <span class="mi">41</span>
+	<span class="n">MLIL_SX</span> <span class="o">=</span> <span class="mi">42</span>
+	<span class="n">MLIL_ZX</span> <span class="o">=</span> <span class="mi">43</span>
+	<span class="n">MLIL_LOW_PART</span> <span class="o">=</span> <span class="mi">44</span>
+	<span class="n">MLIL_JUMP</span> <span class="o">=</span> <span class="mi">45</span>
+	<span class="n">MLIL_JUMP_TO</span> <span class="o">=</span> <span class="mi">46</span>
+	<span class="n">MLIL_CALL</span> <span class="o">=</span> <span class="mi">47</span>
+	<span class="n">MLIL_CALL_UNTYPED</span> <span class="o">=</span> <span class="mi">48</span>
+	<span class="n">MLIL_CALL_OUTPUT</span> <span class="o">=</span> <span class="mi">49</span>
+	<span class="n">MLIL_CALL_PARAM</span> <span class="o">=</span> <span class="mi">50</span>
+	<span class="n">MLIL_RET</span> <span class="o">=</span> <span class="mi">51</span>
+	<span class="n">MLIL_NORET</span> <span class="o">=</span> <span class="mi">52</span>
+	<span class="n">MLIL_IF</span> <span class="o">=</span> <span class="mi">53</span>
+	<span class="n">MLIL_GOTO</span> <span class="o">=</span> <span class="mi">54</span>
+	<span class="n">MLIL_CMP_E</span> <span class="o">=</span> <span class="mi">55</span>
+	<span class="n">MLIL_CMP_NE</span> <span class="o">=</span> <span class="mi">56</span>
+	<span class="n">MLIL_CMP_SLT</span> <span class="o">=</span> <span class="mi">57</span>
+	<span class="n">MLIL_CMP_ULT</span> <span class="o">=</span> <span class="mi">58</span>
+	<span class="n">MLIL_CMP_SLE</span> <span class="o">=</span> <span class="mi">59</span>
+	<span class="n">MLIL_CMP_ULE</span> <span class="o">=</span> <span class="mi">60</span>
+	<span class="n">MLIL_CMP_SGE</span> <span class="o">=</span> <span class="mi">61</span>
+	<span class="n">MLIL_CMP_UGE</span> <span class="o">=</span> <span class="mi">62</span>
+	<span class="n">MLIL_CMP_SGT</span> <span class="o">=</span> <span class="mi">63</span>
+	<span class="n">MLIL_CMP_UGT</span> <span class="o">=</span> <span class="mi">64</span>
+	<span class="n">MLIL_TEST_BIT</span> <span class="o">=</span> <span class="mi">65</span>
+	<span class="n">MLIL_BOOL_TO_INT</span> <span class="o">=</span> <span class="mi">66</span>
+	<span class="n">MLIL_ADD_OVERFLOW</span> <span class="o">=</span> <span class="mi">67</span>
+	<span class="n">MLIL_SYSCALL</span> <span class="o">=</span> <span class="mi">68</span>
+	<span class="n">MLIL_SYSCALL_UNTYPED</span> <span class="o">=</span> <span class="mi">69</span>
+	<span class="n">MLIL_BP</span> <span class="o">=</span> <span class="mi">70</span>
+	<span class="n">MLIL_TRAP</span> <span class="o">=</span> <span class="mi">71</span>
+	<span class="n">MLIL_UNDEF</span> <span class="o">=</span> <span class="mi">72</span>
+	<span class="n">MLIL_UNIMPL</span> <span class="o">=</span> <span class="mi">73</span>
+	<span class="n">MLIL_UNIMPL_MEM</span> <span class="o">=</span> <span class="mi">74</span>
+	<span class="n">MLIL_SET_VAR_SSA</span> <span class="o">=</span> <span class="mi">75</span>
+	<span class="n">MLIL_SET_VAR_SSA_FIELD</span> <span class="o">=</span> <span class="mi">76</span>
+	<span class="n">MLIL_SET_VAR_SPLIT_SSA</span> <span class="o">=</span> <span class="mi">77</span>
+	<span class="n">MLIL_SET_VAR_ALIASED</span> <span class="o">=</span> <span class="mi">78</span>
+	<span class="n">MLIL_SET_VAR_ALIASED_FIELD</span> <span class="o">=</span> <span class="mi">79</span>
+	<span class="n">MLIL_VAR_SSA</span> <span class="o">=</span> <span class="mi">80</span>
+	<span class="n">MLIL_VAR_SSA_FIELD</span> <span class="o">=</span> <span class="mi">81</span>
+	<span class="n">MLIL_VAR_ALIASED</span> <span class="o">=</span> <span class="mi">82</span>
+	<span class="n">MLIL_VAR_ALIASED_FIELD</span> <span class="o">=</span> <span class="mi">83</span>
+	<span class="n">MLIL_CALL_SSA</span> <span class="o">=</span> <span class="mi">84</span>
+	<span class="n">MLIL_CALL_UNTYPED_SSA</span> <span class="o">=</span> <span class="mi">85</span>
+	<span class="n">MLIL_SYSCALL_SSA</span> <span class="o">=</span> <span class="mi">86</span>
+	<span class="n">MLIL_SYSCALL_UNTYPED_SSA</span> <span class="o">=</span> <span class="mi">87</span>
+	<span class="n">MLIL_CALL_PARAM_SSA</span> <span class="o">=</span> <span class="mi">88</span>
+	<span class="n">MLIL_CALL_OUTPUT_SSA</span> <span class="o">=</span> <span class="mi">89</span>
+	<span class="n">MLIL_LOAD_SSA</span> <span class="o">=</span> <span class="mi">90</span>
+	<span class="n">MLIL_LOAD_STRUCT_SSA</span> <span class="o">=</span> <span class="mi">91</span>
+	<span class="n">MLIL_STORE_SSA</span> <span class="o">=</span> <span class="mi">92</span>
+	<span class="n">MLIL_STORE_STRUCT_SSA</span> <span class="o">=</span> <span class="mi">93</span>
+	<span class="n">MLIL_VAR_PHI</span> <span class="o">=</span> <span class="mi">94</span>
+	<span class="n">MLIL_MEM_PHI</span> <span class="o">=</span> <span class="mi">95</span></div>
+
+
+<div class="viewcode-block" id="MemberAccess"><a class="viewcode-back" href="../../binaryninja.enums.MemberAccess.html#binaryninja.architecture.MemberAccess">[docs]</a><span class="k">class</span> <span class="nc">MemberAccess</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoAccess</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">PrivateAccess</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ProtectedAccess</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">PublicAccess</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="MemberScope"><a class="viewcode-back" href="../../binaryninja.enums.MemberScope.html#binaryninja.architecture.MemberScope">[docs]</a><span class="k">class</span> <span class="nc">MemberScope</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoScope</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">StaticScope</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">VirtualScope</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ThunkScope</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">FriendScope</span> <span class="o">=</span> <span class="mi">4</span></div>
+
+
+<div class="viewcode-block" id="MessageBoxButtonResult"><a class="viewcode-back" href="../../binaryninja.enums.MessageBoxButtonResult.html#binaryninja.architecture.MessageBoxButtonResult">[docs]</a><span class="k">class</span> <span class="nc">MessageBoxButtonResult</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoButton</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">YesButton</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">OKButton</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">CancelButton</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="MessageBoxButtonSet"><a class="viewcode-back" href="../../binaryninja.enums.MessageBoxButtonSet.html#binaryninja.architecture.MessageBoxButtonSet">[docs]</a><span class="k">class</span> <span class="nc">MessageBoxButtonSet</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">OKButtonSet</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">YesNoButtonSet</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">YesNoCancelButtonSet</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="MessageBoxIcon"><a class="viewcode-back" href="../../binaryninja.enums.MessageBoxIcon.html#binaryninja.architecture.MessageBoxIcon">[docs]</a><span class="k">class</span> <span class="nc">MessageBoxIcon</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">InformationIcon</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">QuestionIcon</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">WarningIcon</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ErrorIcon</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="MetadataType"><a class="viewcode-back" href="../../binaryninja.enums.MetadataType.html#binaryninja.architecture.MetadataType">[docs]</a><span class="k">class</span> <span class="nc">MetadataType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">InvalidDataType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">BooleanDataType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">StringDataType</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">UnsignedIntegerDataType</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">SignedIntegerDataType</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">DoubleDataType</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">RawDataType</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">KeyValueDataType</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">ArrayDataType</span> <span class="o">=</span> <span class="mi">8</span></div>
+
+
+<div class="viewcode-block" id="ModificationStatus"><a class="viewcode-back" href="../../binaryninja.enums.ModificationStatus.html#binaryninja.architecture.ModificationStatus">[docs]</a><span class="k">class</span> <span class="nc">ModificationStatus</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">Original</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">Changed</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">Inserted</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="NameType"><a class="viewcode-back" href="../../binaryninja.enums.NameType.html#binaryninja.architecture.NameType">[docs]</a><span class="k">class</span> <span class="nc">NameType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NoNameType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ConstructorNameType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">DestructorNameType</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">OperatorNewNameType</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">OperatorDeleteNameType</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">OperatorAssignNameType</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">OperatorRightShiftNameType</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">OperatorLeftShiftNameType</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">OperatorNotNameType</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">OperatorEqualNameType</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">OperatorNotEqualNameType</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">OperatorArrayNameType</span> <span class="o">=</span> <span class="mi">11</span>
+	<span class="n">OperatorArrowNameType</span> <span class="o">=</span> <span class="mi">12</span>
+	<span class="n">OperatorStarNameType</span> <span class="o">=</span> <span class="mi">13</span>
+	<span class="n">OperatorIncrementNameType</span> <span class="o">=</span> <span class="mi">14</span>
+	<span class="n">OperatorDecrementNameType</span> <span class="o">=</span> <span class="mi">15</span>
+	<span class="n">OperatorMinusNameType</span> <span class="o">=</span> <span class="mi">16</span>
+	<span class="n">OperatorPlusNameType</span> <span class="o">=</span> <span class="mi">17</span>
+	<span class="n">OperatorBitAndNameType</span> <span class="o">=</span> <span class="mi">18</span>
+	<span class="n">OperatorArrowStarNameType</span> <span class="o">=</span> <span class="mi">19</span>
+	<span class="n">OperatorDivideNameType</span> <span class="o">=</span> <span class="mi">20</span>
+	<span class="n">OperatorModulusNameType</span> <span class="o">=</span> <span class="mi">21</span>
+	<span class="n">OperatorLessThanNameType</span> <span class="o">=</span> <span class="mi">22</span>
+	<span class="n">OperatorLessThanEqualNameType</span> <span class="o">=</span> <span class="mi">23</span>
+	<span class="n">OperatorGreaterThanNameType</span> <span class="o">=</span> <span class="mi">24</span>
+	<span class="n">OperatorGreaterThanEqualNameType</span> <span class="o">=</span> <span class="mi">25</span>
+	<span class="n">OperatorCommaNameType</span> <span class="o">=</span> <span class="mi">26</span>
+	<span class="n">OperatorParenthesesNameType</span> <span class="o">=</span> <span class="mi">27</span>
+	<span class="n">OperatorTildeNameType</span> <span class="o">=</span> <span class="mi">28</span>
+	<span class="n">OperatorXorNameType</span> <span class="o">=</span> <span class="mi">29</span>
+	<span class="n">OperatorBitOrNameType</span> <span class="o">=</span> <span class="mi">30</span>
+	<span class="n">OperatorLogicalAndNameType</span> <span class="o">=</span> <span class="mi">31</span>
+	<span class="n">OperatorLogicalOrNameType</span> <span class="o">=</span> <span class="mi">32</span>
+	<span class="n">OperatorStarEqualNameType</span> <span class="o">=</span> <span class="mi">33</span>
+	<span class="n">OperatorPlusEqualNameType</span> <span class="o">=</span> <span class="mi">34</span>
+	<span class="n">OperatorMinusEqualNameType</span> <span class="o">=</span> <span class="mi">35</span>
+	<span class="n">OperatorDivideEqualNameType</span> <span class="o">=</span> <span class="mi">36</span>
+	<span class="n">OperatorModulusEqualNameType</span> <span class="o">=</span> <span class="mi">37</span>
+	<span class="n">OperatorRightShiftEqualNameType</span> <span class="o">=</span> <span class="mi">38</span>
+	<span class="n">OperatorLeftShiftEqualNameType</span> <span class="o">=</span> <span class="mi">39</span>
+	<span class="n">OperatorAndEqualNameType</span> <span class="o">=</span> <span class="mi">40</span>
+	<span class="n">OperatorOrEqualNameType</span> <span class="o">=</span> <span class="mi">41</span>
+	<span class="n">OperatorXorEqualNameType</span> <span class="o">=</span> <span class="mi">42</span>
+	<span class="n">VFTableNameType</span> <span class="o">=</span> <span class="mi">43</span>
+	<span class="n">VBTableNameType</span> <span class="o">=</span> <span class="mi">44</span>
+	<span class="n">VCallNameType</span> <span class="o">=</span> <span class="mi">45</span>
+	<span class="n">TypeofNameType</span> <span class="o">=</span> <span class="mi">46</span>
+	<span class="n">LocalStaticGuardNameType</span> <span class="o">=</span> <span class="mi">47</span>
+	<span class="n">StringNameType</span> <span class="o">=</span> <span class="mi">48</span>
+	<span class="n">VBaseDestructorNameType</span> <span class="o">=</span> <span class="mi">49</span>
+	<span class="n">VectorDeletingDestructorNameType</span> <span class="o">=</span> <span class="mi">50</span>
+	<span class="n">DefaultConstructorClosureNameType</span> <span class="o">=</span> <span class="mi">51</span>
+	<span class="n">ScalarDeletingDestructorNameType</span> <span class="o">=</span> <span class="mi">52</span>
+	<span class="n">VectorConstructorIteratorNameType</span> <span class="o">=</span> <span class="mi">53</span>
+	<span class="n">VectorDestructorIteratorNameType</span> <span class="o">=</span> <span class="mi">54</span>
+	<span class="n">VectorVBaseConstructorIteratoreNameType</span> <span class="o">=</span> <span class="mi">55</span>
+	<span class="n">VirtualDisplacementMapNameType</span> <span class="o">=</span> <span class="mi">56</span>
+	<span class="n">EHVectorConstructorIteratorNameType</span> <span class="o">=</span> <span class="mi">57</span>
+	<span class="n">EHVectorDestructorIteratorNameType</span> <span class="o">=</span> <span class="mi">58</span>
+	<span class="n">EHVectorVBaseConstructorIteratorNameType</span> <span class="o">=</span> <span class="mi">59</span>
+	<span class="n">CopyConstructorClosureNameType</span> <span class="o">=</span> <span class="mi">60</span>
+	<span class="n">UDTReturningNameType</span> <span class="o">=</span> <span class="mi">61</span>
+	<span class="n">LocalVFTableNameType</span> <span class="o">=</span> <span class="mi">62</span>
+	<span class="n">LocalVFTableConstructorClosureNameType</span> <span class="o">=</span> <span class="mi">63</span>
+	<span class="n">OperatorNewArrayNameType</span> <span class="o">=</span> <span class="mi">64</span>
+	<span class="n">OperatorDeleteArrayNameType</span> <span class="o">=</span> <span class="mi">65</span>
+	<span class="n">PlacementDeleteClosureNameType</span> <span class="o">=</span> <span class="mi">66</span>
+	<span class="n">PlacementDeleteClosureArrayNameType</span> <span class="o">=</span> <span class="mi">67</span>
+	<span class="n">OperatorReturnTypeNameType</span> <span class="o">=</span> <span class="mi">68</span>
+	<span class="n">RttiTypeDescriptor</span> <span class="o">=</span> <span class="mi">69</span>
+	<span class="n">RttiBaseClassDescriptor</span> <span class="o">=</span> <span class="mi">70</span>
+	<span class="n">RttiBaseClassArray</span> <span class="o">=</span> <span class="mi">71</span>
+	<span class="n">RttiClassHeirarchyDescriptor</span> <span class="o">=</span> <span class="mi">72</span>
+	<span class="n">RttiCompleteObjectLocator</span> <span class="o">=</span> <span class="mi">73</span>
+	<span class="n">OperatorUnaryMinusNameType</span> <span class="o">=</span> <span class="mi">74</span>
+	<span class="n">OperatorUnaryPlusNameType</span> <span class="o">=</span> <span class="mi">75</span>
+	<span class="n">OperatorUnaryBitAndNameType</span> <span class="o">=</span> <span class="mi">76</span>
+	<span class="n">OperatorUnaryStarNameType</span> <span class="o">=</span> <span class="mi">77</span></div>
+
+
+<div class="viewcode-block" id="NamedTypeReferenceClass"><a class="viewcode-back" href="../../binaryninja.enums.NamedTypeReferenceClass.html#binaryninja.architecture.NamedTypeReferenceClass">[docs]</a><span class="k">class</span> <span class="nc">NamedTypeReferenceClass</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">UnknownNamedTypeClass</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">TypedefNamedTypeClass</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ClassNamedTypeClass</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">StructNamedTypeClass</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">UnionNamedTypeClass</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">EnumNamedTypeClass</span> <span class="o">=</span> <span class="mi">5</span></div>
+
+
+<div class="viewcode-block" id="PluginCommandType"><a class="viewcode-back" href="../../binaryninja.enums.PluginCommandType.html#binaryninja.architecture.PluginCommandType">[docs]</a><span class="k">class</span> <span class="nc">PluginCommandType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">DefaultPluginCommand</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">AddressPluginCommand</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">RangePluginCommand</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">FunctionPluginCommand</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="PluginLoadOrder"><a class="viewcode-back" href="../../binaryninja.enums.PluginLoadOrder.html#binaryninja.architecture.PluginLoadOrder">[docs]</a><span class="k">class</span> <span class="nc">PluginLoadOrder</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">EarlyPluginLoadOrder</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">NormalPluginLoadOrder</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">LatePluginLoadOrder</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="PluginOrigin"><a class="viewcode-back" href="../../binaryninja.enums.PluginOrigin.html#binaryninja.architecture.PluginOrigin">[docs]</a><span class="k">class</span> <span class="nc">PluginOrigin</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">OfficialPluginOrigin</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">CommunityPluginOrigin</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">OtherPluginOrigin</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="PluginType"><a class="viewcode-back" href="../../binaryninja.enums.PluginType.html#binaryninja.architecture.PluginType">[docs]</a><span class="k">class</span> <span class="nc">PluginType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">CorePluginType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">UiPluginType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ArchitecturePluginType</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">BinaryViewPluginType</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="PluginUpdateStatus"><a class="viewcode-back" href="../../binaryninja.enums.PluginUpdateStatus.html#binaryninja.architecture.PluginUpdateStatus">[docs]</a><span class="k">class</span> <span class="nc">PluginUpdateStatus</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">UpToDatePluginStatus</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">UpdatesAvailablePluginStatus</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="PointerSuffix"><a class="viewcode-back" href="../../binaryninja.enums.PointerSuffix.html#binaryninja.architecture.PointerSuffix">[docs]</a><span class="k">class</span> <span class="nc">PointerSuffix</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">Ptr64Suffix</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">UnalignedSuffix</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">RestrictSuffix</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ReferenceSuffix</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">LvalueSuffix</span> <span class="o">=</span> <span class="mi">4</span></div>
+
+
+<div class="viewcode-block" id="ReferenceType"><a class="viewcode-back" href="../../binaryninja.enums.ReferenceType.html#binaryninja.architecture.ReferenceType">[docs]</a><span class="k">class</span> <span class="nc">ReferenceType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">PointerReferenceType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ReferenceReferenceType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">RValueReferenceType</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">NoReference</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="RegisterValueType"><a class="viewcode-back" href="../../binaryninja.enums.RegisterValueType.html#binaryninja.architecture.RegisterValueType">[docs]</a><span class="k">class</span> <span class="nc">RegisterValueType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">UndeterminedValue</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">EntryValue</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ConstantValue</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ConstantPointerValue</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">StackFrameOffset</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">ReturnAddressValue</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">ImportedAddressValue</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">SignedRangeValue</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">UnsignedRangeValue</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">LookupTableValue</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">InSetOfValues</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">NotInSetOfValues</span> <span class="o">=</span> <span class="mi">11</span></div>
+
+
+<div class="viewcode-block" id="ScriptingProviderExecuteResult"><a class="viewcode-back" href="../../binaryninja.enums.ScriptingProviderExecuteResult.html#binaryninja.architecture.ScriptingProviderExecuteResult">[docs]</a><span class="k">class</span> <span class="nc">ScriptingProviderExecuteResult</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">InvalidScriptInput</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">IncompleteScriptInput</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">SuccessfulScriptExecution</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="ScriptingProviderInputReadyState"><a class="viewcode-back" href="../../binaryninja.enums.ScriptingProviderInputReadyState.html#binaryninja.architecture.ScriptingProviderInputReadyState">[docs]</a><span class="k">class</span> <span class="nc">ScriptingProviderInputReadyState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">NotReadyForInput</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ReadyForScriptExecution</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ReadyForScriptProgramInput</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="SectionSemantics"><a class="viewcode-back" href="../../binaryninja.enums.SectionSemantics.html#binaryninja.architecture.SectionSemantics">[docs]</a><span class="k">class</span> <span class="nc">SectionSemantics</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">DefaultSectionSemantics</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ReadOnlyCodeSectionSemantics</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ReadOnlyDataSectionSemantics</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">ReadWriteDataSectionSemantics</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="SegmentFlag"><a class="viewcode-back" href="../../binaryninja.enums.SegmentFlag.html#binaryninja.architecture.SegmentFlag">[docs]</a><span class="k">class</span> <span class="nc">SegmentFlag</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">SegmentExecutable</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">SegmentWritable</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">SegmentReadable</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">SegmentContainsData</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">SegmentContainsCode</span> <span class="o">=</span> <span class="mi">16</span>
+	<span class="n">SegmentDenyWrite</span> <span class="o">=</span> <span class="mi">32</span>
+	<span class="n">SegmentDenyExecute</span> <span class="o">=</span> <span class="mi">64</span></div>
+
+
+<div class="viewcode-block" id="StringType"><a class="viewcode-back" href="../../binaryninja.enums.StringType.html#binaryninja.architecture.StringType">[docs]</a><span class="k">class</span> <span class="nc">StringType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">AsciiString</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">Utf16String</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">Utf32String</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="StructureType"><a class="viewcode-back" href="../../binaryninja.enums.StructureType.html#binaryninja.architecture.StructureType">[docs]</a><span class="k">class</span> <span class="nc">StructureType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">ClassStructureType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">StructStructureType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">UnionStructureType</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="SymbolType"><a class="viewcode-back" href="../../binaryninja.enums.SymbolType.html#binaryninja.architecture.SymbolType">[docs]</a><span class="k">class</span> <span class="nc">SymbolType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">FunctionSymbol</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">ImportAddressSymbol</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ImportedFunctionSymbol</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">DataSymbol</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">ImportedDataSymbol</span> <span class="o">=</span> <span class="mi">4</span></div>
+
+
+<div class="viewcode-block" id="TransformType"><a class="viewcode-back" href="../../binaryninja.enums.TransformType.html#binaryninja.architecture.TransformType">[docs]</a><span class="k">class</span> <span class="nc">TransformType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">BinaryCodecTransform</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">TextCodecTransform</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">UnicodeCodecTransform</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">DecodeTransform</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">BinaryEncodeTransform</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">TextEncodeTransform</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">EncryptTransform</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">InvertingTransform</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">HashTransform</span> <span class="o">=</span> <span class="mi">8</span></div>
+
+
+<div class="viewcode-block" id="TypeClass"><a class="viewcode-back" href="../../binaryninja.enums.TypeClass.html#binaryninja.architecture.TypeClass">[docs]</a><span class="k">class</span> <span class="nc">TypeClass</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">VoidTypeClass</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">BoolTypeClass</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">IntegerTypeClass</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">FloatTypeClass</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="n">StructureTypeClass</span> <span class="o">=</span> <span class="mi">4</span>
+	<span class="n">EnumerationTypeClass</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="n">PointerTypeClass</span> <span class="o">=</span> <span class="mi">6</span>
+	<span class="n">ArrayTypeClass</span> <span class="o">=</span> <span class="mi">7</span>
+	<span class="n">FunctionTypeClass</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">VarArgsTypeClass</span> <span class="o">=</span> <span class="mi">9</span>
+	<span class="n">ValueTypeClass</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">NamedTypeReferenceClass</span> <span class="o">=</span> <span class="mi">11</span></div>
+
+
+<div class="viewcode-block" id="UpdateResult"><a class="viewcode-back" href="../../binaryninja.enums.UpdateResult.html#binaryninja.architecture.UpdateResult">[docs]</a><span class="k">class</span> <span class="nc">UpdateResult</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">UpdateFailed</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">UpdateSuccess</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">AlreadyUpToDate</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="VariableSourceType"><a class="viewcode-back" href="../../binaryninja.enums.VariableSourceType.html#binaryninja.architecture.VariableSourceType">[docs]</a><span class="k">class</span> <span class="nc">VariableSourceType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+	<span class="n">StackVariableSourceType</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">RegisterVariableSourceType</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">FlagVariableSourceType</span> <span class="o">=</span> <span class="mi">2</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

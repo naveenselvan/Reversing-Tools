@@ -1,0 +1,6 @@
+binaryninja.interaction.get_save_filename_input
+===============================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: get_save_filename_input

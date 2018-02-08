@@ -1,0 +1,6 @@
+binaryninja.update.updates_checked
+==================================
+
+.. currentmodule:: binaryninja.update
+
+.. autofunction:: updates_checked

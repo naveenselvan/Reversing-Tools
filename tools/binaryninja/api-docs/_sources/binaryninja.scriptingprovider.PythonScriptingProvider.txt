@@ -1,0 +1,30 @@
+binaryninja.scriptingprovider.PythonScriptingProvider
+=====================================================
+
+.. currentmodule:: binaryninja.scriptingprovider
+
+.. autoclass:: PythonScriptingProvider
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PythonScriptingProvider.__init__
+      ~PythonScriptingProvider.create_instance
+      ~PythonScriptingProvider.register
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PythonScriptingProvider.name
+   
+   

@@ -1,0 +1,44 @@
+binaryninja.setting.Setting
+===========================
+
+.. currentmodule:: binaryninja.setting
+
+.. autoclass:: Setting
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Setting.__init__
+      ~Setting.get_bool
+      ~Setting.get_double
+      ~Setting.get_integer
+      ~Setting.get_integer_list
+      ~Setting.get_string
+      ~Setting.get_string_list
+      ~Setting.is_bool
+      ~Setting.is_double
+      ~Setting.is_integer
+      ~Setting.is_integer_list
+      ~Setting.is_present
+      ~Setting.is_string
+      ~Setting.is_string_list
+      ~Setting.remove_setting
+      ~Setting.remove_setting_group
+      ~Setting.set
+      ~Setting.set_bool
+      ~Setting.set_double
+      ~Setting.set_integer
+      ~Setting.set_integer_list
+      ~Setting.set_string
+      ~Setting.set_string_list
+   
+   
+
+   
+   
+   

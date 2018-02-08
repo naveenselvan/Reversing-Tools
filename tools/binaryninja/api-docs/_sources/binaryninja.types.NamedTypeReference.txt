@@ -1,0 +1,32 @@
+binaryninja.types.NamedTypeReference
+====================================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: NamedTypeReference
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NamedTypeReference.__init__
+      ~NamedTypeReference.generate_auto_demangled_type_ref
+      ~NamedTypeReference.generate_auto_type_ref
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NamedTypeReference.name
+      ~NamedTypeReference.type_class
+      ~NamedTypeReference.type_id
+   
+   

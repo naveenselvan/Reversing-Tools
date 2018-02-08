@@ -1,0 +1,6 @@
+binaryninja.lowlevelil.LLIL_GET_TEMP_REG_INDEX
+==============================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autofunction:: LLIL_GET_TEMP_REG_INDEX

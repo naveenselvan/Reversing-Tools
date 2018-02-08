@@ -1,0 +1,6 @@
+binaryninja.log.log_info
+========================
+
+.. currentmodule:: binaryninja.log
+
+.. autofunction:: log_info

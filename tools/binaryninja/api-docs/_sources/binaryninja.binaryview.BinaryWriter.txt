@@ -1,0 +1,42 @@
+binaryninja.binaryview.BinaryWriter
+===================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: BinaryWriter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BinaryWriter.__init__
+      ~BinaryWriter.seek
+      ~BinaryWriter.seek_relative
+      ~BinaryWriter.write
+      ~BinaryWriter.write16
+      ~BinaryWriter.write16be
+      ~BinaryWriter.write16le
+      ~BinaryWriter.write32
+      ~BinaryWriter.write32be
+      ~BinaryWriter.write32le
+      ~BinaryWriter.write64
+      ~BinaryWriter.write64be
+      ~BinaryWriter.write64le
+      ~BinaryWriter.write8
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BinaryWriter.endianness
+      ~BinaryWriter.offset
+   
+   

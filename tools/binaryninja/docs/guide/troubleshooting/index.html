@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Troubleshooting - Binary Ninja Documentation</title>
+      
+      
+      
+        <link rel="canonical" href="https://docs.binary.ninja/guide/troubleshooting/index.html">
+      
+      
+        <meta name="author" content="Vector 35 LLC">
+      
+    
+    <meta property="og:url" content="https://docs.binary.ninja/guide/troubleshooting/index.html">
+    <meta property="og:title" content="Binary Ninja Documentation">
+    <meta property="og:image" content="https://docs.binary.ninja/guide/troubleshooting/index.html/../../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Binary Ninja Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../../docs.css?1492471077">
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                User Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Troubleshooting
+      </div>
+    </div>
+    
+    
+    
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://binary.ninja/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>
+          Binary Ninja Documentation
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../../index.html">
+      Home
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Getting Started Guide" href="../../getting-started/index.html">
+      Getting Started Guide
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">User Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Using and Writing Plugins" href="../plugins/index.html">
+      Using and Writing Plugins
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="Troubleshooting" href="index.html">
+      Troubleshooting
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Basics" href="#basics">
+                Basics
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Bug Reproduction" href="#bug-reproduction">
+                Bug Reproduction
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Plugin Troubleshooting" href="#plugin-troubleshooting">
+                Plugin Troubleshooting
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="License Problems" href="#license-problems">
+                License Problems
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Linux" href="#linux">
+                Linux
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="API" href="#api">
+                API
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Developer Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Contributing Documentation" href="../../dev/documentation/index.html">
+      Contributing Documentation
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="BNIL Guide&#58; LLIL" href="../../dev/bnil-llil/index.html">
+      BNIL Guide&#58; LLIL
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">About</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="License" href="../../about/license/index.html">
+      License
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Open Source" href="../../about/open-source/index.html">
+      Open Source
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Have you searched <a href="https://github.com/Vector35/binaryninja-api/issues?q=is%3Aissue">known issues</a>?</li>
+<li>Have you tried rebooting? (Kidding!)</li>
+<li>Did you read all the items on this page?</li>
+<li>Then you should contact <a href="https://binary.ninja/support.html">support</a>!</li>
+</ul>
+<h2 id="bug-reproduction">Bug Reproduction<a class="headerlink" href="#bug-reproduction" title="Permanent link">&para;</a></h2>
+<p>Running Binary Ninja with debug logging will make your bug report more useful.</p>
+<div class="codehilite"><pre><span></span>./binaryninja --debug --stderr-log
+</pre></div>
+
+
+<p>Alternatively, it might be easier to save debug logs to a file instead:</p>
+<div class="codehilite"><pre><span></span>./binaryninja -d -l logfile.txt
+</pre></div>
+
+
+<p>(note that both long and short-form of the command-line arguments are demonstrated in the above examples)</p>
+<h2 id="plugin-troubleshooting">Plugin Troubleshooting<a class="headerlink" href="#plugin-troubleshooting" title="Permanent link">&para;</a></h2>
+<p>While third party plugins are not officially supported, there are a number of troubleshooting tips that can help identify the cause. The most important is to enable debug logging as suggested in the previous section. This will often highlight problems with python paths or any other issues that prevent plugins from running.</p>
+<p>Additionally, if you're having trouble running a plugin in headless mode (without a GUI calling directly into the core), make sure you'er running the Commercial version of Binary Ninja as the Student/Non-Commercial edition does not support headless processing.</p>
+<p>Next, if running a python plugin, make sure the python requirements are met by your existing installation. Note that on windows, the bundled python is used and python requirements should be installed either by manually copying the modules to the <code>plugins</code> <a href="../../getting-started/#directories">folder</a>.</p>
+<h2 id="license-problems">License Problems<a class="headerlink" href="#license-problems" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If experiencing problems with Windows UAC permissions during an update, the easiest fix is to completely un-install and <a href="https://binary.ninja/recover.html">recover</a> the latest installer and license. Preferences are saved outside the installation folder and are preserved, though you might want to remove your <a href="../../getting-started/#license">license</a>.</li>
+<li>If you need to change the email address on your license, contact <a href="https://binary.ninja/support.html">support</a>.</li>
+</ul>
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>Given the diversity of Linux distributions, some work-arounds are required to run Binary Ninja on platforms that are not <a href="https://binary.ninja/faq.html">officially supported</a>.</p>
+<h3 id="headless-ubuntu">Headless Ubuntu<a class="headerlink" href="#headless-ubuntu" title="Permanent link">&para;</a></h3>
+<p>If you're having trouble getting Binary Ninja installed in a headless server install where you want to be able to X-Forward the GUI on a remote machine, the following should meet requiremetns (for at least 14.04 LTS):</p>
+<div class="codehilite"><pre><span></span>apt-get install libgl1-mesa-glx libfontconfig1 libxrender1 libegl1-mesa libxi6 libnspr4 libsm6
+</pre></div>
+
+
+<h3 id="arch-linux">Arch Linux<a class="headerlink" href="#arch-linux" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Install python2 from the <a href="https://wiki.archlinux.org/index.php/Official_repositories">official repositories</a> (<code>sudo pacman -S python2</code>) and create a sym link: <code>sudo ln -s /usr/lib/libpython2.7.so.1.0 /usr/lib/libpython2.7.so.1</code></li>
+<li>Install the <a href="https://www.archlinux.org/packages/community/x86_64/libcurl-compat/">libcurl-compat</a> library with <code>sudo pacman -S libcurl-compat</code>, and run Binary Ninja via <code>LD_PRELOAD=libcurl.so.3 ~/binaryninja/binaryninja</code></li>
+</ul>
+<h3 id="kde">KDE<a class="headerlink" href="#kde" title="Permanent link">&para;</a></h3>
+<p>To run Binary Ninja in a KDE based environment, set the <code>QT_PLUGIN_PATH</code> to the <code>QT</code> sub-folder:</p>
+<div class="codehilite"><pre><span></span>cd ~/binaryninja
+QT_PLUGIN_PATH=./qt ./binaryninja
+</pre></div>
+
+
+<h3 id="debian">Debian<a class="headerlink" href="#debian" title="Permanent link">&para;</a></h3>
+<p>For Debian variants that (Kali, eg) don't match packages with Ubuntu LTS or the latest stable, the following might fix problems with libssl and libcrypto:</p>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> binaryninja/plugins
+$ ln -s libssl.so libssl.so.1.0.0
+$ ln -s libcrypto.so libcrypto.so.1.0.0
+</pre></div>
+
+
+<h3 id="gentoo">Gentoo<a class="headerlink" href="#gentoo" title="Permanent link">&para;</a></h3>
+<p>One Gentoo user <a href="https://github.com/Vector35/binaryninja-api/issues/672">reported</a> a failed SSL certificate when trying to update. The solution was to copy over <code>/etc/ssl/certs/ca-certificates.crt</code> from another Linux distribution.</p>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If the GUI launches but the license file is not valid when launched from the command-line, check that you're using the right version of Python. Only a 64-bit Python 2.7 is supported at this time. Additionally, the <a href="https://binary.ninja/purchase.html">personal</a> edition does not support headless operation.</li>
+</ul>
+          <aside class="copyright" role="note">
+            
+              (<a href="https://creativecommons.org/licenses/by/3.0/">cc</a>) Vector 35 LLC
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../plugins/index.html" title="Using and Writing Plugins">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Using and Writing Plugins
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../dev/documentation/index.html" title="Contributing Documentation">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Contributing Documentation
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        /* General initialization */
+        ga('create', 'UA-72420552-3', 'docs.binary.ninja');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        /* Track outbound links */
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+        /* Register handler to log search on blur */
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+  </body>
+</html>

@@ -1,0 +1,16 @@
+setting module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.setting.Setting
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.setting
+   :members:
+   :undoc-members:
+   :show-inheritance:

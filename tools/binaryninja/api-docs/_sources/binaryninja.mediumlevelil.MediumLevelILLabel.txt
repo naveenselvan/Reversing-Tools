@@ -1,0 +1,22 @@
+binaryninja.mediumlevelil.MediumLevelILLabel
+============================================
+
+.. currentmodule:: binaryninja.mediumlevelil
+
+.. autoclass:: MediumLevelILLabel
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MediumLevelILLabel.__init__
+   
+   
+
+   
+   
+   

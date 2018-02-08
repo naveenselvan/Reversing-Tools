@@ -1,0 +1,43 @@
+binaryninja.binaryview.BinaryReader
+===================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: BinaryReader
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BinaryReader.__init__
+      ~BinaryReader.read
+      ~BinaryReader.read16
+      ~BinaryReader.read16be
+      ~BinaryReader.read16le
+      ~BinaryReader.read32
+      ~BinaryReader.read32be
+      ~BinaryReader.read32le
+      ~BinaryReader.read64
+      ~BinaryReader.read64be
+      ~BinaryReader.read64le
+      ~BinaryReader.read8
+      ~BinaryReader.seek
+      ~BinaryReader.seek_relative
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BinaryReader.endianness
+      ~BinaryReader.eof
+      ~BinaryReader.offset
+   
+   

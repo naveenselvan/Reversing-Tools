@@ -1,0 +1,37 @@
+binaryninja.pluginmanager.RepositoryManager
+===========================================
+
+.. currentmodule:: binaryninja.pluginmanager
+
+.. autoclass:: RepositoryManager
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RepositoryManager.__init__
+      ~RepositoryManager.add_repository
+      ~RepositoryManager.check_for_updates
+      ~RepositoryManager.disable_plugin
+      ~RepositoryManager.enable_plugin
+      ~RepositoryManager.install_plugin
+      ~RepositoryManager.uninstall_plugin
+      ~RepositoryManager.update_plugin
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RepositoryManager.default_repository
+      ~RepositoryManager.plugins
+      ~RepositoryManager.repositories
+   
+   

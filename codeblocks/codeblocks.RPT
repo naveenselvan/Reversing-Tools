@@ -1,0 +1,377 @@
+-------------------
+
+Error occured on Friday, April 28, 2017 at 16:07:12.
+
+codeblocks.exe caused an Access Violation at location 004B103D in module codeblocks.exe Reading from location 00000038.
+
+Loading symbols... done.
+
+Registers:
+eax=00000000 ebx=0022f388 ecx=7ffdf000 edx=00000000 esi=0058a9c8 edi=0166e140
+eip=004b103d esp=0022f34c ebp=0022f5c4 iopl=0         nv up ei pl nz ac po nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00010216
+
+AddrPC   Params
+004B103D 0022F63C 000000B2 FFFFFFFF  codeblocks.exe!0xb103d
+004066EE 0022F7C8 00000460 003429A8  codeblocks.exe!0x66ee
+6CC41262 003428C0 00000460 00000000  wxmsw28u_gcc_cb.dll!wxAppConsole::HandleEvent
+-------------------
+
+Error occured on Monday, June 12, 2017 at 15:48:37.
+
+codeblocks.exe caused an Access Violation at location 61875166 in module codeblocks.dll Reading from location 0000002C.
+
+Loading symbols... done.
+
+Registers:
+eax=00000000 ebx=00000000 ecx=00000000 edx=0000006d esi=021c2760 edi=00000000
+eip=61875166 esp=0022f960 ebp=0022fa28 iopl=0         nv up ei pl nz na po nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00010206
+
+AddrPC   Params
+61875166 0022FA9C 65FB6558 094A319C  codeblocks.dll!EditorManager::GetActiveEditor
+65ED76F2 00000000 00000000 00000000  codecompletion.dll!0x576f2
+65ED7C52 082EB268 6D1296A0 6D1C7D42  codecompletion.dll!0x57c52
+65EA17F9 00000002 0155AC70 00000000  codecompletion.dll!0x217f9
+6CC7C54A 00400000 00000000 006F235B  wxmsw28u_gcc_cb.dll!wxEntryReal
+00401D98 7FFD6000 00000000 7FFD6000  codeblocks.exe!0x1d98
+004010FD 7FFD6000 771C9F2D 00000000  codeblocks.exe!0x10fd
+770637F5 004012A0 7FFD6000 00000000  ntdll.dll!___RtlUserThreadStart@8
+770637C8 004012A0 7FFD6000 00000000  ntdll.dll!__RtlUserThreadStart@8
+
+codeblocks.exe	16.1.0.0
+ntdll.dll   	6.1.7601.17514
+kernel32.dll	6.1.7601.17514
+KERNELBASE.dll	6.1.7601.17514
+COMCTL32.DLL	6.10.7601.17514
+msvcrt.dll  	7.0.7600.16385
+GDI32.dll   	6.1.7601.17514
+USER32.dll  	6.1.7601.17514
+LPK.dll     	6.1.7600.16385
+USP10.dll   	1.626.7601.17514
+SHLWAPI.dll 	6.1.7601.17514
+SHELL32.DLL 	6.1.7601.17514
+SHFOLDER.DLL	6.1.7600.16385
+wxmsw28u_gcc_cb.dll	2.8.12.0
+ADVAPI32.DLL	6.1.7601.17514
+sechost.dll 	6.1.7600.16385
+RPCRT4.dll  	6.1.7601.17514
+COMDLG32.DLL	6.1.7601.17514
+OLE32.dll   	6.1.7601.17514
+OLEAUT32.DLL	6.1.7601.17514
+WINMM.DLL   	6.1.7601.17514
+WINSPOOL.DRV	6.1.7601.17514
+WSOCK32.DLL 	6.1.7600.16385
+WS2_32.dll  	6.1.7601.17514
+NSI.dll     	6.1.7600.16385
+codeblocks.dll
+wxpropgrid.dll
+exchndl.dll 	0.7.7.0
+mgwhelp.dll 	0.7.7.0
+dbghelp.dll 	6.3.9600.17029
+PSAPI.DLL   	6.1.7600.16385
+VERSION.dll 	6.1.7600.16385
+IMM32.DLL   	6.1.7601.17514
+MSCTF.dll   	6.1.7600.16385
+CRYPTBASE.dll	6.1.7600.16385
+uxtheme.dll 	6.1.7600.16385
+SspiCli.dll 	6.1.7601.17514
+dwmapi.dll  	6.1.7600.16385
+CLBCatQ.DLL 	2001.12.8530.16385
+CRYPTSP.dll 	6.1.7600.16385
+rsaenh.dll  	6.1.7600.16385
+RpcRtRemote.dll	6.1.7601.17514
+msftedit.DLL	5.41.21.2510
+abbreviations.dll
+astyle.dll
+autosave.dll
+AutoVersioning.dll
+BrowseTracker.dll
+byogames.dll
+cb_koders.dll
+Cccc.dll
+classwizard.dll
+codecompletion.dll
+codesnippets.dll
+codestat.dll
+compiler.dll
+copystrings.dll
+CppCheck.dll
+Cscope.dll
+debugger.dll
+defaultmimehandler.dll
+devpakupdater.dll
+DoxyBlocks.dll	1.7.663.8397
+DragScroll.dll
+EditorConfig.dll
+EditorTweaks.dll
+envvars.dll
+Exporter.dll
+FileManager.dll
+FortranProject.dll
+headerfixup.dll
+help_plugin.dll
+HexEditor.dll
+IncrementalSearch.dll
+keybinder.dll
+lib_finder.dll
+wxflatnotebook.dll
+MouseSap.dll
+NassiShneiderman.dll
+OccurrencesHighlighting.dll
+openfileslist.dll
+Profiler.dll
+ProjectOptionsManipulator.dll
+projectsimporter.dll
+RegExTestbed.dll
+ReopenEditor.dll
+rndgen.dll
+scriptedwizard.dll
+SmartIndentCpp.dll
+SmartIndentFortran.dll
+SmartIndentHDL.dll
+SmartIndentLua.dll
+SmartIndentPascal.dll
+SmartIndentPython.dll
+SmartIndentXML.dll
+SpellChecker.dll
+SymTab.dll
+ThreadSearch.dll
+wxcustombutton.dll
+todo.dll
+ToolsPlus.dll
+wxsmith.dll
+wxsmithlib.dll
+wxSmithAui.dll
+wxSmithContribItems.dll
+wxchartctrl.dll
+wximagepanel.dll
+wxkwic.dll
+wxled.dll
+wxmathplot.dll
+wxspeedbutton.dll
+wxtreelist.dll
+xpmanifest.dll
+apphelp.dll 	6.1.7601.17514
+msimg32.dll 	6.1.7600.16385
+WININET.dll 	9.0.8112.16421
+Normaliz.dll	6.1.7600.16385
+iertutil.dll	9.0.8112.16430
+urlmon.dll  	9.0.8112.16430
+Secur32.dll 	6.1.7601.17514
+profapi.dll 	6.1.7600.16385
+dnsapi.DLL  	6.1.7601.17514
+iphlpapi.DLL	6.1.7601.17514
+WINNSI.DLL  	6.1.7600.16385
+RASAPI32.dll	6.1.7600.16385
+rasman.dll  	6.1.7600.16385
+rtutils.dll 	6.1.7601.17514
+sensapi.dll 	6.1.7600.16385
+NLAapi.dll  	6.1.7601.17514
+rasadhlp.dll	6.1.7600.16385
+mswsock.dll 	6.1.7601.17514
+wship6.dll  	6.1.7600.16385
+netprofm.dll	6.1.7600.16385
+npmproxy.dll	6.1.7600.16385
+msiltcfg.dll	5.0.7600.16385
+msi.dll     	5.0.7601.17514
+dhcpcsvc6.DLL	6.1.7600.16385
+wshtcpip.dll	6.1.7600.16385
+dhcpcsvc.DLL	6.1.7600.16385
+fwpuclnt.dll	6.1.7601.17514
+Cabinet.dll 	6.1.7601.17514
+
+Windows 6.1.7601
+DrMingw 0.7.7
+
+-------------------
+
+Error occured on Monday, July 10, 2017 at 10:02:34.
+
+codeblocks.exe caused an Access Violation at location 004B103D in module codeblocks.exe Reading from location 00000038.
+
+Loading symbols... done.
+
+Registers:
+eax=00000000 ebx=0022f388 ecx=7ffde000 edx=00000000 esi=0058a9c8 edi=016ef730
+eip=004b103d esp=0022f34c ebp=0022f5c4 iopl=0         nv up ei pl nz ac po nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00010216
+
+AddrPC   Params
+004B103D 0022F63C 000000B2 FFFFFFFF  codeblocks.exe!0xb103d
+004066EE 0022F7C8 00000B0C 00A22998  codeblocks.exe!0x66ee
+6CC41262 00A228B0 00000B0C 00000000  wxmsw28u_gcc_cb.dll!wxAppConsole::HandleEvent
+6D14023A 01684618 00406290 00000000  wxmsw28u_gcc_cb.dll!pthread_spin_unlock
+
+codeblocks.exe	16.1.0.0
+ntdll.dll   	6.1.7601.17514
+kernel32.dll	6.1.7601.17514
+KERNELBASE.dll	6.1.7601.17514
+COMCTL32.DLL	6.10.7601.17514
+msvcrt.dll  	7.0.7600.16385
+GDI32.dll   	6.1.7601.17514
+USER32.dll  	6.1.7601.17514
+LPK.dll     	6.1.7600.16385
+USP10.dll   	1.626.7601.17514
+SHLWAPI.dll 	6.1.7601.17514
+SHELL32.DLL 	6.1.7601.17514
+SHFOLDER.DLL	6.1.7600.16385
+wxmsw28u_gcc_cb.dll	2.8.12.0
+ADVAPI32.DLL	6.1.7601.17514
+sechost.dll 	6.1.7600.16385
+RPCRT4.dll  	6.1.7601.17514
+COMDLG32.DLL	6.1.7601.17514
+OLE32.dll   	6.1.7601.17514
+OLEAUT32.DLL	6.1.7601.17514
+WINMM.DLL   	6.1.7601.17514
+WINSPOOL.DRV	6.1.7601.17514
+WSOCK32.DLL 	6.1.7600.16385
+WS2_32.dll  	6.1.7601.17514
+NSI.dll     	6.1.7600.16385
+codeblocks.dll
+wxpropgrid.dll
+exchndl.dll 	0.7.7.0
+mgwhelp.dll 	0.7.7.0
+dbghelp.dll 	6.3.9600.17029
+PSAPI.DLL   	6.1.7600.16385
+VERSION.dll 	6.1.7600.16385
+IMM32.DLL   	6.1.7601.17514
+MSCTF.dll   	6.1.7600.16385
+CRYPTBASE.dll	6.1.7600.16385
+uxtheme.dll 	6.1.7600.16385
+SspiCli.dll 	6.1.7601.17514
+dwmapi.dll  	6.1.7600.16385
+CLBCatQ.DLL 	2001.12.8530.16385
+CRYPTSP.dll 	6.1.7600.16385
+rsaenh.dll  	6.1.7600.16385
+RpcRtRemote.dll	6.1.7601.17514
+msftedit.DLL	5.41.21.2510
+abbreviations.dll
+astyle.dll
+autosave.dll
+AutoVersioning.dll
+BrowseTracker.dll
+byogames.dll
+cb_koders.dll
+Cccc.dll
+classwizard.dll
+codecompletion.dll
+codesnippets.dll
+codestat.dll
+compiler.dll
+copystrings.dll
+CppCheck.dll
+Cscope.dll
+debugger.dll
+defaultmimehandler.dll
+devpakupdater.dll
+DoxyBlocks.dll	1.7.663.8397
+DragScroll.dll
+EditorConfig.dll
+EditorTweaks.dll
+envvars.dll
+Exporter.dll
+FileManager.dll
+FortranProject.dll
+headerfixup.dll
+help_plugin.dll
+HexEditor.dll
+IncrementalSearch.dll
+keybinder.dll
+lib_finder.dll
+wxflatnotebook.dll
+MouseSap.dll
+NassiShneiderman.dll
+OccurrencesHighlighting.dll
+openfileslist.dll
+Profiler.dll
+ProjectOptionsManipulator.dll
+projectsimporter.dll
+RegExTestbed.dll
+ReopenEditor.dll
+rndgen.dll
+scriptedwizard.dll
+SmartIndentCpp.dll
+SmartIndentFortran.dll
+SmartIndentHDL.dll
+SmartIndentLua.dll
+SmartIndentPascal.dll
+SmartIndentPython.dll
+SmartIndentXML.dll
+SpellChecker.dll
+SymTab.dll
+ThreadSearch.dll
+wxcustombutton.dll
+todo.dll
+ToolsPlus.dll
+wxsmith.dll
+wxsmithlib.dll
+wxSmithAui.dll
+wxSmithContribItems.dll
+wxchartctrl.dll
+wximagepanel.dll
+wxkwic.dll
+wxled.dll
+wxmathplot.dll
+wxspeedbutton.dll
+wxtreelist.dll
+xpmanifest.dll
+apphelp.dll 	6.1.7601.17514
+msimg32.dll 	6.1.7600.16385
+explorerframe.dll	6.1.7601.17514
+DUser.dll   	6.1.7600.16385
+DUI70.dll   	6.1.7600.16385
+WindowsCodecs.dll	6.1.7601.17514
+EhStorShell.dll	6.1.7600.16385
+SETUPAPI.dll	6.1.7601.17514
+CFGMGR32.dll	6.1.7601.17514
+DEVOBJ.dll  	6.1.7600.16385
+PROPSYS.dll 	7.0.7601.17514
+GR469A~1.DLL	12.0.4518.1014
+GrooveUtil.DLL	12.0.4518.1014
+WININET.dll 	9.0.8112.16421
+Normaliz.dll	6.1.7600.16385
+iertutil.dll	9.0.8112.16430
+urlmon.dll  	9.0.8112.16430
+CRYPT32.dll 	6.1.7601.17514
+MSASN1.dll  	6.1.7601.17514
+MSVCR80.dll 	8.0.50727.6195
+GrooveNew.DLL	12.0.4518.1014
+ATL80.DLL   	8.0.50727.6195
+ntshrui.dll 	6.1.7601.17514
+srvcli.dll  	6.1.7601.17514
+cscapi.dll  	6.1.7601.17514
+slc.dll     	6.1.7600.16385
+msls31.dll  	3.10.349.0
+ntmarta.dll 	6.1.7600.16385
+WLDAP32.dll 	6.1.7601.17514
+profapi.dll 	6.1.7600.16385
+xmllite.dll 	1.3.1000.0
+StructuredQuery.dll	7.0.7601.17514
+Secur32.dll 	6.1.7601.17514
+actxprxy.dll	6.1.7601.17514
+ieproxy.dll 	9.0.8112.16421
+thumbcache.dll	6.1.7601.17514
+SearchFolder.dll	6.1.7601.17514
+SHDOCVW.dll 	6.1.7601.17514
+ieframe.DLL 	9.0.8112.16430
+OLEACC.dll  	7.0.0.0
+NetworkExplorer.dll	6.1.7601.17514
+GRA32A~1.DLL	12.0.4518.1014
+msxml3.dll  	8.110.7601.17514
+LINKINFO.dll	6.1.7600.16385
+MPR.dll     	6.1.7600.16385
+drprov.dll  	6.1.7600.16385
+WINSTA.dll  	6.1.7601.17514
+ntlanman.dll	6.1.7601.17514
+davclnt.dll 	6.1.7601.17514
+DAVHLPR.dll 	6.1.7600.16385
+wkscli.dll  	6.1.7601.17514
+netutils.dll	6.1.7601.17514
+PortableDeviceApi.dll	6.1.7601.17514
+WINTRUST.dll	6.1.7601.17514
+EhStorAPI.dll	6.1.7601.17514
+
+Windows 6.1.7601
+DrMingw 0.7.7
+

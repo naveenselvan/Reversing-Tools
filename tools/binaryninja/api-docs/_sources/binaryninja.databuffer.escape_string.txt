@@ -1,0 +1,6 @@
+binaryninja.databuffer.escape_string
+====================================
+
+.. currentmodule:: binaryninja.databuffer
+
+.. autofunction:: escape_string

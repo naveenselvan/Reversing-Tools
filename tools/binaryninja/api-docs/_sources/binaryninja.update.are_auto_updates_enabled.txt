@@ -1,0 +1,6 @@
+binaryninja.update.are_auto_updates_enabled
+===========================================
+
+.. currentmodule:: binaryninja.update
+
+.. autofunction:: are_auto_updates_enabled

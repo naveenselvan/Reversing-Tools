@@ -1,0 +1,6 @@
+binaryninja.lowlevelil.LLIL_REG_IS_TEMP
+=======================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autofunction:: LLIL_REG_IS_TEMP

@@ -1,0 +1,22 @@
+binaryninja.types.FunctionParameter
+===================================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: FunctionParameter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FunctionParameter.__init__
+   
+   
+
+   
+   
+   

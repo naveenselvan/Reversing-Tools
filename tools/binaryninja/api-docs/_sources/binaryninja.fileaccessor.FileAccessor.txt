@@ -1,0 +1,22 @@
+binaryninja.fileaccessor.FileAccessor
+=====================================
+
+.. currentmodule:: binaryninja.fileaccessor
+
+.. autoclass:: FileAccessor
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileAccessor.__init__
+   
+   
+
+   
+   
+   

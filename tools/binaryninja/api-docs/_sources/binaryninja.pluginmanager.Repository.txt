@@ -1,0 +1,34 @@
+binaryninja.pluginmanager.Repository
+====================================
+
+.. currentmodule:: binaryninja.pluginmanager
+
+.. autoclass:: Repository
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Repository.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Repository.full_path
+      ~Repository.initialized
+      ~Repository.local_reference
+      ~Repository.path
+      ~Repository.plugins
+      ~Repository.remote_reference
+      ~Repository.url
+   
+   

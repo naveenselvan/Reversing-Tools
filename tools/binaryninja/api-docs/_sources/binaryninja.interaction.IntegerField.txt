@@ -1,0 +1,22 @@
+binaryninja.interaction.IntegerField
+====================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: IntegerField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IntegerField.__init__
+   
+   
+
+   
+   
+   

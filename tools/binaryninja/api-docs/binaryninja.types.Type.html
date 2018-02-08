@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.types.Type &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="types module" href="binaryninja.types-module.html"/>
+        <link rel="next" title="binaryninja.types.TypeParserResult" href="binaryninja.types.TypeParserResult.html"/>
+        <link rel="prev" title="binaryninja.types.Symbol" href="binaryninja.types.Symbol.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.types-module.html">types</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.BoolWithConfidence.html">binaryninja.types.BoolWithConfidence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.Enumeration.html">binaryninja.types.Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.EnumerationMember.html">binaryninja.types.EnumerationMember</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.FunctionParameter.html">binaryninja.types.FunctionParameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.NamedTypeReference.html">binaryninja.types.NamedTypeReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.QualifiedName.html">binaryninja.types.QualifiedName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.ReferenceTypeWithConfidence.html">binaryninja.types.ReferenceTypeWithConfidence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.RegisterSet.html">binaryninja.types.RegisterSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.SizeWithConfidence.html">binaryninja.types.SizeWithConfidence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.Structure.html">binaryninja.types.Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.StructureMember.html">binaryninja.types.StructureMember</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.Symbol.html">binaryninja.types.Symbol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.types.Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.TypeParserResult.html">binaryninja.types.TypeParserResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.preprocess_source.html">binaryninja.types.preprocess_source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.types-module.html">types module</a> &raquo;</li>
+        
+      <li>binaryninja.types.Type</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.types.Type.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-types-type">
+<h1>binaryninja.types.Type<a class="headerlink" href="#binaryninja-types-type" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.types.Type">
+<em class="property">class </em><code class="descclassname">binaryninja.types.</code><code class="descname">Type</code><span class="sig-paren">(</span><em>handle</em>, <em>platform=None</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/types.html#Type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.types.Type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="binaryninja.types.Type.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>handle</em>, <em>platform=None</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/types.html#Type.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.types.Type.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.types.Type.__init__" title="binaryninja.types.Type.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(handle[,&nbsp;platform,&nbsp;confidence])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.array" title="binaryninja.types.Type.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(t,&nbsp;count)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool"><code class="xref py py-obj docutils literal"><span class="pre">bool</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.enumeration_type" title="binaryninja.types.Type.enumeration_type"><code class="xref py py-obj docutils literal"><span class="pre">enumeration_type</span></code></a>(arch,&nbsp;e[,&nbsp;width])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.float" title="binaryninja.types.Type.float"><code class="xref py py-obj docutils literal"><span class="pre">float</span></code></a>(width)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.function" title="binaryninja.types.Type.function"><code class="xref py py-obj docutils literal"><span class="pre">function</span></code></a>(ret,&nbsp;params[,&nbsp;calling_convention,&nbsp;...])</td>
+<td><code class="docutils literal"><span class="pre">function</span></code> class method for creating an function Type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.generate_auto_demangled_type_id" title="binaryninja.types.Type.generate_auto_demangled_type_id"><code class="xref py py-obj docutils literal"><span class="pre">generate_auto_demangled_type_id</span></code></a>(name)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.generate_auto_type_id" title="binaryninja.types.Type.generate_auto_type_id"><code class="xref py py-obj docutils literal"><span class="pre">generate_auto_type_id</span></code></a>(source,&nbsp;name)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.get_auto_demanged_type_id_source" title="binaryninja.types.Type.get_auto_demanged_type_id_source"><code class="xref py py-obj docutils literal"><span class="pre">get_auto_demanged_type_id_source</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.get_string_after_name" title="binaryninja.types.Type.get_string_after_name"><code class="xref py py-obj docutils literal"><span class="pre">get_string_after_name</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.get_string_before_name" title="binaryninja.types.Type.get_string_before_name"><code class="xref py py-obj docutils literal"><span class="pre">get_string_before_name</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.get_tokens" title="binaryninja.types.Type.get_tokens"><code class="xref py py-obj docutils literal"><span class="pre">get_tokens</span></code></a>([base_confidence])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.get_tokens_after_name" title="binaryninja.types.Type.get_tokens_after_name"><code class="xref py py-obj docutils literal"><span class="pre">get_tokens_after_name</span></code></a>([base_confidence])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.get_tokens_before_name" title="binaryninja.types.Type.get_tokens_before_name"><code class="xref py py-obj docutils literal"><span class="pre">get_tokens_before_name</span></code></a>([base_confidence])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>(width[,&nbsp;sign,&nbsp;altname])</td>
+<td><code class="docutils literal"><span class="pre">int</span></code> class method for creating an int Type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.named_type" title="binaryninja.types.Type.named_type"><code class="xref py py-obj docutils literal"><span class="pre">named_type</span></code></a>(named_type[,&nbsp;width,&nbsp;align])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.named_type_from_registered_type" title="binaryninja.types.Type.named_type_from_registered_type"><code class="xref py py-obj docutils literal"><span class="pre">named_type_from_registered_type</span></code></a>(view,&nbsp;name)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.named_type_from_type" title="binaryninja.types.Type.named_type_from_type"><code class="xref py py-obj docutils literal"><span class="pre">named_type_from_type</span></code></a>(name,&nbsp;t)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.named_type_from_type_and_id" title="binaryninja.types.Type.named_type_from_type_and_id"><code class="xref py py-obj docutils literal"><span class="pre">named_type_from_type_and_id</span></code></a>(type_id,&nbsp;name,&nbsp;t)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.pointer" title="binaryninja.types.Type.pointer"><code class="xref py py-obj docutils literal"><span class="pre">pointer</span></code></a>(arch,&nbsp;t[,&nbsp;const,&nbsp;volatile,&nbsp;ref_type])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.structure_type" title="binaryninja.types.Type.structure_type"><code class="xref py py-obj docutils literal"><span class="pre">structure_type</span></code></a>(structure_type)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.void" title="binaryninja.types.Type.void"><code class="xref py py-obj docutils literal"><span class="pre">void</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.with_confidence" title="binaryninja.types.Type.with_confidence"><code class="xref py py-obj docutils literal"><span class="pre">with_confidence</span></code></a>(confidence)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.alignment" title="binaryninja.types.Type.alignment"><code class="xref py py-obj docutils literal"><span class="pre">alignment</span></code></a></td>
+<td>Type alignment (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.calling_convention" title="binaryninja.types.Type.calling_convention"><code class="xref py py-obj docutils literal"><span class="pre">calling_convention</span></code></a></td>
+<td>Calling convention (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.can_return" title="binaryninja.types.Type.can_return"><code class="xref py py-obj docutils literal"><span class="pre">can_return</span></code></a></td>
+<td>Whether type can return (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.const" title="binaryninja.types.Type.const"><code class="xref py py-obj docutils literal"><span class="pre">const</span></code></a></td>
+<td>Whether type is const (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.count" title="binaryninja.types.Type.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a></td>
+<td>Type count (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.element_type" title="binaryninja.types.Type.element_type"><code class="xref py py-obj docutils literal"><span class="pre">element_type</span></code></a></td>
+<td>Target (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.enumeration" title="binaryninja.types.Type.enumeration"><code class="xref py py-obj docutils literal"><span class="pre">enumeration</span></code></a></td>
+<td>Type enumeration (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.has_variable_arguments" title="binaryninja.types.Type.has_variable_arguments"><code class="xref py py-obj docutils literal"><span class="pre">has_variable_arguments</span></code></a></td>
+<td>Whether type has variable arguments (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.modified" title="binaryninja.types.Type.modified"><code class="xref py py-obj docutils literal"><span class="pre">modified</span></code></a></td>
+<td>Whether type is modified (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.named_type_reference" title="binaryninja.types.Type.named_type_reference"><code class="xref py py-obj docutils literal"><span class="pre">named_type_reference</span></code></a></td>
+<td>Reference to a named type (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.offset" title="binaryninja.types.Type.offset"><code class="xref py py-obj docutils literal"><span class="pre">offset</span></code></a></td>
+<td>Offset into structure (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.parameters" title="binaryninja.types.Type.parameters"><code class="xref py py-obj docutils literal"><span class="pre">parameters</span></code></a></td>
+<td>Type parameters list (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.return_value" title="binaryninja.types.Type.return_value"><code class="xref py py-obj docutils literal"><span class="pre">return_value</span></code></a></td>
+<td>Return value (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.signed" title="binaryninja.types.Type.signed"><code class="xref py py-obj docutils literal"><span class="pre">signed</span></code></a></td>
+<td>Wether type is signed (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.stack_adjustment" title="binaryninja.types.Type.stack_adjustment"><code class="xref py py-obj docutils literal"><span class="pre">stack_adjustment</span></code></a></td>
+<td>Stack adjustment for function (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.structure" title="binaryninja.types.Type.structure"><code class="xref py py-obj docutils literal"><span class="pre">structure</span></code></a></td>
+<td>Structure of the type (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.target" title="binaryninja.types.Type.target"><code class="xref py py-obj docutils literal"><span class="pre">target</span></code></a></td>
+<td>Target (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.tokens" title="binaryninja.types.Type.tokens"><code class="xref py py-obj docutils literal"><span class="pre">tokens</span></code></a></td>
+<td>Type string as a list of tokens (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.type_class" title="binaryninja.types.Type.type_class"><code class="xref py py-obj docutils literal"><span class="pre">type_class</span></code></a></td>
+<td>Type class (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.width" title="binaryninja.types.Type.width"><code class="xref py py-obj docutils literal"><span class="pre">width</span></code></a></td>
+<td>Type width (read-only)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.types.TypeParserResult.html" class="btn btn-neutral float-right" title="binaryninja.types.TypeParserResult" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.types.Symbol.html" class="btn btn-neutral" title="binaryninja.types.Symbol" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.types &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.types</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="n">max_confidence</span> <span class="o">=</span> <span class="mi">255</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">from</span> <span class="nn">enums</span> <span class="k">import</span> <span class="n">SymbolType</span><span class="p">,</span> <span class="n">TypeClass</span><span class="p">,</span> <span class="n">NamedTypeReferenceClass</span><span class="p">,</span> <span class="n">InstructionTextTokenType</span><span class="p">,</span> <span class="n">StructureType</span><span class="p">,</span> <span class="n">ReferenceType</span><span class="p">,</span> <span class="n">VariableSourceType</span>
+<span class="kn">import</span> <span class="nn">callingconvention</span>
+<span class="kn">import</span> <span class="nn">function</span>
+
+
+<div class="viewcode-block" id="QualifiedName"><a class="viewcode-back" href="../../binaryninja.types.QualifiedName.html#binaryninja.types.QualifiedName">[docs]</a><span class="k">class</span> <span class="nc">QualifiedName</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="QualifiedName.__init__"><a class="viewcode-back" href="../../binaryninja.types.QualifiedName.html#binaryninja.types.QualifiedName.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="p">[]):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">QualifiedName</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span></div>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;::&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">other</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">QualifiedName</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span> <span class="o">==</span> <span class="n">other</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">QualifiedName</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">QualifiedName</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">&lt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">QualifiedName</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">QualifiedName</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">__cmp__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span><span class="p">:</span>
+			<span class="k">return</span> <span class="mi">0</span>
+		<span class="k">if</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">:</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+		<span class="k">return</span> <span class="mi">1</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_get_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNQualifiedName</span><span class="p">()</span>
+		<span class="n">name_list</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)):</span>
+			<span class="n">name_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="n">result</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name_list</span>
+		<span class="n">result</span><span class="o">.</span><span class="n">nameCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">_from_core_struct</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">nameCount</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Symbol"><a class="viewcode-back" href="../../binaryninja.types.Symbol.html#binaryninja.types.Symbol">[docs]</a><span class="k">class</span> <span class="nc">Symbol</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Symbols are defined as one of the following types:</span>
+
+<span class="sd">		=========================== ==============================================================</span>
+<span class="sd">		SymbolType                  Description</span>
+<span class="sd">		=========================== ==============================================================</span>
+<span class="sd">		FunctionSymbol              Symbol for Function that exists in the current binary</span>
+<span class="sd">		ImportAddressSymbol         Symbol defined in the Import Address Table</span>
+<span class="sd">		ImportedFunctionSymbol      Symbol for Function that is not defined in the current binary</span>
+<span class="sd">		DataSymbol                  Symbol for Data in the current binary</span>
+<span class="sd">		ImportedDataSymbol          Symbol for Data that is not defined in the current binary</span>
+<span class="sd">		=========================== ==============================================================</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Symbol.__init__"><a class="viewcode-back" href="../../binaryninja.types.Symbol.html#binaryninja.types.Symbol.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sym_type</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">short_name</span><span class="p">,</span> <span class="n">full_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">raw_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">handle_of_type</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSymbol</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sym_type</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+				<span class="n">sym_type</span> <span class="o">=</span> <span class="n">SymbolType</span><span class="p">[</span><span class="n">sym_type</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">full_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">full_name</span> <span class="o">=</span> <span class="n">short_name</span>
+			<span class="k">if</span> <span class="n">raw_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">raw_name</span> <span class="o">=</span> <span class="n">full_name</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateSymbol</span><span class="p">(</span><span class="n">sym_type</span><span class="p">,</span> <span class="n">short_name</span><span class="p">,</span> <span class="n">full_name</span><span class="p">,</span> <span class="n">raw_name</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Symbol type (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">SymbolType</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetSymbolType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Symbol name (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetSymbolRawName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">short_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Symbol short name (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetSymbolShortName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Symbol full name (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetSymbolFullName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">raw_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Symbol raw name (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetSymbolRawName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">address</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Symbol address (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetSymbolAddress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">auto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsSymbolAutoDefined</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@auto</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">auto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetSymbolAutoDefined</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">: </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> @ </span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FunctionParameter"><a class="viewcode-back" href="../../binaryninja.types.FunctionParameter.html#binaryninja.types.FunctionParameter">[docs]</a><span class="k">class</span> <span class="nc">FunctionParameter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="FunctionParameter.__init__"><a class="viewcode-back" href="../../binaryninja.types.FunctionParameter.html#binaryninja.types.FunctionParameter.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_type</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">location</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">param_type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s%s</span><span class="s2"> @ </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">get_string_before_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">get_string_after_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">get_string_before_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">get_string_after_name</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Type"><a class="viewcode-back" href="../../binaryninja.types.Type.html#binaryninja.types.Type">[docs]</a><span class="k">class</span> <span class="nc">Type</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Type.__init__"><a class="viewcode-back" href="../../binaryninja.types.Type.html#binaryninja.types.Type.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">handle</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="o">=</span> <span class="n">platform</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Type</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Type</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">type_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type class (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">TypeClass</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeClass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type width (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">alignment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type alignment (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeAlignment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">signed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Wether type is signed (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsTypeSigned</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">const</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether type is const (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsTypeConst</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">modified</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether type is modified (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsTypeFloatingPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">target</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Target (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetChildType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">element_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Target (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetChildType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">return_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return value (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetChildType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Calling convention (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">convention</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">convention</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type parameters list (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">params</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeParameters</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">param_type</span> <span class="o">=</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">typeConfidence</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultLocation</span><span class="p">:</span>
+				<span class="n">param_location</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">name</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">VariableSourceType</span><span class="o">.</span><span class="n">RegisterVariableSourceType</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+					<span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">get_reg_name</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">storage</span><span class="p">)</span>
+				<span class="k">elif</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">VariableSourceType</span><span class="o">.</span><span class="n">StackVariableSourceType</span><span class="p">:</span>
+					<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;arg_</span><span class="si">%x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">storage</span>
+				<span class="n">param_location</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+					<span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">param_type</span><span class="p">)</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">FunctionParameter</span><span class="p">(</span><span class="n">param_type</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">param_location</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTypeParameterList</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">has_variable_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether type has variable arguments (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeHasVariableArguments</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">can_return</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether type can return (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNFunctionTypeCanReturn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Structure of the type (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeStructure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">Structure</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">enumeration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type enumeration (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeEnumeration</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">Enumeration</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+ 	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">named_type_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Reference to a named type (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeNamedTypeReference</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">NamedTypeReference</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type count (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeElementCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">offset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Offset into structure (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeOffset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">stack_adjustment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Stack adjustment for function (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeStackAdjustment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">SizeWithConfidence</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">handle</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">&lt;</span> <span class="n">max_confidence</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;type: </span><span class="si">%s</span><span class="s2">, </span><span class="si">%d%%</span><span class="s2"> confidence&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="n">max_confidence</span><span class="p">)</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;type: </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Type.get_string_before_name"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.get_string_before_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_string_before_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">handle</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeStringBeforeName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Type.get_string_after_name"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.get_string_after_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_string_after_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">handle</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeStringAfterName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="p">)</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">tokens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Type string as a list of tokens (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_tokens</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Type.get_tokens"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.get_tokens">[docs]</a>	<span class="k">def</span> <span class="nf">get_tokens</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">tokens</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeTokens</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">base_confidence</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">token_type</span> <span class="o">=</span> <span class="n">InstructionTextTokenType</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+			<span class="n">text</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">size</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+			<span class="n">operand</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">operand</span>
+			<span class="n">context</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">context</span>
+			<span class="n">confidence</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">confidence</span>
+			<span class="n">address</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">address</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">InstructionTextToken</span><span class="p">(</span><span class="n">token_type</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">confidence</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTokenList</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="Type.get_tokens_before_name"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.get_tokens_before_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_tokens_before_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">tokens</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeTokensBeforeName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">base_confidence</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">token_type</span> <span class="o">=</span> <span class="n">InstructionTextTokenType</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+			<span class="n">text</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">size</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+			<span class="n">operand</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">operand</span>
+			<span class="n">context</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">context</span>
+			<span class="n">confidence</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">confidence</span>
+			<span class="n">address</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">address</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">InstructionTextToken</span><span class="p">(</span><span class="n">token_type</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">confidence</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTokenList</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="Type.get_tokens_after_name"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.get_tokens_after_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_tokens_after_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">tokens</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeTokensAfterName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">base_confidence</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">token_type</span> <span class="o">=</span> <span class="n">InstructionTextTokenType</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+			<span class="n">text</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">size</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+			<span class="n">operand</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">operand</span>
+			<span class="n">context</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">context</span>
+			<span class="n">confidence</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">confidence</span>
+			<span class="n">address</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">address</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">InstructionTextToken</span><span class="p">(</span><span class="n">token_type</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">confidence</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTokenList</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.void"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.void">[docs]</a>	<span class="k">def</span> <span class="nf">void</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateVoidType</span><span class="p">())</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.bool"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.bool">[docs]</a>	<span class="k">def</span> <span class="nf">bool</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateBoolType</span><span class="p">())</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.int"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.int">[docs]</a>	<span class="k">def</span> <span class="nf">int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">sign</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">altname</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``int`` class method for creating an int Type.</span>
+
+<span class="sd">		:param int width: width of the integer in bytes</span>
+<span class="sd">		:param bool sign: optional variable representing signedness</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">sign</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">sign</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span> <span class="n">BoolWithConfidence</span><span class="p">):</span>
+			<span class="n">sign</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">sign</span><span class="p">)</span>
+
+		<span class="n">sign_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBoolWithConfidence</span><span class="p">()</span>
+		<span class="n">sign_conf</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">sign_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateIntegerType</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">sign_conf</span><span class="p">,</span> <span class="n">altname</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.float"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.float">[docs]</a>	<span class="k">def</span> <span class="nf">float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateFloatType</span><span class="p">(</span><span class="n">width</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.structure_type"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.structure_type">[docs]</a>	<span class="k">def</span> <span class="nf">structure_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure_type</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateStructureType</span><span class="p">(</span><span class="n">structure_type</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.named_type"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.named_type">[docs]</a>	<span class="k">def</span> <span class="nf">named_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">named_type</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateNamedTypeReference</span><span class="p">(</span><span class="n">named_type</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">align</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.named_type_from_type_and_id"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.named_type_from_type_and_id">[docs]</a>	<span class="k">def</span> <span class="nf">named_type_from_type_and_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateNamedTypeReferenceFromTypeAndId</span><span class="p">(</span><span class="n">type_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.named_type_from_type"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.named_type_from_type">[docs]</a>	<span class="k">def</span> <span class="nf">named_type_from_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateNamedTypeReferenceFromTypeAndId</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.named_type_from_registered_type"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.named_type_from_registered_type">[docs]</a>	<span class="k">def</span> <span class="nf">named_type_from_registered_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateNamedTypeReferenceFromType</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.enumeration_type"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.enumeration_type">[docs]</a>	<span class="k">def</span> <span class="nf">enumeration_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">width</span> <span class="o">=</span> <span class="n">arch</span><span class="o">.</span><span class="n">default_int_size</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateEnumerationType</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">width</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.pointer"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.pointer">[docs]</a>	<span class="k">def</span> <span class="nf">pointer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ref_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">const</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">const</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">const</span><span class="p">,</span> <span class="n">BoolWithConfidence</span><span class="p">):</span>
+			<span class="n">const</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">const</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">volatile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">volatile</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">volatile</span><span class="p">,</span> <span class="n">BoolWithConfidence</span><span class="p">):</span>
+			<span class="n">volatile</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">volatile</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">ref_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">ref_type</span> <span class="o">=</span> <span class="n">ReferenceType</span><span class="o">.</span><span class="n">PointerReferenceType</span>
+
+		<span class="n">type_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeWithConfidence</span><span class="p">()</span>
+		<span class="n">type_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">type_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="n">const_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBoolWithConfidence</span><span class="p">()</span>
+		<span class="n">const_conf</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">const_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="n">volatile_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBoolWithConfidence</span><span class="p">()</span>
+		<span class="n">volatile_conf</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">volatile</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">volatile_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">volatile</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreatePointerType</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">type_conf</span><span class="p">,</span> <span class="n">const_conf</span><span class="p">,</span> <span class="n">volatile_conf</span><span class="p">,</span> <span class="n">ref_type</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.array"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.array">[docs]</a>	<span class="k">def</span> <span class="nf">array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+		<span class="n">type_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeWithConfidence</span><span class="p">()</span>
+		<span class="n">type_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">type_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">confidence</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateArrayType</span><span class="p">(</span><span class="n">type_conf</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.function"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.function">[docs]</a>	<span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ret</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">calling_convention</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">variable_arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stack_adjust</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``function`` class method for creating an function Type.</span>
+
+<span class="sd">		:param Type ret: width of the integer in bytes</span>
+<span class="sd">		:param list(Type) params: list of parameter Types</span>
+<span class="sd">		:param CallingConvention calling_convention: optional argument for function calling convention</span>
+<span class="sd">		:param bool variable_arguments: optional argument for functions that have a variable number of arguments</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">param_buf</span> <span class="o">=</span> <span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNFunctionParameter</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)):</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Type</span><span class="p">):</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">handle</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">typeConfidence</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">confidence</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultLocation</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">FunctionParameter</span><span class="p">):</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">handle</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">typeConfidence</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">confidence</span>
+				<span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultLocation</span> <span class="o">=</span> <span class="kc">True</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultLocation</span> <span class="o">=</span> <span class="kc">False</span>
+					<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">type</span>
+					<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">index</span>
+					<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">storage</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">storage</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">handle</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">typeConfidence</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">confidence</span>
+				<span class="n">param_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultLocation</span> <span class="o">=</span> <span class="kc">True</span>
+
+		<span class="n">ret_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeWithConfidence</span><span class="p">()</span>
+		<span class="n">ret_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">ret_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="n">conv_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCallingConventionWithConfidence</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">calling_convention</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">conv_conf</span><span class="o">.</span><span class="n">convention</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">conv_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">conv_conf</span><span class="o">.</span><span class="n">convention</span> <span class="o">=</span> <span class="n">calling_convention</span><span class="o">.</span><span class="n">handle</span>
+			<span class="n">conv_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">calling_convention</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="k">if</span> <span class="n">variable_arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">variable_arguments</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">variable_arguments</span><span class="p">,</span> <span class="n">BoolWithConfidence</span><span class="p">):</span>
+			<span class="n">variable_arguments</span> <span class="o">=</span> <span class="n">BoolWithConfidence</span><span class="p">(</span><span class="n">variable_arguments</span><span class="p">)</span>
+
+		<span class="n">vararg_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBoolWithConfidence</span><span class="p">()</span>
+		<span class="n">vararg_conf</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">variable_arguments</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">vararg_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">variable_arguments</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="k">if</span> <span class="n">stack_adjust</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">stack_adjust</span> <span class="o">=</span> <span class="n">SizeWithConfidence</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stack_adjust</span><span class="p">,</span> <span class="n">SizeWithConfidence</span><span class="p">):</span>
+			<span class="n">stack_adjust</span> <span class="o">=</span> <span class="n">SizeWithConfidence</span><span class="p">(</span><span class="n">stack_adjust</span><span class="p">)</span>
+
+		<span class="n">stack_adjust_conf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSizeWithConfidence</span><span class="p">()</span>
+		<span class="n">stack_adjust_conf</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">stack_adjust</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">stack_adjust_conf</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">stack_adjust</span><span class="o">.</span><span class="n">confidence</span>
+
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNCreateFunctionType</span><span class="p">(</span><span class="n">ret_conf</span><span class="p">,</span> <span class="n">conv_conf</span><span class="p">,</span> <span class="n">param_buf</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">),</span>
+			<span class="n">vararg_conf</span><span class="p">,</span> <span class="n">stack_adjust_conf</span><span class="p">))</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.generate_auto_type_id"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.generate_auto_type_id">[docs]</a>	<span class="k">def</span> <span class="nf">generate_auto_type_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGenerateAutoTypeId</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.generate_auto_demangled_type_id"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.generate_auto_demangled_type_id">[docs]</a>	<span class="k">def</span> <span class="nf">generate_auto_demangled_type_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGenerateAutoDemangledTypeId</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Type.get_auto_demanged_type_id_source"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.get_auto_demanged_type_id_source">[docs]</a>	<span class="k">def</span> <span class="nf">get_auto_demanged_type_id_source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetAutoDemangledTypeIdSource</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Type.with_confidence"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Type.with_confidence">[docs]</a>	<span class="k">def</span> <span class="nf">with_confidence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Type</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="BoolWithConfidence"><a class="viewcode-back" href="../../binaryninja.types.BoolWithConfidence.html#binaryninja.types.BoolWithConfidence">[docs]</a><span class="k">class</span> <span class="nc">BoolWithConfidence</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="BoolWithConfidence.__init__"><a class="viewcode-back" href="../../binaryninja.types.BoolWithConfidence.html#binaryninja.types.BoolWithConfidence.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span></div>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+	<span class="k">def</span> <span class="nf">__nonzero__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="SizeWithConfidence"><a class="viewcode-back" href="../../binaryninja.types.SizeWithConfidence.html#binaryninja.types.SizeWithConfidence">[docs]</a><span class="k">class</span> <span class="nc">SizeWithConfidence</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="SizeWithConfidence.__init__"><a class="viewcode-back" href="../../binaryninja.types.SizeWithConfidence.html#binaryninja.types.SizeWithConfidence.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span></div>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="RegisterSet"><a class="viewcode-back" href="../../binaryninja.types.RegisterSet.html#binaryninja.types.RegisterSet">[docs]</a><span class="k">class</span> <span class="nc">RegisterSet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="RegisterSet.__init__"><a class="viewcode-back" href="../../binaryninja.types.RegisterSet.html#binaryninja.types.RegisterSet.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reg_list</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">regs</span> <span class="o">=</span> <span class="n">reg_list</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regs</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">regs</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">reg</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">regs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RegisterSet.with_confidence"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.RegisterSet.with_confidence">[docs]</a>	<span class="k">def</span> <span class="nf">with_confidence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">RegisterSet</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regs</span><span class="p">),</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ReferenceTypeWithConfidence"><a class="viewcode-back" href="../../binaryninja.types.ReferenceTypeWithConfidence.html#binaryninja.types.ReferenceTypeWithConfidence">[docs]</a><span class="k">class</span> <span class="nc">ReferenceTypeWithConfidence</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="ReferenceTypeWithConfidence.__init__"><a class="viewcode-back" href="../../binaryninja.types.ReferenceTypeWithConfidence.html#binaryninja.types.ReferenceTypeWithConfidence.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">max_confidence</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">confidence</span></div>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NamedTypeReference"><a class="viewcode-back" href="../../binaryninja.types.NamedTypeReference.html#binaryninja.types.NamedTypeReference">[docs]</a><span class="k">class</span> <span class="nc">NamedTypeReference</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="NamedTypeReference.__init__"><a class="viewcode-back" href="../../binaryninja.types.NamedTypeReference.html#binaryninja.types.NamedTypeReference.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_class</span> <span class="o">=</span> <span class="n">NamedTypeReferenceClass</span><span class="o">.</span><span class="n">UnknownNamedTypeClass</span><span class="p">,</span> <span class="n">type_id</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateNamedType</span><span class="p">()</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNSetTypeReferenceClass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">type_class</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">type_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">core</span><span class="o">.</span><span class="n">BNSetTypeReferenceId</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">type_id</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">name</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+				<span class="n">core</span><span class="o">.</span><span class="n">BNSetTypeReferenceName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">handle</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeNamedTypeReference</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">NamedTypeReference</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">NamedTypeReference</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">type_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">NamedTypeReferenceClass</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeReferenceClass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="nd">@type_class</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">type_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetTypeReferenceClass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">type_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeReferenceId</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@type_id</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">type_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetTypeReferenceId</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTypeReferenceName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeQualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="n">QualifiedName</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetTypeReferenceName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_class</span> <span class="o">==</span> <span class="n">NamedTypeReferenceClass</span><span class="o">.</span><span class="n">TypedefNamedTypeClass</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;named type: typedef </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_class</span> <span class="o">==</span> <span class="n">NamedTypeReferenceClass</span><span class="o">.</span><span class="n">StructNamedTypeClass</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;named type: struct </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_class</span> <span class="o">==</span> <span class="n">NamedTypeReferenceClass</span><span class="o">.</span><span class="n">UnionNamedTypeClass</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;named type: union </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_class</span> <span class="o">==</span> <span class="n">NamedTypeReferenceClass</span><span class="o">.</span><span class="n">EnumNamedTypeClass</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;named type: enum </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;named type: unknown </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="NamedTypeReference.generate_auto_type_ref"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.NamedTypeReference.generate_auto_type_ref">[docs]</a>	<span class="k">def</span> <span class="nf">generate_auto_type_ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_class</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">type_id</span> <span class="o">=</span> <span class="n">Type</span><span class="o">.</span><span class="n">generate_auto_type_id</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">NamedTypeReference</span><span class="p">(</span><span class="n">type_class</span><span class="p">,</span> <span class="n">type_id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="NamedTypeReference.generate_auto_demangled_type_ref"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.NamedTypeReference.generate_auto_demangled_type_ref">[docs]</a>	<span class="k">def</span> <span class="nf">generate_auto_demangled_type_ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_class</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">type_id</span> <span class="o">=</span> <span class="n">Type</span><span class="o">.</span><span class="n">generate_auto_demangled_type_id</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">NamedTypeReference</span><span class="p">(</span><span class="n">type_class</span><span class="p">,</span> <span class="n">type_id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="StructureMember"><a class="viewcode-back" href="../../binaryninja.types.StructureMember.html#binaryninja.types.StructureMember">[docs]</a><span class="k">class</span> <span class="nc">StructureMember</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="StructureMember.__init__"><a class="viewcode-back" href="../../binaryninja.types.StructureMember.html#binaryninja.types.StructureMember.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">t</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">offset</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;member: </span><span class="si">%s</span><span class="s2">, offset </span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s%s</span><span class="s2">, offset </span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">get_string_before_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+							 <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">get_string_after_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Structure"><a class="viewcode-back" href="../../binaryninja.types.Structure.html#binaryninja.types.Structure">[docs]</a><span class="k">class</span> <span class="nc">Structure</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Structure.__init__"><a class="viewcode-back" href="../../binaryninja.types.Structure.html#binaryninja.types.Structure.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateStructure</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">handle</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeStructure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Structure</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Structure</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">members</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Structure member list (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">members</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetStructureMembers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">StructureMember</span><span class="p">(</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">confidence</span> <span class="o">=</span> <span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">typeConfidence</span><span class="p">),</span>
+				<span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeStructureMemberList</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Structure width&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetStructureWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@width</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_width</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetStructureWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">new_width</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">alignment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Structure alignment&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetStructureAlignment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@alignment</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">alignment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">align</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetStructureAlignment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">align</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">packed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsStructurePacked</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@packed</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">packed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetStructurePacked</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsStructureUnion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">StructureType</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetStructureType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="nd">@type</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetStructureType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;struct: size </span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+<div class="viewcode-block" id="Structure.append"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Structure.append">[docs]</a>	<span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="n">tc</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeWithConfidence</span><span class="p">()</span>
+		<span class="n">tc</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">tc</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">confidence</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNAddStructureMember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">tc</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Structure.insert"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Structure.insert">[docs]</a>	<span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="n">tc</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeWithConfidence</span><span class="p">()</span>
+		<span class="n">tc</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">tc</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">confidence</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNAddStructureMemberAtOffset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">tc</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Structure.remove"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Structure.remove">[docs]</a>	<span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRemoveStructureMember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Structure.replace"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Structure.replace">[docs]</a>	<span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="n">tc</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeWithConfidence</span><span class="p">()</span>
+		<span class="n">tc</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">tc</span><span class="o">.</span><span class="n">confidence</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">confidence</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNReplaceStructureMember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">tc</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="EnumerationMember"><a class="viewcode-back" href="../../binaryninja.types.EnumerationMember.html#binaryninja.types.EnumerationMember">[docs]</a><span class="k">class</span> <span class="nc">EnumerationMember</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="EnumerationMember.__init__"><a class="viewcode-back" href="../../binaryninja.types.EnumerationMember.html#binaryninja.types.EnumerationMember.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="n">default</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2"> = </span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Enumeration"><a class="viewcode-back" href="../../binaryninja.types.Enumeration.html#binaryninja.types.Enumeration">[docs]</a><span class="k">class</span> <span class="nc">Enumeration</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Enumeration.__init__"><a class="viewcode-back" href="../../binaryninja.types.Enumeration.html#binaryninja.types.Enumeration.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateEnumeration</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">handle</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeEnumeration</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Enumeration</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Enumeration</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">members</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Enumeration member list (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">members</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetEnumerationMembers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">EnumerationMember</span><span class="p">(</span><span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">members</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isDefault</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeEnumerationMemberList</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;enum: </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">members</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Enumeration.append"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Enumeration.append">[docs]</a>	<span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNAddEnumerationMember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNAddEnumerationMemberWithValue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Enumeration.remove"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Enumeration.remove">[docs]</a>	<span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRemoveEnumerationMember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Enumeration.replace"><a class="viewcode-back" href="../../binaryninja.types-module.html#binaryninja.types.Enumeration.replace">[docs]</a>	<span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNReplaceEnumerationMember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="TypeParserResult"><a class="viewcode-back" href="../../binaryninja.types.TypeParserResult.html#binaryninja.types.TypeParserResult">[docs]</a><span class="k">class</span> <span class="nc">TypeParserResult</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeParserResult.__init__"><a class="viewcode-back" href="../../binaryninja.types.TypeParserResult.html#binaryninja.types.TypeParserResult.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">functions</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">types</span> <span class="o">=</span> <span class="n">types</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="n">variables</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">functions</span> <span class="o">=</span> <span class="n">functions</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;types: </span><span class="si">%s</span><span class="s2">, variables: </span><span class="si">%s</span><span class="s2">, functions: </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">functions</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="preprocess_source"><a class="viewcode-back" href="../../binaryninja.types.preprocess_source.html#binaryninja.types.preprocess_source">[docs]</a><span class="k">def</span> <span class="nf">preprocess_source</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_dirs</span><span class="o">=</span><span class="p">[]):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``preprocess_source`` run the C preprocessor on the given source or source filename.</span>
+
+<span class="sd">	:param str source: source to preprocess</span>
+<span class="sd">	:param str filename: optional filename to preprocess</span>
+<span class="sd">	:param list(str) include_dirs: list of string directorires to use as include directories.</span>
+<span class="sd">	:return: returns a tuple of (preprocessed_source, error_string)</span>
+<span class="sd">	:rtype: tuple(str,str)</span>
+<span class="sd">	:Example:</span>
+
+<span class="sd">		&gt;&gt;&gt; source = &quot;#define TEN 10\\nint x[TEN];\\n&quot;</span>
+<span class="sd">		&gt;&gt;&gt; preprocess_source(source)</span>
+<span class="sd">		(&#39;#line 1 &quot;input&quot;\\n\\n#line 2 &quot;input&quot;\\n int x [ 10 ] ;\\n&#39;, &#39;&#39;)</span>
+<span class="sd">		&gt;&gt;&gt;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;input&quot;</span>
+	<span class="n">dir_buf</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">))()</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">)):</span>
+		<span class="n">dir_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">output</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNPreprocessSource</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">dir_buf</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">))</span>
+	<span class="n">output_str</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+	<span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">(</span><span class="n">output_str</span><span class="p">,</span> <span class="n">error_str</span><span class="p">)</span>
+	<span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">error_str</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

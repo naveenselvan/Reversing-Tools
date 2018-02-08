@@ -1,0 +1,869 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.binaryview.BinaryView &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="binaryview module" href="binaryninja.binaryview-module.html"/>
+        <link rel="next" title="binaryninja.binaryview.BinaryViewType" href="binaryninja.binaryview.BinaryViewType.html"/>
+        <link rel="prev" title="binaryninja.binaryview.BinaryReader" href="binaryninja.binaryview.BinaryReader.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.AddressRange.html">binaryninja.binaryview.AddressRange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.AnalysisCompletionEvent.html">binaryninja.binaryview.AnalysisCompletionEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.AnalysisProgress.html">binaryninja.binaryview.AnalysisProgress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryDataNotification.html">binaryninja.binaryview.BinaryDataNotification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryDataNotificationCallbacks.html">binaryninja.binaryview.BinaryDataNotificationCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryReader.html">binaryninja.binaryview.BinaryReader</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.binaryview.BinaryView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryViewType.html">binaryninja.binaryview.BinaryViewType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryWriter.html">binaryninja.binaryview.BinaryWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.DataVariable.html">binaryninja.binaryview.DataVariable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.Section.html">binaryninja.binaryview.Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.Segment.html">binaryninja.binaryview.Segment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.StringReference.html">binaryninja.binaryview.StringReference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.binaryview-module.html">binaryview module</a> &raquo;</li>
+        
+      <li>binaryninja.binaryview.BinaryView</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.binaryview.BinaryView.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-binaryview-binaryview">
+<h1>binaryninja.binaryview.BinaryView<a class="headerlink" href="#binaryninja-binaryview-binaryview" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.binaryview.BinaryView">
+<em class="property">class </em><code class="descclassname">binaryninja.binaryview.</code><code class="descname">BinaryView</code><span class="sig-paren">(</span><em>file_metadata=None</em>, <em>parent_view=None</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/binaryview.html#BinaryView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.binaryview.BinaryView" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">class</span> <span class="pre">BinaryView</span></code> implements a view on binary data, and presents a queryable interface of a binary file. One key
+job of BinaryView is file format parsing which allows Binary Ninja to read, write, insert, remove portions
+of the file given a virtual address. For the purposes of this documentation we define a virtual address as the
+memory address that the various pieces of the physical file will be loaded at.</p>
+<p>A binary file does not have to have just one BinaryView, thus much of the interface to manipulate disassembly exists
+within or is accessed through a BinaryView. All files are guaranteed to have at least the <code class="docutils literal"><span class="pre">Raw</span></code> BinaryView. The
+<code class="docutils literal"><span class="pre">Raw</span></code> BinaryView is simply a hex editor, but is helpful for manipulating binary files via their absolute addresses.</p>
+<p>BinaryViews are plugins and thus registered with Binary Ninja at startup, and thus should <strong>never</strong> be instantiated
+directly as this is already done. The list of available BinaryViews can be seen in the BinaryViewType class which
+provides an iterator and map of the various installed BinaryViews:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">BinaryViewType</span><span class="p">)</span>
+<span class="go">[&lt;view type: &#39;Raw&#39;&gt;, &lt;view type: &#39;ELF&#39;&gt;, &lt;view type: &#39;Mach-O&#39;&gt;, &lt;view type: &#39;PE&#39;&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BinaryViewType</span><span class="p">[</span><span class="s1">&#39;ELF&#39;</span><span class="p">]</span>
+<span class="go">&lt;view type: &#39;ELF&#39;&gt;</span>
+</pre></div>
+</div>
+<p>To open a file with a given BinaryView the following code can be used:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span> <span class="o">=</span> <span class="n">BinaryViewType</span><span class="p">[</span><span class="s1">&#39;Mach-O&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/bin/ls&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span>
+<span class="go">&lt;BinaryView: &#39;/bin/ls&#39;, start 0x100000000, len 0xa000&gt;</span>
+</pre></div>
+</div>
+<p><cite>By convention in the rest of this document we will use bv to mean an open BinaryView of an executable file.</cite>
+When a BinaryView is open on an executable view, analysis does not automatically run, this can be done by running
+the <code class="docutils literal"><span class="pre">update_analysis_and_wait()</span></code> method which disassembles the executable and returns when all disassembly is
+finished:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">update_analysis_and_wait</span><span class="p">()</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Since BinaryNinja&#8217;s analysis is multi-threaded (depending on version) this can also be done in the background by
+using the <code class="docutils literal"><span class="pre">update_analysis()</span></code> method instead.</p>
+<p>By standard python convention methods which start with &#8216;_&#8217; should be considered private and should not be called
+externally. Additionanlly, methods which begin with <code class="docutils literal"><span class="pre">perform_</span></code> should not be called either and are
+used explicitly for subclassing the BinaryView.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">An important note on the <code class="docutils literal"><span class="pre">*_user_*()</span></code> methods. Binary Ninja makes a distinction between edits       performed by the user and actions performed by auto analysis.  Auto analysis actions that can quickly be recalculated   are not saved to the database. Auto analysis actions that take a long time and all user edits are stored in the         database (e.g. <code class="docutils literal"><span class="pre">remove_user_function()</span></code> rather than <code class="docutils literal"><span class="pre">remove_function()</span></code>). Thus use <code class="docutils literal"><span class="pre">_user_</span></code> methods if saving     to the database is desired.</p>
+</div>
+<dl class="method">
+<dt id="binaryninja.binaryview.BinaryView.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>file_metadata=None</em>, <em>parent_view=None</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/binaryview.html#BinaryView.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.binaryview.BinaryView.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.binaryview.BinaryView.__init__" title="binaryninja.binaryview.BinaryView.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([file_metadata,&nbsp;parent_view,&nbsp;handle])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.abort_analysis" title="binaryninja.binaryview.BinaryView.abort_analysis"><code class="xref py py-obj docutils literal"><span class="pre">abort_analysis</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">abort_analysis</span></code> will abort the currently running analysis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_analysis_completion_event" title="binaryninja.binaryview.BinaryView.add_analysis_completion_event"><code class="xref py py-obj docutils literal"><span class="pre">add_analysis_completion_event</span></code></a>(callback)</td>
+<td><code class="docutils literal"><span class="pre">add_analysis_completion_event</span></code> sets up a call back function to be called when analysis has been completed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_analysis_option" title="binaryninja.binaryview.BinaryView.add_analysis_option"><code class="xref py py-obj docutils literal"><span class="pre">add_analysis_option</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">add_analysis_option</span></code> adds an analysis option. Analysis options elaborate the analysis phase. The user must</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_auto_section" title="binaryninja.binaryview.BinaryView.add_auto_section"><code class="xref py py-obj docutils literal"><span class="pre">add_auto_section</span></code></a>(name,&nbsp;start,&nbsp;length[,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_auto_segment" title="binaryninja.binaryview.BinaryView.add_auto_segment"><code class="xref py py-obj docutils literal"><span class="pre">add_auto_segment</span></code></a>(start,&nbsp;length,&nbsp;data_offset,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_entry_point" title="binaryninja.binaryview.BinaryView.add_entry_point"><code class="xref py py-obj docutils literal"><span class="pre">add_entry_point</span></code></a>(addr[,&nbsp;plat])</td>
+<td><code class="docutils literal"><span class="pre">add_entry_point</span></code> adds an virtual address to start analysis from for a given plat.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_function" title="binaryninja.binaryview.BinaryView.add_function"><code class="xref py py-obj docutils literal"><span class="pre">add_function</span></code></a>(addr[,&nbsp;plat])</td>
+<td><code class="docutils literal"><span class="pre">add_function</span></code> add a new function of the given <code class="docutils literal"><span class="pre">plat</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_undo_action" title="binaryninja.binaryview.BinaryView.add_undo_action"><code class="xref py py-obj docutils literal"><span class="pre">add_undo_action</span></code></a>(action)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_user_section" title="binaryninja.binaryview.BinaryView.add_user_section"><code class="xref py py-obj docutils literal"><span class="pre">add_user_section</span></code></a>(name,&nbsp;start,&nbsp;length[,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.add_user_segment" title="binaryninja.binaryview.BinaryView.add_user_segment"><code class="xref py py-obj docutils literal"><span class="pre">add_user_segment</span></code></a>(start,&nbsp;length,&nbsp;data_offset,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.always_branch" title="binaryninja.binaryview.BinaryView.always_branch"><code class="xref py py-obj docutils literal"><span class="pre">always_branch</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">always_branch</span></code> convert the instruction of architecture <code class="docutils literal"><span class="pre">arch</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code> to an</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.begin_undo_actions" title="binaryninja.binaryview.BinaryView.begin_undo_actions"><code class="xref py py-obj docutils literal"><span class="pre">begin_undo_actions</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">begin_undo_actions</span></code> start recording actions taken so the can be undone at some point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.commit_undo_actions" title="binaryninja.binaryview.BinaryView.commit_undo_actions"><code class="xref py py-obj docutils literal"><span class="pre">commit_undo_actions</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">commit_undo_actions</span></code> commit the actions taken since the last commit to the undo database.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.convert_to_nop" title="binaryninja.binaryview.BinaryView.convert_to_nop"><code class="xref py py-obj docutils literal"><span class="pre">convert_to_nop</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">convert_to_nop</span></code> converts the instruction at virtual address <code class="docutils literal"><span class="pre">addr</span></code> to a nop of the provided architecture.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.create_database" title="binaryninja.binaryview.BinaryView.create_database"><code class="xref py py-obj docutils literal"><span class="pre">create_database</span></code></a>(filename[,&nbsp;progress_func])</td>
+<td><code class="docutils literal"><span class="pre">create_database</span></code> writes the current database (.bndb) file out to the specified file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.create_user_function" title="binaryninja.binaryview.BinaryView.create_user_function"><code class="xref py py-obj docutils literal"><span class="pre">create_user_function</span></code></a>(addr[,&nbsp;plat])</td>
+<td><code class="docutils literal"><span class="pre">create_user_function</span></code> add a new <em>user</em> function of the given <code class="docutils literal"><span class="pre">plat</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_auto_symbol" title="binaryninja.binaryview.BinaryView.define_auto_symbol"><code class="xref py py-obj docutils literal"><span class="pre">define_auto_symbol</span></code></a>(sym)</td>
+<td><code class="docutils literal"><span class="pre">define_auto_symbol</span></code> adds a symbol to the internal list of automatically discovered Symbol objects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_auto_symbol_and_var_or_function" title="binaryninja.binaryview.BinaryView.define_auto_symbol_and_var_or_function"><code class="xref py py-obj docutils literal"><span class="pre">define_auto_symbol_and_var_or_function</span></code></a>(sym,&nbsp;...)</td>
+<td><code class="docutils literal"><span class="pre">define_auto_symbol_and_var_or_function</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_data_var" title="binaryninja.binaryview.BinaryView.define_data_var"><code class="xref py py-obj docutils literal"><span class="pre">define_data_var</span></code></a>(addr,&nbsp;var_type)</td>
+<td><code class="docutils literal"><span class="pre">define_data_var</span></code> defines a non-user data variable <code class="docutils literal"><span class="pre">var_type</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_imported_function" title="binaryninja.binaryview.BinaryView.define_imported_function"><code class="xref py py-obj docutils literal"><span class="pre">define_imported_function</span></code></a>(import_addr_sym,&nbsp;func)</td>
+<td><code class="docutils literal"><span class="pre">define_imported_function</span></code> defines an imported Function <code class="docutils literal"><span class="pre">func</span></code> with a ImportedFunctionSymbol type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_type" title="binaryninja.binaryview.BinaryView.define_type"><code class="xref py py-obj docutils literal"><span class="pre">define_type</span></code></a>(type_id,&nbsp;default_name,&nbsp;type_obj)</td>
+<td><code class="docutils literal"><span class="pre">define_type</span></code> registers a <code class="xref py py-class docutils literal"><span class="pre">Type</span></code> <code class="docutils literal"><span class="pre">type_obj</span></code> of the given <code class="docutils literal"><span class="pre">name</span></code> in the global list of types for</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_user_data_var" title="binaryninja.binaryview.BinaryView.define_user_data_var"><code class="xref py py-obj docutils literal"><span class="pre">define_user_data_var</span></code></a>(addr,&nbsp;var_type)</td>
+<td><code class="docutils literal"><span class="pre">define_user_data_var</span></code> defines a user data variable <code class="docutils literal"><span class="pre">var_type</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_user_symbol" title="binaryninja.binaryview.BinaryView.define_user_symbol"><code class="xref py py-obj docutils literal"><span class="pre">define_user_symbol</span></code></a>(sym)</td>
+<td><code class="docutils literal"><span class="pre">define_user_symbol</span></code> adds a symbol to the internal list of user added Symbol objects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.define_user_type" title="binaryninja.binaryview.BinaryView.define_user_type"><code class="xref py py-obj docutils literal"><span class="pre">define_user_type</span></code></a>(name,&nbsp;type_obj)</td>
+<td><code class="docutils literal"><span class="pre">define_user_type</span></code> registers a <code class="xref py py-class docutils literal"><span class="pre">Type</span></code> <code class="docutils literal"><span class="pre">type_obj</span></code> of the given <code class="docutils literal"><span class="pre">name</span></code> in the global list of user</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.find_next_data" title="binaryninja.binaryview.BinaryView.find_next_data"><code class="xref py py-obj docutils literal"><span class="pre">find_next_data</span></code></a>(start,&nbsp;data[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">find_next_data</span></code> searchs for the bytes in data starting at the virtual address <code class="docutils literal"><span class="pre">start</span></code> either, case-sensitive,</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_address_for_data_offset" title="binaryninja.binaryview.BinaryView.get_address_for_data_offset"><code class="xref py py-obj docutils literal"><span class="pre">get_address_for_data_offset</span></code></a>(offset)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_address_input" title="binaryninja.binaryview.BinaryView.get_address_input"><code class="xref py py-obj docutils literal"><span class="pre">get_address_input</span></code></a>(prompt,&nbsp;title[,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_basic_blocks_at" title="binaryninja.binaryview.BinaryView.get_basic_blocks_at"><code class="xref py py-obj docutils literal"><span class="pre">get_basic_blocks_at</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_basic_blocks_at</span></code> get a list of <code class="xref py py-class docutils literal"><span class="pre">BasicBlock</span></code> objects which exist at the provided virtual address.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_basic_blocks_starting_at" title="binaryninja.binaryview.BinaryView.get_basic_blocks_starting_at"><code class="xref py py-obj docutils literal"><span class="pre">get_basic_blocks_starting_at</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_basic_blocks_starting_at</span></code> get a list of <code class="xref py py-class docutils literal"><span class="pre">BasicBlock</span></code> objects which start at the provided virtual address.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_code_refs" title="binaryninja.binaryview.BinaryView.get_code_refs"><code class="xref py py-obj docutils literal"><span class="pre">get_code_refs</span></code></a>(addr[,&nbsp;length])</td>
+<td><code class="docutils literal"><span class="pre">get_code_refs</span></code> returns a list of ReferenceSource objects (xrefs or cross-references) that point to the provided virtual address.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_data_var_at" title="binaryninja.binaryview.BinaryView.get_data_var_at"><code class="xref py py-obj docutils literal"><span class="pre">get_data_var_at</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_data_var_at</span></code> returns the data type at a given virtual address.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_disassembly" title="binaryninja.binaryview.BinaryView.get_disassembly"><code class="xref py py-obj docutils literal"><span class="pre">get_disassembly</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">get_disassembly</span></code> simple helper function for printing disassembly of a given address</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_function_at" title="binaryninja.binaryview.BinaryView.get_function_at"><code class="xref py py-obj docutils literal"><span class="pre">get_function_at</span></code></a>(addr[,&nbsp;plat])</td>
+<td><code class="docutils literal"><span class="pre">get_function_at</span></code> gets a Function object for the function that starts at virtual address <code class="docutils literal"><span class="pre">addr</span></code>:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_functions_at" title="binaryninja.binaryview.BinaryView.get_functions_at"><code class="xref py py-obj docutils literal"><span class="pre">get_functions_at</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_functions_at</span></code> get a list of binaryninja.Function objects (one for each valid plat) at the given</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_functions_containing" title="binaryninja.binaryview.BinaryView.get_functions_containing"><code class="xref py py-obj docutils literal"><span class="pre">get_functions_containing</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_functions_containing</span></code> returns a list of functions which contain the given address or None on failure.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_instruction_length" title="binaryninja.binaryview.BinaryView.get_instruction_length"><code class="xref py py-obj docutils literal"><span class="pre">get_instruction_length</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">get_instruction_length</span></code> returns the number of bytes in the instruction of Architecture <code class="docutils literal"><span class="pre">arch</span></code> at the virtual</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_linear_disassembly" title="binaryninja.binaryview.BinaryView.get_linear_disassembly"><code class="xref py py-obj docutils literal"><span class="pre">get_linear_disassembly</span></code></a>(settings)</td>
+<td><code class="docutils literal"><span class="pre">get_linear_disassembly</span></code> gets an iterator for all lines in the linear disassembly of the view for the given</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_linear_disassembly_position_at" title="binaryninja.binaryview.BinaryView.get_linear_disassembly_position_at"><code class="xref py py-obj docutils literal"><span class="pre">get_linear_disassembly_position_at</span></code></a>(addr,&nbsp;...)</td>
+<td><code class="docutils literal"><span class="pre">get_linear_disassembly_position_at</span></code> instantiates a <code class="xref py py-class docutils literal"><span class="pre">LinearDisassemblyPosition</span></code> object for use in</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_modification" title="binaryninja.binaryview.BinaryView.get_modification"><code class="xref py py-obj docutils literal"><span class="pre">get_modification</span></code></a>(addr[,&nbsp;length])</td>
+<td><code class="docutils literal"><span class="pre">get_modification</span></code> returns the modified bytes of up to <code class="docutils literal"><span class="pre">length</span></code> bytes from virtual address <code class="docutils literal"><span class="pre">addr</span></code>, or if</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_next_basic_block_start_after" title="binaryninja.binaryview.BinaryView.get_next_basic_block_start_after"><code class="xref py py-obj docutils literal"><span class="pre">get_next_basic_block_start_after</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_next_basic_block_start_after</span></code> returns the virtual address of the BasicBlock that occurs after the virtual</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_next_data_after" title="binaryninja.binaryview.BinaryView.get_next_data_after"><code class="xref py py-obj docutils literal"><span class="pre">get_next_data_after</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_next_data_after</span></code> retrieves the virtual address of the next non-code byte.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_next_data_var_after" title="binaryninja.binaryview.BinaryView.get_next_data_var_after"><code class="xref py py-obj docutils literal"><span class="pre">get_next_data_var_after</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_next_data_var_after</span></code> retrieves the next virtual address of the next <a class="reference internal" href="binaryninja.binaryview.DataVariable.html#binaryninja.binaryview.DataVariable" title="binaryninja.binaryview.DataVariable"><code class="xref py py-class docutils literal"><span class="pre">DataVariable</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_next_disassembly" title="binaryninja.binaryview.BinaryView.get_next_disassembly"><code class="xref py py-obj docutils literal"><span class="pre">get_next_disassembly</span></code></a>([arch])</td>
+<td><code class="docutils literal"><span class="pre">get_next_disassembly</span></code> simple helper function for printing disassembly of the next instruction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_next_function_start_after" title="binaryninja.binaryview.BinaryView.get_next_function_start_after"><code class="xref py py-obj docutils literal"><span class="pre">get_next_function_start_after</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_next_function_start_after</span></code> returns the virtual address of the Function that occurs after the virtual address</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_next_linear_disassembly_lines" title="binaryninja.binaryview.BinaryView.get_next_linear_disassembly_lines"><code class="xref py py-obj docutils literal"><span class="pre">get_next_linear_disassembly_lines</span></code></a>(pos,&nbsp;settings)</td>
+<td><code class="docutils literal"><span class="pre">get_next_linear_disassembly_lines</span></code> retrieves a list of <code class="xref py py-class docutils literal"><span class="pre">LinearDisassemblyLine</span></code> objects for the</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_previous_basic_block_end_before" title="binaryninja.binaryview.BinaryView.get_previous_basic_block_end_before"><code class="xref py py-obj docutils literal"><span class="pre">get_previous_basic_block_end_before</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_previous_basic_block_end_before</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_previous_basic_block_start_before" title="binaryninja.binaryview.BinaryView.get_previous_basic_block_start_before"><code class="xref py py-obj docutils literal"><span class="pre">get_previous_basic_block_start_before</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_previous_basic_block_start_before</span></code> returns the virtual address of the BasicBlock that occurs prior to the</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_previous_data_before" title="binaryninja.binaryview.BinaryView.get_previous_data_before"><code class="xref py py-obj docutils literal"><span class="pre">get_previous_data_before</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_previous_data_before</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_previous_data_var_before" title="binaryninja.binaryview.BinaryView.get_previous_data_var_before"><code class="xref py py-obj docutils literal"><span class="pre">get_previous_data_var_before</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_previous_data_var_before</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_previous_function_start_before" title="binaryninja.binaryview.BinaryView.get_previous_function_start_before"><code class="xref py py-obj docutils literal"><span class="pre">get_previous_function_start_before</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_previous_function_start_before</span></code> returns the virtual address of the Function that occurs prior to the</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_previous_linear_disassembly_lines" title="binaryninja.binaryview.BinaryView.get_previous_linear_disassembly_lines"><code class="xref py py-obj docutils literal"><span class="pre">get_previous_linear_disassembly_lines</span></code></a>(pos,&nbsp;...)</td>
+<td><code class="docutils literal"><span class="pre">get_previous_linear_disassembly_lines</span></code> retrieves a list of <code class="xref py py-class docutils literal"><span class="pre">LinearDisassemblyLine</span></code> objects for the</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_recent_basic_block_at" title="binaryninja.binaryview.BinaryView.get_recent_basic_block_at"><code class="xref py py-obj docutils literal"><span class="pre">get_recent_basic_block_at</span></code></a>(addr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_recent_function_at" title="binaryninja.binaryview.BinaryView.get_recent_function_at"><code class="xref py py-obj docutils literal"><span class="pre">get_recent_function_at</span></code></a>(addr)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_section_by_name" title="binaryninja.binaryview.BinaryView.get_section_by_name"><code class="xref py py-obj docutils literal"><span class="pre">get_section_by_name</span></code></a>(name)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_sections_at" title="binaryninja.binaryview.BinaryView.get_sections_at"><code class="xref py py-obj docutils literal"><span class="pre">get_sections_at</span></code></a>(addr)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_segment_at" title="binaryninja.binaryview.BinaryView.get_segment_at"><code class="xref py py-obj docutils literal"><span class="pre">get_segment_at</span></code></a>(addr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_strings" title="binaryninja.binaryview.BinaryView.get_strings"><code class="xref py py-obj docutils literal"><span class="pre">get_strings</span></code></a>([start,&nbsp;length])</td>
+<td><code class="docutils literal"><span class="pre">get_strings</span></code> returns a list of strings defined in the binary in the optional virtual address range:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_symbol_at" title="binaryninja.binaryview.BinaryView.get_symbol_at"><code class="xref py py-obj docutils literal"><span class="pre">get_symbol_at</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">get_symbol_at</span></code> returns the Symbol at the provided virtual address.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_symbol_by_raw_name" title="binaryninja.binaryview.BinaryView.get_symbol_by_raw_name"><code class="xref py py-obj docutils literal"><span class="pre">get_symbol_by_raw_name</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">get_symbol_by_raw_name</span></code> retrieves a Symbol object for the given a raw (mangled) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_symbols" title="binaryninja.binaryview.BinaryView.get_symbols"><code class="xref py py-obj docutils literal"><span class="pre">get_symbols</span></code></a>([start,&nbsp;length])</td>
+<td><code class="docutils literal"><span class="pre">get_symbols</span></code> retrieves the list of all Symbol objects in the optionally provided range.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_symbols_by_name" title="binaryninja.binaryview.BinaryView.get_symbols_by_name"><code class="xref py py-obj docutils literal"><span class="pre">get_symbols_by_name</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">get_symbols_by_name</span></code> retrieves a list of Symbol objects for the given symbol name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_symbols_of_type" title="binaryninja.binaryview.BinaryView.get_symbols_of_type"><code class="xref py py-obj docutils literal"><span class="pre">get_symbols_of_type</span></code></a>(sym_type[,&nbsp;start,&nbsp;length])</td>
+<td><code class="docutils literal"><span class="pre">get_symbols_of_type</span></code> retrieves a list of all Symbol objects of the provided symbol type in the optionally</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_type_by_id" title="binaryninja.binaryview.BinaryView.get_type_by_id"><code class="xref py py-obj docutils literal"><span class="pre">get_type_by_id</span></code></a>(id)</td>
+<td><code class="docutils literal"><span class="pre">get_type_by_id</span></code> returns the defined type whose unique identifier corresponds with the provided <code class="docutils literal"><span class="pre">id</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_type_by_name" title="binaryninja.binaryview.BinaryView.get_type_by_name"><code class="xref py py-obj docutils literal"><span class="pre">get_type_by_name</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">get_type_by_name</span></code> returns the defined type whose name corresponds with the provided <code class="docutils literal"><span class="pre">name</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_type_id" title="binaryninja.binaryview.BinaryView.get_type_id"><code class="xref py py-obj docutils literal"><span class="pre">get_type_id</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">get_type_id</span></code> returns the unique indentifier of the defined type whose name corresponds with the</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_type_name_by_id" title="binaryninja.binaryview.BinaryView.get_type_name_by_id"><code class="xref py py-obj docutils literal"><span class="pre">get_type_name_by_id</span></code></a>(id)</td>
+<td><code class="docutils literal"><span class="pre">get_type_name_by_id</span></code> returns the defined type name whose unique identifier corresponds with the provided <code class="docutils literal"><span class="pre">id</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_unique_section_names" title="binaryninja.binaryview.BinaryView.get_unique_section_names"><code class="xref py py-obj docutils literal"><span class="pre">get_unique_section_names</span></code></a>(name_list)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.get_view_of_type" title="binaryninja.binaryview.BinaryView.get_view_of_type"><code class="xref py py-obj docutils literal"><span class="pre">get_view_of_type</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">get_view_of_type</span></code> returns the BinaryView associated with the provided name if it exists.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.init" title="binaryninja.binaryview.BinaryView.init"><code class="xref py py-obj docutils literal"><span class="pre">init</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.insert" title="binaryninja.binaryview.BinaryView.insert"><code class="xref py py-obj docutils literal"><span class="pre">insert</span></code></a>(addr,&nbsp;data)</td>
+<td><code class="docutils literal"><span class="pre">insert</span></code> inserts the bytes in <code class="docutils literal"><span class="pre">data</span></code> to the virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.invert_branch" title="binaryninja.binaryview.BinaryView.invert_branch"><code class="xref py py-obj docutils literal"><span class="pre">invert_branch</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">invert_branch</span></code> convert the branch instruction of architecture <code class="docutils literal"><span class="pre">arch</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code> to the</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_always_branch_patch_available" title="binaryninja.binaryview.BinaryView.is_always_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_always_branch_patch_available</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">is_always_branch_patch_available</span></code> queries the architecture plugin to determine if the</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_invert_branch_patch_available" title="binaryninja.binaryview.BinaryView.is_invert_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_invert_branch_patch_available</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">is_invert_branch_patch_available</span></code> queries the architecture plugin to determine if the instruction at <code class="docutils literal"><span class="pre">addr</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_never_branch_patch_available" title="binaryninja.binaryview.BinaryView.is_never_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_never_branch_patch_available</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">is_never_branch_patch_available</span></code> queries the architecture plugin to determine if the instruction at the</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_offset_code_semantics" title="binaryninja.binaryview.BinaryView.is_offset_code_semantics"><code class="xref py py-obj docutils literal"><span class="pre">is_offset_code_semantics</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_offset_code_semantics</span></code> checks if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is semantically valid for code.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_offset_executable" title="binaryninja.binaryview.BinaryView.is_offset_executable"><code class="xref py py-obj docutils literal"><span class="pre">is_offset_executable</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_offset_executable</span></code> checks if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is valid for executing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_offset_readable" title="binaryninja.binaryview.BinaryView.is_offset_readable"><code class="xref py py-obj docutils literal"><span class="pre">is_offset_readable</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_offset_readable</span></code> checks if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is valid for reading.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_offset_writable" title="binaryninja.binaryview.BinaryView.is_offset_writable"><code class="xref py py-obj docutils literal"><span class="pre">is_offset_writable</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_offset_writable</span></code> checks if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is valid for writing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_offset_writable_semantics" title="binaryninja.binaryview.BinaryView.is_offset_writable_semantics"><code class="xref py py-obj docutils literal"><span class="pre">is_offset_writable_semantics</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_offset_writable_semantics</span></code> checks if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is semantically writable. Some sections</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_skip_and_return_value_patch_available" title="binaryninja.binaryview.BinaryView.is_skip_and_return_value_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_skip_and_return_value_patch_available</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_skip_and_return_value_patch_available</span></code> queries the architecture plugin to determine if the</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_skip_and_return_zero_patch_available" title="binaryninja.binaryview.BinaryView.is_skip_and_return_zero_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code> queries the architecture plugin to determine if the</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_type_auto_defined" title="binaryninja.binaryview.BinaryView.is_type_auto_defined"><code class="xref py py-obj docutils literal"><span class="pre">is_type_auto_defined</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">is_type_auto_defined</span></code> queries the user type list of name. If name is not in the <em>user</em> type list then the name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.is_valid_offset" title="binaryninja.binaryview.BinaryView.is_valid_offset"><code class="xref py py-obj docutils literal"><span class="pre">is_valid_offset</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">is_valid_offset</span></code> checks if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is valid .</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.navigate" title="binaryninja.binaryview.BinaryView.navigate"><code class="xref py py-obj docutils literal"><span class="pre">navigate</span></code></a>(view,&nbsp;offset)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.never_branch" title="binaryninja.binaryview.BinaryView.never_branch"><code class="xref py py-obj docutils literal"><span class="pre">never_branch</span></code></a>(addr[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">never_branch</span></code> convert the branch instruction of architecture <code class="docutils literal"><span class="pre">arch</span></code> at the virtual address <code class="docutils literal"><span class="pre">addr</span></code> to</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.new" title="binaryninja.binaryview.BinaryView.new"><code class="xref py py-obj docutils literal"><span class="pre">new</span></code></a>([data,&nbsp;file_metadata])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.notify_data_inserted" title="binaryninja.binaryview.BinaryView.notify_data_inserted"><code class="xref py py-obj docutils literal"><span class="pre">notify_data_inserted</span></code></a>(offset,&nbsp;length)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.notify_data_removed" title="binaryninja.binaryview.BinaryView.notify_data_removed"><code class="xref py py-obj docutils literal"><span class="pre">notify_data_removed</span></code></a>(offset,&nbsp;length)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.notify_data_written" title="binaryninja.binaryview.BinaryView.notify_data_written"><code class="xref py py-obj docutils literal"><span class="pre">notify_data_written</span></code></a>(offset,&nbsp;length)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.open" title="binaryninja.binaryview.BinaryView.open"><code class="xref py py-obj docutils literal"><span class="pre">open</span></code></a>(src[,&nbsp;file_metadata])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.parse_type_string" title="binaryninja.binaryview.BinaryView.parse_type_string"><code class="xref py py-obj docutils literal"><span class="pre">parse_type_string</span></code></a>(text)</td>
+<td><code class="docutils literal"><span class="pre">parse_type_string</span></code> converts <cite>C-style</cite> string into a <code class="xref py py-class docutils literal"><span class="pre">Type</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_address_size" title="binaryninja.binaryview.BinaryView.perform_get_address_size"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_address_size</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_default_endianness" title="binaryninja.binaryview.BinaryView.perform_get_default_endianness"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_default_endianness</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">perform_get_default_endianness</span></code> implements a check which returns true if the BinaryView is executable.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_entry_point" title="binaryninja.binaryview.BinaryView.perform_get_entry_point"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_entry_point</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">perform_get_entry_point</span></code> implements a query for the initial entry point for code execution.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_length" title="binaryninja.binaryview.BinaryView.perform_get_length"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_length</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">perform_get_length</span></code> implements a query for the size of the virtual address range used by</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_modification" title="binaryninja.binaryview.BinaryView.perform_get_modification"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_modification</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_get_modification</span></code> implements query to the whether the virtual address <code class="docutils literal"><span class="pre">addr</span></code> is modified.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_next_valid_offset" title="binaryninja.binaryview.BinaryView.perform_get_next_valid_offset"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_next_valid_offset</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_get_next_valid_offset</span></code> implements a query for the next valid readable, writable, or executable virtual</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_get_start" title="binaryninja.binaryview.BinaryView.perform_get_start"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_start</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">perform_get_start</span></code> implements a query for the first readable, writable, or executable virtual address in</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_insert" title="binaryninja.binaryview.BinaryView.perform_insert"><code class="xref py py-obj docutils literal"><span class="pre">perform_insert</span></code></a>(addr,&nbsp;data)</td>
+<td><code class="docutils literal"><span class="pre">perform_insert</span></code> implements a mapping between a virtual address and an absolute file offset, inserting</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_is_executable" title="binaryninja.binaryview.BinaryView.perform_is_executable"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_executable</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">perform_is_executable</span></code> implements a check which returns true if the BinaryView is executable.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_is_offset_executable" title="binaryninja.binaryview.BinaryView.perform_is_offset_executable"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_offset_executable</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_offset_executable</span></code> implements a check if a virtual address <code class="docutils literal"><span class="pre">addr</span></code> is executable.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_is_offset_readable" title="binaryninja.binaryview.BinaryView.perform_is_offset_readable"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_offset_readable</span></code></a>(offset)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_offset_readable</span></code> implements a check if an virtual address is readable.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_is_offset_writable" title="binaryninja.binaryview.BinaryView.perform_is_offset_writable"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_offset_writable</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_offset_writable</span></code> implements a check if a virtual address <code class="docutils literal"><span class="pre">addr</span></code> is writable.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_is_valid_offset" title="binaryninja.binaryview.BinaryView.perform_is_valid_offset"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_valid_offset</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_valid_offset</span></code> implements a check if an virtual address <code class="docutils literal"><span class="pre">addr</span></code> is valid.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_read" title="binaryninja.binaryview.BinaryView.perform_read"><code class="xref py py-obj docutils literal"><span class="pre">perform_read</span></code></a>(addr,&nbsp;length)</td>
+<td><code class="docutils literal"><span class="pre">perform_read</span></code> implements a mapping between a virtual address and an absolute file offset, reading</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_remove" title="binaryninja.binaryview.BinaryView.perform_remove"><code class="xref py py-obj docutils literal"><span class="pre">perform_remove</span></code></a>(addr,&nbsp;length)</td>
+<td><code class="docutils literal"><span class="pre">perform_remove</span></code> implements a mapping between a virtual address and an absolute file offset, removing</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_save" title="binaryninja.binaryview.BinaryView.perform_save"><code class="xref py py-obj docutils literal"><span class="pre">perform_save</span></code></a>(accessor)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.perform_write" title="binaryninja.binaryview.BinaryView.perform_write"><code class="xref py py-obj docutils literal"><span class="pre">perform_write</span></code></a>(addr,&nbsp;data)</td>
+<td><code class="docutils literal"><span class="pre">perform_write</span></code> implements a mapping between a virtual address and an absolute file offset, writing</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.query_metadata" title="binaryninja.binaryview.BinaryView.query_metadata"><code class="xref py py-obj docutils literal"><span class="pre">query_metadata</span></code></a>(key)</td>
+<td><cite>query_metadata</cite> retrieves a metadata associated with the given key stored in the current BinaryView.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.read" title="binaryninja.binaryview.BinaryView.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>(addr,&nbsp;length)</td>
+<td><code class="docutils literal"><span class="pre">read</span></code> returns the data reads at most <code class="docutils literal"><span class="pre">length</span></code> bytes from virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.reanalyze" title="binaryninja.binaryview.BinaryView.reanalyze"><code class="xref py py-obj docutils literal"><span class="pre">reanalyze</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">reanalyze</span></code> causes all functions to be reanalyzed. This function does not wait for the analysis to finish.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.redo" title="binaryninja.binaryview.BinaryView.redo"><code class="xref py py-obj docutils literal"><span class="pre">redo</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">redo</span></code> redo the last commited action in the undo database.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.register" title="binaryninja.binaryview.BinaryView.register"><code class="xref py py-obj docutils literal"><span class="pre">register</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.register_notification" title="binaryninja.binaryview.BinaryView.register_notification"><code class="xref py py-obj docutils literal"><span class="pre">register_notification</span></code></a>(notify)</td>
+<td><cite>register_notification</cite> provides a mechanism for receiving callbacks for various analysis events. A full</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.register_platform_types" title="binaryninja.binaryview.BinaryView.register_platform_types"><code class="xref py py-obj docutils literal"><span class="pre">register_platform_types</span></code></a>(platform)</td>
+<td><code class="docutils literal"><span class="pre">register_platform_types</span></code> ensures that the platform-specific types for a <code class="xref py py-class docutils literal"><span class="pre">Platform</span></code> are available</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove" title="binaryninja.binaryview.BinaryView.remove"><code class="xref py py-obj docutils literal"><span class="pre">remove</span></code></a>(addr,&nbsp;length)</td>
+<td><code class="docutils literal"><span class="pre">remove</span></code> removes at most <code class="docutils literal"><span class="pre">length</span></code> bytes from virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_auto_section" title="binaryninja.binaryview.BinaryView.remove_auto_section"><code class="xref py py-obj docutils literal"><span class="pre">remove_auto_section</span></code></a>(name)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_auto_segment" title="binaryninja.binaryview.BinaryView.remove_auto_segment"><code class="xref py py-obj docutils literal"><span class="pre">remove_auto_segment</span></code></a>(start,&nbsp;length)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_function" title="binaryninja.binaryview.BinaryView.remove_function"><code class="xref py py-obj docutils literal"><span class="pre">remove_function</span></code></a>(func)</td>
+<td><code class="docutils literal"><span class="pre">remove_function</span></code> removes the function <code class="docutils literal"><span class="pre">func</span></code> from the list of functions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_metadata" title="binaryninja.binaryview.BinaryView.remove_metadata"><code class="xref py py-obj docutils literal"><span class="pre">remove_metadata</span></code></a>(key)</td>
+<td><cite>remove_metadata</cite> removes the metadata associated with key from the current BinaryView.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_user_function" title="binaryninja.binaryview.BinaryView.remove_user_function"><code class="xref py py-obj docutils literal"><span class="pre">remove_user_function</span></code></a>(func)</td>
+<td><code class="docutils literal"><span class="pre">remove_user_function</span></code> removes the <em>user</em> function <code class="docutils literal"><span class="pre">func</span></code> from the list of functions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_user_section" title="binaryninja.binaryview.BinaryView.remove_user_section"><code class="xref py py-obj docutils literal"><span class="pre">remove_user_section</span></code></a>(name)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.remove_user_segment" title="binaryninja.binaryview.BinaryView.remove_user_segment"><code class="xref py py-obj docutils literal"><span class="pre">remove_user_segment</span></code></a>(start,&nbsp;length)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.rename_type" title="binaryninja.binaryview.BinaryView.rename_type"><code class="xref py py-obj docutils literal"><span class="pre">rename_type</span></code></a>(old_name,&nbsp;new_name)</td>
+<td><code class="docutils literal"><span class="pre">rename_type</span></code> renames a type in the global list of types for the current <a class="reference internal" href="#binaryninja.binaryview.BinaryView" title="binaryninja.binaryview.BinaryView"><code class="xref py py-class docutils literal"><span class="pre">BinaryView</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.save" title="binaryninja.binaryview.BinaryView.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(dest)</td>
+<td><code class="docutils literal"><span class="pre">save</span></code> saves the original binary file to the provided destination <code class="docutils literal"><span class="pre">dest</span></code> along with any modifications.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.save_auto_snapshot" title="binaryninja.binaryview.BinaryView.save_auto_snapshot"><code class="xref py py-obj docutils literal"><span class="pre">save_auto_snapshot</span></code></a>([progress_func])</td>
+<td><code class="docutils literal"><span class="pre">save_auto_snapshot</span></code> saves the current database to the already created file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.set_default_session_data" title="binaryninja.binaryview.BinaryView.set_default_session_data"><code class="xref py py-obj docutils literal"><span class="pre">set_default_session_data</span></code></a>(name,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">set_default_session_data</span></code> saves a variable to the BinaryView.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.show_html_report" title="binaryninja.binaryview.BinaryView.show_html_report"><code class="xref py py-obj docutils literal"><span class="pre">show_html_report</span></code></a>(title,&nbsp;contents[,&nbsp;plaintext])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.show_markdown_report" title="binaryninja.binaryview.BinaryView.show_markdown_report"><code class="xref py py-obj docutils literal"><span class="pre">show_markdown_report</span></code></a>(title,&nbsp;contents[,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.show_plain_text_report" title="binaryninja.binaryview.BinaryView.show_plain_text_report"><code class="xref py py-obj docutils literal"><span class="pre">show_plain_text_report</span></code></a>(title,&nbsp;contents)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.skip_and_return_value" title="binaryninja.binaryview.BinaryView.skip_and_return_value"><code class="xref py py-obj docutils literal"><span class="pre">skip_and_return_value</span></code></a>(addr,&nbsp;value[,&nbsp;arch])</td>
+<td><code class="docutils literal"><span class="pre">skip_and_return_value</span></code> convert the <code class="docutils literal"><span class="pre">call</span></code> instruction of architecture <code class="docutils literal"><span class="pre">arch</span></code> at the virtual address</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.store_metadata" title="binaryninja.binaryview.BinaryView.store_metadata"><code class="xref py py-obj docutils literal"><span class="pre">store_metadata</span></code></a>(key,&nbsp;md)</td>
+<td><cite>store_metadata</cite> stores an object for the given key in the current BinaryView. Objects stored using</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undefine_auto_symbol" title="binaryninja.binaryview.BinaryView.undefine_auto_symbol"><code class="xref py py-obj docutils literal"><span class="pre">undefine_auto_symbol</span></code></a>(sym)</td>
+<td><code class="docutils literal"><span class="pre">undefine_auto_symbol</span></code> removes a symbol from the internal list of automatically discovered Symbol objects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undefine_data_var" title="binaryninja.binaryview.BinaryView.undefine_data_var"><code class="xref py py-obj docutils literal"><span class="pre">undefine_data_var</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">undefine_data_var</span></code> removes the non-user data variable at the virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undefine_type" title="binaryninja.binaryview.BinaryView.undefine_type"><code class="xref py py-obj docutils literal"><span class="pre">undefine_type</span></code></a>(type_id)</td>
+<td><code class="docutils literal"><span class="pre">undefine_type</span></code> removes a <code class="xref py py-class docutils literal"><span class="pre">Type</span></code> from the global list of types for the current <a class="reference internal" href="#binaryninja.binaryview.BinaryView" title="binaryninja.binaryview.BinaryView"><code class="xref py py-class docutils literal"><span class="pre">BinaryView</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undefine_user_data_var" title="binaryninja.binaryview.BinaryView.undefine_user_data_var"><code class="xref py py-obj docutils literal"><span class="pre">undefine_user_data_var</span></code></a>(addr)</td>
+<td><code class="docutils literal"><span class="pre">undefine_user_data_var</span></code> removes the user data variable at the virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undefine_user_symbol" title="binaryninja.binaryview.BinaryView.undefine_user_symbol"><code class="xref py py-obj docutils literal"><span class="pre">undefine_user_symbol</span></code></a>(sym)</td>
+<td><code class="docutils literal"><span class="pre">undefine_user_symbol</span></code> removes a symbol from the internal list of user added Symbol objects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undefine_user_type" title="binaryninja.binaryview.BinaryView.undefine_user_type"><code class="xref py py-obj docutils literal"><span class="pre">undefine_user_type</span></code></a>(name)</td>
+<td><code class="docutils literal"><span class="pre">undefine_user_type</span></code> removes a <code class="xref py py-class docutils literal"><span class="pre">Type</span></code> from the global list of user types for the current</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.undo" title="binaryninja.binaryview.BinaryView.undo"><code class="xref py py-obj docutils literal"><span class="pre">undo</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">undo</span></code> undo the last commited action in the undo database.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.unregister_notification" title="binaryninja.binaryview.BinaryView.unregister_notification"><code class="xref py py-obj docutils literal"><span class="pre">unregister_notification</span></code></a>(notify)</td>
+<td><cite>unregister_notification</cite> unregisters the <a class="reference internal" href="binaryninja.binaryview.BinaryDataNotification.html#binaryninja.binaryview.BinaryDataNotification" title="binaryninja.binaryview.BinaryDataNotification"><code class="xref py py-class docutils literal"><span class="pre">BinaryDataNotification</span></code></a> object passed to</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.update_analysis" title="binaryninja.binaryview.BinaryView.update_analysis"><code class="xref py py-obj docutils literal"><span class="pre">update_analysis</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">update_analysis</span></code> asynchronously starts the analysis running and returns immediately. Analysis of BinaryViews</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.update_analysis_and_wait" title="binaryninja.binaryview.BinaryView.update_analysis_and_wait"><code class="xref py py-obj docutils literal"><span class="pre">update_analysis_and_wait</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">update_analysis_and_wait</span></code> blocking call to update the analysis, this call returns when the analysis is</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.write" title="binaryninja.binaryview.BinaryView.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(addr,&nbsp;data)</td>
+<td><code class="docutils literal"><span class="pre">write</span></code> writes the bytes in <code class="docutils literal"><span class="pre">data</span></code> to the virtual address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.address_size" title="binaryninja.binaryview.BinaryView.address_size"><code class="xref py py-obj docutils literal"><span class="pre">address_size</span></code></a></td>
+<td>Address size of the binary (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.allocated_ranges" title="binaryninja.binaryview.BinaryView.allocated_ranges"><code class="xref py py-obj docutils literal"><span class="pre">allocated_ranges</span></code></a></td>
+<td>List of valid address ranges for this view (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.analysis_changed" title="binaryninja.binaryview.BinaryView.analysis_changed"><code class="xref py py-obj docutils literal"><span class="pre">analysis_changed</span></code></a></td>
+<td>boolean analysis state changed of the currently running analysis (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.analysis_progress" title="binaryninja.binaryview.BinaryView.analysis_progress"><code class="xref py py-obj docutils literal"><span class="pre">analysis_progress</span></code></a></td>
+<td>Status of current analysis (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.arch" title="binaryninja.binaryview.BinaryView.arch"><code class="xref py py-obj docutils literal"><span class="pre">arch</span></code></a></td>
+<td>The architecture associated with the current BinaryView (read/write)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.available_view_types" title="binaryninja.binaryview.BinaryView.available_view_types"><code class="xref py py-obj docutils literal"><span class="pre">available_view_types</span></code></a></td>
+<td>Available view types (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.data_vars" title="binaryninja.binaryview.BinaryView.data_vars"><code class="xref py py-obj docutils literal"><span class="pre">data_vars</span></code></a></td>
+<td>List of data variables (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.end" title="binaryninja.binaryview.BinaryView.end"><code class="xref py py-obj docutils literal"><span class="pre">end</span></code></a></td>
+<td>End offset of the binary (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.endianness" title="binaryninja.binaryview.BinaryView.endianness"><code class="xref py py-obj docutils literal"><span class="pre">endianness</span></code></a></td>
+<td>Endianness of the binary (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.entry_function" title="binaryninja.binaryview.BinaryView.entry_function"><code class="xref py py-obj docutils literal"><span class="pre">entry_function</span></code></a></td>
+<td>Entry function (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.entry_point" title="binaryninja.binaryview.BinaryView.entry_point"><code class="xref py py-obj docutils literal"><span class="pre">entry_point</span></code></a></td>
+<td>Entry point of the binary (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.executable" title="binaryninja.binaryview.BinaryView.executable"><code class="xref py py-obj docutils literal"><span class="pre">executable</span></code></a></td>
+<td>Whether the binary is an executable (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.functions" title="binaryninja.binaryview.BinaryView.functions"><code class="xref py py-obj docutils literal"><span class="pre">functions</span></code></a></td>
+<td>List of functions (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.global_pointer_value" title="binaryninja.binaryview.BinaryView.global_pointer_value"><code class="xref py py-obj docutils literal"><span class="pre">global_pointer_value</span></code></a></td>
+<td>Discovered value of the global pointer register, if the binary uses one (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.has_database" title="binaryninja.binaryview.BinaryView.has_database"><code class="xref py py-obj docutils literal"><span class="pre">has_database</span></code></a></td>
+<td>boolean has a database been written to disk (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.has_functions" title="binaryninja.binaryview.BinaryView.has_functions"><code class="xref py py-obj docutils literal"><span class="pre">has_functions</span></code></a></td>
+<td>Boolean whether the binary has functions (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.linear_disassembly" title="binaryninja.binaryview.BinaryView.linear_disassembly"><code class="xref py py-obj docutils literal"><span class="pre">linear_disassembly</span></code></a></td>
+<td>Iterator for all lines in the linear disassembly of the view</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.long_name" title="binaryninja.binaryview.BinaryView.long_name"><code class="xref py py-obj docutils literal"><span class="pre">long_name</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.modified" title="binaryninja.binaryview.BinaryView.modified"><code class="xref py py-obj docutils literal"><span class="pre">modified</span></code></a></td>
+<td>boolean modification state of the BinaryView (read/write)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.name" title="binaryninja.binaryview.BinaryView.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.next_address" title="binaryninja.binaryview.BinaryView.next_address"><code class="xref py py-obj docutils literal"><span class="pre">next_address</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.offset" title="binaryninja.binaryview.BinaryView.offset"><code class="xref py py-obj docutils literal"><span class="pre">offset</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.parent_view" title="binaryninja.binaryview.BinaryView.parent_view"><code class="xref py py-obj docutils literal"><span class="pre">parent_view</span></code></a></td>
+<td>View that contains the raw data used by this view (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.platform" title="binaryninja.binaryview.BinaryView.platform"><code class="xref py py-obj docutils literal"><span class="pre">platform</span></code></a></td>
+<td>The platform associated with the current BinaryView (read/write)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.registered_view_type" title="binaryninja.binaryview.BinaryView.registered_view_type"><code class="xref py py-obj docutils literal"><span class="pre">registered_view_type</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.saved" title="binaryninja.binaryview.BinaryView.saved"><code class="xref py py-obj docutils literal"><span class="pre">saved</span></code></a></td>
+<td>boolean state of whether or not the file has been saved (read/write)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.sections" title="binaryninja.binaryview.BinaryView.sections"><code class="xref py py-obj docutils literal"><span class="pre">sections</span></code></a></td>
+<td>List of sections (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.segments" title="binaryninja.binaryview.BinaryView.segments"><code class="xref py py-obj docutils literal"><span class="pre">segments</span></code></a></td>
+<td>List of segments (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.session_data" title="binaryninja.binaryview.BinaryView.session_data"><code class="xref py py-obj docutils literal"><span class="pre">session_data</span></code></a></td>
+<td>Dictionary object where plugins can store arbitrary data associated with the view</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.start" title="binaryninja.binaryview.BinaryView.start"><code class="xref py py-obj docutils literal"><span class="pre">start</span></code></a></td>
+<td>Start offset of the binary (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.strings" title="binaryninja.binaryview.BinaryView.strings"><code class="xref py py-obj docutils literal"><span class="pre">strings</span></code></a></td>
+<td>List of strings (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.symbols" title="binaryninja.binaryview.BinaryView.symbols"><code class="xref py py-obj docutils literal"><span class="pre">symbols</span></code></a></td>
+<td>Dict of symbols (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.types" title="binaryninja.binaryview.BinaryView.types"><code class="xref py py-obj docutils literal"><span class="pre">types</span></code></a></td>
+<td>List of defined types (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.view" title="binaryninja.binaryview.BinaryView.view"><code class="xref py py-obj docutils literal"><span class="pre">view</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryView.view_type" title="binaryninja.binaryview.BinaryView.view_type"><code class="xref py py-obj docutils literal"><span class="pre">view_type</span></code></a></td>
+<td>View type (read-only)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.binaryview.BinaryViewType.html" class="btn btn-neutral float-right" title="binaryninja.binaryview.BinaryViewType" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.binaryview.BinaryReader.html" class="btn btn-neutral" title="binaryninja.binaryview.BinaryReader" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

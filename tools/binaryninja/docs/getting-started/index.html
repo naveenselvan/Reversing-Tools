@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Getting Started Guide - Binary Ninja Documentation</title>
+      
+      
+      
+        <link rel="canonical" href="https://docs.binary.ninja/getting-started/index.html">
+      
+      
+        <meta name="author" content="Vector 35 LLC">
+      
+    
+    <meta property="og:url" content="https://docs.binary.ninja/getting-started/index.html">
+    <meta property="og:title" content="Binary Ninja Documentation">
+    <meta property="og:image" content="https://docs.binary.ninja/getting-started/index.html/../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Binary Ninja Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../docs.css?1492471077">
+    
+    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+          </span>
+        
+        Getting Started Guide
+      </div>
+    </div>
+    
+    
+    
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://binary.ninja/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>
+          Binary Ninja Documentation
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../index.html">
+      Home
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="current" title="Getting Started Guide" href="index.html">
+      Getting Started Guide
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Directories" href="#directories">
+                Directories
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="License" href="#license">
+                License
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Linux Setup" href="#linux-setup">
+                Linux Setup
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Loading Files" href="#loading-files">
+                Loading Files
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Analysis" href="#analysis">
+                Analysis
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Interacting" href="#interacting">
+                Interacting
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Using Plugins" href="#using-plugins">
+                Using Plugins
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="PDB Plugin" href="#pdb-plugin">
+                PDB Plugin
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Preferences/Updates" href="#preferencesupdates">
+                Preferences/Updates
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Settings" href="#settings">
+                Settings
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Getting Support" href="#getting-support">
+                Getting Support
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">User Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Using and Writing Plugins" href="../guide/plugins/index.html">
+      Using and Writing Plugins
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Troubleshooting" href="../guide/troubleshooting/index.html">
+      Troubleshooting
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Developer Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Contributing Documentation" href="../dev/documentation/index.html">
+      Contributing Documentation
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="BNIL Guide&#58; LLIL" href="../dev/bnil-llil/index.html">
+      BNIL Guide&#58; LLIL
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">About</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="License" href="../about/license/index.html">
+      License
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Open Source" href="../about/open-source/index.html">
+      Open Source
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p>Welcome to Binary Ninja. This introduction document is meant to quickly guide you over some of the most common uses of Binary Ninja.</p>
+<h2 id="directories">Directories<a class="headerlink" href="#directories" title="Permanent link">&para;</a></h2>
+<p>Binary Ninja uses two main locations. The first is the install path of the binary itself and the second is the user folders for user-installed content.</p>
+<h3 id="binary-path">Binary Path<a class="headerlink" href="#binary-path" title="Permanent link">&para;</a></h3>
+<p>Binaries are installed in the following locations by default:</p>
+<ul>
+<li>OS X: <code>/Applications/Binary Ninja.app</code></li>
+<li>Windows: <code>C:\Program Files\Vector35\BinaryNinja</code></li>
+<li>Linux: Wherever you extract it! (No standard location)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not put any user content in the install-path of Binary Ninja. The auto-update process of Binary Ninja may replace any files included in these folders. </p>
+</div>
+<h3 id="user-folder">User Folder<a class="headerlink" href="#user-folder" title="Permanent link">&para;</a></h3>
+<p>The base locations of user folders are: </p>
+<ul>
+<li>OS X: <code>~/Library/Application Support/Binary Ninja</code></li>
+<li>Linux: <code>~/.binaryninja</code></li>
+<li>Windows: <code>%APPDATA%\Binary Ninja</code></li>
+</ul>
+<p>Contents of the user folder includes:</p>
+<ul>
+<li><code>settings.json</code>: Advanced settings (see <a href="#settings">settings</a>)</li>
+<li><code>lastrun</code>: A text file containing the directory of the last BinaryNinja binary path -- very useful for plugins to resolve the install locations in non-default settings or on linux.</li>
+<li><code>plugins/</code>: Folder containing all manually installed user plugins</li>
+<li><code>repositories/</code>: Folder containing files and plugins managed by the <a href="https://api.binary.ninja/binaryninja.pluginmanager-module.html">Plugin Manager API</a></li>
+</ul>
+<p><img alt="license popup &gt;" src="../images/license-popup.png" title="License Popup" /></p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>When you first run Binary Ninja, it will prompt you for your license key. You should have received your license key via email after your purchase. If not, please contact [support].</p>
+<p>Once the license key is installed, you can change it, back it up, or otherwise inspect it simply by looking inside the base of the user folder for <code>license.dat</code>.</p>
+<h2 id="linux-setup">Linux Setup<a class="headerlink" href="#linux-setup" title="Permanent link">&para;</a></h2>
+<p>Because linux install locations can vary widely, we do not assume a Binary Ninja has been installed in any particular folder on linux. Rather, you can simply run <code>binaryninja/scripts/linux-setup.sh</code> after extracting the zip and various file associations, icons, and other settings will be set up. Run it with <code>-h</code> to see the customization options.</p>
+<h2 id="loading-files">Loading Files<a class="headerlink" href="#loading-files" title="Permanent link">&para;</a></h2>
+<p>You can load files in many ways:</p>
+<ol>
+<li>Drag-and-drop a file onto the Binary Ninja window</li>
+<li>Use the <code>File/Open</code> menu or <code>Open</code> button on the start screen</li>
+<li>Clicking an item in the recent files list</li>
+<li>Running Binary Ninja with an optional command-line parameter</li>
+<li>Opening a file from a URL via the <code>⌘-l</code> or <code>⌃-l</code> hotkey</li>
+<li>Opening a file using the binaryninja: url handler. For security reasons, the url handler requires you to confirm a warning before opening a file via the url handler. The url handler can open remote URLs like: <code>binaryninja:https://captf.com/2015/plaidctf/pwnable/datastore_7e64104f876f0aa3f8330a409d9b9924.elf</code>, or even local files like <code>binarynina://bin/ls</code> in cases where you wish to script up Binary Ninja from a local webapp.</li>
+</ol>
+<p><img alt="recent files" src="../images/recent.png" title="Recent Files" /></p>
+<h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h2>
+<p><img alt="auto analysis &gt;&lt;" src="../images/analysis.png" title="Auto Analysis" /></p>
+<p>As soon as you open a file, Binary Ninja begins its auto-analysis.</p>
+<p>Even while Binary Ninja is analyzing a binary, the UI should be responsive. Not only that, but because the analysis prioritizes user-requested analysis, you can start navigating a binary immediately and any functions you select will be added to the top of the analysis queue. The current progress through a binary is shown in the status bar, but note that the total number of items left to analyze will go up as well as the binary is processed and more items are discovered that require analysis.</p>
+<p>Errors or warnings during the load of the binary are also shown in the status bar, along with an icon (in the case of the image above, a large number of warnings were shown). The most common warnings are from incomplete lifting and can be safely ignored. If the warnings include a message like <code>Data flow for function at 0x41414141 did not terminate</code>, then please report the binary to the [bug database][issues].</p>
+<h2 id="interacting">Interacting<a class="headerlink" href="#interacting" title="Permanent link">&para;</a></h2>
+<h3 id="navigating">Navigating<a class="headerlink" href="#navigating" title="Permanent link">&para;</a></h3>
+<p>Navigating code in Binary Ninja is usually a case of just double-clicking where you want to go. Addresses, references, functions, jmp edges, etc, can all be double-clicked to navigate. Additionally, The <code>g</code> hotkey can navigate to a specific address in the current view.</p>
+<p><img alt="graph view" src="../images/view-choices.png" title="Different Views" /></p>
+<p>Switching views happens multiple ways. In some instances, it's automatic (clicking a data reference from graph view will navigate to linear view as data is not shown in the graph view), and there are multiple ways to manually change views as well. While navigating, you can use the view hotkeys (see below) to switch to a specific view at the same location as the current selection. Alternatively, the view menu in the bottom-right can be used to change views without navigating to any given location.</p>
+<h3 id="hotkeys">Hotkeys<a class="headerlink" href="#hotkeys" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>h</code> : Switch to hex view</li>
+<li><code>p</code> : Create a function</li>
+<li><code>[ESC]</code> : Navigate backward</li>
+<li><code>[SPACE]</code> : Toggle between linear view and graph view</li>
+<li><code>g</code> : Go To Address dialog</li>
+<li><code>n</code> : Name a symbol</li>
+<li><code>u</code> : Undefine a symbol</li>
+<li><code>e</code> : Edits an instruction (by modifying the original binary -- currently only enabled for x86, and x64)</li>
+<li><code>x</code> : Focuses the cross-reference pane</li>
+<li><code>;</code> : Adds a comment</li>
+<li><code>i</code> : Switches between disassembly and low-level il in graph view</li>
+<li><code>y</code> : Change type</li>
+<li><code>a</code> : Change the data type to an ASCII string</li>
+<li>[1248] : Change type directly to a data variable of the indicated widths</li>
+<li><code>a</code> : Change the data type to an ASCII string</li>
+<li><code>d</code> : Switches between data variables of various widths</li>
+<li><code>r</code> : Change the data type to single ASCII character</li>
+<li><code>o</code> : Create a pointer data type</li>
+<li><code>[CMD-SHIFT] +</code> (OS X) : Graph view zoom in</li>
+<li><code>[CMD-SHIFT] -</code> (OS X) : Graph view zoom out</li>
+<li><code>[CTRL-SHIFT] +</code> (Windows/Linux) : Graph view zoom in</li>
+<li><code>[CTRL-SHIFT] -</code> (Windows/Linux) : Graph view zoom out</li>
+</ul>
+<h3 id="graph-view">Graph View<a class="headerlink" href="#graph-view" title="Permanent link">&para;</a></h3>
+<p><img alt="graph view" src="../images/graphview.png" title="Graph View" /></p>
+<p>The default view in Binary Ninja when opening a binary is a graph view that groups the basic blocks of disassembly into visually distinct blocks with edges showing control flow between them.</p>
+<p><img alt="graph view context &gt;" src="../images/graphcontext.png" title="Graph View Contet Menu" /></p>
+<p>Features of the graph view include:</p>
+<ul>
+<li>Ability to double click edges to quickly jump between locations</li>
+<li>Zoom (CTRL-mouse wheel)</li>
+<li>Vertical Scrolling (Side scroll bar as well as mouse wheel)</li>
+<li>Horizontal Scrolling (Bottom scroll bar as well as SHIFT-mouse wheel)</li>
+<li>Individual highlighting of arguments, addresses, immediate values</li>
+<li>Edge colors indicate whether the path is the true or false case of a conditional jump (a color-blind option in the preferences is useful for those with red-green color blindness)</li>
+<li>Context menu that can trigger some function-wide actions as well as some specific to the highlighted instruction (such as inverting branch logic or replacing a specific function with a NOP)</li>
+</ul>
+<h3 id="view-options">View Options<a class="headerlink" href="#view-options" title="Permanent link">&para;</a></h3>
+<p><img alt="options &gt;&lt;" src="../images/options.png" title="options" /></p>
+<p>Each of the views (Hex, Graph, Linear) have a variety of options configurable in the bottom-right of the UI.</p>
+<p>Current options include:</p>
+<ul>
+<li>Hex<ul>
+<li>Background highlight<ul>
+<li>None</li>
+<li>Column</li>
+<li>Byte value</li>
+</ul>
+</li>
+<li>Color highlight<ul>
+<li>None</li>
+<li>ASCII and printable</li>
+<li>Modification</li>
+</ul>
+</li>
+<li>Contrast<ul>
+<li>Normal</li>
+<li>Medium</li>
+<li>Highlight</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Graph<ul>
+<li>Show address</li>
+<li>Show opcode bytes</li>
+<li>Assembly</li>
+<li>Lifted IL<ul>
+<li>Show IL flag usage (if showing Lifted IL)</li>
+</ul>
+</li>
+<li>Low Level IL<ul>
+<li>Show basic block register state (if showing Low Level IL)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Linear<ul>
+<li>Show address</li>
+<li>Show opcode bytes</li>
+</ul>
+</li>
+</ul>
+<h3 id="hex-view">Hex View<a class="headerlink" href="#hex-view" title="Permanent link">&para;</a></h3>
+<p><img alt="hex &gt;" src="../images/hex.png" title="hex view" /></p>
+<p>The hexadecimal view is useful for view raw binary files that may or may not even be executable binaries. The hex view is particularly good for transforming data in various ways via the <code>Copy as</code>, <code>Transform</code>, and <code>Paste from</code> menus. Note that <code>Transform</code> menu options will transform the data in-place, and that these options will only work when the Hex View is in the <code>Raw</code> mode as opposd to any of the binary views (such as "ELF", "Mach-O", or "PE").</p>
+<p>Note that any changes made in the Hex view will take effect immediately in any other views open into the same file (new views can be created via the <code>Split to new tab</code>, or <code>Split to new window</code> options under <code>View</code>.). This can, however, cause large amounts of re-analysis so be warned before making large edits or transformations in a large binary file.</p>
+<h3 id="xrefs-view">Xrefs View<a class="headerlink" href="#xrefs-view" title="Permanent link">&para;</a></h3>
+<p><img alt="xrefs &gt;" src="../images/xrefs.png" title="xrefs" /></p>
+<p>The xrefs view in the lower-left shows all cross-references to a given location or reference. Note that the cross-references pane will change depending on whether an entire line is selected (all cross-references to that address are shown), or whether a specific token within the line is selected.</p>
+<p>One fun trick that the xrefs view has up its sleeve: when in <a href="#hexview">Hex View</a>, a large range of memory addresses can be selected and the xrefs pane will show all xrefs to any location within that range of data.</p>
+<h3 id="linear-view">Linear View<a class="headerlink" href="#linear-view" title="Permanent link">&para;</a></h3>
+<p><img alt="linear" src="../images/linear.png" title="linear view" /></p>
+<p>Linear view is a hybrid view between a graph-based disassembly window and the raw hex view. It lists the entire binary's memory in a linear fashion and is especially useful when trying to find sections of a binary that were not properly identified as code or even just examining data.</p>
+<p>Linear view is most commonly used for identifying and adding type information for unknown data. To this end,</p>
+<h3 id="function-list">Function List<a class="headerlink" href="#function-list" title="Permanent link">&para;</a></h3>
+<p><img alt="function list &gt;" src="../images/functionlist.png" title="Function List" /></p>
+<p>The function list in Binary Ninja shows the list of functions currently identified. As large binaries are analyzed, the list may grow during analysis. The function list starts with known functions such as the entry point, exports, or using other features of the binary file format and explores from there to identify other functions.</p>
+<p>The function list also highlights imports, and functions identified with symbols in different colors to make them easier to identify.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To search in the function list, just click to make sure it's focused and start typing!</p>
+</div>
+<h3 id="script-python-console">Script (Python) Console<a class="headerlink" href="#script-python-console" title="Permanent link">&para;</a></h3>
+<p><img alt="console &gt;" src="../images/console.png" title="Console" /></p>
+<p>The integrated script console is useful for small scripts that aren't worth writing as full plugins.</p>
+<p>To trigger the console, either use <code>&lt;CTRL&gt;-&lt;BACKTICK&gt;</code>, or use the <code>View</code>/<code>Script console</code> menu.</p>
+<p>Once loaded, the script console can be docked in different locations or popped out into a stand-alone window. Note that <a href="https://github.com/Vector35/binaryninja-api/issues/226">at this time</a> window locations are not saved on restart.</p>
+<p>Multi-line input is possible just by doing what you'd normally do in python. If you leave a trailing <code>:</code> at the end of a line, the box will automatically turn into a multi-line edit box, complete with a command-history. To submit that multi-line input, use <code>&lt;CTRL&gt;-&lt;ENTER&gt;</code></p>
+<p>By default the interactive python prompt has a number of convenient helper functions and variables built in:</p>
+<ul>
+<li><code>here</code> / <code>current_address</code>: address of the current selection</li>
+<li><code>bv</code> / <code>current_view</code> / : the current <a href="https://api.binary.ninja/binaryninja.BinaryView.html">BinaryView</a></li>
+<li><code>current_function</code>: the current <a href="https://api.binary.ninja/binaryninja.Function.html">Function</a></li>
+<li><code>current_basic_block</code>: the current <a href="https://api.binary.ninja/binaryninja.BasicBlock.html">BasicBlock</a></li>
+<li><code>current_selection</code>: a tuple of the start and end addresses of the current selection</li>
+<li><code>write_at_cursor(data)</code>: function that writes data to the start of the current selection</li>
+<li><code>get_selected_data()</code>: function that returns the data in the current selection</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Note</p>
+<p>The current script console only supports Python at the moment, but it's fully extensible for other programming languages for advanced users who with to implement their own bindings.</p>
+</div>
+<h2 id="using-plugins">Using Plugins<a class="headerlink" href="#using-plugins" title="Permanent link">&para;</a></h2>
+<p>Plugins can be installed by one of two methods. First, they can be manually installed by adding the plugin (either a <code>.py</code> file or a folder implementing a python module with a <code>__init__.py</code> file) to the appropriate path:</p>
+<ul>
+<li>OS X: <code>~/Library/Application Support/Binary Ninja/plugins/</code></li>
+<li>Linux: <code>~/.binaryninja/plugins/</code></li>
+<li>Windows: <code>%APPDATA%\Binary Ninja\plugins</code></li>
+</ul>
+<p>Alternatively, plugins can be installed with the new <a href="https://api.binary.ninja/binaryninja.pluginmanager-module.html">pluginmanager</a> API.</p>
+<p>For more detailed information, see the <a href="../guide/plugins">plugin guide</a>.</p>
+<h2 id="pdb-plugin">PDB Plugin<a class="headerlink" href="#pdb-plugin" title="Permanent link">&para;</a></h2>
+<p>Binary Ninja supports loading PDB files through the built in PDB plugin. When selected from the plugin menu it attempts to find where the corresponding PDB file is located using the following search order:</p>
+<ol>
+<li>Look for in the same directory as the opened file/bndb (e.g. If you ahve <code>c:\foo.exe</code> or <code>c:\foo.bndb</code> open the pdb plugin looks for <code>c:\foo.pdb</code>)</li>
+<li>Look in the local symbol store. This is the directory specified by the settings: <code>local-store-relative</code> or <code>local-store-absolute</code>. The format of this directory is <code>foo.pdb\&lt;guid&gt;\foo.pdb</code>.</li>
+<li>Attempt to connect and download the PDB from the list of symbol servers specified in setting <code>symbol-server-list</code>.</li>
+<li>Prompt the user for the pdb.</li>
+</ol>
+<h2 id="preferencesupdates">Preferences/Updates<a class="headerlink" href="#preferencesupdates" title="Permanent link">&para;</a></h2>
+<p><img alt="preferences &gt;" src="../images/preferences.png" title="Preferences" /></p>
+<p>Binary Ninja automatically updates itself by default. This functionality can be disabled in the preferences by turning off the <code>Update to latest version automatically</code> option. Updates are silently downloaded in the background and when complete an option to restart is displayed in the status bar. Whenever Binary Ninja restarts next, it will replace itself with the new version as it launches.</p>
+<p>On windows, this is achieved through a separate launcher that loads first and replaces the installation before launching the new version. On OS X and Linux, the original installation is overwritten after the update occurs as these operating systems allow files to be replaced while running. The update on restart is thus immediate.</p>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p>Settings are stored in the <em>user</em> directory in the file <code>settings.json</code>. Each top level object in this file is represents a different plugin.  As of build 860 the following settings are available:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Plugin</th>
+<th align="right">Setting</th>
+<th align="right">Type</th>
+<th align="right">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">ui</td>
+<td align="right">activeContent</td>
+<td align="right">boolean</td>
+<td align="right">True</td>
+<td align="left">Allow Binary Ninja to connect to the web to check for updates</td>
+</tr>
+<tr>
+<td align="right">ui</td>
+<td align="right">colorblind</td>
+<td align="right">boolean</td>
+<td align="right">True</td>
+<td align="left">Choose colors that are visible to those with red/green colorblind</td>
+</tr>
+<tr>
+<td align="right">ui</td>
+<td align="right">debug</td>
+<td align="right">boolean</td>
+<td align="right">False</td>
+<td align="left">Enable developer debugging features (Additional views: Lifted IL, and SSA forms)</td>
+</tr>
+<tr>
+<td align="right">pdb</td>
+<td align="right">local-store-absolute</td>
+<td align="right">string</td>
+<td align="right">""</td>
+<td align="left">Absolute path specifying where the pdb symbol store exists on this machine, overrides relative path</td>
+</tr>
+<tr>
+<td align="right">pdb</td>
+<td align="right">local-store-relative</td>
+<td align="right">string</td>
+<td align="right">"symbols"</td>
+<td align="left">Path <em>relative</em> to the binaryninja <em>user</em> directory, sepcifying the pdb symbol store</td>
+</tr>
+<tr>
+<td align="right">pdb</td>
+<td align="right">auto-download-pdb</td>
+<td align="right">boolean</td>
+<td align="right">True</td>
+<td align="left">Automatically download pdb files from specified symbol servers</td>
+</tr>
+<tr>
+<td align="right">pdb</td>
+<td align="right">symbol-server-list</td>
+<td align="right">list(string)</td>
+<td align="right">["http://msdl.microsoft.com/download/symbols"]</td>
+<td align="left">List of servers to query for pdb symbols.</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example <code>settings.json</code> setting various options:</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;ui&quot; :
+    {
+        &quot;activeContent&quot; : false,
+        &quot;colorblind&quot; : false,
+        &quot;debug&quot; : true
+    }
+    &quot;pdb&quot; :
+    {
+        &quot;local-store-absolute&quot; : &quot;C:\Symbols&quot;,
+        &quot;local-store-relative&quot; : &quot;&quot;,
+        &quot;symbol-server-list&quot; : [&quot;http://mysymbolserver.company.lan&quot;]
+    }
+}
+</pre></div>
+
+
+<h2 id="getting-support">Getting Support<a class="headerlink" href="#getting-support" title="Permanent link">&para;</a></h2>
+<p>Vector 35 offers a number of ways to get Binary Ninja <a href="https://binary.ninja/support/">support</a>.</p>
+          <aside class="copyright" role="note">
+            
+              (<a href="https://creativecommons.org/licenses/by/3.0/">cc</a>) Vector 35 LLC
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../index.html" title="Home">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Home
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../guide/plugins/index.html" title="Using and Writing Plugins">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Using and Writing Plugins
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        /* General initialization */
+        ga('create', 'UA-72420552-3', 'docs.binary.ninja');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        /* Track outbound links */
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+        /* Register handler to log search on blur */
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+  </body>
+</html>

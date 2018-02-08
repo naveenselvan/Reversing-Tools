@@ -1,0 +1,29 @@
+binaryninja.function.AdvancedFunctionAnalysisDataRequestor
+==========================================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: AdvancedFunctionAnalysisDataRequestor
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AdvancedFunctionAnalysisDataRequestor.__init__
+      ~AdvancedFunctionAnalysisDataRequestor.close
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AdvancedFunctionAnalysisDataRequestor.function
+   
+   

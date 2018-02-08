@@ -1,0 +1,36 @@
+binaryninja.transform.Transform
+===============================
+
+.. currentmodule:: binaryninja.transform
+
+.. autoclass:: Transform
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Transform.__init__
+      ~Transform.decode
+      ~Transform.encode
+      ~Transform.perform_decode
+      ~Transform.perform_encode
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Transform.group
+      ~Transform.long_name
+      ~Transform.name
+      ~Transform.parameters
+      ~Transform.transform_type
+   
+   

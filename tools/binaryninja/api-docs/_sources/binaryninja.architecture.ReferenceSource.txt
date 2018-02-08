@@ -1,0 +1,22 @@
+binaryninja.architecture.ReferenceSource
+========================================
+
+.. currentmodule:: binaryninja.architecture
+
+.. autoclass:: ReferenceSource
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ReferenceSource.__init__
+   
+   
+
+   
+   
+   

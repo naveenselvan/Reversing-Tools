@@ -1,0 +1,6 @@
+binaryninja.interaction.markdown_to_html
+========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: markdown_to_html

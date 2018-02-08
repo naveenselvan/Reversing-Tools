@@ -1,0 +1,31 @@
+binaryninja.function.DisassemblySettings
+========================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: DisassemblySettings
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DisassemblySettings.__init__
+      ~DisassemblySettings.is_option_set
+      ~DisassemblySettings.set_option
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DisassemblySettings.max_symbol_width
+      ~DisassemblySettings.width
+   
+   

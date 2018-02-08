@@ -1,0 +1,6 @@
+binaryninja.interaction.show_markdown_report
+============================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: show_markdown_report

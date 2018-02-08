@@ -1,0 +1,6 @@
+binaryninja.interaction.get_directory_name_input
+================================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: get_directory_name_input

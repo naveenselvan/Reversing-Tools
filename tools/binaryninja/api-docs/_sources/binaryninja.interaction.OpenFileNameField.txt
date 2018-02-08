@@ -1,0 +1,22 @@
+binaryninja.interaction.OpenFileNameField
+=========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: OpenFileNameField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~OpenFileNameField.__init__
+   
+   
+
+   
+   
+   

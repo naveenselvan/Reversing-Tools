@@ -1,0 +1,30 @@
+binaryninja.enums.FlagRole
+==========================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: FlagRole
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FlagRole.CarryFlagRole
+      ~FlagRole.EvenParityFlagRole
+      ~FlagRole.HalfCarryFlagRole
+      ~FlagRole.NegativeSignFlagRole
+      ~FlagRole.OddParityFlagRole
+      ~FlagRole.OverflowFlagRole
+      ~FlagRole.PositiveSignFlagRole
+      ~FlagRole.SpecialFlagRole
+      ~FlagRole.ZeroFlagRole
+   
+   

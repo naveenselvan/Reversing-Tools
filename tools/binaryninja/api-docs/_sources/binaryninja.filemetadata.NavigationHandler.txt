@@ -1,0 +1,16 @@
+binaryninja.filemetadata.NavigationHandler
+==========================================
+
+.. currentmodule:: binaryninja.filemetadata
+
+.. autoclass:: NavigationHandler
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

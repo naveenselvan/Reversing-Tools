@@ -1,0 +1,18 @@
+pluginmanager module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.pluginmanager.RepoPlugin
+   binaryninja.pluginmanager.Repository
+   binaryninja.pluginmanager.RepositoryManager
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.pluginmanager
+   :members:
+   :undoc-members:
+   :show-inheritance:

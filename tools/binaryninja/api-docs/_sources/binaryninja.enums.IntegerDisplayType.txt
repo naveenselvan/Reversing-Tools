@@ -1,0 +1,31 @@
+binaryninja.enums.IntegerDisplayType
+====================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: IntegerDisplayType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~IntegerDisplayType.BinaryDisplayType
+      ~IntegerDisplayType.CharacterConstantDisplayType
+      ~IntegerDisplayType.DefaultIntegerDisplayType
+      ~IntegerDisplayType.PointerDisplayType
+      ~IntegerDisplayType.SignedDecimalDisplayType
+      ~IntegerDisplayType.SignedHexadecimalDisplayType
+      ~IntegerDisplayType.SignedOctalDisplayType
+      ~IntegerDisplayType.UnsignedDecimalDisplayType
+      ~IntegerDisplayType.UnsignedHexadecimalDisplayType
+      ~IntegerDisplayType.UnsignedOctalDisplayType
+   
+   

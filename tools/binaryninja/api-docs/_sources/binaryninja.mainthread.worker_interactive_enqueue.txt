@@ -1,0 +1,6 @@
+binaryninja.mainthread.worker_interactive_enqueue
+=================================================
+
+.. currentmodule:: binaryninja.mainthread
+
+.. autofunction:: worker_interactive_enqueue

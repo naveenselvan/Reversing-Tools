@@ -1,0 +1,25 @@
+binaryninja.enums.MessageBoxButtonResult
+========================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: MessageBoxButtonResult
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MessageBoxButtonResult.CancelButton
+      ~MessageBoxButtonResult.NoButton
+      ~MessageBoxButtonResult.OKButton
+      ~MessageBoxButtonResult.YesButton
+   
+   

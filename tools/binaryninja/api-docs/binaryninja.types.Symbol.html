@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.types.Symbol &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="types module" href="binaryninja.types-module.html"/>
+        <link rel="next" title="binaryninja.types.Type" href="binaryninja.types.Type.html"/>
+        <link rel="prev" title="binaryninja.types.StructureMember" href="binaryninja.types.StructureMember.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.types-module.html">types</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.BoolWithConfidence.html">binaryninja.types.BoolWithConfidence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.Enumeration.html">binaryninja.types.Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.EnumerationMember.html">binaryninja.types.EnumerationMember</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.FunctionParameter.html">binaryninja.types.FunctionParameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.NamedTypeReference.html">binaryninja.types.NamedTypeReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.QualifiedName.html">binaryninja.types.QualifiedName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.ReferenceTypeWithConfidence.html">binaryninja.types.ReferenceTypeWithConfidence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.RegisterSet.html">binaryninja.types.RegisterSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.SizeWithConfidence.html">binaryninja.types.SizeWithConfidence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.Structure.html">binaryninja.types.Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.StructureMember.html">binaryninja.types.StructureMember</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.types.Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.Type.html">binaryninja.types.Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.TypeParserResult.html">binaryninja.types.TypeParserResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.types.preprocess_source.html">binaryninja.types.preprocess_source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.types-module.html">types module</a> &raquo;</li>
+        
+      <li>binaryninja.types.Symbol</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.types.Symbol.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-types-symbol">
+<h1>binaryninja.types.Symbol<a class="headerlink" href="#binaryninja-types-symbol" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.types.Symbol">
+<em class="property">class </em><code class="descclassname">binaryninja.types.</code><code class="descname">Symbol</code><span class="sig-paren">(</span><em>sym_type</em>, <em>addr</em>, <em>short_name</em>, <em>full_name=None</em>, <em>raw_name=None</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/types.html#Symbol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.types.Symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Symbols are defined as one of the following types:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">SymbolType</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>FunctionSymbol</td>
+<td>Symbol for Function that exists in the current binary</td>
+</tr>
+<tr class="row-odd"><td>ImportAddressSymbol</td>
+<td>Symbol defined in the Import Address Table</td>
+</tr>
+<tr class="row-even"><td>ImportedFunctionSymbol</td>
+<td>Symbol for Function that is not defined in the current binary</td>
+</tr>
+<tr class="row-odd"><td>DataSymbol</td>
+<td>Symbol for Data in the current binary</td>
+</tr>
+<tr class="row-even"><td>ImportedDataSymbol</td>
+<td>Symbol for Data that is not defined in the current binary</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="method">
+<dt id="binaryninja.types.Symbol.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sym_type</em>, <em>addr</em>, <em>short_name</em>, <em>full_name=None</em>, <em>raw_name=None</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/types.html#Symbol.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.types.Symbol.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.types.Symbol.__init__" title="binaryninja.types.Symbol.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(sym_type,&nbsp;addr,&nbsp;short_name[,&nbsp;...])</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.address" title="binaryninja.types.Symbol.address"><code class="xref py py-obj docutils literal"><span class="pre">address</span></code></a></td>
+<td>Symbol address (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.auto" title="binaryninja.types.Symbol.auto"><code class="xref py py-obj docutils literal"><span class="pre">auto</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.full_name" title="binaryninja.types.Symbol.full_name"><code class="xref py py-obj docutils literal"><span class="pre">full_name</span></code></a></td>
+<td>Symbol full name (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.name" title="binaryninja.types.Symbol.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a></td>
+<td>Symbol name (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.raw_name" title="binaryninja.types.Symbol.raw_name"><code class="xref py py-obj docutils literal"><span class="pre">raw_name</span></code></a></td>
+<td>Symbol raw name (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.short_name" title="binaryninja.types.Symbol.short_name"><code class="xref py py-obj docutils literal"><span class="pre">short_name</span></code></a></td>
+<td>Symbol short name (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Symbol.type" title="binaryninja.types.Symbol.type"><code class="xref py py-obj docutils literal"><span class="pre">type</span></code></a></td>
+<td>Symbol type (read-only)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.types.Type.html" class="btn btn-neutral float-right" title="binaryninja.types.Type" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.types.StructureMember.html" class="btn btn-neutral" title="binaryninja.types.StructureMember" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

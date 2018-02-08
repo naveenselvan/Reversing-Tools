@@ -1,0 +1,22 @@
+mainthread module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.mainthread.execute_on_main_thread
+   binaryninja.mainthread.execute_on_main_thread_and_wait
+   binaryninja.mainthread.get_worker_thread_count
+   binaryninja.mainthread.set_worker_thread_count
+   binaryninja.mainthread.worker_enqueue
+   binaryninja.mainthread.worker_interactive_enqueue
+   binaryninja.mainthread.worker_priority_enqueue
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.mainthread
+   :members:
+   :undoc-members:
+   :show-inheritance:

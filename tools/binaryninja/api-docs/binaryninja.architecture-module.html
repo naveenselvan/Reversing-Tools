@@ -1,0 +1,1691 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>architecture module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.architecture.Architecture" href="binaryninja.architecture.Architecture.html"/>
+        <link rel="prev" title="Binary Ninja Python API Documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.architecture.Architecture.html">binaryninja.architecture.Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.architecture.ReferenceSource.html">binaryninja.architecture.ReferenceSource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>architecture module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.architecture-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="architecture-module">
+<h1>architecture module<a class="headerlink" href="#architecture-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.architecture.Architecture</span></code></a>([handle])</td>
+<td><code class="docutils literal"><span class="pre">class</span> <span class="pre">Architecture</span></code> is the parent class for all CPU architectures. Subclasses of Architecture implement assembly,</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture.ReferenceSource.html#binaryninja.architecture.ReferenceSource" title="binaryninja.architecture.ReferenceSource"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.architecture.ReferenceSource</span></code></a>(...)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.architecture"></span><dl class="class">
+<dt id="binaryninja.architecture.Architecture">
+<em class="property">class </em><code class="descclassname">binaryninja.architecture.</code><code class="descname">Architecture</code><span class="sig-paren">(</span><em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">Architecture</span></code> is the parent class for all CPU architectures. Subclasses of Architecture implement assembly,
+disassembly, IL lifting, and patching.</p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">Architecture</span></code> has a <code class="docutils literal"><span class="pre">__metaclass__</span></code> with the additional methods <code class="docutils literal"><span class="pre">register</span></code>, and supports
+iteration:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#List the architectures</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Architecture</span><span class="p">)</span>
+<span class="go">[&lt;arch: aarch64&gt;, &lt;arch: armv7&gt;, &lt;arch: armv7eb&gt;, &lt;arch: mipsel32&gt;, &lt;arch: mips32&gt;, &lt;arch: powerpc&gt;,</span>
+<span class="go">&lt;arch: x86&gt;, &lt;arch: x86_64&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#Register a new Architecture</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyArch</span><span class="p">(</span><span class="n">Architecture</span><span class="p">):</span>
+<span class="gp">... </span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;MyArch&quot;</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">MyArch</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Architecture</span><span class="p">)</span>
+<span class="go">[&lt;arch: aarch64&gt;, &lt;arch: armv7&gt;, &lt;arch: armv7eb&gt;, &lt;arch: mipsel32&gt;, &lt;arch: mips32&gt;, &lt;arch: powerpc&gt;,</span>
+<span class="go">&lt;arch: x86&gt;, &lt;arch: x86_64&gt;, &lt;arch: MyArch&gt;]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>For the purposes of this documentation the variable <code class="docutils literal"><span class="pre">arch</span></code> will be used in the following context</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binaryninja</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span> <span class="o">=</span> <span class="n">Architecture</span><span class="p">[</span><span class="s1">&#39;x86&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.address_size">
+<code class="descname">address_size</code><em class="property"> = 8</em><a class="headerlink" href="#binaryninja.architecture.Architecture.address_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.always_branch">
+<code class="descname">always_branch</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.always_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.always_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">always_branch</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of bytes
+of the same length which always branches.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be converted</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">string containing len(data) which always branches to the same location as the provided instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bytes</span> <span class="o">=</span> <span class="n">arch</span><span class="o">.</span><span class="n">always_branch</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;je 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">([&#39;nop     &#39;], 1L)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="nb">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">([&#39;jmp     &#39;, &#39;0x9&#39;], 5L)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.assemble">
+<code class="descname">assemble</code><span class="sig-paren">(</span><em>code</em>, <em>addr=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.assemble"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.assemble" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">assemble</span></code> converts the string of assembly instructions <code class="docutils literal"><span class="pre">code</span></code> loaded at virtual address <code class="docutils literal"><span class="pre">addr</span></code> to the
+byte representation of those instructions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>code</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; string representation of the instructions to be assembled</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address that the instructions will be loaded at</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the bytes for the assembled instructions or error string</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">(a tuple of instructions and empty string) or (or None and error string)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;je 10&quot;</span><span class="p">)</span>
+<span class="go">(&#39;\x0f\x84\x04\x00\x00\x00&#39;, &#39;&#39;)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.calling_conventions">
+<code class="descname">calling_conventions</code><a class="headerlink" href="#binaryninja.architecture.Architecture.calling_conventions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of CallingConvention objects (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.convert_to_nop">
+<code class="descname">convert_to_nop</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.convert_to_nop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.convert_to_nop" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">convert_to_nop</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of nop
+instructions of the same length as data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be converted</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">string containing len(data) worth of no-operation instructions</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">convert_to_nop</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\x00\x00</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">&#39;\x90\x90&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.default_int_size">
+<code class="descname">default_int_size</code><em class="property"> = 4</em><a class="headerlink" href="#binaryninja.architecture.Architecture.default_int_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.endianness">
+<code class="descname">endianness</code><em class="property"> = &lt;Endianness.LittleEndian: 0&gt;</em><a class="headerlink" href="#binaryninja.architecture.Architecture.endianness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.flag_roles">
+<code class="descname">flag_roles</code><em class="property"> = {}</em><a class="headerlink" href="#binaryninja.architecture.Architecture.flag_roles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.flag_write_types">
+<code class="descname">flag_write_types</code><em class="property"> = []</em><a class="headerlink" href="#binaryninja.architecture.Architecture.flag_write_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.flags">
+<code class="descname">flags</code><em class="property"> = []</em><a class="headerlink" href="#binaryninja.architecture.Architecture.flags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.flags_required_for_flag_condition">
+<code class="descname">flags_required_for_flag_condition</code><em class="property"> = {}</em><a class="headerlink" href="#binaryninja.architecture.Architecture.flags_required_for_flag_condition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.flags_written_by_flag_write_type">
+<code class="descname">flags_written_by_flag_write_type</code><em class="property"> = {}</em><a class="headerlink" href="#binaryninja.architecture.Architecture.flags_written_by_flag_write_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.full_width_regs">
+<code class="descname">full_width_regs</code><a class="headerlink" href="#binaryninja.architecture.Architecture.full_width_regs" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of full width register strings (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_associated_arch_by_address">
+<code class="descname">get_associated_arch_by_address</code><span class="sig-paren">(</span><em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_associated_arch_by_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_associated_arch_by_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_default_flag_condition_low_level_il">
+<code class="descname">get_default_flag_condition_low_level_il</code><span class="sig-paren">(</span><em>cond</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_default_flag_condition_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_default_flag_condition_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cond</strong> (<a class="reference internal" href="binaryninja.enums.LowLevelILFlagCondition.html#binaryninja.enums.LowLevelILFlagCondition" title="binaryninja.enums.LowLevelILFlagCondition"><em>LowLevelILFlagCondition</em></a>) &#8211; </li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILExpr.html#binaryninja.lowlevelil.LowLevelILExpr" title="binaryninja.lowlevelil.LowLevelILExpr">LowLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_default_flag_write_low_level_il">
+<code class="descname">get_default_flag_write_low_level_il</code><span class="sig-paren">(</span><em>op</em>, <em>size</em>, <em>role</em>, <em>operands</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_default_flag_write_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_default_flag_write_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>op</strong> (<a class="reference internal" href="binaryninja.enums.LowLevelILOperation.html#binaryninja.enums.LowLevelILOperation" title="binaryninja.enums.LowLevelILOperation"><em>LowLevelILOperation</em></a>) &#8211; </li>
+<li><strong>size</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>role</strong> (<a class="reference internal" href="binaryninja.enums.FlagRole.html#binaryninja.enums.FlagRole" title="binaryninja.enums.FlagRole"><em>FlagRole</em></a>) &#8211; </li>
+<li><strong>or int) operands</strong> (<em>list(str</em>) &#8211; a list of either items that are either string register names or constant              integer values</li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">LowLevelILExpr index</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_by_name">
+<code class="descname">get_flag_by_name</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_flag_by_name</span></code> get flag name for flag index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; flag index</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">flag name for flag index</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_condition_low_level_il">
+<code class="descname">get_flag_condition_low_level_il</code><span class="sig-paren">(</span><em>cond</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_condition_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_condition_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cond</strong> (<a class="reference internal" href="binaryninja.enums.LowLevelILFlagCondition.html#binaryninja.enums.LowLevelILFlagCondition" title="binaryninja.enums.LowLevelILFlagCondition"><em>LowLevelILFlagCondition</em></a>) &#8211; </li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILExpr.html#binaryninja.lowlevelil.LowLevelILExpr" title="binaryninja.lowlevelil.LowLevelILExpr">LowLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_index">
+<code class="descname">get_flag_index</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_name">
+<code class="descname">get_flag_name</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_flag_name</span></code> gets a flag name from a flag number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; register number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the corresponding register string</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_write_low_level_il">
+<code class="descname">get_flag_write_low_level_il</code><span class="sig-paren">(</span><em>op</em>, <em>size</em>, <em>write_type</em>, <em>flag</em>, <em>operands</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_write_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_write_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>op</strong> (<a class="reference internal" href="binaryninja.enums.LowLevelILOperation.html#binaryninja.enums.LowLevelILOperation" title="binaryninja.enums.LowLevelILOperation"><em>LowLevelILOperation</em></a>) &#8211; </li>
+<li><strong>size</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>write_type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; </li>
+<li><strong>or int) operands</strong> (<em>list(str</em>) &#8211; a list of either items that are either string register names or constant              integer values</li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILExpr.html#binaryninja.lowlevelil.LowLevelILExpr" title="binaryninja.lowlevelil.LowLevelILExpr">LowLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_write_type_by_name">
+<code class="descname">get_flag_write_type_by_name</code><span class="sig-paren">(</span><em>write_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_write_type_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_write_type_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_flag_write_type_by_name</span></code> gets the flag write type name for the flage write type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>write_type</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; flag write type</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">flag write type</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_flag_write_type_name">
+<code class="descname">get_flag_write_type_name</code><span class="sig-paren">(</span><em>write_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_flag_write_type_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_flag_write_type_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_flag_write_type_name</span></code> gets the flag write type name for the given flag.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>write_type</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; flag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">flag write type name</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_instruction_info">
+<code class="descname">get_instruction_info</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_instruction_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_instruction_info" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_instruction_info</span></code> returns an InstructionInfo object for the instruction at the given virtual address
+<code class="docutils literal"><span class="pre">addr</span></code> with data <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The instruction info object should always set the InstructionInfo.length to the instruction length,          and the branches of the proper types shoulde be added if the instruction is a branch.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; max_instruction_length bytes from the binary at virtual address <code class="docutils literal"><span class="pre">addr</span></code></li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of bytes in <code class="docutils literal"><span class="pre">data</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the InstructionInfo for the current instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.function.InstructionInfo.html#binaryninja.function.InstructionInfo" title="binaryninja.function.InstructionInfo">InstructionInfo</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_instruction_low_level_il">
+<code class="descname">get_instruction_low_level_il</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_instruction_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_instruction_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_instruction_low_level_il</span></code> appends LowLevelILExpr objects to <code class="docutils literal"><span class="pre">il</span></code> for the instruction at the given
+virtual address <code class="docutils literal"><span class="pre">addr</span></code> with data <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<p>This is used to analyze arbitrary data at an address, if you are working with an existing binary, you likely
+want to be using <code class="docutils literal"><span class="pre">Function.get_low_level_il_at</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; max_instruction_length bytes from the binary at virtual address <code class="docutils literal"><span class="pre">addr</span></code></li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of bytes in <code class="docutils literal"><span class="pre">data</span></code></li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; The function the current instruction belongs to</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the length of the current instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_instruction_low_level_il_instruction">
+<code class="descname">get_instruction_low_level_il_instruction</code><span class="sig-paren">(</span><em>bv</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_instruction_low_level_il_instruction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_instruction_low_level_il_instruction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_instruction_text">
+<code class="descname">get_instruction_text</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_instruction_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_instruction_text" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_instruction_text</span></code> returns a list of InstructionTextToken objects for the instruction at the given virtual
+address <code class="docutils literal"><span class="pre">addr</span></code> with data <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; max_instruction_length bytes from the binary at virtual address <code class="docutils literal"><span class="pre">addr</span></code></li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of bytes in <code class="docutils literal"><span class="pre">data</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">an InstructionTextToken list for the current instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list(InstructionTextToken)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_low_level_il_from_bytes">
+<code class="descname">get_low_level_il_from_bytes</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_low_level_il_from_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_low_level_il_from_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_low_level_il_from_bytes</span></code> converts the instruction in bytes to <code class="docutils literal"><span class="pre">il</span></code> at the given virtual address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the bytes of the instruction</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of bytes in <code class="docutils literal"><span class="pre">data</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILInstruction.html#binaryninja.lowlevelil.LowLevelILInstruction" title="binaryninja.lowlevelil.LowLevelILInstruction">LowLevelILInstruction</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_low_level_il_from_bytes</span><span class="p">(</span><span class="s1">&#39;ëþ&#39;</span><span class="p">,</span> <span class="mh">0x40DEAD</span><span class="p">)</span>
+<span class="go">&lt;il: jump(0x40dead)&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_modified_regs_on_write">
+<code class="descname">get_modified_regs_on_write</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_modified_regs_on_write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_modified_regs_on_write" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_modified_regs_on_write</span></code> returns a list of register names that are modified when <code class="docutils literal"><span class="pre">reg</span></code> is written.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; string register name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of register names</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_reg_index">
+<code class="descname">get_reg_index</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_reg_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_reg_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_reg_name">
+<code class="descname">get_reg_name</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_reg_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_reg_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_reg_name</span></code> gets a register name from a register number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; register number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the corresponding register string</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.get_view_type_constant">
+<code class="descname">get_view_type_constant</code><span class="sig-paren">(</span><em>type_name</em>, <em>const_name</em>, <em>default_value=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.get_view_type_constant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.get_view_type_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_view_type_constant</span></code> retrieves the view type constant for the given type_name and const_name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the BinaryView type name of the constant to be retrieved</li>
+<li><strong>const_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the constant name to retrieved</li>
+<li><strong>value</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; optional default value if the type_name is not present. default value is zero.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The BinaryView type constant or the default_value if not found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int">int</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ELF_RELOC_COPY</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">set_view_type_constant</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;R_COPY&quot;</span><span class="p">,</span> <span class="n">ELF_RELOC_COPY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_view_type_constant</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;R_COPY&quot;</span><span class="p">)</span>
+<span class="go">5L</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_view_type_constant</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;NOT_HERE&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="go">100L</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.global_regs">
+<code class="descname">global_regs</code><em class="property"> = []</em><a class="headerlink" href="#binaryninja.architecture.Architecture.global_regs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.invert_branch">
+<code class="descname">invert_branch</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.invert_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.invert_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">invert_branch</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of bytes
+of the same length which inverts the branch of provided instruction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be converted</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">string containing len(data) which always branches to the same location as the provided instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">invert_branch</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;je 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">([&#39;jne     &#39;, &#39;0xa&#39;], 6L)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">invert_branch</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;jo 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">([&#39;jno     &#39;, &#39;0xa&#39;], 6L)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">invert_branch</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;jge 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">([&#39;jl      &#39;, &#39;0xa&#39;], 6L)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.is_always_branch_patch_available">
+<code class="descname">is_always_branch_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.is_always_branch_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.is_always_branch_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">is_always_branch_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> can be made to
+<strong>always branch</strong>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_always_branch_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;je 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_always_branch_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;nop&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.is_invert_branch_patch_available">
+<code class="descname">is_invert_branch_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.is_invert_branch_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.is_invert_branch_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">is_always_branch_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> can be inverted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_invert_branch_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;je 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_invert_branch_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;nop&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.is_never_branch_patch_available">
+<code class="descname">is_never_branch_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.is_never_branch_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.is_never_branch_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">is_never_branch_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> can be made to <strong>never branch</strong>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_never_branch_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;je 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_never_branch_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;nop&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.is_skip_and_return_value_patch_available">
+<code class="descname">is_skip_and_return_value_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.is_skip_and_return_value_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.is_skip_and_return_value_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> is a <em>call-like</em>
+instruction that can be made into an instruction <em>returns a value</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_skip_and_return_zero_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;call 0&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_skip_and_return_zero_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;jmp eax&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.is_skip_and_return_zero_patch_available">
+<code class="descname">is_skip_and_return_zero_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.is_skip_and_return_zero_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.is_skip_and_return_zero_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> is a <em>call-like</em>
+instruction that can be made into an instruction <em>returns zero</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_skip_and_return_zero_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;call 0&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_skip_and_return_zero_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;call eax&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_skip_and_return_zero_patch_available</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;jmp eax&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.is_view_type_constant_defined">
+<code class="descname">is_view_type_constant_defined</code><span class="sig-paren">(</span><em>type_name</em>, <em>const_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.is_view_type_constant_defined"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.is_view_type_constant_defined" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the BinaryView type name of the constant to query</li>
+<li><strong>const_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the constant name to query</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">set_view_type_constant</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;R_COPY&quot;</span><span class="p">,</span> <span class="n">ELF_RELOC_COPY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_view_type_constant_defined</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;R_COPY&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">is_view_type_constant_defined</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;NOT_THERE&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.link_reg">
+<code class="descname">link_reg</code><em class="property"> = None</em><a class="headerlink" href="#binaryninja.architecture.Architecture.link_reg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.max_instr_length">
+<code class="descname">max_instr_length</code><em class="property"> = 16</em><a class="headerlink" href="#binaryninja.architecture.Architecture.max_instr_length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="#binaryninja.architecture.Architecture.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.next_address">
+<code class="descname">next_address</code><em class="property"> = 0</em><a class="headerlink" href="#binaryninja.architecture.Architecture.next_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.opcode_display_length">
+<code class="descname">opcode_display_length</code><em class="property"> = 8</em><a class="headerlink" href="#binaryninja.architecture.Architecture.opcode_display_length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_always_branch">
+<code class="descname">perform_always_branch</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_always_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_always_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_always_branch</span></code> implements a method which converts the branch represented by the bytes in <code class="docutils literal"><span class="pre">data</span></code> to
+at <code class="docutils literal"><span class="pre">addr</span></code> to an unconditional branch.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The bytes of the replacement unconditional branch instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_assemble">
+<code class="descname">perform_assemble</code><span class="sig-paren">(</span><em>code</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_assemble"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_assemble" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_assemble</span></code> implements a method to convert the string of assembly instructions <code class="docutils literal"><span class="pre">code</span></code> loaded at
+virtual address <code class="docutils literal"><span class="pre">addr</span></code> to the byte representation of those instructions. This can be done by simply shelling
+out to an assembler like yasm or llvm-mc, since this method isn&#8217;t performance sensitive.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is important that the assembler used accepts a syntax identical to the one emitted by the                 disassembler. This will prevent confusing the user.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>code</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; string representation of the instructions to be assembled</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address that the instructions will be loaded at</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the bytes for the assembled instructions or error string</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(a tuple of instructions and empty string) or (or None and error string)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_convert_to_nop">
+<code class="descname">perform_convert_to_nop</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_convert_to_nop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_convert_to_nop" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_convert_to_nop</span></code> implements a method which returns a nop sequence of len(data) bytes long.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes at virtual address <code class="docutils literal"><span class="pre">addr</span></code></li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">nop sequence of same length as <code class="docutils literal"><span class="pre">data</span></code> or None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str or None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_get_associated_arch_by_address">
+<code class="descname">perform_get_associated_arch_by_address</code><span class="sig-paren">(</span><em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_get_associated_arch_by_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_get_associated_arch_by_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_get_flag_condition_low_level_il">
+<code class="descname">perform_get_flag_condition_low_level_il</code><span class="sig-paren">(</span><em>cond</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_get_flag_condition_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_get_flag_condition_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cond</strong> (<a class="reference internal" href="binaryninja.enums.LowLevelILFlagCondition.html#binaryninja.enums.LowLevelILFlagCondition" title="binaryninja.enums.LowLevelILFlagCondition"><em>LowLevelILFlagCondition</em></a>) &#8211; </li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILExpr.html#binaryninja.lowlevelil.LowLevelILExpr" title="binaryninja.lowlevelil.LowLevelILExpr">LowLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_get_flag_write_low_level_il">
+<code class="descname">perform_get_flag_write_low_level_il</code><span class="sig-paren">(</span><em>op</em>, <em>size</em>, <em>write_type</em>, <em>flag</em>, <em>operands</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_get_flag_write_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_get_flag_write_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>op</strong> (<a class="reference internal" href="binaryninja.enums.LowLevelILOperation.html#binaryninja.enums.LowLevelILOperation" title="binaryninja.enums.LowLevelILOperation"><em>LowLevelILOperation</em></a>) &#8211; </li>
+<li><strong>size</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>write_type</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>flag</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>list(int_or_str)</strong> &#8211; </li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILExpr.html#binaryninja.lowlevelil.LowLevelILExpr" title="binaryninja.lowlevelil.LowLevelILExpr">LowLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_get_instruction_info">
+<code class="descname">perform_get_instruction_info</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_get_instruction_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_get_instruction_info" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_get_instruction_info</span></code> implements a method which interpretes the bytes passed in <code class="docutils literal"><span class="pre">data</span></code> as an
+<code class="xref py py-class docutils literal"><span class="pre">InstructionInfo</span></code> object. The InstructionInfo object should have the length of the current instruction.
+If the instruction is a branch instruction the method should add a branch of the proper type:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">BranchType</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>UnconditionalBranch</td>
+<td>Branch will always be taken</td>
+</tr>
+<tr class="row-odd"><td>FalseBranch</td>
+<td>False branch condition</td>
+</tr>
+<tr class="row-even"><td>TrueBranch</td>
+<td>True branch condition</td>
+</tr>
+<tr class="row-odd"><td>CallDestination</td>
+<td>Branch is a call instruction (Branch with Link)</td>
+</tr>
+<tr class="row-even"><td>FunctionReturn</td>
+<td>Branch returns from a function</td>
+</tr>
+<tr class="row-odd"><td>SystemCall</td>
+<td>System call instruction</td>
+</tr>
+<tr class="row-even"><td>IndirectBranch</td>
+<td>Branch destination is a memory address or register</td>
+</tr>
+<tr class="row-odd"><td>UnresolvedBranch</td>
+<td>Call instruction that isn&#8217;t</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to decode</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the byte to be decoded</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a <code class="xref py py-class docutils literal"><span class="pre">InstructionInfo</span></code> object containing the length and branche types for the given instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.function.InstructionInfo.html#binaryninja.function.InstructionInfo" title="binaryninja.function.InstructionInfo">InstructionInfo</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_get_instruction_low_level_il">
+<code class="descname">perform_get_instruction_low_level_il</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em>, <em>il</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_get_instruction_low_level_il"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_get_instruction_low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_get_instruction_low_level_il</span></code> implements a method to interpret the bytes passed in <code class="docutils literal"><span class="pre">data</span></code> to
+low-level IL instructions. The il instructions must be appended to the <code class="xref py py-class docutils literal"><span class="pre">LowLevelILFunction</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be interpreted as low-level IL instructions</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of start of <code class="docutils literal"><span class="pre">data</span></code></li>
+<li><strong>il</strong> (<a class="reference internal" href="binaryninja.lowlevelil.LowLevelILFunction.html#binaryninja.lowlevelil.LowLevelILFunction" title="binaryninja.lowlevelil.LowLevelILFunction"><em>LowLevelILFunction</em></a>) &#8211; LowLevelILFunction object to append LowLevelILExpr objects to</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">length of bytes read on success, None on failure</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_get_instruction_text">
+<code class="descname">perform_get_instruction_text</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_get_instruction_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_get_instruction_text" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_get_instruction_text</span></code> implements a method which interpretes the bytes passed in <code class="docutils literal"><span class="pre">data</span></code> as a
+list of <code class="xref py py-class docutils literal"><span class="pre">InstructionTextToken</span></code> objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to decode</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the byte to be decoded</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a tuple of list(InstructionTextToken) and length of instruction decoded</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple(list(InstructionTextToken), int)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_invert_branch">
+<code class="descname">perform_invert_branch</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_invert_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_invert_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_invert_branch</span></code> implements a method which inverts the branch represented by the bytes in <code class="docutils literal"><span class="pre">data</span></code> to
+at <code class="docutils literal"><span class="pre">addr</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The bytes of the replacement unconditional branch instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_is_always_branch_patch_available">
+<code class="descname">perform_is_always_branch_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_is_always_branch_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_is_always_branch_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_is_always_branch_patch_available</span></code> implements a check to determine if the instruction represented by
+the bytes contained in <code class="docutils literal"><span class="pre">data</span></code> at address addr is a conditional branch that can be made unconditional.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_is_invert_branch_patch_available">
+<code class="descname">perform_is_invert_branch_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_is_invert_branch_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_is_invert_branch_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_is_invert_branch_patch_available</span></code> implements a check to determine if the instruction represented by
+the bytes contained in <code class="docutils literal"><span class="pre">data</span></code> at address addr is a conditional branch which can be inverted.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the instruction can be patched, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_is_never_branch_patch_available">
+<code class="descname">perform_is_never_branch_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_is_never_branch_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_is_never_branch_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_is_never_branch_patch_available</span></code> implements a check to determine if the instruction represented by
+the bytes contained in <code class="docutils literal"><span class="pre">data</span></code> at address addr is a branch instruction that can be made to never branch.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_is_skip_and_return_value_patch_available">
+<code class="descname">perform_is_skip_and_return_value_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_is_skip_and_return_value_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_is_skip_and_return_value_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_is_skip_and_return_value_patch_available</span></code> implements a check to determine if the instruction represented by
+the bytes contained in <code class="docutils literal"><span class="pre">data</span></code> at address addr is a <em>call-like</em> instruction which can made into instructions
+that are equivilent to &#8220;return 0&#8221;. For example if <code class="docutils literal"><span class="pre">data</span></code> was the x86 instruction <code class="docutils literal"><span class="pre">call</span> <span class="pre">0xdeadbeef</span></code> which could be
+converted into <code class="docutils literal"><span class="pre">mov</span> <span class="pre">eax,</span> <span class="pre">42</span></code> thus this function would return True.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_is_skip_and_return_zero_patch_available">
+<code class="descname">perform_is_skip_and_return_zero_patch_available</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_is_skip_and_return_zero_patch_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_is_skip_and_return_zero_patch_available" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_is_skip_and_return_zero_patch_available</span></code> implements a check to determine if the instruction represented by
+the bytes contained in <code class="docutils literal"><span class="pre">data</span></code> at address addr is a <em>call-like</em> instruction which can made into instructions
+that are equivilent to &#8220;return 0&#8221;. For example if <code class="docutils literal"><span class="pre">data</span></code> was the x86 instruction <code class="docutils literal"><span class="pre">call</span> <span class="pre">eax</span></code> which could be
+converted into <code class="docutils literal"><span class="pre">xor</span> <span class="pre">eax,eax</span></code> thus this function would return True.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the instruction can be patched, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.bool" title="binaryninja.types.Type.bool">bool</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.perform_skip_and_return_value">
+<code class="descname">perform_skip_and_return_value</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.perform_skip_and_return_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.perform_skip_and_return_value" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">perform_skip_and_return_value</span></code> implements a method which converts a <em>call-like</em> instruction represented by
+the bytes in <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> to one or more instructions that are equivilent to a function returning a
+value.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method should never be called directly.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes to be checked</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+<li><strong>value</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; value to be returned</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The bytes of the replacement unconditional branch instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.register_calling_convention">
+<code class="descname">register_calling_convention</code><span class="sig-paren">(</span><em>cc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.register_calling_convention"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.register_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">register_calling_convention</span></code> registers a new calling convention for the Architecture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cc</strong> (<a class="reference internal" href="binaryninja.callingconvention.CallingConvention.html#binaryninja.callingconvention.CallingConvention" title="binaryninja.callingconvention.CallingConvention"><em>CallingConvention</em></a>) &#8211; CallingConvention object to be registered</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.regs">
+<code class="descname">regs</code><em class="property"> = {}</em><a class="headerlink" href="#binaryninja.architecture.Architecture.regs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.set_view_type_constant">
+<code class="descname">set_view_type_constant</code><span class="sig-paren">(</span><em>type_name</em>, <em>const_name</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.set_view_type_constant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.set_view_type_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">set_view_type_constant</span></code> creates a new binaryview type constant.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the BinaryView type name of the constant to be registered</li>
+<li><strong>const_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the constant name to register</li>
+<li><strong>value</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the value of the constant</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ELF_RELOC_COPY</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">set_view_type_constant</span><span class="p">(</span><span class="s2">&quot;ELF&quot;</span><span class="p">,</span> <span class="s2">&quot;R_COPY&quot;</span><span class="p">,</span> <span class="n">ELF_RELOC_COPY</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.skip_and_return_value">
+<code class="descname">skip_and_return_value</code><span class="sig-paren">(</span><em>data</em>, <em>addr</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.skip_and_return_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.skip_and_return_value" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">skip_and_return_value</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of
+bytes of the same length which doesn&#8217;t call and instead <em>return a value</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; bytes for the instruction to be converted</li>
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; the virtual address of the instruction to be patched</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">string containing len(data) which always branches to the same location as the provided instruction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">skip_and_return_value</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;call 10&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">([&#39;mov     &#39;, &#39;eax&#39;, &#39;, &#39;, &#39;0x0&#39;], 5L)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.stack_pointer">
+<code class="descname">stack_pointer</code><em class="property"> = None</em><a class="headerlink" href="#binaryninja.architecture.Architecture.stack_pointer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.architecture.Architecture.standalone_platform">
+<code class="descname">standalone_platform</code><a class="headerlink" href="#binaryninja.architecture.Architecture.standalone_platform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Architecture standalone platform (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.architecture.ReferenceSource">
+<em class="property">class </em><code class="descclassname">binaryninja.architecture.</code><code class="descname">ReferenceSource</code><span class="sig-paren">(</span><em>func</em>, <em>arch</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#ReferenceSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.ReferenceSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.architecture.Architecture.html" class="btn btn-neutral float-right" title="binaryninja.architecture.Architecture" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Binary Ninja Python API Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

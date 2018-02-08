@@ -1,0 +1,53 @@
+binaryninja.platform.Platform
+=============================
+
+.. currentmodule:: binaryninja.platform
+
+.. autoclass:: Platform
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Platform.__init__
+      ~Platform.add_related_platform
+      ~Platform.generate_auto_platform_type_id
+      ~Platform.generate_auto_platform_type_ref
+      ~Platform.get_associated_platform_by_address
+      ~Platform.get_auto_platform_type_id_source
+      ~Platform.get_function_by_name
+      ~Platform.get_related_platform
+      ~Platform.get_system_call_name
+      ~Platform.get_system_call_type
+      ~Platform.get_type_by_name
+      ~Platform.get_variable_by_name
+      ~Platform.parse_types_from_source
+      ~Platform.parse_types_from_source_file
+      ~Platform.register
+      ~Platform.register_calling_convention
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Platform.calling_conventions
+      ~Platform.cdecl_calling_convention
+      ~Platform.default_calling_convention
+      ~Platform.fastcall_calling_convention
+      ~Platform.functions
+      ~Platform.name
+      ~Platform.stdcall_calling_convention
+      ~Platform.system_call_convention
+      ~Platform.system_calls
+      ~Platform.types
+      ~Platform.variables
+   
+   

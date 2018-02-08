@@ -1,0 +1,22 @@
+binaryninja.interaction.SaveFileNameField
+=========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: SaveFileNameField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SaveFileNameField.__init__
+   
+   
+
+   
+   
+   

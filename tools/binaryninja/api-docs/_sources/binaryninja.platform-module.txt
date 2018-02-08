@@ -1,0 +1,16 @@
+platform module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.platform.Platform
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.platform
+   :members:
+   :undoc-members:
+   :show-inheritance:

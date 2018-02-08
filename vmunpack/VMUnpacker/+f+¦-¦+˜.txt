@@ -1,0 +1,154 @@
+超级巡警之虚拟机自动脱壳机 V1.3
+
+
+
+
+大成天下-数据安全实验室(DSW LABS) 出品
+
+
+
+    本工具完全基于虚拟机技术，对各种已知未知壳进行脱壳处理，适合病毒分析中对加壳的木马样本进行脱壳处理。由于所有代码均运行在虚拟机中，不会对系统造成任何危害。
+
+    本软件产品为免费软件，用户可以非商业性地下载、安装、复制和散发本软件产品。如果需要进行商业性的销售、复制和散发，例如反病毒公司用来批量分析木马，必须获得DSWLAB的授权和许可，商业公司及团队使用本软件必须获得DSWLAB的授权和许可。
+
+    欢迎使用本程序并反馈问题致support@dswlab.com
+    
+    如果你在使用中遇到问题，请提交未脱壳的程序给我们，能提供该程序的加壳工具更好，提交方法将程序发送到support@dswlab.com。
+
+
+V1.3 改动：
+
+    1.新支持脱upx 多个最新修改版
+    2.新支持脱RLPack base edition v1.19
+    3.新支持EXEFog v1.1
+    4.新支持ASDPack
+    5.新增加yoda's protector 1.03.3 版本的支持
+    6.新增加支持pebundle，包括该壳的内存捆绑方式和文件捆绑方式。
+    7.新增支持neolite
+    8.新增支持naked packer
+    9.修正几个壳脱壳方法
+    10.由于部分不支持脱壳的杀毒软件会误报我们提供的测试文件为病毒，所以本版中不再提供测试文件。
+
+
+正式提供商用的虚拟脱壳引擎开发包(VM Unpack Engine SDK)。
+
+虚拟脱壳引擎开发包(VM Unpack Engine SDK)：
+
+    使用虚拟脱壳引擎，开发商无需关心具体的脱壳过程和脱壳方法，只需要将数据传送给我们的VMUE SDK，虚拟脱壳引擎会自动完成壳分析和脱壳过程。我们同时支持将壳脱到文件和脱到内存缓冲区，并且直接返回脱壳后的OEP地址，方便您在自己的产品和工具中直接调用处理。
+    
+    提供脱壳后修复程序导入表，修复附加数据等功能，为重建可运行EXE提供必要条件。
+
+VMUE SDK开发包中，主要包括如下部分：
+
+    相关的动态或者静态链接库
+    脱壳引擎SDK技术白皮书和接口规范文档
+    调用示例代码
+    2进制壳特征库
+    其他辅助程序和代码
+
+
+经过精确测试支持的壳列表! V1.2版本，已经不能代表最新版，该列表不在更新：
+
+    upx 0.5x-3.00  All Version
+    BeRoEXEPacker
+    aspack 1.x--2.x   All Version
+    PEcompact 0.90--1.76 2.06--2.79   All Version
+    fsg v1.0 v1.1 v1.2 v1.3 v1.31 v1.33 v2.0  All Version
+    vgcrypt v0.75
+    nspack 1.4--4.1  All Version
+    expressor v1.0 v1.1 v1.2 v1.3 v1.4 v1.501  /  网友称闪电壳
+    npack v1.5 v2.5 v3.0 
+    dxpack v0.86 v1.0
+    !epack v1.0 !epack v1.4
+    bjfnt v1.2 v1.3
+    mew5 mew v1.0 v1.1
+    packman v1.0
+    PEDiminisher v0.1
+    pex v0.99
+    petite v1.2 v1.3 v1.4 v2.2 v2.3  All Version
+    winkript v1.0
+    pklite32
+    pepack v0.99 v1.0
+    pcshrinker v0.71
+    wwpack32 1.0--1.2
+    upack 0.1--0.32 0.33--0.399
+    rlpack 1.11--1.14 1.15--1.18
+    exe32pack v1.42
+    kbys v0.22 v0.28  /  网友称涛涛压缩器
+    yoda's protector v1.02 v1.025 v1.03.2
+    yoda's crypt v1.1
+    yoda's crypt v1.2 v1.3 v1.xModify  / 网友修改版
+    XJ  / 国产仙剑望海潮壳
+    exestealth  2.72--2.76
+    hidepe v1.0 v1.1
+    jdpack v1.01 v2.1 v2.13
+    jdprotect 0.9b
+    PEncrypt v3.0 v3.1 v4.0
+    Stone's PE Crypt v1.13
+    telock v0.42 v0.51 v0.60 v0.70 v0.71 v0.80 v0.85 v0.90 v0.92 v0.95 v0.96 v0.98 v0.99 
+    ezip
+    hmimys_pack v1.0
+    lamecrypt v1.0
+    depack
+    polyene v0.01
+    dragonArmour
+    EP Protector v0.3
+    PackItBitch
+    trojan_protect  / 木马彩衣    //国内常用的木马伪装工具
+    anti007 v2.5 v2.6
+    mkfpack
+    yzpack v1.1  v2.0
+    spack method1  spack method2
+    naked packer v1.0
+      
+    upolyx v0.51 
+    stealthPE v1.01   stealthPE v2.2  
+    mslrh v0.31 v0.32
+    mslrh v0.2 == [G!X]'s Protect
+    morphine v1.3 morphine v1.6 morphine v2.7
+    rlpack full edition
+    naked packer v1.0
+    EXEFog v1.1
+    ASDPack
+    PEBundle
+    Neolite
+
+    ..\TestFils  目录中有几个测试样例文件。
+    
+    注意：部分无法脱壳的查毒的杀毒软件会对我们的测试文件误报发出报警，测试文件均无毒无害。
+          这些报警的杀毒软件因无法脱壳查毒造成查毒结果不精确，用户可用此来判断杀毒软件检测能力。
+    
+    测试文件说明：
+    
+    测试文件为两个文件，信息如下：
+    
+    文件1：
+    
+    原始文件名：mouserate.exe
+    功能：一个测试鼠标精度和坐标的程序，你可以在http://www.tscherwitschke.de下载到最新版，程序采用VC编写。
+    原始文件MD5：ec6aede62d797a08cbc53f3c4602157c *mouserate.exe
+    原始文件大小：19,968字节
+    
+    使用Nspack4.1版压缩，即测试文件：Test_nspack41.exe
+    
+    文件2:
+    
+    原始文件名：notepad.exe
+    功能：记事本程序，微软出品，你可以在Windows98中找到它，程序采用VC编写。
+    原始文件MD5：e90e9b4bfcf919c28ef937fdc8651165 *notepad.exe
+    原始文件大小：53,248字节
+    
+    分别使用四个壳压缩测试，为：
+    
+    Test_aspack2.12.exe
+    Test_pecompactV2.x.exe
+    Test_upack0.39.exe
+    Test_yoda's Protect v1.03.2.exe
+ 
+    任何文件在内存DUMP后都会存在节对其等情况从而导致跟原始文件MD5不一致，所以如果用VMUnpacker脱掉用MD5变化，属于正常，但这不影响反汇编之类的二进制对比。
+
+
+
+超级巡警：彻底查杀各种木马，全面保护系统安全。
+更多免费工具下载：http://www.dswlab.com
+专业的桌面与内容安全产品：http://www.unnoo.com

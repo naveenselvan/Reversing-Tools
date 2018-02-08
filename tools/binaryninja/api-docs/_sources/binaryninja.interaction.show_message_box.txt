@@ -1,0 +1,6 @@
+binaryninja.interaction.show_message_box
+========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: show_message_box

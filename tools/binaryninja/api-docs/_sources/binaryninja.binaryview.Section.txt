@@ -1,0 +1,28 @@
+binaryninja.binaryview.Section
+==============================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: Section
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Section.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Section.end
+   
+   

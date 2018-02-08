@@ -1,0 +1,35 @@
+binaryninja.binaryview.BinaryDataNotification
+=============================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: BinaryDataNotification
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BinaryDataNotification.__init__
+      ~BinaryDataNotification.data_inserted
+      ~BinaryDataNotification.data_removed
+      ~BinaryDataNotification.data_var_added
+      ~BinaryDataNotification.data_var_removed
+      ~BinaryDataNotification.data_var_updated
+      ~BinaryDataNotification.data_written
+      ~BinaryDataNotification.function_added
+      ~BinaryDataNotification.function_removed
+      ~BinaryDataNotification.function_updated
+      ~BinaryDataNotification.string_found
+      ~BinaryDataNotification.string_removed
+      ~BinaryDataNotification.type_defined
+      ~BinaryDataNotification.type_undefined
+   
+   
+
+   
+   
+   

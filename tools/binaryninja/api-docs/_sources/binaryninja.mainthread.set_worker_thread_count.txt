@@ -1,0 +1,6 @@
+binaryninja.mainthread.set_worker_thread_count
+==============================================
+
+.. currentmodule:: binaryninja.mainthread
+
+.. autofunction:: set_worker_thread_count

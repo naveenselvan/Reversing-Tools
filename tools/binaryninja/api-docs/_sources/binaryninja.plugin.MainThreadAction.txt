@@ -1,0 +1,30 @@
+binaryninja.plugin.MainThreadAction
+===================================
+
+.. currentmodule:: binaryninja.plugin
+
+.. autoclass:: MainThreadAction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MainThreadAction.__init__
+      ~MainThreadAction.execute
+      ~MainThreadAction.wait
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MainThreadAction.done
+   
+   

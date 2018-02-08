@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>setting module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.setting.Setting" href="binaryninja.setting.Setting.html"/>
+        <link rel="prev" title="binaryninja.scriptingprovider.ScriptingProvider" href="binaryninja.scriptingprovider.ScriptingProvider.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">setting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.setting.Setting.html">binaryninja.setting.Setting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>setting module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.setting-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setting-module">
+<h1>setting module<a class="headerlink" href="#setting-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.setting.Setting.html#binaryninja.setting.Setting" title="binaryninja.setting.Setting"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.setting.Setting</span></code></a>([plugin_name])</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.setting"></span><dl class="class">
+<dt id="binaryninja.setting.Setting">
+<em class="property">class </em><code class="descclassname">binaryninja.setting.</code><code class="descname">Setting</code><span class="sig-paren">(</span><em>plugin_name='core'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.setting.Setting.get_bool">
+<code class="descname">get_bool</code><span class="sig-paren">(</span><em>name</em>, <em>default_value=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.get_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.get_bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.get_double">
+<code class="descname">get_double</code><span class="sig-paren">(</span><em>name</em>, <em>default_value=0.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.get_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.get_double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.get_integer">
+<code class="descname">get_integer</code><span class="sig-paren">(</span><em>name</em>, <em>default_value=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.get_integer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.get_integer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.get_integer_list">
+<code class="descname">get_integer_list</code><span class="sig-paren">(</span><em>name</em>, <em>default_value=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.get_integer_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.get_integer_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.get_string">
+<code class="descname">get_string</code><span class="sig-paren">(</span><em>name</em>, <em>default_value=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.get_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.get_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.get_string_list">
+<code class="descname">get_string_list</code><span class="sig-paren">(</span><em>name</em>, <em>default_value=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.get_string_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.get_string_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_bool">
+<code class="descname">is_bool</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_double">
+<code class="descname">is_double</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_integer">
+<code class="descname">is_integer</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_integer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_integer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_integer_list">
+<code class="descname">is_integer_list</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_integer_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_integer_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_present">
+<code class="descname">is_present</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_present"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_present" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_string">
+<code class="descname">is_string</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.is_string_list">
+<code class="descname">is_string_list</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.is_string_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.is_string_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.remove_setting">
+<code class="descname">remove_setting</code><span class="sig-paren">(</span><em>setting</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.remove_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.remove_setting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.remove_setting_group">
+<code class="descname">remove_setting_group</code><span class="sig-paren">(</span><em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.remove_setting_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.remove_setting_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set_bool">
+<code class="descname">set_bool</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set_bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set_double">
+<code class="descname">set_double</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set_double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set_integer">
+<code class="descname">set_integer</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set_integer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set_integer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set_integer_list">
+<code class="descname">set_integer_list</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set_integer_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set_integer_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set_string">
+<code class="descname">set_string</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.setting.Setting.set_string_list">
+<code class="descname">set_string_list</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>auto_flush=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/setting.html#Setting.set_string_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.setting.Setting.set_string_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.setting.Setting.html" class="btn btn-neutral float-right" title="binaryninja.setting.Setting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.scriptingprovider.ScriptingProvider.html" class="btn btn-neutral" title="binaryninja.scriptingprovider.ScriptingProvider" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

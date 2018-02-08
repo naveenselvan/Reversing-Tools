@@ -1,0 +1,37 @@
+binaryninja.types.Structure
+===========================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: Structure
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Structure.__init__
+      ~Structure.append
+      ~Structure.insert
+      ~Structure.remove
+      ~Structure.replace
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Structure.alignment
+      ~Structure.members
+      ~Structure.packed
+      ~Structure.type
+      ~Structure.union
+      ~Structure.width
+   
+   

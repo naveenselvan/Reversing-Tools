@@ -1,0 +1,59 @@
+binaryninja.mediumlevelil.MediumLevelILInstruction
+==================================================
+
+.. currentmodule:: binaryninja.mediumlevelil
+
+.. autoclass:: MediumLevelILInstruction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MediumLevelILInstruction.__init__
+      ~MediumLevelILInstruction.get_branch_dependence
+      ~MediumLevelILInstruction.get_flag_value
+      ~MediumLevelILInstruction.get_flag_value_after
+      ~MediumLevelILInstruction.get_possible_flag_values
+      ~MediumLevelILInstruction.get_possible_flag_values_after
+      ~MediumLevelILInstruction.get_possible_reg_values
+      ~MediumLevelILInstruction.get_possible_reg_values_after
+      ~MediumLevelILInstruction.get_possible_stack_contents
+      ~MediumLevelILInstruction.get_possible_stack_contents_after
+      ~MediumLevelILInstruction.get_reg_value
+      ~MediumLevelILInstruction.get_reg_value_after
+      ~MediumLevelILInstruction.get_ssa_var_possible_values
+      ~MediumLevelILInstruction.get_ssa_var_version
+      ~MediumLevelILInstruction.get_stack_contents
+      ~MediumLevelILInstruction.get_stack_contents_after
+      ~MediumLevelILInstruction.get_var_for_flag
+      ~MediumLevelILInstruction.get_var_for_reg
+      ~MediumLevelILInstruction.get_var_for_stack_location
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MediumLevelILInstruction.ILOperations
+      ~MediumLevelILInstruction.branch_dependence
+      ~MediumLevelILInstruction.expr_type
+      ~MediumLevelILInstruction.low_level_il
+      ~MediumLevelILInstruction.non_ssa_form
+      ~MediumLevelILInstruction.possible_values
+      ~MediumLevelILInstruction.postfix_operands
+      ~MediumLevelILInstruction.prefix_operands
+      ~MediumLevelILInstruction.ssa_form
+      ~MediumLevelILInstruction.ssa_memory_version
+      ~MediumLevelILInstruction.tokens
+      ~MediumLevelILInstruction.value
+      ~MediumLevelILInstruction.vars_read
+      ~MediumLevelILInstruction.vars_written
+   
+   

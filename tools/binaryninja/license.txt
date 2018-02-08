@@ -1,0 +1,12 @@
+[
+  {
+    "product": "Binary Ninja Personal",
+    "email": "amritabi0s1@gmail.com",
+    "serial": "c3e077b28f4b6964e560a56dd469ca2d",
+    "created": "Sun, 24 Sep 2017 09:36:58 GMT",
+    "type": "user",
+    "count": 1,
+    "data": "T4ZEoc42VXgWq72cDKcPkHwV3ovG+2CuJD6rpv0Bv8UNYebiRgR+W4ML2+GYZ2b5qfD+lFN7qL4YSYBAtnrTZgNMpO1VfyxGqaItcwiTgKR2jxf1NvfdrfMEUEeaHS/j7yN+YG54oC7YXWQbauj8wOThIHNbc/qLp7VZgSIirUs9OxcHl6FqbOCHcZTg2M7w4eZFgaG2ocitv+ffjBG9vWkq0u62NPiLm1PkOb35hhj+YYGhS0pd71zt8BGUgNhS+Zcw9plPOpDiRRXVkqavosr6W8XORsrn3h1tCpvARAyV2CKiB3Q1Griu8ZlaFgNsyiitR7nkLW4O3Ll0gp6jyClVkWdKFPqTFsG0M2kKYBxDttf0aIzSfA==",
+    "signature": "fVk6bDGPe+pE1ONxVcxYBjdRqKWUpizxdrUIZxYEjTHjb1U9taC9ad0Hr0N/MB2bvgx/RUI3gLC/iBkw8wbriwXNlZEPkELqpm4eumPr/tPB6yNh8hjx8UlulQM4sGrr0THFyS0YJvCoCVSMHpO3rEi/+NEmmKarGQVaGyYsrJRn4JF5xcns+ZyNx9zUykPIL5p/2p1OrFr5GzeMNvGE9T2WGtvEmJ0RURDoZmyy+JqQUOg1LsyIxDQriOUSqaXNKLMIq4DQp4hoJ5zNuf1nIZMCLXArFWn2B9e30AxMl3NCE8pCc28bQZAM2RyGxb0NnoZxHPN83aDxuEXtQmG1WQ=="
+  }
+]

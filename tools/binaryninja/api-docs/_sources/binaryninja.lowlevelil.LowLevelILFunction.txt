@@ -1,0 +1,130 @@
+binaryninja.lowlevelil.LowLevelILFunction
+=========================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autoclass:: LowLevelILFunction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LowLevelILFunction.__init__
+      ~LowLevelILFunction.add
+      ~LowLevelILFunction.add_carry
+      ~LowLevelILFunction.add_label_for_address
+      ~LowLevelILFunction.add_label_list
+      ~LowLevelILFunction.add_operand_list
+      ~LowLevelILFunction.and_expr
+      ~LowLevelILFunction.append
+      ~LowLevelILFunction.arith_shift_right
+      ~LowLevelILFunction.breakpoint
+      ~LowLevelILFunction.call
+      ~LowLevelILFunction.call_stack_adjust
+      ~LowLevelILFunction.clear_indirect_branches
+      ~LowLevelILFunction.compare_equal
+      ~LowLevelILFunction.compare_not_equal
+      ~LowLevelILFunction.compare_signed_greater_equal
+      ~LowLevelILFunction.compare_signed_greater_than
+      ~LowLevelILFunction.compare_signed_less_equal
+      ~LowLevelILFunction.compare_signed_less_than
+      ~LowLevelILFunction.compare_unsigned_greater_equal
+      ~LowLevelILFunction.compare_unsigned_greater_than
+      ~LowLevelILFunction.compare_unsigned_less_equal
+      ~LowLevelILFunction.compare_unsigned_less_than
+      ~LowLevelILFunction.const
+      ~LowLevelILFunction.const_pointer
+      ~LowLevelILFunction.div_double_prec_signed
+      ~LowLevelILFunction.div_double_prec_unsigned
+      ~LowLevelILFunction.div_signed
+      ~LowLevelILFunction.div_unsigned
+      ~LowLevelILFunction.expr
+      ~LowLevelILFunction.finalize
+      ~LowLevelILFunction.flag
+      ~LowLevelILFunction.flag_bit
+      ~LowLevelILFunction.flag_condition
+      ~LowLevelILFunction.get_instruction_start
+      ~LowLevelILFunction.get_label_for_address
+      ~LowLevelILFunction.get_mapped_medium_level_il_expr_index
+      ~LowLevelILFunction.get_mapped_medium_level_il_instruction_index
+      ~LowLevelILFunction.get_medium_level_il_expr_index
+      ~LowLevelILFunction.get_medium_level_il_instruction_index
+      ~LowLevelILFunction.get_non_ssa_instruction_index
+      ~LowLevelILFunction.get_ssa_flag_definition
+      ~LowLevelILFunction.get_ssa_flag_uses
+      ~LowLevelILFunction.get_ssa_flag_value
+      ~LowLevelILFunction.get_ssa_instruction_index
+      ~LowLevelILFunction.get_ssa_memory_definition
+      ~LowLevelILFunction.get_ssa_memory_uses
+      ~LowLevelILFunction.get_ssa_reg_definition
+      ~LowLevelILFunction.get_ssa_reg_uses
+      ~LowLevelILFunction.get_ssa_reg_value
+      ~LowLevelILFunction.goto
+      ~LowLevelILFunction.if_expr
+      ~LowLevelILFunction.jump
+      ~LowLevelILFunction.load
+      ~LowLevelILFunction.logical_shift_right
+      ~LowLevelILFunction.low_part
+      ~LowLevelILFunction.mark_label
+      ~LowLevelILFunction.mod_double_prec_signed
+      ~LowLevelILFunction.mod_double_prec_unsigned
+      ~LowLevelILFunction.mod_signed
+      ~LowLevelILFunction.mod_unsigned
+      ~LowLevelILFunction.mult
+      ~LowLevelILFunction.mult_double_prec_signed
+      ~LowLevelILFunction.mult_double_prec_unsigned
+      ~LowLevelILFunction.neg_expr
+      ~LowLevelILFunction.no_ret
+      ~LowLevelILFunction.nop
+      ~LowLevelILFunction.not_expr
+      ~LowLevelILFunction.operand
+      ~LowLevelILFunction.or_expr
+      ~LowLevelILFunction.pop
+      ~LowLevelILFunction.push
+      ~LowLevelILFunction.reg
+      ~LowLevelILFunction.ret
+      ~LowLevelILFunction.rotate_left
+      ~LowLevelILFunction.rotate_left_carry
+      ~LowLevelILFunction.rotate_right
+      ~LowLevelILFunction.rotate_right_carry
+      ~LowLevelILFunction.set_current_address
+      ~LowLevelILFunction.set_flag
+      ~LowLevelILFunction.set_indirect_branches
+      ~LowLevelILFunction.set_reg
+      ~LowLevelILFunction.set_reg_split
+      ~LowLevelILFunction.shift_left
+      ~LowLevelILFunction.sign_extend
+      ~LowLevelILFunction.store
+      ~LowLevelILFunction.sub
+      ~LowLevelILFunction.sub_borrow
+      ~LowLevelILFunction.system_call
+      ~LowLevelILFunction.test_bit
+      ~LowLevelILFunction.trap
+      ~LowLevelILFunction.undefined
+      ~LowLevelILFunction.unimplemented
+      ~LowLevelILFunction.unimplemented_memory_ref
+      ~LowLevelILFunction.xor_expr
+      ~LowLevelILFunction.zero_extend
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LowLevelILFunction.basic_blocks
+      ~LowLevelILFunction.current_address
+      ~LowLevelILFunction.mapped_medium_level_il
+      ~LowLevelILFunction.medium_level_il
+      ~LowLevelILFunction.non_ssa_form
+      ~LowLevelILFunction.ssa_form
+      ~LowLevelILFunction.temp_flag_count
+      ~LowLevelILFunction.temp_reg_count
+   
+   

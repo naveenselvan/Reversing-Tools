@@ -1,0 +1,25 @@
+binaryninja.enums.PluginCommandType
+===================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: PluginCommandType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PluginCommandType.AddressPluginCommand
+      ~PluginCommandType.DefaultPluginCommand
+      ~PluginCommandType.FunctionPluginCommand
+      ~PluginCommandType.RangePluginCommand
+   
+   

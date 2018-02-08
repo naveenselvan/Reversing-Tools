@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.basicblock &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.basicblock</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.basicblock</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">from</span> <span class="nn">enums</span> <span class="k">import</span> <span class="n">BranchType</span><span class="p">,</span> <span class="n">HighlightColorStyle</span><span class="p">,</span> <span class="n">HighlightStandardColor</span><span class="p">,</span> <span class="n">InstructionTextTokenType</span>
+<span class="kn">import</span> <span class="nn">architecture</span>
+<span class="kn">import</span> <span class="nn">highlight</span>
+<span class="kn">import</span> <span class="nn">function</span>
+
+
+<div class="viewcode-block" id="BasicBlockEdge"><a class="viewcode-back" href="../../binaryninja.basicblock.BasicBlockEdge.html#binaryninja.basicblock.BasicBlockEdge">[docs]</a><span class="k">class</span> <span class="nc">BasicBlockEdge</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="BasicBlockEdge.__init__"><a class="viewcode-back" href="../../binaryninja.basicblock.BasicBlockEdge.html#binaryninja.basicblock.BasicBlockEdge.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_type</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">back_edge</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">branch_type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">back_edge</span> <span class="o">=</span> <span class="n">back_edge</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">BranchType</span><span class="o">.</span><span class="n">UnresolvedBranch</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="n">BranchType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">arch</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">@</span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">BranchType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">BranchType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="BasicBlock"><a class="viewcode-back" href="../../binaryninja.basicblock.BasicBlock.html#binaryninja.basicblock.BasicBlock">[docs]</a><span class="k">class</span> <span class="nc">BasicBlock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="BasicBlock.__init__"><a class="viewcode-back" href="../../binaryninja.basicblock.BasicBlock.html#binaryninja.basicblock.BasicBlock.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">handle_of_type</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBasicBlock</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_arch</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_func</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlock</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">BasicBlock</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">BasicBlock</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Internal method used to instantiante child instances&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">BasicBlock</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Basic block function (read-only)&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_func</span>
+		<span class="n">func</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockFunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_func</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_func</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">arch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Basic block architecture (read-only)&quot;&quot;&quot;</span>
+		<span class="c1"># The arch for a BasicBlock isn&#39;t going to change so just cache</span>
+		<span class="c1"># it the first time we need it</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arch</span>
+		<span class="n">arch</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockArchitecture</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">arch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_arch</span> <span class="o">=</span> <span class="n">architecture</span><span class="o">.</span><span class="n">Architecture</span><span class="p">(</span><span class="n">arch</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arch</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Basic block start (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockStart</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Basic block end (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockEnd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Basic block length (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockLength</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Basic block index in list of blocks for the function (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">outgoing_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of basic block outgoing edges (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">edges</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockOutgoingEdges</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">branch_type</span> <span class="o">=</span> <span class="n">BranchType</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">target</span><span class="p">:</span>
+				<span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">target</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BasicBlockEdge</span><span class="p">(</span><span class="n">branch_type</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">backEdge</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockEdgeList</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">incoming_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of basic block incoming edges (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">edges</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockIncomingEdges</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">branch_type</span> <span class="o">=</span> <span class="n">BranchType</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">target</span><span class="p">:</span>
+				<span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">target</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BasicBlockEdge</span><span class="p">(</span><span class="n">branch_type</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">backEdge</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockEdgeList</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">has_undetermined_outgoing_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether basic block has undetermined outgoing edges (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBasicBlockHasUndeterminedOutgoingEdges</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">can_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether basic block can return or is tagged as &#39;No Return&#39; (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNBasicBlockCanExit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">dominators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of dominators for this basic block (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">blocks</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockDominators</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">blocks</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockList</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">strict_dominators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of strict dominators for this basic block (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">blocks</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockStrictDominators</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">blocks</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockList</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">immediate_dominator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Immediate dominator of this basic block (read-only)&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockImmediateDominator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">dominator_tree_children</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of child blocks in the dominator tree for this basic block (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">blocks</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockDominatorTreeChildren</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">blocks</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockList</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">dominance_frontier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Dominance frontier for this basic block (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">blocks</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockDominanceFrontier</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">blocks</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockList</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">annotations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of automatic annotations for the start of this block (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">get_block_annotations</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">arch</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">disassembly_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``disassembly_text`` property which returns a list of function.DisassemblyTextLine objects for the current basic block.</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; current_basic_block.disassembly_text</span>
+<span class="sd">			[&lt;0x100000f30: _main:&gt;, ...]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_disassembly_text</span><span class="p">()</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets or sets the highlight color for basic block</span>
+
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; current_basic_block.highlight = HighlightStandardColor.BlueHighlightColor</span>
+<span class="sd">			&gt;&gt;&gt; current_basic_block.highlight</span>
+<span class="sd">			&lt;color: blue&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">color</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockHighlight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">color</span><span class="o">.</span><span class="n">style</span> <span class="o">==</span> <span class="n">HighlightColorStyle</span><span class="o">.</span><span class="n">StandardHighlightColor</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">color</span><span class="o">.</span><span class="n">style</span> <span class="o">==</span> <span class="n">HighlightColorStyle</span><span class="o">.</span><span class="n">MixedHighlightColor</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="n">mix_color</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">mixColor</span><span class="p">,</span> <span class="n">mix</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">mix</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">color</span><span class="o">.</span><span class="n">style</span> <span class="o">==</span> <span class="n">HighlightColorStyle</span><span class="o">.</span><span class="n">CustomHighlightColor</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">HighlightStandardColor</span><span class="o">.</span><span class="n">NoHighlightColor</span><span class="p">)</span>
+
+	<span class="nd">@highlight</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">set_user_highlight</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BasicBlock.get_iterated_dominance_frontier"><a class="viewcode-back" href="../../binaryninja.basicblock-module.html#binaryninja.basicblock.BasicBlock.get_iterated_dominance_frontier">[docs]</a>	<span class="k">def</span> <span class="nf">get_iterated_dominance_frontier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocks</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="p">[]</span>
+		<span class="n">block_set</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNBasicBlock</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocks</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">blocks</span><span class="p">)):</span>
+			<span class="n">block_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">blocks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">out_blocks</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockIteratedDominanceFrontier</span><span class="p">(</span><span class="n">block_set</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocks</span><span class="p">),</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BasicBlock</span><span class="p">(</span><span class="n">blocks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">out_blocks</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeBasicBlockList</span><span class="p">(</span><span class="n">out_blocks</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockLength</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">arch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arch</span>
+		<span class="k">if</span> <span class="n">arch</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;block: </span><span class="si">%s</span><span class="s2">@</span><span class="si">%#x</span><span class="s2">-</span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;&lt;block: </span><span class="si">%#x</span><span class="s2">-</span><span class="si">%#x</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
+		<span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
+
+		<span class="n">idx</span> <span class="o">=</span> <span class="n">start</span>
+		<span class="k">while</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+			<span class="n">inst_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_info</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+			<span class="n">inst_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">get_instruction_text</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+
+			<span class="k">yield</span> <span class="n">inst_text</span>
+			<span class="n">idx</span> <span class="o">+=</span> <span class="n">inst_info</span><span class="o">.</span><span class="n">length</span>
+
+<div class="viewcode-block" id="BasicBlock.mark_recent_use"><a class="viewcode-back" href="../../binaryninja.basicblock-module.html#binaryninja.basicblock.BasicBlock.mark_recent_use">[docs]</a>	<span class="k">def</span> <span class="nf">mark_recent_use</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNMarkBasicBlockAsRecentlyUsed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BasicBlock.get_disassembly_text"><a class="viewcode-back" href="../../binaryninja.basicblock-module.html#binaryninja.basicblock.BasicBlock.get_disassembly_text">[docs]</a>	<span class="k">def</span> <span class="nf">get_disassembly_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``get_disassembly_text`` returns a list of function.DisassemblyTextLine objects for the current basic block.</span>
+
+<span class="sd">		:param DisassemblySettings settings: (optional) DisassemblySettings object</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; current_basic_block.get_disassembly_text()</span>
+<span class="sd">			[&lt;0x100000f30: _main:&gt;, &lt;0x100000f30: push    rbp&gt;, ... ]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">settings_obj</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="n">settings</span><span class="p">:</span>
+			<span class="n">settings_obj</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">handle</span>
+
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">lines</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockDisassemblyText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">settings_obj</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">addr</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">addr</span>
+			<span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+				<span class="n">token_type</span> <span class="o">=</span> <span class="n">InstructionTextTokenType</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+				<span class="n">text</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+				<span class="n">size</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+				<span class="n">operand</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">operand</span>
+				<span class="n">context</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">context</span>
+				<span class="n">confidence</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">confidence</span>
+				<span class="n">address</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">address</span>
+				<span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">InstructionTextToken</span><span class="p">(</span><span class="n">token_type</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">confidence</span><span class="p">))</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">DisassemblyTextLine</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">tokens</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeDisassemblyTextLines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="BasicBlock.set_auto_highlight"><a class="viewcode-back" href="../../binaryninja.basicblock-module.html#binaryninja.basicblock.BasicBlock.set_auto_highlight">[docs]</a>	<span class="k">def</span> <span class="nf">set_auto_highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``set_auto_highlight`` highlights the current BasicBlock with the supplied color.</span>
+
+<span class="sd">		..warning:: Use only in analysis plugins. Do not use in regular plugins, as colors won&#39;t be saved to the database.</span>
+
+<span class="sd">		:param HighlightStandardColor or highlight.HighlightColor color: Color value to use for highlighting</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">HighlightStandardColor</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Specified color is not one of HighlightStandardColor, highlight.HighlightColor&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">HighlightStandardColor</span><span class="p">):</span>
+			<span class="n">color</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetAutoBasicBlockHighlight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="BasicBlock.set_user_highlight"><a class="viewcode-back" href="../../binaryninja.basicblock-module.html#binaryninja.basicblock.BasicBlock.set_user_highlight">[docs]</a>	<span class="k">def</span> <span class="nf">set_user_highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``set_user_highlight`` highlights the current BasicBlock with the supplied color</span>
+
+<span class="sd">		:param HighlightStandardColor or highlight.HighlightColor color: Color value to use for highlighting</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; current_basic_block.set_user_highlight(highlight.HighlightColor(red=0xff, blue=0xff, green=0))</span>
+<span class="sd">			&gt;&gt;&gt; current_basic_block.set_user_highlight(HighlightStandardColor.BlueHighlightColor)</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">HighlightStandardColor</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Specified color is not one of HighlightStandardColor, highlight.HighlightColor&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">HighlightStandardColor</span><span class="p">):</span>
+			<span class="n">color</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetUserBasicBlockHighlight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">())</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

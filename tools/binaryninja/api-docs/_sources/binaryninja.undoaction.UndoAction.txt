@@ -1,0 +1,30 @@
+binaryninja.undoaction.UndoAction
+=================================
+
+.. currentmodule:: binaryninja.undoaction
+
+.. autoclass:: UndoAction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UndoAction.__init__
+      ~UndoAction.register
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~UndoAction.action_type
+      ~UndoAction.name
+   
+   

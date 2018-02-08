@@ -1,0 +1,22 @@
+binaryninja.interaction.TextLineField
+=====================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: TextLineField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextLineField.__init__
+   
+   
+
+   
+   
+   

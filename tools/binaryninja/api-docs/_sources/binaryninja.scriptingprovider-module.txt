@@ -1,0 +1,20 @@
+scriptingprovider module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.scriptingprovider.PythonScriptingInstance
+   binaryninja.scriptingprovider.PythonScriptingProvider
+   binaryninja.scriptingprovider.ScriptingInstance
+   binaryninja.scriptingprovider.ScriptingOutputListener
+   binaryninja.scriptingprovider.ScriptingProvider
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.scriptingprovider
+   :members:
+   :undoc-members:
+   :show-inheritance:

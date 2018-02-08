@@ -1,0 +1,22 @@
+binaryninja.binaryview.BinaryDataNotificationCallbacks
+======================================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: BinaryDataNotificationCallbacks
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BinaryDataNotificationCallbacks.__init__
+   
+   
+
+   
+   
+   

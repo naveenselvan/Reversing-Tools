@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.filemetadata &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.filemetadata</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.filemetadata</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">import</span> <span class="nn">startup</span>
+<span class="kn">import</span> <span class="nn">associateddatastore</span>
+<span class="kn">import</span> <span class="nn">log</span>
+<span class="kn">import</span> <span class="nn">binaryview</span>
+
+
+<div class="viewcode-block" id="NavigationHandler"><a class="viewcode-back" href="../../binaryninja.filemetadata.NavigationHandler.html#binaryninja.filemetadata.NavigationHandler">[docs]</a><span class="k">class</span> <span class="nc">NavigationHandler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">_register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNavigationHandler</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getCurrentView</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getCurrentView</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_current_view</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getCurrentOffset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getCurrentOffset</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_current_offset</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">navigate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">navigate</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_navigate</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetFileMetadataNavigationHandler</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_get_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_view</span><span class="p">()</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+			<span class="n">view</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_get_current_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_offset</span><span class="p">()</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+			<span class="k">return</span> <span class="mi">0</span>
+
+	<span class="k">def</span> <span class="nf">_navigate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+			<span class="k">return</span> <span class="kc">False</span></div>
+
+
+<span class="k">class</span> <span class="nc">_FileMetadataAssociatedDataStore</span><span class="p">(</span><span class="n">associateddatastore</span><span class="o">.</span><span class="n">_AssociatedDataStore</span><span class="p">):</span>
+	<span class="n">_defaults</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<div class="viewcode-block" id="FileMetadata"><a class="viewcode-back" href="../../binaryninja.filemetadata.FileMetadata.html#binaryninja.filemetadata.FileMetadata">[docs]</a><span class="k">class</span> <span class="nc">FileMetadata</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">_associated_data</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``class FileMetadata`` represents the file being analyzed by Binary Ninja. It is responsible for opening,</span>
+<span class="sd">	closing, creating the database (.bndb) files, and is used to keep track of undoable actions.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="FileMetadata.__init__"><a class="viewcode-back" href="../../binaryninja.filemetadata.FileMetadata.html#binaryninja.filemetadata.FileMetadata.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Instantiates a new FileMetadata class.</span>
+
+<span class="sd">		:param filename: The string path to the file to be opened. Defaults to None.</span>
+<span class="sd">		:param handle: A handle to the underlying C FileMetadata object. Defaults to None.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">handle_of_type</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNFileMetadata</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateFileMetadata</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">core</span><span class="o">.</span><span class="n">BNSetFilename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">nav</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">navigation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNSetFileMetadataNavigationHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeFileMetadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">FileMetadata</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">FileMetadata</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">_unregister</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+		<span class="n">handle</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">handle</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_associated_data</span><span class="p">:</span>
+			<span class="k">del</span> <span class="n">cls</span><span class="o">.</span><span class="n">_associated_data</span><span class="p">[</span><span class="n">handle</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="FileMetadata.set_default_session_data"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.set_default_session_data">[docs]</a>	<span class="k">def</span> <span class="nf">set_default_session_data</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">_FileMetadataAssociatedDataStore</span><span class="o">.</span><span class="n">set_default</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;The name of the file (read/write)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetFilename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@filename</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetFilename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">modified</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Boolean result of whether the file is modified (Inverse of &#39;saved&#39; property) (read/write)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsFileModified</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@modified</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">modified</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNMarkFileModified</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNMarkFileSaved</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">analysis_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Boolean result of whether the auto-analysis results have changed (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsAnalysisChanged</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">has_database</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether the FileMetadata is backed by a database (read-only)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsBackedByDatabase</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetCurrentView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@view</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNNavigate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetCurrentOffset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">offset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;The current offset into the file (read/write)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetCurrentOffset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@offset</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNNavigate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetCurrentView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">raw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets the &quot;Raw&quot; BinaryView of the file&quot;&quot;&quot;</span>
+		<span class="n">view</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetFileViewOfType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="s2">&quot;Raw&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">file_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">view</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">saved</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Boolean result of whether the file has been saved (Inverse of &#39;modified&#39; property) (read/write)&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsFileModified</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@saved</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">saved</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNMarkFileSaved</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNMarkFileModified</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">navigation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nav</span>
+
+	<span class="nd">@navigation</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">navigation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">_register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">nav</span> <span class="o">=</span> <span class="n">value</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">session_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Dictionary object where plugins can store arbitrary data associated with the file&quot;&quot;&quot;</span>
+		<span class="n">handle</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">handle</span><span class="o">.</span><span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">FileMetadata</span><span class="o">.</span><span class="n">_associated_data</span><span class="p">:</span>
+			<span class="n">obj</span> <span class="o">=</span> <span class="n">_FileMetadataAssociatedDataStore</span><span class="p">()</span>
+			<span class="n">FileMetadata</span><span class="o">.</span><span class="n">_associated_data</span><span class="p">[</span><span class="n">handle</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+			<span class="k">return</span> <span class="n">obj</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">FileMetadata</span><span class="o">.</span><span class="n">_associated_data</span><span class="p">[</span><span class="n">handle</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+
+<div class="viewcode-block" id="FileMetadata.close"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.close">[docs]</a>	<span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Closes the underlying file handle. It is recommended that this is done in a</span>
+<span class="sd">		`finally` clause to avoid handle leaks.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNCloseFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.begin_undo_actions"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.begin_undo_actions">[docs]</a>	<span class="k">def</span> <span class="nf">begin_undo_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``begin_undo_actions`` start recording actions taken so the can be undone at some point.</span>
+
+<span class="sd">		:rtype: None</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.begin_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.convert_to_nop(0x100012f1)</span>
+<span class="sd">			True</span>
+<span class="sd">			&gt;&gt;&gt; bv.commit_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;nop&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.undo()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNBeginUndoActions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.commit_undo_actions"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.commit_undo_actions">[docs]</a>	<span class="k">def</span> <span class="nf">commit_undo_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``commit_undo_actions`` commit the actions taken since the last commit to the undo database.</span>
+
+<span class="sd">		:rtype: None</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.begin_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.convert_to_nop(0x100012f1)</span>
+<span class="sd">			True</span>
+<span class="sd">			&gt;&gt;&gt; bv.commit_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;nop&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.undo()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNCommitUndoActions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.undo"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.undo">[docs]</a>	<span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``undo`` undo the last commited action in the undo database.</span>
+
+<span class="sd">		:rtype: None</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.begin_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.convert_to_nop(0x100012f1)</span>
+<span class="sd">			True</span>
+<span class="sd">			&gt;&gt;&gt; bv.commit_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;nop&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.undo()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.redo()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;nop&#39;</span>
+<span class="sd">			&gt;&gt;&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNUndo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.redo"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.redo">[docs]</a>	<span class="k">def</span> <span class="nf">redo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``redo`` redo the last commited action in the undo database.</span>
+
+<span class="sd">		:rtype: None</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.begin_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.convert_to_nop(0x100012f1)</span>
+<span class="sd">			True</span>
+<span class="sd">			&gt;&gt;&gt; bv.commit_undo_actions()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;nop&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.undo()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;xor     eax, eax&#39;</span>
+<span class="sd">			&gt;&gt;&gt; bv.redo()</span>
+<span class="sd">			&gt;&gt;&gt; bv.get_disassembly(0x100012f1)</span>
+<span class="sd">			&#39;nop&#39;</span>
+<span class="sd">			&gt;&gt;&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRedo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.navigate"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.navigate">[docs]</a>	<span class="k">def</span> <span class="nf">navigate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNavigate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">view</span><span class="p">),</span> <span class="n">offset</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.create_database"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.create_database">[docs]</a>	<span class="k">def</span> <span class="nf">create_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">progress_func</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">progress_func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateDatabase</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateDatabaseWithProgress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span>
+				<span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">)(</span>
+					<span class="k">lambda</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">cur</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="n">progress_func</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">total</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="FileMetadata.open_existing_database"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.open_existing_database">[docs]</a>	<span class="k">def</span> <span class="nf">open_existing_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">progress_func</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">progress_func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">view</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNOpenExistingDatabase</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">view</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNOpenExistingDatabaseWithProgress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span>
+				<span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">)(</span>
+				<span class="k">lambda</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">cur</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="n">progress_func</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">total</span><span class="p">)))</span>
+		<span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">file_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">view</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileMetadata.save_auto_snapshot"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.save_auto_snapshot">[docs]</a>	<span class="k">def</span> <span class="nf">save_auto_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">progress_func</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">progress_func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSaveAutoSnapshot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSaveAutoSnapshotWithProgress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
+				<span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">)(</span>
+					<span class="k">lambda</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">cur</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="n">progress_func</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">total</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="FileMetadata.get_view_of_type"><a class="viewcode-back" href="../../binaryninja.filemetadata-module.html#binaryninja.filemetadata.FileMetadata.get_view_of_type">[docs]</a>	<span class="k">def</span> <span class="nf">get_view_of_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">view</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetFileViewOfType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">view_type</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBinaryViewTypeByName</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+			<span class="k">if</span> <span class="n">view_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">None</span>
+			<span class="n">view</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateBinaryViewOfType</span><span class="p">(</span><span class="n">view_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">file_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">view</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

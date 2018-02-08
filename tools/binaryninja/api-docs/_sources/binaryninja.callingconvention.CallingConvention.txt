@@ -1,0 +1,44 @@
+binaryninja.callingconvention.CallingConvention
+===============================================
+
+.. currentmodule:: binaryninja.callingconvention
+
+.. autoclass:: CallingConvention
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CallingConvention.__init__
+      ~CallingConvention.get_incoming_flag_value
+      ~CallingConvention.get_incoming_reg_value
+      ~CallingConvention.perform_get_incoming_flag_value
+      ~CallingConvention.perform_get_incoming_reg_value
+      ~CallingConvention.with_confidence
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CallingConvention.arg_regs_share_index
+      ~CallingConvention.caller_saved_regs
+      ~CallingConvention.float_arg_regs
+      ~CallingConvention.float_return_reg
+      ~CallingConvention.global_pointer_reg
+      ~CallingConvention.high_int_return_reg
+      ~CallingConvention.implicitly_defined_regs
+      ~CallingConvention.int_arg_regs
+      ~CallingConvention.int_return_reg
+      ~CallingConvention.name
+      ~CallingConvention.stack_adjusted_on_return
+      ~CallingConvention.stack_reserved_for_arg_regs
+   
+   

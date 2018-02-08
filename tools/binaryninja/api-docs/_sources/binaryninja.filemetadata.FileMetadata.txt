@@ -1,0 +1,48 @@
+binaryninja.filemetadata.FileMetadata
+=====================================
+
+.. currentmodule:: binaryninja.filemetadata
+
+.. autoclass:: FileMetadata
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileMetadata.__init__
+      ~FileMetadata.begin_undo_actions
+      ~FileMetadata.close
+      ~FileMetadata.commit_undo_actions
+      ~FileMetadata.create_database
+      ~FileMetadata.get_view_of_type
+      ~FileMetadata.navigate
+      ~FileMetadata.open_existing_database
+      ~FileMetadata.redo
+      ~FileMetadata.save_auto_snapshot
+      ~FileMetadata.set_default_session_data
+      ~FileMetadata.undo
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FileMetadata.analysis_changed
+      ~FileMetadata.filename
+      ~FileMetadata.has_database
+      ~FileMetadata.modified
+      ~FileMetadata.navigation
+      ~FileMetadata.offset
+      ~FileMetadata.raw
+      ~FileMetadata.saved
+      ~FileMetadata.session_data
+      ~FileMetadata.view
+   
+   

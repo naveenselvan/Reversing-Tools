@@ -1,0 +1,33 @@
+binaryninja.enums.TypeClass
+===========================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: TypeClass
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TypeClass.ArrayTypeClass
+      ~TypeClass.BoolTypeClass
+      ~TypeClass.EnumerationTypeClass
+      ~TypeClass.FloatTypeClass
+      ~TypeClass.FunctionTypeClass
+      ~TypeClass.IntegerTypeClass
+      ~TypeClass.NamedTypeReferenceClass
+      ~TypeClass.PointerTypeClass
+      ~TypeClass.StructureTypeClass
+      ~TypeClass.ValueTypeClass
+      ~TypeClass.VarArgsTypeClass
+      ~TypeClass.VoidTypeClass
+   
+   

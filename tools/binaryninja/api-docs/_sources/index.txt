@@ -1,0 +1,39 @@
+Binary Ninja Python API Documentation
+=====================================
+
+.. toctree::
+   :maxdepth: 2
+
+   architecture <binaryninja.architecture-module.rst>
+   atexit <binaryninja.atexit-module.rst>
+   basicblock <binaryninja.basicblock-module.rst>
+   binaryview <binaryninja.binaryview-module.rst>
+   callingconvention <binaryninja.callingconvention-module.rst>
+   databuffer <binaryninja.databuffer-module.rst>
+   demangle <binaryninja.demangle-module.rst>
+   enums <binaryninja.enums-module.rst>
+   fileaccessor <binaryninja.fileaccessor-module.rst>
+   filemetadata <binaryninja.filemetadata-module.rst>
+   function <binaryninja.function-module.rst>
+   functionrecognizer <binaryninja.functionrecognizer-module.rst>
+   highlight <binaryninja.highlight-module.rst>
+   interaction <binaryninja.interaction-module.rst>
+   lineardisassembly <binaryninja.lineardisassembly-module.rst>
+   log <binaryninja.log-module.rst>
+   lowlevelil <binaryninja.lowlevelil-module.rst>
+   mainthread <binaryninja.mainthread-module.rst>
+   mediumlevelil <binaryninja.mediumlevelil-module.rst>
+   metadata <binaryninja.metadata-module.rst>
+   platform <binaryninja.platform-module.rst>
+   plugin <binaryninja.plugin-module.rst>
+   pluginmanager <binaryninja.pluginmanager-module.rst>
+   scriptingprovider <binaryninja.scriptingprovider-module.rst>
+   setting <binaryninja.setting-module.rst>
+   transform <binaryninja.transform-module.rst>
+   types <binaryninja.types-module.rst>
+   undoaction <binaryninja.undoaction-module.rst>
+   update <binaryninja.update-module.rst>
+.. automodule:: binaryninja
+   :members:
+   :undoc-members:
+   :show-inheritance:

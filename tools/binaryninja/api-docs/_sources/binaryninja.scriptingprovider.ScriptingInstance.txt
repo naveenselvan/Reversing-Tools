@@ -1,0 +1,45 @@
+binaryninja.scriptingprovider.ScriptingInstance
+===============================================
+
+.. currentmodule:: binaryninja.scriptingprovider
+
+.. autoclass:: ScriptingInstance
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ScriptingInstance.__init__
+      ~ScriptingInstance.error
+      ~ScriptingInstance.execute_script_input
+      ~ScriptingInstance.output
+      ~ScriptingInstance.perform_destroy_instance
+      ~ScriptingInstance.perform_execute_script_input
+      ~ScriptingInstance.perform_set_current_address
+      ~ScriptingInstance.perform_set_current_basic_block
+      ~ScriptingInstance.perform_set_current_binary_view
+      ~ScriptingInstance.perform_set_current_function
+      ~ScriptingInstance.perform_set_current_selection
+      ~ScriptingInstance.register_output_listener
+      ~ScriptingInstance.set_current_address
+      ~ScriptingInstance.set_current_basic_block
+      ~ScriptingInstance.set_current_binary_view
+      ~ScriptingInstance.set_current_function
+      ~ScriptingInstance.set_current_selection
+      ~ScriptingInstance.unregister_output_listener
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ScriptingInstance.input_ready_state
+   
+   

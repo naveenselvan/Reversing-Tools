@@ -1,0 +1,205 @@
+binaryninja.binaryview.BinaryView
+=================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: BinaryView
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BinaryView.__init__
+      ~BinaryView.abort_analysis
+      ~BinaryView.add_analysis_completion_event
+      ~BinaryView.add_analysis_option
+      ~BinaryView.add_auto_section
+      ~BinaryView.add_auto_segment
+      ~BinaryView.add_entry_point
+      ~BinaryView.add_function
+      ~BinaryView.add_undo_action
+      ~BinaryView.add_user_section
+      ~BinaryView.add_user_segment
+      ~BinaryView.always_branch
+      ~BinaryView.begin_undo_actions
+      ~BinaryView.commit_undo_actions
+      ~BinaryView.convert_to_nop
+      ~BinaryView.create_database
+      ~BinaryView.create_user_function
+      ~BinaryView.define_auto_symbol
+      ~BinaryView.define_auto_symbol_and_var_or_function
+      ~BinaryView.define_data_var
+      ~BinaryView.define_imported_function
+      ~BinaryView.define_type
+      ~BinaryView.define_user_data_var
+      ~BinaryView.define_user_symbol
+      ~BinaryView.define_user_type
+      ~BinaryView.find_next_data
+      ~BinaryView.get_address_for_data_offset
+      ~BinaryView.get_address_input
+      ~BinaryView.get_basic_blocks_at
+      ~BinaryView.get_basic_blocks_starting_at
+      ~BinaryView.get_code_refs
+      ~BinaryView.get_data_var_at
+      ~BinaryView.get_disassembly
+      ~BinaryView.get_function_at
+      ~BinaryView.get_functions_at
+      ~BinaryView.get_functions_containing
+      ~BinaryView.get_instruction_length
+      ~BinaryView.get_linear_disassembly
+      ~BinaryView.get_linear_disassembly_position_at
+      ~BinaryView.get_modification
+      ~BinaryView.get_next_basic_block_start_after
+      ~BinaryView.get_next_data_after
+      ~BinaryView.get_next_data_var_after
+      ~BinaryView.get_next_disassembly
+      ~BinaryView.get_next_function_start_after
+      ~BinaryView.get_next_linear_disassembly_lines
+      ~BinaryView.get_previous_basic_block_end_before
+      ~BinaryView.get_previous_basic_block_start_before
+      ~BinaryView.get_previous_data_before
+      ~BinaryView.get_previous_data_var_before
+      ~BinaryView.get_previous_function_start_before
+      ~BinaryView.get_previous_linear_disassembly_lines
+      ~BinaryView.get_recent_basic_block_at
+      ~BinaryView.get_recent_function_at
+      ~BinaryView.get_section_by_name
+      ~BinaryView.get_sections_at
+      ~BinaryView.get_segment_at
+      ~BinaryView.get_strings
+      ~BinaryView.get_symbol_at
+      ~BinaryView.get_symbol_by_raw_name
+      ~BinaryView.get_symbols
+      ~BinaryView.get_symbols_by_name
+      ~BinaryView.get_symbols_of_type
+      ~BinaryView.get_type_by_id
+      ~BinaryView.get_type_by_name
+      ~BinaryView.get_type_id
+      ~BinaryView.get_type_name_by_id
+      ~BinaryView.get_unique_section_names
+      ~BinaryView.get_view_of_type
+      ~BinaryView.init
+      ~BinaryView.insert
+      ~BinaryView.invert_branch
+      ~BinaryView.is_always_branch_patch_available
+      ~BinaryView.is_invert_branch_patch_available
+      ~BinaryView.is_never_branch_patch_available
+      ~BinaryView.is_offset_code_semantics
+      ~BinaryView.is_offset_executable
+      ~BinaryView.is_offset_readable
+      ~BinaryView.is_offset_writable
+      ~BinaryView.is_offset_writable_semantics
+      ~BinaryView.is_skip_and_return_value_patch_available
+      ~BinaryView.is_skip_and_return_zero_patch_available
+      ~BinaryView.is_type_auto_defined
+      ~BinaryView.is_valid_offset
+      ~BinaryView.navigate
+      ~BinaryView.never_branch
+      ~BinaryView.new
+      ~BinaryView.notify_data_inserted
+      ~BinaryView.notify_data_removed
+      ~BinaryView.notify_data_written
+      ~BinaryView.open
+      ~BinaryView.parse_type_string
+      ~BinaryView.perform_get_address_size
+      ~BinaryView.perform_get_default_endianness
+      ~BinaryView.perform_get_entry_point
+      ~BinaryView.perform_get_length
+      ~BinaryView.perform_get_modification
+      ~BinaryView.perform_get_next_valid_offset
+      ~BinaryView.perform_get_start
+      ~BinaryView.perform_insert
+      ~BinaryView.perform_is_executable
+      ~BinaryView.perform_is_offset_executable
+      ~BinaryView.perform_is_offset_readable
+      ~BinaryView.perform_is_offset_writable
+      ~BinaryView.perform_is_valid_offset
+      ~BinaryView.perform_read
+      ~BinaryView.perform_remove
+      ~BinaryView.perform_save
+      ~BinaryView.perform_write
+      ~BinaryView.query_metadata
+      ~BinaryView.read
+      ~BinaryView.reanalyze
+      ~BinaryView.redo
+      ~BinaryView.register
+      ~BinaryView.register_notification
+      ~BinaryView.register_platform_types
+      ~BinaryView.remove
+      ~BinaryView.remove_auto_section
+      ~BinaryView.remove_auto_segment
+      ~BinaryView.remove_function
+      ~BinaryView.remove_metadata
+      ~BinaryView.remove_user_function
+      ~BinaryView.remove_user_section
+      ~BinaryView.remove_user_segment
+      ~BinaryView.rename_type
+      ~BinaryView.save
+      ~BinaryView.save_auto_snapshot
+      ~BinaryView.set_default_session_data
+      ~BinaryView.show_html_report
+      ~BinaryView.show_markdown_report
+      ~BinaryView.show_plain_text_report
+      ~BinaryView.skip_and_return_value
+      ~BinaryView.store_metadata
+      ~BinaryView.undefine_auto_symbol
+      ~BinaryView.undefine_data_var
+      ~BinaryView.undefine_type
+      ~BinaryView.undefine_user_data_var
+      ~BinaryView.undefine_user_symbol
+      ~BinaryView.undefine_user_type
+      ~BinaryView.undo
+      ~BinaryView.unregister_notification
+      ~BinaryView.update_analysis
+      ~BinaryView.update_analysis_and_wait
+      ~BinaryView.write
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BinaryView.address_size
+      ~BinaryView.allocated_ranges
+      ~BinaryView.analysis_changed
+      ~BinaryView.analysis_progress
+      ~BinaryView.arch
+      ~BinaryView.available_view_types
+      ~BinaryView.data_vars
+      ~BinaryView.end
+      ~BinaryView.endianness
+      ~BinaryView.entry_function
+      ~BinaryView.entry_point
+      ~BinaryView.executable
+      ~BinaryView.functions
+      ~BinaryView.global_pointer_value
+      ~BinaryView.has_database
+      ~BinaryView.has_functions
+      ~BinaryView.linear_disassembly
+      ~BinaryView.long_name
+      ~BinaryView.modified
+      ~BinaryView.name
+      ~BinaryView.next_address
+      ~BinaryView.offset
+      ~BinaryView.parent_view
+      ~BinaryView.platform
+      ~BinaryView.registered_view_type
+      ~BinaryView.saved
+      ~BinaryView.sections
+      ~BinaryView.segments
+      ~BinaryView.session_data
+      ~BinaryView.start
+      ~BinaryView.strings
+      ~BinaryView.symbols
+      ~BinaryView.types
+      ~BinaryView.view
+      ~BinaryView.view_type
+   
+   

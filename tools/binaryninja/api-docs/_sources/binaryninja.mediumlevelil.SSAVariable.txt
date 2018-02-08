@@ -1,0 +1,22 @@
+binaryninja.mediumlevelil.SSAVariable
+=====================================
+
+.. currentmodule:: binaryninja.mediumlevelil
+
+.. autoclass:: SSAVariable
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SSAVariable.__init__
+   
+   
+
+   
+   
+   

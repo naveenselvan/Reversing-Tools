@@ -1,0 +1,22 @@
+binaryninja.lowlevelil.SSAFlag
+==============================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autoclass:: SSAFlag
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SSAFlag.__init__
+   
+   
+
+   
+   
+   

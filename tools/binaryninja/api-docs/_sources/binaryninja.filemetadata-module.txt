@@ -1,0 +1,17 @@
+filemetadata module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.filemetadata.FileMetadata
+   binaryninja.filemetadata.NavigationHandler
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.filemetadata
+   :members:
+   :undoc-members:
+   :show-inheritance:

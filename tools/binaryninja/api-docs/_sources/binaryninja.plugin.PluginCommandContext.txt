@@ -1,0 +1,22 @@
+binaryninja.plugin.PluginCommandContext
+=======================================
+
+.. currentmodule:: binaryninja.plugin
+
+.. autoclass:: PluginCommandContext
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PluginCommandContext.__init__
+   
+   
+
+   
+   
+   

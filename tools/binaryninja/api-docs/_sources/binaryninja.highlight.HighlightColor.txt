@@ -1,0 +1,22 @@
+binaryninja.highlight.HighlightColor
+====================================
+
+.. currentmodule:: binaryninja.highlight
+
+.. autoclass:: HighlightColor
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~HighlightColor.__init__
+   
+   
+
+   
+   
+   

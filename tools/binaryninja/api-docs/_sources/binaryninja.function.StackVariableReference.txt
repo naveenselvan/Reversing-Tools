@@ -1,0 +1,22 @@
+binaryninja.function.StackVariableReference
+===========================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: StackVariableReference
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~StackVariableReference.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+binaryninja.mainthread.execute_on_main_thread_and_wait
+======================================================
+
+.. currentmodule:: binaryninja.mainthread
+
+.. autofunction:: execute_on_main_thread_and_wait

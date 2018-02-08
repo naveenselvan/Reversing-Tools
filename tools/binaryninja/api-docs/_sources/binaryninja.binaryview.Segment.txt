@@ -1,0 +1,28 @@
+binaryninja.binaryview.Segment
+==============================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: Segment
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Segment.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Segment.end
+   
+   

@@ -1,0 +1,22 @@
+binaryninja.function.RegisterInfo
+=================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: RegisterInfo
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RegisterInfo.__init__
+   
+   
+
+   
+   
+   

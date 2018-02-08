@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.interaction &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.interaction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.interaction</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">from</span> <span class="nn">enums</span> <span class="k">import</span> <span class="n">FormInputFieldType</span><span class="p">,</span> <span class="n">MessageBoxIcon</span><span class="p">,</span> <span class="n">MessageBoxButtonSet</span><span class="p">,</span> <span class="n">MessageBoxButtonResult</span>
+<span class="kn">import</span> <span class="nn">binaryview</span>
+<span class="kn">import</span> <span class="nn">log</span>
+
+
+<div class="viewcode-block" id="LabelField"><a class="viewcode-back" href="../../binaryninja.interaction.LabelField.html#binaryninja.interaction.LabelField">[docs]</a><span class="k">class</span> <span class="nc">LabelField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``LabelField`` adds a text label to the display.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="LabelField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.LabelField.html#binaryninja.interaction.LabelField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">LabelFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="SeparatorField"><a class="viewcode-back" href="../../binaryninja.interaction.SeparatorField.html#binaryninja.interaction.SeparatorField">[docs]</a><span class="k">class</span> <span class="nc">SeparatorField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``SeparatorField`` adds vertical separation to the display.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">SeparatorFormField</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="TextLineField"><a class="viewcode-back" href="../../binaryninja.interaction.TextLineField.html#binaryninja.interaction.TextLineField">[docs]</a><span class="k">class</span> <span class="nc">TextLineField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``TextLineField`` Adds prompt for text string input. Result is stored in self.result as a string on completion.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="TextLineField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.TextLineField.html#binaryninja.interaction.TextLineField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">TextLineFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">stringResult</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">stringResult</span></div>
+
+
+<div class="viewcode-block" id="MultilineTextField"><a class="viewcode-back" href="../../binaryninja.interaction.MultilineTextField.html#binaryninja.interaction.MultilineTextField">[docs]</a><span class="k">class</span> <span class="nc">MultilineTextField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``MultilineTextField`` add multi-line text string input field. Result is stored in self.result</span>
+<span class="sd">	as a string. This option is not supported on the command line.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="MultilineTextField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.MultilineTextField.html#binaryninja.interaction.MultilineTextField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">MultilineTextFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">stringResult</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">stringResult</span></div>
+
+
+<div class="viewcode-block" id="IntegerField"><a class="viewcode-back" href="../../binaryninja.interaction.IntegerField.html#binaryninja.interaction.IntegerField">[docs]</a><span class="k">class</span> <span class="nc">IntegerField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``IntegerField`` add prompt for integer. Result is stored in self.result as an int.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="IntegerField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.IntegerField.html#binaryninja.interaction.IntegerField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">IntegerFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">intResult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">intResult</span></div>
+
+
+<div class="viewcode-block" id="AddressField"><a class="viewcode-back" href="../../binaryninja.interaction.AddressField.html#binaryninja.interaction.AddressField">[docs]</a><span class="k">class</span> <span class="nc">AddressField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``AddressField`` prompts the user for an address. By passing the optional view and current_address parameters</span>
+<span class="sd">	offsets can be used instead of just an address. Th reslut is stored as in int in self.result.</span>
+
+<span class="sd">	Note: This API currenlty functions differently on the command line, as the view and current_address are</span>
+<span class="sd">	      disregarded. Additionally where as in the ui the result defaults to hexidecimal on the command line 0x must be </span>
+<span class="sd">	      specified.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AddressField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.AddressField.html#binaryninja.interaction.AddressField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">current_address</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">current_address</span> <span class="o">=</span> <span class="n">current_address</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">AddressFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">value</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">currentAddress</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_address</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">addressResult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">addressResult</span></div>
+
+
+<div class="viewcode-block" id="ChoiceField"><a class="viewcode-back" href="../../binaryninja.interaction.ChoiceField.html#binaryninja.interaction.ChoiceField">[docs]</a><span class="k">class</span> <span class="nc">ChoiceField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``ChoiceField`` prompts the user to choose from the list of strings provided in ``choices``. Result is stored</span>
+<span class="sd">	in self.result as an index in to the coices array.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="ChoiceField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.ChoiceField.html#binaryninja.interaction.ChoiceField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">choices</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">choices</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">ChoiceFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+		<span class="n">choice_buf</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">choices</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">choices</span><span class="p">)):</span>
+			<span class="n">choice_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">choice_buf</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">choices</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">indexResult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">indexResult</span></div>
+
+
+<div class="viewcode-block" id="OpenFileNameField"><a class="viewcode-back" href="../../binaryninja.interaction.OpenFileNameField.html#binaryninja.interaction.OpenFileNameField">[docs]</a><span class="k">class</span> <span class="nc">OpenFileNameField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``OpenFileNameField`` prompts the user to specify a file name to open. Result is stored in self.result as a string.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="OpenFileNameField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.OpenFileNameField.html#binaryninja.interaction.OpenFileNameField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="n">ext</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">OpenFileNameFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">stringResult</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">stringResult</span></div>
+
+
+<div class="viewcode-block" id="SaveFileNameField"><a class="viewcode-back" href="../../binaryninja.interaction.SaveFileNameField.html#binaryninja.interaction.SaveFileNameField">[docs]</a><span class="k">class</span> <span class="nc">SaveFileNameField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``SaveFileNameField`` prompts the user to specify a file name to save. Result is stored in self.result as a string.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="SaveFileNameField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.SaveFileNameField.html#binaryninja.interaction.SaveFileNameField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">default_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="n">ext</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">default_name</span> <span class="o">=</span> <span class="n">default_name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">SaveFileNameFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">defaultName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_name</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">stringResult</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">stringResult</span></div>
+
+
+<div class="viewcode-block" id="DirectoryNameField"><a class="viewcode-back" href="../../binaryninja.interaction.DirectoryNameField.html#binaryninja.interaction.DirectoryNameField">[docs]</a><span class="k">class</span> <span class="nc">DirectoryNameField</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``DirectoryNameField`` prompts the user to specify a directory name to open. Result is stored in self.result as</span>
+<span class="sd">	a string.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="DirectoryNameField.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.DirectoryNameField.html#binaryninja.interaction.DirectoryNameField.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">default_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">default_name</span> <span class="o">=</span> <span class="n">default_name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+	<span class="k">def</span> <span class="nf">_fill_core_struct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">DirectoryNameFormField</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">defaultName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_name</span>
+
+	<span class="k">def</span> <span class="nf">_fill_core_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">value</span><span class="o">.</span><span class="n">stringResult</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">_get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">stringResult</span></div>
+
+
+<div class="viewcode-block" id="InteractionHandler"><a class="viewcode-back" href="../../binaryninja.interaction.InteractionHandler.html#binaryninja.interaction.InteractionHandler">[docs]</a><span class="k">class</span> <span class="nc">InteractionHandler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">_interaction_handler</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="InteractionHandler.__init__"><a class="viewcode-back" href="../../binaryninja.interaction.InteractionHandler.html#binaryninja.interaction.InteractionHandler.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNInteractionHandlerCallbacks</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showPlainTextReport</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showPlainTextReport</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_plain_text_report</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showMarkdownReport</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showMarkdownReport</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_markdown_report</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showHTMLReport</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showHTMLReport</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_html_report</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getTextLineInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getTextLineInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_text_line_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getIntegerInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getIntegerInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_int_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getAddressInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getAddressInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_address_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getChoiceInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getChoiceInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_choice_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getOpenFileNameInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getOpenFileNameInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_open_filename_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getSaveFileNameInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getSaveFileNameInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_save_filename_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getDirectoryNameInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getDirectoryNameInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_directory_name_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getFormInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">getFormInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_form_input</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showMessageBox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">showMessageBox</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_message_box</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.register"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.register">[docs]</a>	<span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">_interaction_handler</span> <span class="o">=</span> <span class="bp">self</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterInteractionHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">_show_plain_text_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">view</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewViewReference</span><span class="p">(</span><span class="n">view</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">show_plain_text_report</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_show_markdown_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">view</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewViewReference</span><span class="p">(</span><span class="n">view</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">show_markdown_report</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_show_html_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">view</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewViewReference</span><span class="p">(</span><span class="n">view</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">show_html_report</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_text_line_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text_line_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_int_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_int_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_address_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">current_address</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">view</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewViewReference</span><span class="p">(</span><span class="n">view</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_address_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">current_address</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_choice_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">choice_buf</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+				<span class="n">choices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choice_buf</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_choice_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_open_filename_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_open_filename_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_save_filename_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_save_filename_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">default_name</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_directory_name_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_directory_name_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default_name</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAllocString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_get_form_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">field_objs</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+				<span class="k">if</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">LabelFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LabelField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">SeparatorFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SeparatorField</span><span class="p">())</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">TextLineFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TextLineField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">MultilineTextFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MultilineTextField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">IntegerFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">AddressFormField</span><span class="p">:</span>
+					<span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+					<span class="k">if</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">:</span>
+						<span class="n">view</span> <span class="o">=</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewViewReference</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">))</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AddressField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">currentAddress</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">ChoiceFormField</span><span class="p">:</span>
+					<span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
+					<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+						<span class="n">choices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">choices</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">OpenFileNameFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">OpenFileNameField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ext</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">SaveFileNameFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SaveFileNameField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ext</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultName</span><span class="p">))</span>
+				<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FormInputFieldType</span><span class="o">.</span><span class="n">DirectoryNameFormField</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">DirectoryNameField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">defaultName</span><span class="p">))</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">field_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LabelField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prompt</span><span class="p">))</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_form_input</span><span class="p">(</span><span class="n">field_objs</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+				<span class="n">field_objs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_fill_core_result</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_show_message_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">icon</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_message_box</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">icon</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+<div class="viewcode-block" id="InteractionHandler.show_plain_text_report"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.show_plain_text_report">[docs]</a>	<span class="k">def</span> <span class="nf">show_plain_text_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.show_markdown_report"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.show_markdown_report">[docs]</a>	<span class="k">def</span> <span class="nf">show_markdown_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">show_html_report</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">markdown_to_html</span><span class="p">(</span><span class="n">contents</span><span class="p">),</span> <span class="n">plaintext</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.show_html_report"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.show_html_report">[docs]</a>	<span class="k">def</span> <span class="nf">show_html_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">show_plain_text_report</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_text_line_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_text_line_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_text_line_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_int_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_int_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_int_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text_line_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="k">continue</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_address_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_address_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_address_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">current_address</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">get_int_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_choice_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_choice_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_choice_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">choices</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_open_filename_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_open_filename_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_open_filename_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">get_text_line_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="s2">&quot;Open File&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_save_filename_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_save_filename_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_save_filename_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">get_text_line_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="s2">&quot;Save File&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_directory_name_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_directory_name_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_directory_name_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">get_text_line_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="s2">&quot;Select Directory&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.get_form_input"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.get_form_input">[docs]</a>	<span class="k">def</span> <span class="nf">get_form_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="InteractionHandler.show_message_box"><a class="viewcode-back" href="../../binaryninja.interaction-module.html#binaryninja.interaction.InteractionHandler.show_message_box">[docs]</a>	<span class="k">def</span> <span class="nf">show_message_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">icon</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">MessageBoxButtonResult</span><span class="o">.</span><span class="n">CancelButton</span></div></div>
+
+
+<div class="viewcode-block" id="markdown_to_html"><a class="viewcode-back" href="../../binaryninja.interaction.markdown_to_html.html#binaryninja.interaction.markdown_to_html">[docs]</a><span class="k">def</span> <span class="nf">markdown_to_html</span><span class="p">(</span><span class="n">contents</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``markdown_to_html`` converts the provided markdown to HTML.</span>
+
+<span class="sd">	:param string contents: Markdown contents to convert to HTML.</span>
+<span class="sd">	:rtype: string</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; markdown_to_html(&quot;##Yay&quot;)</span>
+<span class="sd">		&#39;&lt;h2&gt;Yay&lt;/h2&gt;&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNMarkdownToHTML</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="show_plain_text_report"><a class="viewcode-back" href="../../binaryninja.interaction.show_plain_text_report.html#binaryninja.interaction.show_plain_text_report">[docs]</a><span class="k">def</span> <span class="nf">show_plain_text_report</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``show_plain_text_report`` displays contents to the user in the UI or on the command line.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used.</span>
+
+<span class="sd">	:param str title: title to display in the UI popup.</span>
+<span class="sd">	:param str contents: plain text contents to display</span>
+<span class="sd">	:rtype: None</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; show_plain_text_report(&quot;title&quot;, &quot;contents&quot;)</span>
+<span class="sd">		contents</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNShowPlainTextReport</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="show_markdown_report"><a class="viewcode-back" href="../../binaryninja.interaction.show_markdown_report.html#binaryninja.interaction.show_markdown_report">[docs]</a><span class="k">def</span> <span class="nf">show_markdown_report</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``show_markdown_report`` displays the markdown contents in UI applications and plaintext in command line</span>
+<span class="sd">	applications.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used.</span>
+
+<span class="sd">	:param str contents: markdown contents to display</span>
+<span class="sd">	:param str plaintext: Plain text version to display (used on the command line)</span>
+<span class="sd">	:rtype: None</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; show_markdown_report(&quot;title&quot;, &quot;##Contents&quot;, &quot;Plain text contents&quot;)</span>
+<span class="sd">		Plain text contents</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNShowMarkdownReport</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="show_html_report"><a class="viewcode-back" href="../../binaryninja.interaction.show_html_report.html#binaryninja.interaction.show_html_report">[docs]</a><span class="k">def</span> <span class="nf">show_html_report</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``show_html_report`` displays the html contents in UI applications and plaintext in command line</span>
+<span class="sd">	applications.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used.</span>
+
+<span class="sd">	:param str contents: HTML contents to display</span>
+<span class="sd">	:param str plaintext: Plain text version to display (used on the command line)</span>
+<span class="sd">	:rtype: None</span>
+<span class="sd">	:Example&quot;</span>
+<span class="sd">		&gt;&gt;&gt; show_html_report(&quot;title&quot;, &quot;&lt;h1&gt;Contents&lt;/h1&gt;&quot;, &quot;Plain text contents&quot;)</span>
+<span class="sd">		Plain text contents</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNShowHTMLReport</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">contents</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_text_line_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_text_line_input.html#binaryninja.interaction.get_text_line_input">[docs]</a><span class="k">def</span> <span class="nf">get_text_line_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_text_line_input`` prompts the user to input a string with the given prompt and title.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used.</span>
+
+<span class="sd">	:param str prompt: String to prompt with.</span>
+<span class="sd">	:param str title: Title of the window when executed in the UI.</span>
+<span class="sd">	:rtype: string containing the input without trailing newline character.</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_text_line_input(&quot;PROMPT&gt;&quot;, &quot;getinfo&quot;)</span>
+<span class="sd">		PROMPT&gt; Input!</span>
+<span class="sd">		&#39;Input!&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTextLineInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+	<span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="get_int_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_int_input.html#binaryninja.interaction.get_int_input">[docs]</a><span class="k">def</span> <span class="nf">get_int_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_int_input`` prompts the user to input a integer with the given prompt and title.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used.</span>
+
+<span class="sd">	:param str prompt: String to prompt with.</span>
+<span class="sd">	:param str title: Title of the window when executed in the UI.</span>
+<span class="sd">	:rtype: integer value input by the user.</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_int_input(&quot;PROMPT&gt;&quot;, &quot;getinfo&quot;)</span>
+<span class="sd">		PROMPT&gt; 10</span>
+<span class="sd">		10</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_longlong</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetIntegerInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="get_address_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_address_input.html#binaryninja.interaction.get_address_input">[docs]</a><span class="k">def</span> <span class="nf">get_address_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_address_input`` prompts the user for an address with the given prompt and title.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used.</span>
+
+<span class="sd">	:param str prompt: String to prompt with.</span>
+<span class="sd">	:param str title: Title of the window when executed in the UI.</span>
+<span class="sd">	:rtype: integer value input by the user.</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_address_input(&quot;PROMPT&gt;&quot;, &quot;getinfo&quot;)</span>
+<span class="sd">		PROMPT&gt; 10</span>
+<span class="sd">		10L</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetAddressInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="get_choice_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_choice_input.html#binaryninja.interaction.get_choice_input">[docs]</a><span class="k">def</span> <span class="nf">get_choice_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">choices</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_choice_input`` prompts the user to select the one of the provided choices.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used. The ui uses a combo box.</span>
+
+<span class="sd">	:param str prompt: String to prompt with.</span>
+<span class="sd">	:param str title: Title of the window when executed in the UI.</span>
+<span class="sd">	:param list choices: A list of strings for the user to choose from.</span>
+<span class="sd">	:rtype: integer array index of the selected option</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_choice_input(&quot;PROMPT&gt;&quot;, &quot;choices&quot;, [&quot;Yes&quot;, &quot;No&quot;, &quot;Maybe&quot;])</span>
+<span class="sd">		choices</span>
+<span class="sd">		1) Yes</span>
+<span class="sd">		2) No</span>
+<span class="sd">		3) Maybe</span>
+<span class="sd">		PROMPT&gt; 1</span>
+<span class="sd">		0L</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">choice_buf</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">choices</span><span class="p">))()</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">choices</span><span class="p">)):</span>
+		<span class="n">choice_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">choices</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetChoiceInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">choice_buf</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">choices</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="get_open_filename_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_open_filename_input.html#binaryninja.interaction.get_open_filename_input">[docs]</a><span class="k">def</span> <span class="nf">get_open_filename_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_open_filename_input`` prompts the user for a file name to open.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used. The ui uses the native window popup for file selection.</span>
+
+<span class="sd">	:param str prompt: Prompt to display.</span>
+<span class="sd">	:param str ext: Optional, file extension</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_open_filename_input(&quot;filename:&quot;, &quot;exe&quot;)</span>
+<span class="sd">		filename: foo.exe</span>
+<span class="sd">		&#39;foo.exe&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetOpenFileNameInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+	<span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="get_save_filename_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_save_filename_input.html#binaryninja.interaction.get_save_filename_input">[docs]</a><span class="k">def</span> <span class="nf">get_save_filename_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">default_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_save_filename_input`` prompts the user for a file name to save as, optionally providing a file extension and</span>
+<span class="sd">	default_name.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used. The ui uses the native window popup for file selection.</span>
+
+<span class="sd">	:param str prompt: Prompt to display.</span>
+<span class="sd">	:param str ext: Optional, file extension</span>
+<span class="sd">	:param str default_name: Optional, default file name.</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_save_filename_input(&quot;filename:&quot;, &quot;exe&quot;, &quot;foo.exe&quot;)</span>
+<span class="sd">		filename: foo.exe</span>
+<span class="sd">		&#39;foo.exe&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetSaveFileNameInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+	<span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="get_directory_name_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_directory_name_input.html#binaryninja.interaction.get_directory_name_input">[docs]</a><span class="k">def</span> <span class="nf">get_directory_name_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">default_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_directory_name_input`` prompts the user for a directory name to save as, optionally providing and</span>
+<span class="sd">	default_name.</span>
+
+<span class="sd">	Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</span>
+<span class="sd">	      a simple text prompt is used. The ui uses the native window popup for file selection.</span>
+
+<span class="sd">	:param str prompt: Prompt to display.</span>
+<span class="sd">	:param str default_name: Optional, default directory name.</span>
+<span class="sd">	:rtype: str</span>
+<span class="sd">	:Example:</span>
+<span class="sd">		&gt;&gt;&gt; get_directory_name_input(&quot;prompt&quot;)</span>
+<span class="sd">		prompt dirname</span>
+<span class="sd">		&#39;dirname&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetDirectoryNameInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">default_name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+	<span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="get_form_input"><a class="viewcode-back" href="../../binaryninja.interaction.get_form_input.html#binaryninja.interaction.get_form_input">[docs]</a><span class="k">def</span> <span class="nf">get_form_input</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_from_input`` Prompts the user for a set of inputs specified in ``fields`` with given title.</span>
+<span class="sd">	The fields parameter is a list which can contain the following types:</span>
+<span class="sd">		- str  - an alias for LabelField</span>
+<span class="sd">		- None - an alias for SeparatorField</span>
+<span class="sd">		- LabelField         - Text output</span>
+<span class="sd">		- SeparatorField     - Vertical spacing</span>
+<span class="sd">		- TextLineField      - Prompt for a string value</span>
+<span class="sd">		- MultilineTextField - Prompt for multi-line string value</span>
+<span class="sd">		- IntegerField       - Prompt for an integer</span>
+<span class="sd">		- AddressField       - Prompt for an address</span>
+<span class="sd">		- ChoiceField        - Prompt for a choice from provided options</span>
+<span class="sd">		- OpenFileNameField  - Prompt for file to open</span>
+<span class="sd">		- SaveFileNameField  - Prompt for file to save to</span>
+<span class="sd">		- DirectoryNameField - Prompt for directory name</span>
+<span class="sd">	This API is flexible and works both in the UI via a popup dialog and on the command line.</span>
+<span class="sd">	:params list fields: A list containing of the above specified classes, strings or None</span>
+<span class="sd">	:params str title: The title of the popup dialog.</span>
+<span class="sd">	:Example:</span>
+
+<span class="sd">		&gt;&gt;&gt; int_f = IntegerField(&quot;Specify Integer&quot;)</span>
+<span class="sd">		&gt;&gt;&gt; tex_f = TextLineField(&quot;Specify name&quot;)</span>
+<span class="sd">		&gt;&gt;&gt; choice_f = ChoiceField(&quot;Options&quot;, [&quot;Yes&quot;, &quot;No&quot;, &quot;Maybe&quot;])</span>
+<span class="sd">		&gt;&gt;&gt; get_form_input([&quot;Get Data&quot;, None, int_f, tex_f, choice_f], &quot;The options&quot;)</span>
+<span class="sd">		Get Data</span>
+
+<span class="sd">		Specify Integer 1337</span>
+<span class="sd">		Specify name Peter</span>
+<span class="sd">		The options</span>
+<span class="sd">		1) Yes</span>
+<span class="sd">		2) No</span>
+<span class="sd">		3) Maybe</span>
+<span class="sd">		Options 1</span>
+<span class="sd">		&gt;&gt;&gt; True</span>
+<span class="sd">		&gt;&gt;&gt; print tex_f.result, int_f.result, choice_f.result</span>
+<span class="sd">		Peter 1337 0</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNFormInputField</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">))()</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">)):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">LabelField</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">_fill_core_struct</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">SeparatorField</span><span class="p">()</span><span class="o">.</span><span class="n">_fill_core_struct</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_fill_core_struct</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetFormInput</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">),</span> <span class="n">title</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">)):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)):</span>
+			<span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_get_result</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNFreeFormInputResults</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">))</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="show_message_box"><a class="viewcode-back" href="../../binaryninja.interaction.show_message_box.html#binaryninja.interaction.show_message_box">[docs]</a><span class="k">def</span> <span class="nf">show_message_box</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="n">MessageBoxButtonSet</span><span class="o">.</span><span class="n">OKButtonSet</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="n">MessageBoxIcon</span><span class="o">.</span><span class="n">InformationIcon</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``show_message_box`` Displays a configurable message box in the UI, or prompts on the console as appropriate</span>
+<span class="sd">	retrieves a list of all Symbol objects of the provided symbol type in the optionally</span>
+<span class="sd">	provided range.</span>
+
+<span class="sd">	:param str title: Text title for the message box.</span>
+<span class="sd">	:param str text: Text for the main body of the message box.</span>
+<span class="sd">	:param MessageBoxButtonSet buttons: One of :py:class:`MessageBoxButtonSet`</span>
+<span class="sd">	:param MessageBoxIcon icon: One of :py:class:`MessageBoxIcon`</span>
+<span class="sd">	:return: Which button was selected</span>
+<span class="sd">	:rtype: MessageBoxButtonResult</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNShowMessageBox</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">icon</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>BNIL Guide&#58; LLIL - Binary Ninja Documentation</title>
+      
+      
+      
+        <link rel="canonical" href="https://docs.binary.ninja/dev/bnil-llil/index.html">
+      
+      
+        <meta name="author" content="Vector 35 LLC">
+      
+    
+    <meta property="og:url" content="https://docs.binary.ninja/dev/bnil-llil/index.html">
+    <meta property="og:title" content="Binary Ninja Documentation">
+    <meta property="og:image" content="https://docs.binary.ninja/dev/bnil-llil/index.html/../../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Binary Ninja Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../../docs.css?1492471077">
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Developer Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        BNIL Guide&#58; LLIL
+      </div>
+    </div>
+    
+    
+    
+    
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://binary.ninja/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>
+          Binary Ninja Documentation
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../../index.html">
+      Home
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Getting Started Guide" href="../../getting-started/index.html">
+      Getting Started Guide
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">User Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Using and Writing Plugins" href="../../guide/plugins/index.html">
+      Using and Writing Plugins
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Troubleshooting" href="../../guide/troubleshooting/index.html">
+      Troubleshooting
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Developer Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Contributing Documentation" href="../documentation/index.html">
+      Contributing Documentation
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="BNIL Guide&#58; LLIL" href="index.html">
+      BNIL Guide&#58; LLIL
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Introduction by example" href="#introduction-by-example">
+                Introduction by example
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Low Level IL Instructions" href="#low-level-il-instructions">
+                Low Level IL Instructions
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="The Instructions" href="#the-instructions">
+                The Instructions
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">About</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="License" href="../../about/license/index.html">
+      License
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Open Source" href="../../about/open-source/index.html">
+      Open Source
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="binary-ninja-intermediate-language-series-part-1-low-level-il">Binary Ninja Intermediate Language Series, Part 1: Low Level IL<a class="headerlink" href="#binary-ninja-intermediate-language-series-part-1-low-level-il" title="Permanent link">&para;</a></h1>
+<p>The Binary Ninja Intermediate Language (BNIL) is a semantic representation of the assembly language instructions for a native architecture in Binary Ninja.  BNIL is actually a family of intermediate languages that work together to provide functionality at different abstraction layers. This developer guide is intended to cover some of the mechanics of the LLIL to distinguish it from the other ILs in the BNIL family. </p>
+<p><img alt="BNIL-LLIL Selected" src="../../images/BNIL.png" /></p>
+<p>The Lifted IL is very similar to the LLIL and is primarily of interest for Architecture plugin authors. If you're writing an analysis plugin, you'll always want to be working at LLIL or higher. During each stage of the lifting process a number of transformations take place, and each layer of IL can have different instructions. Because of this, you can not rely on an instruction from one layer existing in another.</p>
+<h2 id="introduction-by-example">Introduction by example<a class="headerlink" href="#introduction-by-example" title="Permanent link">&para;</a></h2>
+<p>Since doing is the easiest way to learn lets start with a simple example binary and step through analyzing it using the python console. </p>
+<p><img alt="Low Level IL Option &gt;" src="../../images/llil_option.png" /></p>
+<ul>
+<li>Download <a href="../../files/chal1">chal1</a> and open it with Binary Ninja</li>
+<li>Next, bring up the <code>Low Level IL</code> view by clicking in the options pane at the bottom of the screen
+ (or alternatively, use the <code>i</code> key)</li>
+<li>Navigate to main (<code>g</code>, then "main", or double-click it in the function list)</li>
+<li>Finally, bring up the python console using: <code>~</code></li>
+</ul>
+<p>Next, enter the following in the console:</p>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; for block in current_function.low_level_il:
+...     for instr in block:
+...         print instr.address, instr.instr_index, instr
+... 
+4196422 0 push(rbp)
+4196423 1 rbp = rsp {var_8}
+4196426 2 rsp = rsp - 0x110
+4196433 3 rax = rbp - 0xc0 {var_c8}
+...
+</pre></div>
+
+
+<p>This will print out all the LLIL instructions in the current function. How does this code work? </p>
+<p>First we use the global magic variable <code>current_function</code> which gives us the python object <a href="http://api.binary.ninja/function.Function.html"><code>function.Function</code></a> for whatever function is currently selected in the UI. The variable is only usable from the python console, and shouldn't be used for headless plugins. In a script you can either use the function that was passed in if you <a href="https://api.binary.ninja/binaryninja.plugin-module.html#binaryninja.plugin.PluginCommand.register_for_function">registered your plugin</a> to handle functions, or you can compute the function based on <a href="https://api.binary.ninja/binaryninja.binaryview-module.html?highlight=get_functions_at#binaryninja.binaryview.BinaryView.get_functions_at">a specific address</a>, or maybe even just iterate over all the functions in a BinaryView (<code>for func in bv.functions:</code>).</p>
+<p>Next we get the <a href="http://api.binary.ninja/binaryninja.lowlevelil.LowLevelILFunction.html"><code>lowlevelil.LowLevelILFunction</code></a> from the <code>Function</code> class: <code>current_function.low_level_il</code>. Iterating over the <code>LowLevelILFunction</code> class provides access to the <a href="http://api.binary.ninja/binaryninja.lowlevelil.LowLevelILBasicBlock.html"><code>lowlevelil.LowLevelILBasicBlock</code></a> classes for this function. Inside the loop we can now iterate over the <code>LowLevelILBasicBlock</code> class which provides access to the individual <a href="http://api.binary.ninja/binaryninja.lowlevelil.LowLevelILInstruction.html"><code>lowlevelil.LowLevelILInstruction</code></a> classes.</p>
+<p>Finally, we can print out the attributes of the instruction. We first print out <code>address</code> which is the address of the corresponding assembly language instruction.  Next, we print the <code>instr_index</code>, this you can think of as the address of the IL instruction. Since translating assembly language is a many-to-many relationship we may see multiple IL instructions needed to represent a single assembly language instruction, and thus each IL instruction needs to have its own index separate from its address. Finally, we print out the instruction text.</p>
+<p>In python, iterating over a class is a distinct operation from subscripting.  This separation is used in the <code>LowLevelILFunction</code> class. If you iterate over a <code>LowLevelILFunction</code> you get a list of <code>LowLevelILBasicBlocks</code>, however if you subscript a <code>LowLevelILFunction</code> you actually get the <code>LowLevelILInstruction</code> whose <code>instr_index</code> corresponds to the subscript:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">list</span><span class="p">(</span><span class="n">current_function</span><span class="p">.</span><span class="n">low_level_il</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="nl">block</span><span class="p">:</span> <span class="n">x86_64</span><span class="mh">@0x0</span><span class="o">-</span><span class="mh">0x3f</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nl">block</span><span class="p">:</span> <span class="n">x86_64</span><span class="mh">@0x3f</span><span class="o">-</span><span class="mh">0x45</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nl">block</span><span class="p">:</span> <span class="n">x86_64</span><span class="mh">@0x45</span><span class="o">-</span><span class="mh">0x47</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="nl">block</span><span class="p">:</span> <span class="n">x86_64</span><span class="mh">@0x47</span><span class="o">-</span><span class="mh">0x53</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nl">block</span><span class="p">:</span> <span class="n">x86_64</span><span class="mh">@0x53</span><span class="o">-</span><span class="mh">0x57</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nl">block</span><span class="p">:</span> <span class="n">x86_64</span><span class="mh">@0x57</span><span class="o">-</span><span class="mh">0x5a</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">type</span><span class="p">(</span><span class="n">current_function</span><span class="p">.</span><span class="n">low_level_il</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="n">binaryninja</span><span class="p">.</span><span class="n">lowlevelil</span><span class="p">.</span><span class="n">LowLevelILInstruction</span><span class="err">&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">current_function</span><span class="p">.</span><span class="n">low_level_il</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&lt;</span><span class="nl">il</span><span class="p">:</span> <span class="n">push</span><span class="p">(</span><span class="n">rbp</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h2 id="low-level-il-instructions">Low Level IL Instructions<a class="headerlink" href="#low-level-il-instructions" title="Permanent link">&para;</a></h2>
+<p>Now that we've established how to access LLIL Functions, Blocks, and Instructions, lets focus in on the instructions themselves. LLIL instructions are infinite length and structured as an expression tree. An expression tree means that instruction operands can be composed of operation. Thus we can have an IL instruction like this:</p>
+<div class="codehilite"><pre><span></span>eax = eax + ecx * 4
+</pre></div>
+
+
+<p>The tree for such an instruction would look like:</p>
+<div class="codehilite"><pre><span></span>   =
+  / \
+eax  +
+    / \
+  eax  *
+      / \
+    ecx  4
+</pre></div>
+
+
+<p>There are quite a few reasons that we chose to use expression trees that we won't go into in detail here, but suffice it to say lifting to this form and reading this form are both much easier than other forms.</p>
+<p>Now lets get back to the examples. First let's pick an instruction to work with:</p>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr = current_function.low_level_il[2]
+&gt;&gt;&gt; instr
+&lt;il: rsp = rsp - 0x110&gt;
+</pre></div>
+
+
+<p>For the above instruction, we have a few operations we can perform:</p>
+<ul>
+<li><strong>address</strong> - returns the virtual address</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; hex(instr.address)
+&#39;0x40084aL&#39;
+</pre></div>
+
+
+<ul>
+<li><strong>dest</strong> - returns the destination operand</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.dest
+&#39;rsp&#39;
+</pre></div>
+
+
+<ul>
+<li><strong>function</strong> - returns the containing function</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.function
+&lt;binaryninja.lowlevelil.LowLevelILFunction object at 0x111c79810&gt;
+</pre></div>
+
+
+<ul>
+<li><strong>instr_index</strong> - returns the LLIL index</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.instr_index
+2
+</pre></div>
+
+
+<ul>
+<li><strong>operands</strong> - returns a list of all operands.</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.operands
+[&#39;rsp&#39;, &lt;il: rsp - 0x110&gt;]
+</pre></div>
+
+
+<ul>
+<li><strong>operation</strong> - returns the enumeration value of the current operation</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.operation
+&lt;LowLevelILOperation.LLIL_SET_REG: 1&gt;
+</pre></div>
+
+
+<ul>
+<li><strong>src</strong> - returns the source operand</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.src
+&lt;il: rsp - 0x110&gt;
+</pre></div>
+
+
+<ul>
+<li><strong>dest</strong> - returns the destination operand</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.dest
+&#39;rsp&#39;
+</pre></div>
+
+
+<ul>
+<li><strong>size</strong> - returns the size of the operation in bytes (in this case we have an 8 byte assigment)</li>
+</ul>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; instr.size
+8L
+</pre></div>
+
+
+<p>Now with some knowledge of the <code>LowLevelIL</code> class lets try to do something with it. Lets say our goal is to find all the times the register <code>rdx</code> is written to in the current function. This code is straight forward:</p>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; for block in current_function.low_level_il:
+...  for instr in block:
+...   if instr.operation == LowLevelILOperation.LLIL_SET_REG and instr.dest == &#39;rdx&#39;:
+...    print instr.address, instr.instr_index, instr
+... 
+4196490 14 rdx = [rax].q
+4196500 16 rdx = [rax + 8].q
+4196511 18 rdx = [rax + 0x10].q
+4196522 20 rdx = [rax + 0x18].q
+4196533 22 rdx = [rax + 0x20].q
+4196544 24 rdx = [rax + 0x28].q
+4196798 77 rdx = [0x602090].q
+</pre></div>
+
+
+<h2 id="the-instructions">The Instructions<a class="headerlink" href="#the-instructions" title="Permanent link">&para;</a></h2>
+<p>Going into gross detail on all the instructions is out of scope of the this article, but we'll go over the different instructions types and speak generally about how they are used.</p>
+<h3 id="registers-constants-flags">Registers, Constants &amp; Flags<a class="headerlink" href="#registers-constants-flags" title="Permanent link">&para;</a></h3>
+<p>When parsing an instruction tree the terminals are registers, constants and flags. This provide the basis from which all instructions are built.</p>
+<ul>
+<li><strong><code>LLIL_REG</code></strong> - A register, terminal</li>
+<li><strong><code>LLIL_CONST</code></strong> - A constant integer value, terminal</li>
+<li><strong><code>LLIL_SET_REG</code></strong> - Sets a register to the results of the of the IL operation in <code>src</code> attribute.</li>
+<li><strong><code>LLIL_SET_REG_SPLIT</code></strong> - Uses a pair of registers as one double sized register, setting both registers at once.</li>
+<li><strong><code>LLIL_SET_FLAG</code></strong> - Sets the specified flag to the IL operation in <code>src</code> attribute.</li>
+</ul>
+<h3 id="memory-load-store">Memory Load &amp; Store<a class="headerlink" href="#memory-load-store" title="Permanent link">&para;</a></h3>
+<p>Reading and writing memory is accomplished through the following instructions.</p>
+<ul>
+<li><strong><code>LLIL_LOAD</code></strong> - Load a value from memory.</li>
+<li><strong><code>LLIL_STORE</code></strong> - Store a value to memory.</li>
+<li><strong><code>LLIL_PUSH</code></strong> - Store value to stack adjusting stack pointer by sizeof(value) after the store.</li>
+<li><strong><code>LLIL_POP</code></strong> - Load value from stack adjusting stack pointer by sizeof(value) after the store.</li>
+</ul>
+<h3 id="control-flow-conditionals">Control Flow &amp; Conditionals<a class="headerlink" href="#control-flow-conditionals" title="Permanent link">&para;</a></h3>
+<p>Control flow transfering instructions and comparison instructions are straight forward enough, but one instruction that deserves more attention is the <code>if</code> instruction. To understand the <code>if</code> instruction we need to first understand the concept of labels.</p>
+<p>Labels function much like they do in C code. They can be put anywhere in the emitted IL and serve as a destination for the <code>if</code> and <code>goto</code> instructions.  Labels are required because one assembly language instruction can translate to multiple IL instructions, and you need to be able to branch to any of the emitted IL instructions. Lets consider the following x86 instruction <code>cmove</code> (Conditional move if equal flag is set):</p>
+<div class="codehilite"><pre><span></span>test    eax, eax
+cmove  eax, ebx
+</pre></div>
+
+
+<p>To translate this instruction to IL we have to first create true and false labels. Then we emit the <code>if</code> instruction, passing it the proper conditional and labels. Next we emit the true label, then we emit the set register instruction and a goto false label instruction. This results in the following output:</p>
+<div class="codehilite"><pre><span></span>0 @ 00000002 if (eax == 0) then 1 else 3
+1 @ 00000002 eax = ebx
+2 @ 00000002 goto 3
+</pre></div>
+
+
+<p>As you can see from the above code labels are really just used internaly and aren't explicitly marked. In addition to <code>if</code> and <code>goto</code>, the <code>jump_to</code> IL instruction is the only other instruction that operates on labels.  The rest of the IL control flow instructions operate on addresses rather than labels, much like actual assembly language instructions. Note that an architecture plugin author should not be emitting <code>jump_to</code> IL instructions as those are generated by the analysis automatically. </p>
+<ul>
+<li><strong><code>LLIL_JUMP</code></strong> - Branch execution to the result of the IL operation.</li>
+<li><strong><code>LLIL_JUMP_TO</code></strong> - Jump table construct, contains an expression and list of possible targets.</li>
+<li><strong><code>LLIL_CALL</code></strong> - Branch execution to the result of the IL operation.</li>
+<li><strong><code>LLIL_RET</code></strong> - Return execution to the caller.</li>
+<li><strong><code>LLIL_NORET</code></strong> - Instruction emitted automatically after syscall or call instruction which cause the program to terminate.</li>
+<li><strong><code>LLIL_IF</code></strong> - If provides conditional execution. If cond is true execution branches to the true label and false label otherwise.</li>
+<li><strong><code>LLIL_GOTO</code></strong> - Goto is used to branch to an IL label, this is different than jump since jump can only jump to addresses.</li>
+<li><strong><code>LLIL_FLAG_COND</code></strong> - Returns the flag condition expression for the specified flag condition.</li>
+<li><strong><code>LLIL_CMP_E</code></strong> - equality</li>
+<li><strong><code>LLIL_CMP_NE</code></strong> - not equal</li>
+<li><strong><code>LLIL_CMP_SLT</code></strong> - signed less than</li>
+<li><strong><code>LLIL_CMP_ULT</code></strong> - unsigned less than</li>
+<li><strong><code>LLIL_CMP_SLE</code></strong> - signed less than or equal</li>
+<li><strong><code>LLIL_CMP_ULE</code></strong> - unsigned less than or equal</li>
+<li><strong><code>LLIL_CMP_SGE</code></strong> - signed greater than or equal</li>
+<li><strong><code>LLIL_CMP_UGE</code></strong> - unsigned greater than or equal</li>
+<li><strong><code>LLIL_CMP_SGT</code></strong> - signed greater than</li>
+<li><strong><code>LLIL_CMP_UGT</code></strong> - unsigned greater than</li>
+</ul>
+<h3 id="the-arithmetic-logical-instructions">The Arithmetic &amp; Logical Instructions<a class="headerlink" href="#the-arithmetic-logical-instructions" title="Permanent link">&para;</a></h3>
+<p>LLIL implements the most common arithmetic as well as a host of more complicated instruction which make translating from assembly much easier. Most arithmetic and logical instruction contain <code>left</code> and <code>right</code> attributes which can themselves be other IL instructions.</p>
+<p>The double precision instruction multiply, divide, modulus instructions are particularly helpful for instruction sets like x86 whose output/input can be double the size of the input/output.</p>
+<ul>
+<li><strong><code>LLIL_ADD</code></strong> - Add</li>
+<li><strong><code>LLIL_ADC</code></strong> - Add with carry</li>
+<li><strong><code>LLIL_SUB</code></strong> - Subtract</li>
+<li><strong><code>LLIL_SBB</code></strong> - Subtract with borrow</li>
+<li><strong><code>LLIL_AND</code></strong> - Bitwise and</li>
+<li><strong><code>LLIL_OR</code></strong> - Bitwise or</li>
+<li><strong><code>LLIL_XOR</code></strong> - Exclusive or</li>
+<li><strong><code>LLIL_LSL</code></strong> - Logical shift left</li>
+<li><strong><code>LLIL_LSR</code></strong> - Logical shift right</li>
+<li><strong><code>LLIL_ASR</code></strong> - Arithmetic shift right</li>
+<li><strong><code>LLIL_ROL</code></strong> - Rotate left</li>
+<li><strong><code>LLIL_RLC</code></strong> - Rotate left with carry</li>
+<li><strong><code>LLIL_ROR</code></strong> - Rotate right</li>
+<li><strong><code>LLIL_RRC</code></strong> - Rotate right with carry</li>
+<li><strong><code>LLIL_MUL</code></strong> - Multiply single precision</li>
+<li><strong><code>LLIL_MULU_DP</code></strong> - Unsigned multiply double precision </li>
+<li><strong><code>LLIL_MULS_DP</code></strong> - Signed multiply double precision</li>
+<li><strong><code>LLIL_DIVU</code></strong> - Unsigned divide single precision</li>
+<li><strong><code>LLIL_DIVU_DP</code></strong> - Unsigned divide double precision</li>
+<li><strong><code>LLIL_DIVS</code></strong> - Signed divide single precision</li>
+<li><strong><code>LLIL_DIVS_DP</code></strong> - Signed divide double precision</li>
+<li><strong><code>LLIL_MODU</code></strong> - Unsigned modulus single precision</li>
+<li><strong><code>LLIL_MODU_DP</code></strong> - Unsigned modulus double precision</li>
+<li><strong><code>LLIL_MODS</code></strong> - Signed modulus single precision</li>
+<li><strong><code>LLIL_MODS_DP</code></strong> - Signed modulus double precision</li>
+<li><strong><code>LLIL_NEG</code></strong> - Sign negation</li>
+<li><strong><code>LLIL_NOT</code></strong> - Bitwise complement</li>
+</ul>
+<h3 id="special-instructions">Special instructions<a class="headerlink" href="#special-instructions" title="Permanent link">&para;</a></h3>
+<p>The rest of the instructions are pretty much self explanitory to anyone with familiarity with assembly languages.</p>
+<ul>
+<li><strong><code>LLIL_NOP</code></strong> - No operation</li>
+<li><strong><code>LLIL_SX</code></strong> - Sign extend</li>
+<li><strong><code>LLIL_ZX</code></strong> - Zero extend</li>
+<li><strong><code>LLIL_SYSCALL</code></strong> - System call instruction</li>
+<li><strong><code>LLIL_BP</code></strong> - Breakpoint instruction</li>
+<li><strong><code>LLIL_TRAP</code></strong> - Trap instruction</li>
+<li><strong><code>LLIL_UNDEF</code></strong> - Undefined instruction</li>
+<li><strong><code>LLIL_UNIMPL</code></strong> - Unimplemented instruction</li>
+<li><strong><code>LLIL_UNIMPL_MEM</code></strong> - Unimplemented memory access instruction</li>
+</ul>
+          <aside class="copyright" role="note">
+            
+              (<a href="https://creativecommons.org/licenses/by/3.0/">cc</a>) Vector 35 LLC
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../documentation/index.html" title="Contributing Documentation">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Contributing Documentation
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../about/license/index.html" title="License">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                License
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        /* General initialization */
+        ga('create', 'UA-72420552-3', 'docs.binary.ninja');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        /* Track outbound links */
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+        /* Register handler to log search on blur */
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+  </body>
+</html>

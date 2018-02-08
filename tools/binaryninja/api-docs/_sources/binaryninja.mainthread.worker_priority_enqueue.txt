@@ -1,0 +1,6 @@
+binaryninja.mainthread.worker_priority_enqueue
+==============================================
+
+.. currentmodule:: binaryninja.mainthread
+
+.. autofunction:: worker_priority_enqueue

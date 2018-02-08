@@ -1,0 +1,6 @@
+binaryninja.log.close_logs
+==========================
+
+.. currentmodule:: binaryninja.log
+
+.. autofunction:: close_logs

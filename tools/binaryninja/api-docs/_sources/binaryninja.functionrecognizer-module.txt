@@ -1,0 +1,16 @@
+functionrecognizer module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.functionrecognizer.FunctionRecognizer
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.functionrecognizer
+   :members:
+   :undoc-members:
+   :show-inheritance:

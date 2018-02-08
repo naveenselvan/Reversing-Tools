@@ -1,0 +1,23 @@
+binaryninja.update.UpdateVersion
+================================
+
+.. currentmodule:: binaryninja.update
+
+.. autoclass:: UpdateVersion
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UpdateVersion.__init__
+      ~UpdateVersion.update
+   
+   
+
+   
+   
+   

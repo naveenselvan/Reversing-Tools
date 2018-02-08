@@ -1,0 +1,115 @@
+binaryninja.function.Function
+=============================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: Function
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Function.__init__
+      ~Function.apply_auto_discovered_type
+      ~Function.apply_imported_types
+      ~Function.create_auto_stack_var
+      ~Function.create_auto_var
+      ~Function.create_graph
+      ~Function.create_user_stack_var
+      ~Function.create_user_var
+      ~Function.delete_auto_stack_var
+      ~Function.delete_auto_var
+      ~Function.delete_user_stack_var
+      ~Function.delete_user_var
+      ~Function.get_basic_block_at
+      ~Function.get_block_annotations
+      ~Function.get_comment_at
+      ~Function.get_constants_referenced_by
+      ~Function.get_flags_read_by_lifted_il_instruction
+      ~Function.get_flags_written_by_lifted_il_instruction
+      ~Function.get_indirect_branches_at
+      ~Function.get_instr_highlight
+      ~Function.get_int_display_type
+      ~Function.get_lifted_il_at
+      ~Function.get_lifted_il_flag_definitions_for_use
+      ~Function.get_lifted_il_flag_uses_for_definition
+      ~Function.get_low_level_il_at
+      ~Function.get_low_level_il_exits_at
+      ~Function.get_parameter_at
+      ~Function.get_parameter_at_low_level_il_instruction
+      ~Function.get_reg_value_after
+      ~Function.get_reg_value_at
+      ~Function.get_reg_value_at_exit
+      ~Function.get_regs_read_by
+      ~Function.get_regs_written_by
+      ~Function.get_stack_contents_after
+      ~Function.get_stack_contents_at
+      ~Function.get_stack_var_at_frame_offset
+      ~Function.get_stack_vars_referenced_by
+      ~Function.get_type_tokens
+      ~Function.mark_recent_use
+      ~Function.reanalyze
+      ~Function.release_advanced_analysis_data
+      ~Function.request_advanced_analysis_data
+      ~Function.set_auto_calling_convention
+      ~Function.set_auto_can_return
+      ~Function.set_auto_clobbered_regs
+      ~Function.set_auto_has_variable_arguments
+      ~Function.set_auto_indirect_branches
+      ~Function.set_auto_instr_highlight
+      ~Function.set_auto_parameter_vars
+      ~Function.set_auto_return_type
+      ~Function.set_auto_stack_adjustment
+      ~Function.set_auto_type
+      ~Function.set_comment
+      ~Function.set_comment_at
+      ~Function.set_default_session_data
+      ~Function.set_int_display_type
+      ~Function.set_user_indirect_branches
+      ~Function.set_user_instr_highlight
+      ~Function.set_user_type
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Function.analysis_performance_info
+      ~Function.arch
+      ~Function.auto
+      ~Function.basic_blocks
+      ~Function.calling_convention
+      ~Function.can_return
+      ~Function.clobbered_regs
+      ~Function.comment
+      ~Function.comments
+      ~Function.explicitly_defined_type
+      ~Function.function_type
+      ~Function.global_pointer_value
+      ~Function.has_variable_arguments
+      ~Function.indirect_branches
+      ~Function.lifted_il
+      ~Function.low_level_il
+      ~Function.medium_level_il
+      ~Function.name
+      ~Function.needs_update
+      ~Function.parameter_vars
+      ~Function.platform
+      ~Function.return_type
+      ~Function.session_data
+      ~Function.stack_adjustment
+      ~Function.stack_layout
+      ~Function.start
+      ~Function.symbol
+      ~Function.type_tokens
+      ~Function.vars
+      ~Function.view
+   
+   

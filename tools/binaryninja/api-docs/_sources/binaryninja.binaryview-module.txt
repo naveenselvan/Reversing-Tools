@@ -1,0 +1,28 @@
+binaryview module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.binaryview.AddressRange
+   binaryninja.binaryview.AnalysisCompletionEvent
+   binaryninja.binaryview.AnalysisProgress
+   binaryninja.binaryview.BinaryDataNotification
+   binaryninja.binaryview.BinaryDataNotificationCallbacks
+   binaryninja.binaryview.BinaryReader
+   binaryninja.binaryview.BinaryView
+   binaryninja.binaryview.BinaryViewType
+   binaryninja.binaryview.BinaryWriter
+   binaryninja.binaryview.DataVariable
+   binaryninja.binaryview.Section
+   binaryninja.binaryview.Segment
+   binaryninja.binaryview.StringReference
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.binaryview
+   :members:
+   :undoc-members:
+   :show-inheritance:

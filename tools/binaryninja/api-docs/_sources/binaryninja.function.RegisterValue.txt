@@ -1,0 +1,22 @@
+binaryninja.function.RegisterValue
+==================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: RegisterValue
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RegisterValue.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,16 @@
+atexit module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.atexit.register
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.atexit
+   :members:
+   :undoc-members:
+   :show-inheritance:

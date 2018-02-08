@@ -1,0 +1,22 @@
+binaryninja.binaryview.DataVariable
+===================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: DataVariable
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataVariable.__init__
+   
+   
+
+   
+   
+   

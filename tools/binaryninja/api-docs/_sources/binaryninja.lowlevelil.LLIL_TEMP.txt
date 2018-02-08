@@ -1,0 +1,6 @@
+binaryninja.lowlevelil.LLIL_TEMP
+================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autofunction:: LLIL_TEMP

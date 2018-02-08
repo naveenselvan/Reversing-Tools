@@ -1,0 +1,30 @@
+binaryninja.enums.CallingConventionName
+=======================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: CallingConventionName
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CallingConventionName.CLRCallCallingConvention
+      ~CallingConventionName.CdeclCallingConvention
+      ~CallingConventionName.EabiCallCallingConvention
+      ~CallingConventionName.FastcallCallingConvention
+      ~CallingConventionName.NoCallingConvention
+      ~CallingConventionName.PascalCallingConvention
+      ~CallingConventionName.STDCallCallingConvention
+      ~CallingConventionName.ThisCallCallingConvention
+      ~CallingConventionName.VectorCallCallingConvention
+   
+   

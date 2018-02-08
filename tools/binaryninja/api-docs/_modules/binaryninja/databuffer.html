@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.databuffer &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.databuffer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.databuffer</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+
+
+<div class="viewcode-block" id="DataBuffer"><a class="viewcode-back" href="../../binaryninja.databuffer.DataBuffer.html#binaryninja.databuffer.DataBuffer">[docs]</a><span class="k">class</span> <span class="nc">DataBuffer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="DataBuffer.__init__"><a class="viewcode-back" href="../../binaryninja.databuffer.DataBuffer.html#binaryninja.databuffer.DataBuffer.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">handle_of_type</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNDataBuffer</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="n">long</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateDataBuffer</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="n">DataBuffer</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNDuplicateDataBuffer</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateDataBuffer</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contents</span><span class="p">))</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeDataBuffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferLength</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+			<span class="n">source</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+				<span class="n">result</span> <span class="o">+=</span> <span class="n">source</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+			<span class="k">return</span> <span class="n">result</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+				<span class="n">start</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+				<span class="n">stop</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">stop</span> <span class="o">&lt;=</span> <span class="n">start</span><span class="p">:</span>
+					<span class="k">return</span> <span class="s2">&quot;&quot;</span>
+				<span class="n">buf</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+				<span class="n">ctypes</span><span class="o">.</span><span class="n">memmove</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferContentsAt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">start</span><span class="p">),</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+				<span class="k">return</span> <span class="n">buf</span><span class="o">.</span><span class="n">raw</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferByte</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;index out of range&quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferByte</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;index out of range&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;step not supported on assignment&quot;</span><span class="p">)</span>
+			<span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+			<span class="n">start</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">stop</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
+				<span class="n">stop</span> <span class="o">=</span> <span class="n">start</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">):</span>
+				<span class="n">data</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+				<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">start</span><span class="p">]</span> <span class="o">+</span> <span class="n">value</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="n">stop</span><span class="p">:]</span>
+				<span class="n">core</span><span class="o">.</span><span class="n">BNSetDataBufferContents</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+				<span class="n">buf</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+				<span class="n">ctypes</span><span class="o">.</span><span class="n">memmove</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferContentsAt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">start</span><span class="p">),</span> <span class="n">buf</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;expected single byte for assignment&quot;</span><span class="p">)</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+				<span class="n">buf</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+				<span class="n">ctypes</span><span class="o">.</span><span class="n">memmove</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferContentsAt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)),</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;index out of range&quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;expected single byte for assignment&quot;</span><span class="p">)</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="n">buf</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="n">ctypes</span><span class="o">.</span><span class="n">memmove</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferContentsAt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;index out of range&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">buf</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="n">ctypes</span><span class="o">.</span><span class="n">memmove</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetDataBufferContents</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">buf</span><span class="o">.</span><span class="n">raw</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+<div class="viewcode-block" id="DataBuffer.escape"><a class="viewcode-back" href="../../binaryninja.databuffer-module.html#binaryninja.databuffer.DataBuffer.escape">[docs]</a>	<span class="k">def</span> <span class="nf">escape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNDataBufferToEscapedString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DataBuffer.unescape"><a class="viewcode-back" href="../../binaryninja.databuffer-module.html#binaryninja.databuffer.DataBuffer.unescape">[docs]</a>	<span class="k">def</span> <span class="nf">unescape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">DataBuffer</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">core</span><span class="o">.</span><span class="n">BNDecodeEscapedString</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="DataBuffer.base64_encode"><a class="viewcode-back" href="../../binaryninja.databuffer-module.html#binaryninja.databuffer.DataBuffer.base64_encode">[docs]</a>	<span class="k">def</span> <span class="nf">base64_encode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNDataBufferToBase64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DataBuffer.base64_decode"><a class="viewcode-back" href="../../binaryninja.databuffer-module.html#binaryninja.databuffer.DataBuffer.base64_decode">[docs]</a>	<span class="k">def</span> <span class="nf">base64_decode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">DataBuffer</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNDecodeBase64</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="DataBuffer.zlib_compress"><a class="viewcode-back" href="../../binaryninja.databuffer-module.html#binaryninja.databuffer.DataBuffer.zlib_compress">[docs]</a>	<span class="k">def</span> <span class="nf">zlib_compress</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">buf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNZlibCompress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">DataBuffer</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">buf</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DataBuffer.zlib_decompress"><a class="viewcode-back" href="../../binaryninja.databuffer-module.html#binaryninja.databuffer.DataBuffer.zlib_decompress">[docs]</a>	<span class="k">def</span> <span class="nf">zlib_decompress</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">buf</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNZlibDecompress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">DataBuffer</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">buf</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="escape_string"><a class="viewcode-back" href="../../binaryninja.databuffer.escape_string.html#binaryninja.databuffer.escape_string">[docs]</a><span class="k">def</span> <span class="nf">escape_string</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">DataBuffer</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">escape</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="unescape_string"><a class="viewcode-back" href="../../binaryninja.databuffer.unescape_string.html#binaryninja.databuffer.unescape_string">[docs]</a><span class="k">def</span> <span class="nf">unescape_string</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">DataBuffer</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">unescape</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

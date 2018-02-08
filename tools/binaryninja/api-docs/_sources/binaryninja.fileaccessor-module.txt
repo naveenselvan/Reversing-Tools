@@ -1,0 +1,17 @@
+fileaccessor module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.fileaccessor.CoreFileAccessor
+   binaryninja.fileaccessor.FileAccessor
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.fileaccessor
+   :members:
+   :undoc-members:
+   :show-inheritance:

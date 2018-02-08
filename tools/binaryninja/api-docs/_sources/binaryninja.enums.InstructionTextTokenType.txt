@@ -1,0 +1,49 @@
+binaryninja.enums.InstructionTextTokenType
+==========================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: InstructionTextTokenType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~InstructionTextTokenType.AddressDisplayToken
+      ~InstructionTextTokenType.AnnotationToken
+      ~InstructionTextTokenType.ArgumentNameToken
+      ~InstructionTextTokenType.BeginMemoryOperandToken
+      ~InstructionTextTokenType.CharacterConstantToken
+      ~InstructionTextTokenType.CodeRelativeAddressToken
+      ~InstructionTextTokenType.CodeSymbolToken
+      ~InstructionTextTokenType.DataSymbolToken
+      ~InstructionTextTokenType.EndMemoryOperandToken
+      ~InstructionTextTokenType.FieldNameToken
+      ~InstructionTextTokenType.FloatingPointToken
+      ~InstructionTextTokenType.HexDumpByteValueToken
+      ~InstructionTextTokenType.HexDumpInvalidByteToken
+      ~InstructionTextTokenType.HexDumpSkippedByteToken
+      ~InstructionTextTokenType.HexDumpTextToken
+      ~InstructionTextTokenType.ImportToken
+      ~InstructionTextTokenType.IndirectImportToken
+      ~InstructionTextTokenType.InstructionToken
+      ~InstructionTextTokenType.IntegerToken
+      ~InstructionTextTokenType.KeywordToken
+      ~InstructionTextTokenType.LocalVariableToken
+      ~InstructionTextTokenType.OpcodeToken
+      ~InstructionTextTokenType.OperandSeparatorToken
+      ~InstructionTextTokenType.PossibleAddressToken
+      ~InstructionTextTokenType.RegisterToken
+      ~InstructionTextTokenType.StringToken
+      ~InstructionTextTokenType.TextToken
+      ~InstructionTextTokenType.TypeNameToken
+   
+   

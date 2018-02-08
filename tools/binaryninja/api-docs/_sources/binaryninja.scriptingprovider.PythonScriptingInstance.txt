@@ -1,0 +1,45 @@
+binaryninja.scriptingprovider.PythonScriptingInstance
+=====================================================
+
+.. currentmodule:: binaryninja.scriptingprovider
+
+.. autoclass:: PythonScriptingInstance
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PythonScriptingInstance.__init__
+      ~PythonScriptingInstance.error
+      ~PythonScriptingInstance.execute_script_input
+      ~PythonScriptingInstance.output
+      ~PythonScriptingInstance.perform_destroy_instance
+      ~PythonScriptingInstance.perform_execute_script_input
+      ~PythonScriptingInstance.perform_set_current_address
+      ~PythonScriptingInstance.perform_set_current_basic_block
+      ~PythonScriptingInstance.perform_set_current_binary_view
+      ~PythonScriptingInstance.perform_set_current_function
+      ~PythonScriptingInstance.perform_set_current_selection
+      ~PythonScriptingInstance.register_output_listener
+      ~PythonScriptingInstance.set_current_address
+      ~PythonScriptingInstance.set_current_basic_block
+      ~PythonScriptingInstance.set_current_binary_view
+      ~PythonScriptingInstance.set_current_function
+      ~PythonScriptingInstance.set_current_selection
+      ~PythonScriptingInstance.unregister_output_listener
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PythonScriptingInstance.input_ready_state
+   
+   

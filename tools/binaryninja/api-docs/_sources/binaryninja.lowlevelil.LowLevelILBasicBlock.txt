@@ -1,0 +1,50 @@
+binaryninja.lowlevelil.LowLevelILBasicBlock
+===========================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autoclass:: LowLevelILBasicBlock
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LowLevelILBasicBlock.__init__
+      ~LowLevelILBasicBlock.get_disassembly_text
+      ~LowLevelILBasicBlock.get_iterated_dominance_frontier
+      ~LowLevelILBasicBlock.mark_recent_use
+      ~LowLevelILBasicBlock.set_auto_highlight
+      ~LowLevelILBasicBlock.set_user_highlight
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LowLevelILBasicBlock.annotations
+      ~LowLevelILBasicBlock.arch
+      ~LowLevelILBasicBlock.can_exit
+      ~LowLevelILBasicBlock.disassembly_text
+      ~LowLevelILBasicBlock.dominance_frontier
+      ~LowLevelILBasicBlock.dominator_tree_children
+      ~LowLevelILBasicBlock.dominators
+      ~LowLevelILBasicBlock.end
+      ~LowLevelILBasicBlock.function
+      ~LowLevelILBasicBlock.has_undetermined_outgoing_edges
+      ~LowLevelILBasicBlock.highlight
+      ~LowLevelILBasicBlock.immediate_dominator
+      ~LowLevelILBasicBlock.incoming_edges
+      ~LowLevelILBasicBlock.index
+      ~LowLevelILBasicBlock.length
+      ~LowLevelILBasicBlock.outgoing_edges
+      ~LowLevelILBasicBlock.start
+      ~LowLevelILBasicBlock.strict_dominators
+   
+   

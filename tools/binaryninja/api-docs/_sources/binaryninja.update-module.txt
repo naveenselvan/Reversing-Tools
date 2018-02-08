@@ -1,0 +1,24 @@
+update module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.update.UpdateChannel
+   binaryninja.update.UpdateProgressCallback
+   binaryninja.update.UpdateVersion
+   binaryninja.update.are_auto_updates_enabled
+   binaryninja.update.get_time_since_last_update_check
+   binaryninja.update.install_pending_update
+   binaryninja.update.is_update_installation_pending
+   binaryninja.update.set_auto_updates_enabled
+   binaryninja.update.updates_checked
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.update
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,25 @@
+binaryninja.enums.MemberAccess
+==============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: MemberAccess
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MemberAccess.NoAccess
+      ~MemberAccess.PrivateAccess
+      ~MemberAccess.ProtectedAccess
+      ~MemberAccess.PublicAccess
+   
+   

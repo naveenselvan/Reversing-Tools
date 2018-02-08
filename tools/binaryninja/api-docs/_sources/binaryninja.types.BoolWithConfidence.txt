@@ -1,0 +1,22 @@
+binaryninja.types.BoolWithConfidence
+====================================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: BoolWithConfidence
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BoolWithConfidence.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,18 @@
+demangle module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.demangle.demangle_gnu3
+   binaryninja.demangle.demangle_ms
+   binaryninja.demangle.get_qualified_name
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.demangle
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,29 @@
+binaryninja.enums.BranchType
+============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: BranchType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BranchType.CallDestination
+      ~BranchType.FalseBranch
+      ~BranchType.FunctionReturn
+      ~BranchType.IndirectBranch
+      ~BranchType.SystemCall
+      ~BranchType.TrueBranch
+      ~BranchType.UnconditionalBranch
+      ~BranchType.UnresolvedBranch
+   
+   

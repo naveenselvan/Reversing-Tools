@@ -1,0 +1,22 @@
+binaryninja.lowlevelil.ILFlag
+=============================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autoclass:: ILFlag
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ILFlag.__init__
+   
+   
+
+   
+   
+   

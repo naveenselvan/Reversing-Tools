@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>plugin module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.plugin.BackgroundTask" href="binaryninja.plugin.BackgroundTask.html"/>
+        <link rel="prev" title="binaryninja.platform.Platform" href="binaryninja.platform.Platform.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.plugin.BackgroundTask.html">binaryninja.plugin.BackgroundTask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.plugin.BackgroundTaskThread.html">binaryninja.plugin.BackgroundTaskThread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.plugin.MainThreadAction.html">binaryninja.plugin.MainThreadAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.plugin.MainThreadActionHandler.html">binaryninja.plugin.MainThreadActionHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.plugin.PluginCommand.html">binaryninja.plugin.PluginCommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.plugin.PluginCommandContext.html">binaryninja.plugin.PluginCommandContext</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>plugin module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.plugin-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plugin-module">
+<h1>plugin module<a class="headerlink" href="#plugin-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.plugin.BackgroundTask.html#binaryninja.plugin.BackgroundTask" title="binaryninja.plugin.BackgroundTask"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.plugin.BackgroundTask</span></code></a>([...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.plugin.BackgroundTaskThread.html#binaryninja.plugin.BackgroundTaskThread" title="binaryninja.plugin.BackgroundTaskThread"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.plugin.BackgroundTaskThread</span></code></a>([...])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.plugin.MainThreadAction.html#binaryninja.plugin.MainThreadAction" title="binaryninja.plugin.MainThreadAction"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.plugin.MainThreadAction</span></code></a>(handle)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.plugin.MainThreadActionHandler.html#binaryninja.plugin.MainThreadActionHandler" title="binaryninja.plugin.MainThreadActionHandler"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.plugin.MainThreadActionHandler</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.plugin.PluginCommand.html#binaryninja.plugin.PluginCommand" title="binaryninja.plugin.PluginCommand"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.plugin.PluginCommand</span></code></a>(cmd)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.plugin.PluginCommandContext.html#binaryninja.plugin.PluginCommandContext" title="binaryninja.plugin.PluginCommandContext"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.plugin.PluginCommandContext</span></code></a>(view)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.plugin"></span><dl class="class">
+<dt id="binaryninja.plugin.BackgroundTask">
+<em class="property">class </em><code class="descclassname">binaryninja.plugin.</code><code class="descname">BackgroundTask</code><span class="sig-paren">(</span><em>initial_progress_text=''</em>, <em>can_cancel=False</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="binaryninja.plugin.BackgroundTask.can_cancel">
+<code class="descname">can_cancel</code><a class="headerlink" href="#binaryninja.plugin.BackgroundTask.can_cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the task can be cancelled (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.BackgroundTask.cancel">
+<code class="descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTask.cancel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTask.cancel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.plugin.BackgroundTask.cancelled">
+<code class="descname">cancelled</code><a class="headerlink" href="#binaryninja.plugin.BackgroundTask.cancelled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the task has been cancelled</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.BackgroundTask.finish">
+<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTask.finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTask.finish" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.plugin.BackgroundTask.finished">
+<code class="descname">finished</code><a class="headerlink" href="#binaryninja.plugin.BackgroundTask.finished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the task has finished</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.plugin.BackgroundTask.progress">
+<code class="descname">progress</code><a class="headerlink" href="#binaryninja.plugin.BackgroundTask.progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text description of the progress of the background task (displayed in status bar of the UI)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.plugin.BackgroundTaskThread">
+<em class="property">class </em><code class="descclassname">binaryninja.plugin.</code><code class="descname">BackgroundTaskThread</code><span class="sig-paren">(</span><em>initial_progress_text=''</em>, <em>can_cancel=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTaskThread"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTaskThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="binaryninja.plugin.BackgroundTask.html#binaryninja.plugin.BackgroundTask" title="binaryninja.plugin.BackgroundTask"><code class="xref py py-class docutils literal"><span class="pre">binaryninja.plugin.BackgroundTask</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.plugin.BackgroundTaskThread.join">
+<code class="descname">join</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTaskThread.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTaskThread.join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.BackgroundTaskThread.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTaskThread.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTaskThread.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.BackgroundTaskThread.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#BackgroundTaskThread.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.BackgroundTaskThread.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.plugin.MainThreadAction">
+<em class="property">class </em><code class="descclassname">binaryninja.plugin.</code><code class="descname">MainThreadAction</code><span class="sig-paren">(</span><em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#MainThreadAction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.MainThreadAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="binaryninja.plugin.MainThreadAction.done">
+<code class="descname">done</code><a class="headerlink" href="#binaryninja.plugin.MainThreadAction.done" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.MainThreadAction.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#MainThreadAction.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.MainThreadAction.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.MainThreadAction.wait">
+<code class="descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#MainThreadAction.wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.MainThreadAction.wait" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.plugin.MainThreadActionHandler">
+<em class="property">class </em><code class="descclassname">binaryninja.plugin.</code><code class="descname">MainThreadActionHandler</code><a class="reference internal" href="_modules/binaryninja/plugin.html#MainThreadActionHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.MainThreadActionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.plugin.MainThreadActionHandler.add_action">
+<code class="descname">add_action</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#MainThreadActionHandler.add_action"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.MainThreadActionHandler.add_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.MainThreadActionHandler.register">
+<code class="descname">register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#MainThreadActionHandler.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.MainThreadActionHandler.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.plugin.PluginCommand">
+<em class="property">class </em><code class="descclassname">binaryninja.plugin.</code><code class="descname">PluginCommand</code><span class="sig-paren">(</span><em>cmd</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.plugin.PluginCommand.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.plugin.PluginCommand.get_valid_list">
+<em class="property">classmethod </em><code class="descname">get_valid_list</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.get_valid_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.get_valid_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.plugin.PluginCommand.is_valid">
+<code class="descname">is_valid</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.is_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.plugin.PluginCommand.register">
+<em class="property">classmethod </em><code class="descname">register</code><span class="sig-paren">(</span><em>name</em>, <em>description</em>, <em>action</em>, <em>is_valid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.plugin.PluginCommand.register_for_address">
+<em class="property">classmethod </em><code class="descname">register_for_address</code><span class="sig-paren">(</span><em>name</em>, <em>description</em>, <em>action</em>, <em>is_valid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.register_for_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.register_for_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.plugin.PluginCommand.register_for_function">
+<em class="property">classmethod </em><code class="descname">register_for_function</code><span class="sig-paren">(</span><em>name</em>, <em>description</em>, <em>action</em>, <em>is_valid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.register_for_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.register_for_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.plugin.PluginCommand.register_for_range">
+<em class="property">classmethod </em><code class="descname">register_for_range</code><span class="sig-paren">(</span><em>name</em>, <em>description</em>, <em>action</em>, <em>is_valid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommand.register_for_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommand.register_for_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.plugin.PluginCommandContext">
+<em class="property">class </em><code class="descclassname">binaryninja.plugin.</code><code class="descname">PluginCommandContext</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/plugin.html#PluginCommandContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.plugin.PluginCommandContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.plugin.BackgroundTask.html" class="btn btn-neutral float-right" title="binaryninja.plugin.BackgroundTask" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.platform.Platform.html" class="btn btn-neutral" title="binaryninja.platform.Platform" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

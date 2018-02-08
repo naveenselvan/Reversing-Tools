@@ -1,0 +1,6 @@
+binaryninja.demangle.get_qualified_name
+=======================================
+
+.. currentmodule:: binaryninja.demangle
+
+.. autofunction:: get_qualified_name

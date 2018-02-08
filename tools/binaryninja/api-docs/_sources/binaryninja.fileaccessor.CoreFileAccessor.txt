@@ -1,0 +1,25 @@
+binaryninja.fileaccessor.CoreFileAccessor
+=========================================
+
+.. currentmodule:: binaryninja.fileaccessor
+
+.. autoclass:: CoreFileAccessor
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CoreFileAccessor.__init__
+      ~CoreFileAccessor.get_length
+      ~CoreFileAccessor.read
+      ~CoreFileAccessor.write
+   
+   
+
+   
+   
+   

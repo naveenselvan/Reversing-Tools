@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>platform module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.platform.Platform" href="binaryninja.platform.Platform.html"/>
+        <link rel="prev" title="binaryninja.metadata.Metadata" href="binaryninja.metadata.Metadata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.platform.Platform.html">binaryninja.platform.Platform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>platform module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.platform-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="platform-module">
+<h1>platform module<a class="headerlink" href="#platform-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.platform.Platform.html#binaryninja.platform.Platform" title="binaryninja.platform.Platform"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.platform.Platform</span></code></a>(arch[,&nbsp;handle])</td>
+<td><code class="docutils literal"><span class="pre">class</span> <span class="pre">Platform</span></code> contains all information releated to the execution environment of the binary, mainly the</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.platform"></span><dl class="class">
+<dt id="binaryninja.platform.Platform">
+<em class="property">class </em><code class="descclassname">binaryninja.platform.</code><code class="descname">Platform</code><span class="sig-paren">(</span><em>arch</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">Platform</span></code> contains all information releated to the execution environment of the binary, mainly the
+calling conventions used.</p>
+<dl class="method">
+<dt id="binaryninja.platform.Platform.add_related_platform">
+<code class="descname">add_related_platform</code><span class="sig-paren">(</span><em>arch</em>, <em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.add_related_platform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.add_related_platform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.calling_conventions">
+<code class="descname">calling_conventions</code><a class="headerlink" href="#binaryninja.platform.Platform.calling_conventions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of platform CallingConvention objects (read-only)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Getter:</th><td class="field-body">returns the list of supported CallingConvention objects</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">list(CallingConvention)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.cdecl_calling_convention">
+<code class="descname">cdecl_calling_convention</code><a class="headerlink" href="#binaryninja.platform.Platform.cdecl_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cdecl calling convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Getter:</th><td class="field-body">returns a CallingConvention object for the cdecl calling convention.</td>
+</tr>
+</tbody>
+</table>
+<p>:setter sets the cdecl calling convention
+:type: CallingConvention</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.default_calling_convention">
+<code class="descname">default_calling_convention</code><a class="headerlink" href="#binaryninja.platform.Platform.default_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default calling convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Getter:</th><td class="field-body">returns a CallingConvention object for the default calling convention.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Setter:</th><td class="field-body">sets the default calling convention</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">CallingConvention</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.fastcall_calling_convention">
+<code class="descname">fastcall_calling_convention</code><a class="headerlink" href="#binaryninja.platform.Platform.fastcall_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fastcall calling convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Getter:</th><td class="field-body">returns a CallingConvention object for the fastcall calling convention.</td>
+</tr>
+</tbody>
+</table>
+<p>:setter sets the fastcall calling convention
+:type: CallingConvention</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.functions">
+<code class="descname">functions</code><a class="headerlink" href="#binaryninja.platform.Platform.functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of platform-specific function definitions (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.generate_auto_platform_type_id">
+<code class="descname">generate_auto_platform_type_id</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.generate_auto_platform_type_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.generate_auto_platform_type_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.generate_auto_platform_type_ref">
+<code class="descname">generate_auto_platform_type_ref</code><span class="sig-paren">(</span><em>type_class</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.generate_auto_platform_type_ref"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.generate_auto_platform_type_ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_associated_platform_by_address">
+<code class="descname">get_associated_platform_by_address</code><span class="sig-paren">(</span><em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_associated_platform_by_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_associated_platform_by_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_auto_platform_type_id_source">
+<code class="descname">get_auto_platform_type_id_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_auto_platform_type_id_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_auto_platform_type_id_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_function_by_name">
+<code class="descname">get_function_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_function_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_function_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_related_platform">
+<code class="descname">get_related_platform</code><span class="sig-paren">(</span><em>arch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_related_platform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_related_platform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_system_call_name">
+<code class="descname">get_system_call_name</code><span class="sig-paren">(</span><em>number</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_system_call_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_system_call_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_system_call_type">
+<code class="descname">get_system_call_type</code><span class="sig-paren">(</span><em>number</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_system_call_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_system_call_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_type_by_name">
+<code class="descname">get_type_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_type_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_type_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.get_variable_by_name">
+<code class="descname">get_variable_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.get_variable_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.get_variable_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="#binaryninja.platform.Platform.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.parse_types_from_source">
+<code class="descname">parse_types_from_source</code><span class="sig-paren">(</span><em>source</em>, <em>filename=None</em>, <em>include_dirs=[]</em>, <em>auto_type_source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.parse_types_from_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.parse_types_from_source" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">parse_types_from_source</span></code> parses the source string and any needed headers searching for them in
+the optional list of directories provided in <code class="docutils literal"><span class="pre">include_dirs</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; source string to be parsed</li>
+<li><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; optional source filename</li>
+<li><strong>include_dirs</strong> (<em>list(str)</em>) &#8211; optional list of string filename include directories</li>
+<li><strong>auto_type_source</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; optional source of types if used for automatically generated types</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-class docutils literal"><span class="pre">TypeParserResult</span></code> (a SyntaxError is thrown on parse error)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types.TypeParserResult.html#binaryninja.types.TypeParserResult" title="binaryninja.types.TypeParserResult">TypeParserResult</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">parse_types_from_source</span><span class="p">(</span><span class="s1">&#39;int foo;</span><span class="se">\n</span><span class="s1">int bar(int x);</span><span class="se">\n</span><span class="s1">struct bas{int x,y;};</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">({types: {&#39;bas&#39;: &lt;type: struct bas&gt;}, variables: {&#39;foo&#39;: &lt;type: int32_t&gt;}, functions:{&#39;bar&#39;:</span>
+<span class="go">&lt;type: int32_t(int32_t x)&gt;}}, &#39;&#39;)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.parse_types_from_source_file">
+<code class="descname">parse_types_from_source_file</code><span class="sig-paren">(</span><em>filename</em>, <em>include_dirs=[]</em>, <em>auto_type_source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.parse_types_from_source_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.parse_types_from_source_file" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">parse_types_from_source_file</span></code> parses the source file <code class="docutils literal"><span class="pre">filename</span></code> and any needed headers searching for them in
+the optional list of directories provided in <code class="docutils literal"><span class="pre">include_dirs</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; filename of file to be parsed</li>
+<li><strong>include_dirs</strong> (<em>list(str)</em>) &#8211; optional list of string filename include directories</li>
+<li><strong>auto_type_source</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; optional source of types if used for automatically generated types</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-class docutils literal"><span class="pre">TypeParserResult</span></code> (a SyntaxError is thrown on parse error)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.types.TypeParserResult.html#binaryninja.types.TypeParserResult" title="binaryninja.types.TypeParserResult">TypeParserResult</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;/Users/binja/tmp.c&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;int foo;\nint bar(int x);\nstruct bas{int x,y;};\n&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">parse_types_from_source_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="go">({types: {&#39;bas&#39;: &lt;type: struct bas&gt;}, variables: {&#39;foo&#39;: &lt;type: int32_t&gt;}, functions:</span>
+<span class="go">{&#39;bar&#39;: &lt;type: int32_t(int32_t x)&gt;}}, &#39;&#39;)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>os</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.register" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">register</span></code> registers the platform for given OS name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>os</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; OS name to register</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.platform.Platform.register_calling_convention">
+<code class="descname">register_calling_convention</code><span class="sig-paren">(</span><em>cc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/platform.html#Platform.register_calling_convention"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.platform.Platform.register_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">register_calling_convention</span></code> register a new calling convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cc</strong> (<a class="reference internal" href="binaryninja.callingconvention.CallingConvention.html#binaryninja.callingconvention.CallingConvention" title="binaryninja.callingconvention.CallingConvention"><em>CallingConvention</em></a>) &#8211; a CallingConvention object to register</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.stdcall_calling_convention">
+<code class="descname">stdcall_calling_convention</code><a class="headerlink" href="#binaryninja.platform.Platform.stdcall_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stdcall calling convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Getter:</th><td class="field-body">returns a CallingConvention object for the stdcall calling convention.</td>
+</tr>
+</tbody>
+</table>
+<p>:setter sets the stdcall calling convention
+:type: CallingConvention</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.system_call_convention">
+<code class="descname">system_call_convention</code><a class="headerlink" href="#binaryninja.platform.Platform.system_call_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p>System call convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Getter:</th><td class="field-body">returns a CallingConvention object for the system call convention.</td>
+</tr>
+</tbody>
+</table>
+<p>:setter sets the system call convention
+:type: CallingConvention</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.system_calls">
+<code class="descname">system_calls</code><a class="headerlink" href="#binaryninja.platform.Platform.system_calls" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of system calls for this platform (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.types">
+<code class="descname">types</code><a class="headerlink" href="#binaryninja.platform.Platform.types" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of platform-specific types (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.platform.Platform.variables">
+<code class="descname">variables</code><a class="headerlink" href="#binaryninja.platform.Platform.variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of platform-specific variable definitions (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.platform.Platform.html" class="btn btn-neutral float-right" title="binaryninja.platform.Platform" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.metadata.Metadata.html" class="btn btn-neutral" title="binaryninja.metadata.Metadata" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

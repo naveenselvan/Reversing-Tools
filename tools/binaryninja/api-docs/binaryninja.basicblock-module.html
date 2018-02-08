@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>basicblock module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.basicblock.BasicBlock" href="binaryninja.basicblock.BasicBlock.html"/>
+        <link rel="prev" title="binaryninja.atexit.register" href="binaryninja.atexit.register.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">basicblock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.basicblock.BasicBlock.html">binaryninja.basicblock.BasicBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.basicblock.BasicBlockEdge.html">binaryninja.basicblock.BasicBlockEdge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>basicblock module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.basicblock-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basicblock-module">
+<h1>basicblock module<a class="headerlink" href="#basicblock-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.basicblock.BasicBlock.html#binaryninja.basicblock.BasicBlock" title="binaryninja.basicblock.BasicBlock"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.basicblock.BasicBlock</span></code></a>(view,&nbsp;handle)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.basicblock.BasicBlockEdge.html#binaryninja.basicblock.BasicBlockEdge" title="binaryninja.basicblock.BasicBlockEdge"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.basicblock.BasicBlockEdge</span></code></a>(...)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.basicblock"></span><dl class="class">
+<dt id="binaryninja.basicblock.BasicBlock">
+<em class="property">class </em><code class="descclassname">binaryninja.basicblock.</code><code class="descname">BasicBlock</code><span class="sig-paren">(</span><em>view</em>, <em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.annotations">
+<code class="descname">annotations</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.annotations" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of automatic annotations for the start of this block (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.arch">
+<code class="descname">arch</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.arch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block architecture (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.can_exit">
+<code class="descname">can_exit</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.can_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether basic block can return or is tagged as &#8216;No Return&#8217; (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.disassembly_text">
+<code class="descname">disassembly_text</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.disassembly_text" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">disassembly_text</span></code> property which returns a list of function.DisassemblyTextLine objects for the current basic block.
+:Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_basic_block</span><span class="o">.</span><span class="n">disassembly_text</span>
+<span class="go">[&lt;0x100000f30: _main:&gt;, ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.dominance_frontier">
+<code class="descname">dominance_frontier</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.dominance_frontier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dominance frontier for this basic block (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.dominator_tree_children">
+<code class="descname">dominator_tree_children</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.dominator_tree_children" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of child blocks in the dominator tree for this basic block (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.dominators">
+<code class="descname">dominators</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.dominators" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of dominators for this basic block (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.end">
+<code class="descname">end</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block end (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.function">
+<code class="descname">function</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block function (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.basicblock.BasicBlock.get_disassembly_text">
+<code class="descname">get_disassembly_text</code><span class="sig-paren">(</span><em>settings=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlock.get_disassembly_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.get_disassembly_text" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_disassembly_text</span></code> returns a list of function.DisassemblyTextLine objects for the current basic block.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>settings</strong> (<a class="reference internal" href="binaryninja.function.DisassemblySettings.html#binaryninja.function.DisassemblySettings" title="binaryninja.function.DisassemblySettings"><em>DisassemblySettings</em></a>) &#8211; (optional) DisassemblySettings object</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_basic_block</span><span class="o">.</span><span class="n">get_disassembly_text</span><span class="p">()</span>
+<span class="go">[&lt;0x100000f30: _main:&gt;, &lt;0x100000f30: push    rbp&gt;, ... ]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.basicblock.BasicBlock.get_iterated_dominance_frontier">
+<em class="property">classmethod </em><code class="descname">get_iterated_dominance_frontier</code><span class="sig-paren">(</span><em>blocks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlock.get_iterated_dominance_frontier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.get_iterated_dominance_frontier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.has_undetermined_outgoing_edges">
+<code class="descname">has_undetermined_outgoing_edges</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.has_undetermined_outgoing_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether basic block has undetermined outgoing edges (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.highlight">
+<code class="descname">highlight</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets or sets the highlight color for basic block</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_basic_block</span><span class="o">.</span><span class="n">highlight</span> <span class="o">=</span> <span class="n">HighlightStandardColor</span><span class="o">.</span><span class="n">BlueHighlightColor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_basic_block</span><span class="o">.</span><span class="n">highlight</span>
+<span class="go">&lt;color: blue&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.immediate_dominator">
+<code class="descname">immediate_dominator</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.immediate_dominator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Immediate dominator of this basic block (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.incoming_edges">
+<code class="descname">incoming_edges</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.incoming_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of basic block incoming edges (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.index">
+<code class="descname">index</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block index in list of blocks for the function (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.length">
+<code class="descname">length</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block length (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.basicblock.BasicBlock.mark_recent_use">
+<code class="descname">mark_recent_use</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlock.mark_recent_use"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.mark_recent_use" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.outgoing_edges">
+<code class="descname">outgoing_edges</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.outgoing_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of basic block outgoing edges (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.basicblock.BasicBlock.set_auto_highlight">
+<code class="descname">set_auto_highlight</code><span class="sig-paren">(</span><em>color</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlock.set_auto_highlight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.set_auto_highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">set_auto_highlight</span></code> highlights the current BasicBlock with the supplied color.</p>
+<p>..warning:: Use only in analysis plugins. Do not use in regular plugins, as colors won&#8217;t be saved to the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>or highlight.HighlightColor color</strong> (<a class="reference internal" href="binaryninja.enums.HighlightStandardColor.html#binaryninja.enums.HighlightStandardColor" title="binaryninja.enums.HighlightStandardColor"><em>HighlightStandardColor</em></a>) &#8211; Color value to use for highlighting</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.basicblock.BasicBlock.set_user_highlight">
+<code class="descname">set_user_highlight</code><span class="sig-paren">(</span><em>color</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlock.set_user_highlight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.set_user_highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">set_user_highlight</span></code> highlights the current BasicBlock with the supplied color</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>or highlight.HighlightColor color</strong> (<a class="reference internal" href="binaryninja.enums.HighlightStandardColor.html#binaryninja.enums.HighlightStandardColor" title="binaryninja.enums.HighlightStandardColor"><em>HighlightStandardColor</em></a>) &#8211; Color value to use for highlighting</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_basic_block</span><span class="o">.</span><span class="n">set_user_highlight</span><span class="p">(</span><span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="mh">0xff</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mh">0xff</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_basic_block</span><span class="o">.</span><span class="n">set_user_highlight</span><span class="p">(</span><span class="n">HighlightStandardColor</span><span class="o">.</span><span class="n">BlueHighlightColor</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.start">
+<code class="descname">start</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block start (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.basicblock.BasicBlock.strict_dominators">
+<code class="descname">strict_dominators</code><a class="headerlink" href="#binaryninja.basicblock.BasicBlock.strict_dominators" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of strict dominators for this basic block (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.basicblock.BasicBlockEdge">
+<em class="property">class </em><code class="descclassname">binaryninja.basicblock.</code><code class="descname">BasicBlockEdge</code><span class="sig-paren">(</span><em>branch_type</em>, <em>source</em>, <em>target</em>, <em>back_edge</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/basicblock.html#BasicBlockEdge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.basicblock.BasicBlockEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.basicblock.BasicBlock.html" class="btn btn-neutral float-right" title="binaryninja.basicblock.BasicBlock" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.atexit.register.html" class="btn btn-neutral" title="binaryninja.atexit.register" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

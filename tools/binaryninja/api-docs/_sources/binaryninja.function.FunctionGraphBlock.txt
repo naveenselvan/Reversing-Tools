@@ -1,0 +1,37 @@
+binaryninja.function.FunctionGraphBlock
+=======================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: FunctionGraphBlock
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FunctionGraphBlock.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FunctionGraphBlock.arch
+      ~FunctionGraphBlock.basic_block
+      ~FunctionGraphBlock.end
+      ~FunctionGraphBlock.height
+      ~FunctionGraphBlock.lines
+      ~FunctionGraphBlock.outgoing_edges
+      ~FunctionGraphBlock.start
+      ~FunctionGraphBlock.width
+      ~FunctionGraphBlock.x
+      ~FunctionGraphBlock.y
+   
+   

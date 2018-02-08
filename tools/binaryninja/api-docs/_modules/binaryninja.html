@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>binaryninja</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+
+<span class="kn">import</span> <span class="nn">atexit</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">from</span> <span class="nn">.enums</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.databuffer</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.filemetadata</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.fileaccessor</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.binaryview</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.transform</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.architecture</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.basicblock</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.function</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.log</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.lowlevelil</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.mediumlevelil</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.functionrecognizer</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.update</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.plugin</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.callingconvention</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.platform</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.demangle</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.mainthread</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.interaction</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.lineardisassembly</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.undoaction</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.highlight</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.scriptingprovider</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.pluginmanager</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.setting</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.metadata</span> <span class="k">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="shutdown"><a class="viewcode-back" href="../index.html#binaryninja.shutdown">[docs]</a><span class="k">def</span> <span class="nf">shutdown</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``shutdown`` cleanly shuts down the core, stopping all workers and closing all log files.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNShutdown</span><span class="p">()</span></div>
+
+
+<span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">shutdown</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_unique_identifier"><a class="viewcode-back" href="../index.html#binaryninja.get_unique_identifier">[docs]</a><span class="k">def</span> <span class="nf">get_unique_identifier</span><span class="p">():</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUniqueIdentifierString</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="get_install_directory"><a class="viewcode-back" href="../index.html#binaryninja.get_install_directory">[docs]</a><span class="k">def</span> <span class="nf">get_install_directory</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_install_directory`` returns a string pointing to the installed binary currently running</span>
+
+<span class="sd">	..warning:: ONLY for use within the Binary Ninja UI, behavior is undefined and unreliable if run headlessly</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetInstallDirectory</span><span class="p">()</span></div>
+
+
+<span class="n">_plugin_api_name</span> <span class="o">=</span> <span class="s2">&quot;python2&quot;</span>
+
+
+<div class="viewcode-block" id="PluginManagerLoadPluginCallback"><a class="viewcode-back" href="../index.html#binaryninja.PluginManagerLoadPluginCallback">[docs]</a><span class="k">class</span> <span class="nc">PluginManagerLoadPluginCallback</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Callback for BNLoadPluginForApi(&quot;python2&quot;, ...), dynamicly loads python plugins.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cb</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span>
+			<span class="n">ctypes</span><span class="o">.</span><span class="n">c_bool</span><span class="p">,</span>
+			<span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">,</span>
+			<span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">,</span>
+			<span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_plugin</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_load_plugin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repo_path</span><span class="p">,</span> <span class="n">plugin_path</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">repo</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()[</span><span class="n">repo_path</span><span class="p">]</span>
+			<span class="n">plugin</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="n">plugin_path</span><span class="p">]</span>
+
+			<span class="k">if</span> <span class="n">plugin</span><span class="o">.</span><span class="n">api</span> <span class="o">!=</span> <span class="n">_plugin_api_name</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Plugin api name is not &quot;</span> <span class="o">+</span> <span class="n">_plugin_api_name</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">plugin</span><span class="o">.</span><span class="n">installed</span><span class="p">:</span>
+				<span class="n">plugin</span><span class="o">.</span><span class="n">installed</span> <span class="o">=</span> <span class="kc">True</span>
+
+			<span class="k">if</span> <span class="n">repo</span><span class="o">.</span><span class="n">full_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+				<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">full_path</span><span class="p">)</span>
+
+			<span class="nb">__import__</span><span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+			<span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Successfully loaded plugin: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">plugin_path</span><span class="p">))</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="n">log_error</span><span class="p">(</span><span class="s2">&quot;Failed to find python plugin: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">plugin_path</span><span class="p">))</span>
+		<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">ie</span><span class="p">:</span>
+			<span class="n">log_error</span><span class="p">(</span><span class="s2">&quot;Failed to import python plugin: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">plugin_path</span><span class="p">,</span> <span class="n">ie</span><span class="p">))</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+
+
+<span class="n">load_plugin</span> <span class="o">=</span> <span class="n">PluginManagerLoadPluginCallback</span><span class="p">()</span>
+<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterForPluginLoading</span><span class="p">(</span><span class="n">_plugin_api_name</span><span class="p">,</span> <span class="n">load_plugin</span><span class="o">.</span><span class="n">cb</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">_DestructionCallbackHandler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNObjectDestructionCallbacks</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destructBinaryView</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destructBinaryView</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">destruct_binary_view</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destructFileMetadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destructFileMetadata</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">destruct_file_metadata</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destructFunction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destructFunction</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">destruct_function</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterObjectDestructionCallbacks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">destruct_binary_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+		<span class="n">BinaryView</span><span class="o">.</span><span class="n">_unregister</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">destruct_file_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+		<span class="n">FileMetadata</span><span class="o">.</span><span class="n">_unregister</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">destruct_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="n">Function</span><span class="o">.</span><span class="n">_unregister</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+
+<span class="n">_destruct_callbacks</span> <span class="o">=</span> <span class="n">_DestructionCallbackHandler</span><span class="p">()</span>
+
+<span class="n">bundled_plugin_path</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBundledPluginDirectory</span><span class="p">()</span>
+<span class="n">user_plugin_path</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUserPluginDirectory</span><span class="p">()</span>
+
+<span class="n">core_version</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetVersionString</span><span class="p">()</span>
+<span class="sd">&#39;&#39;&#39;Core version&#39;&#39;&#39;</span>
+
+<span class="n">core_build_id</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBuildId</span><span class="p">()</span>
+<span class="sd">&#39;&#39;&#39;Build ID&#39;&#39;&#39;</span>
+
+<span class="n">core_product</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetProduct</span><span class="p">()</span>
+<span class="sd">&#39;&#39;&#39;Product string from the license file&#39;&#39;&#39;</span>
+
+<span class="n">core_product_type</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetProductType</span><span class="p">()</span>
+<span class="sd">&#39;&#39;&#39;Product type from the license file&#39;&#39;&#39;</span>
+
+<span class="n">core_license_count</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetLicenseCount</span><span class="p">()</span>
+<span class="sd">&#39;&#39;&#39;License count from the license file&#39;&#39;&#39;</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

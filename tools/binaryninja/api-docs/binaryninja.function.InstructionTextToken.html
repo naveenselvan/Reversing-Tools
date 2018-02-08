@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.function.InstructionTextToken &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="function module" href="binaryninja.function-module.html"/>
+        <link rel="next" title="binaryninja.function.LookupTableEntry" href="binaryninja.function.LookupTableEntry.html"/>
+        <link rel="prev" title="binaryninja.function.InstructionInfo" href="binaryninja.function.InstructionInfo.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.function-module.html">function</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.html">binaryninja.function.AdvancedFunctionAnalysisDataRequestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.ConstantReference.html">binaryninja.function.ConstantReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.DisassemblySettings.html">binaryninja.function.DisassemblySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.DisassemblyTextLine.html">binaryninja.function.DisassemblyTextLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.Function.html">binaryninja.function.Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.FunctionGraph.html">binaryninja.function.FunctionGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.FunctionGraphBlock.html">binaryninja.function.FunctionGraphBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.FunctionGraphEdge.html">binaryninja.function.FunctionGraphEdge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.IndirectBranchInfo.html">binaryninja.function.IndirectBranchInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.InstructionBranch.html">binaryninja.function.InstructionBranch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.InstructionInfo.html">binaryninja.function.InstructionInfo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.function.InstructionTextToken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.LookupTableEntry.html">binaryninja.function.LookupTableEntry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.ParameterVariables.html">binaryninja.function.ParameterVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.PossibleValueSet.html">binaryninja.function.PossibleValueSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.RegisterInfo.html">binaryninja.function.RegisterInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.RegisterValue.html">binaryninja.function.RegisterValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.StackVariableReference.html">binaryninja.function.StackVariableReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.ValueRange.html">binaryninja.function.ValueRange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.Variable.html">binaryninja.function.Variable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.function-module.html">function module</a> &raquo;</li>
+        
+      <li>binaryninja.function.InstructionTextToken</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.function.InstructionTextToken.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-function-instructiontexttoken">
+<h1>binaryninja.function.InstructionTextToken<a class="headerlink" href="#binaryninja-function-instructiontexttoken" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.function.InstructionTextToken">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">InstructionTextToken</code><span class="sig-paren">(</span><em>token_type</em>, <em>text</em>, <em>value=0</em>, <em>size=0</em>, <em>operand=4294967295</em>, <em>context=&lt;InstructionTextTokenContext.NoTokenContext: 0&gt;</em>, <em>address=0</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#InstructionTextToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.InstructionTextToken" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">class</span> <span class="pre">InstructionTextToken</span></code> is used to tell the core about the various components in the disassembly views.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">InstructionTextTokenType</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TextToken</td>
+<td>Text that doesn&#8217;t fit into the other tokens</td>
+</tr>
+<tr class="row-odd"><td>InstructionToken</td>
+<td>The instruction mnemonic</td>
+</tr>
+<tr class="row-even"><td>OperandSeparatorToken</td>
+<td>The comma or whatever else separates tokens</td>
+</tr>
+<tr class="row-odd"><td>RegisterToken</td>
+<td>Registers</td>
+</tr>
+<tr class="row-even"><td>IntegerToken</td>
+<td>Integers</td>
+</tr>
+<tr class="row-odd"><td>PossibleAddressToken</td>
+<td>Integers that are likely addresses</td>
+</tr>
+<tr class="row-even"><td>BeginMemoryOperandToken</td>
+<td>The start of memory operand</td>
+</tr>
+<tr class="row-odd"><td>EndMemoryOperandToken</td>
+<td>The end of a memory operand</td>
+</tr>
+<tr class="row-even"><td>FloatingPointToken</td>
+<td>Floating point number</td>
+</tr>
+<tr class="row-odd"><td>AnnotationToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>CodeRelativeAddressToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>StackVariableTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>DataVariableTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>FunctionReturnTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>FunctionAttributeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>ArgumentTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>ArgumentNameToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>HexDumpByteValueToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>HexDumpSkippedByteToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>HexDumpInvalidByteToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>HexDumpTextToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>OpcodeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>StringToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>CharacterConstantToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>CodeSymbolToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>DataSymbolToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>StackVariableToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>ImportToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>AddressDisplayToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="method">
+<dt id="binaryninja.function.InstructionTextToken.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>token_type</em>, <em>text</em>, <em>value=0</em>, <em>size=0</em>, <em>operand=4294967295</em>, <em>context=&lt;InstructionTextTokenContext.NoTokenContext: 0&gt;</em>, <em>address=0</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#InstructionTextToken.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.InstructionTextToken.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.function.InstructionTextToken.__init__" title="binaryninja.function.InstructionTextToken.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(token_type,&nbsp;text[,&nbsp;value,&nbsp;size,&nbsp;...])</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.function.LookupTableEntry.html" class="btn btn-neutral float-right" title="binaryninja.function.LookupTableEntry" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.function.InstructionInfo.html" class="btn btn-neutral" title="binaryninja.function.InstructionInfo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

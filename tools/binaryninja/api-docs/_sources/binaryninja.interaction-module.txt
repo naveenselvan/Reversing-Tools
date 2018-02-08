@@ -1,0 +1,39 @@
+interaction module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.interaction.AddressField
+   binaryninja.interaction.ChoiceField
+   binaryninja.interaction.DirectoryNameField
+   binaryninja.interaction.IntegerField
+   binaryninja.interaction.InteractionHandler
+   binaryninja.interaction.LabelField
+   binaryninja.interaction.MultilineTextField
+   binaryninja.interaction.OpenFileNameField
+   binaryninja.interaction.SaveFileNameField
+   binaryninja.interaction.SeparatorField
+   binaryninja.interaction.TextLineField
+   binaryninja.interaction.get_address_input
+   binaryninja.interaction.get_choice_input
+   binaryninja.interaction.get_directory_name_input
+   binaryninja.interaction.get_form_input
+   binaryninja.interaction.get_int_input
+   binaryninja.interaction.get_open_filename_input
+   binaryninja.interaction.get_save_filename_input
+   binaryninja.interaction.get_text_line_input
+   binaryninja.interaction.markdown_to_html
+   binaryninja.interaction.show_html_report
+   binaryninja.interaction.show_markdown_report
+   binaryninja.interaction.show_message_box
+   binaryninja.interaction.show_plain_text_report
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.interaction
+   :members:
+   :undoc-members:
+   :show-inheritance:

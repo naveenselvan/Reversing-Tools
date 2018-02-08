@@ -1,0 +1,36 @@
+binaryninja.plugin.BackgroundTaskThread
+=======================================
+
+.. currentmodule:: binaryninja.plugin
+
+.. autoclass:: BackgroundTaskThread
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BackgroundTaskThread.__init__
+      ~BackgroundTaskThread.cancel
+      ~BackgroundTaskThread.finish
+      ~BackgroundTaskThread.join
+      ~BackgroundTaskThread.run
+      ~BackgroundTaskThread.start
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BackgroundTaskThread.can_cancel
+      ~BackgroundTaskThread.cancelled
+      ~BackgroundTaskThread.finished
+      ~BackgroundTaskThread.progress
+   
+   

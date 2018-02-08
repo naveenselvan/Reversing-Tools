@@ -1,0 +1,6 @@
+binaryninja.log.redirect_output_to_log
+======================================
+
+.. currentmodule:: binaryninja.log
+
+.. autofunction:: redirect_output_to_log

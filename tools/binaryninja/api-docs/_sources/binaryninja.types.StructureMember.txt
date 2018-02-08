@@ -1,0 +1,22 @@
+binaryninja.types.StructureMember
+=================================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: StructureMember
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~StructureMember.__init__
+   
+   
+
+   
+   
+   

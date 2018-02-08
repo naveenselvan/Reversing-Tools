@@ -1,0 +1,23 @@
+binaryninja.function.InstructionInfo
+====================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: InstructionInfo
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~InstructionInfo.__init__
+      ~InstructionInfo.add_branch
+   
+   
+
+   
+   
+   

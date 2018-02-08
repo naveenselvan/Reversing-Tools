@@ -1,0 +1,16 @@
+binaryninja.interaction.SeparatorField
+======================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: SeparatorField
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

@@ -1,0 +1,28 @@
+binaryninja.binaryview.AddressRange
+===================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: AddressRange
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AddressRange.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AddressRange.length
+   
+   

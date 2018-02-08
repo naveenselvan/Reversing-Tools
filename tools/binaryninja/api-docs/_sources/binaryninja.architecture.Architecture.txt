@@ -1,0 +1,94 @@
+binaryninja.architecture.Architecture
+=====================================
+
+.. currentmodule:: binaryninja.architecture
+
+.. autoclass:: Architecture
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Architecture.__init__
+      ~Architecture.always_branch
+      ~Architecture.assemble
+      ~Architecture.convert_to_nop
+      ~Architecture.get_associated_arch_by_address
+      ~Architecture.get_default_flag_condition_low_level_il
+      ~Architecture.get_default_flag_write_low_level_il
+      ~Architecture.get_flag_by_name
+      ~Architecture.get_flag_condition_low_level_il
+      ~Architecture.get_flag_index
+      ~Architecture.get_flag_name
+      ~Architecture.get_flag_write_low_level_il
+      ~Architecture.get_flag_write_type_by_name
+      ~Architecture.get_flag_write_type_name
+      ~Architecture.get_instruction_info
+      ~Architecture.get_instruction_low_level_il
+      ~Architecture.get_instruction_low_level_il_instruction
+      ~Architecture.get_instruction_text
+      ~Architecture.get_low_level_il_from_bytes
+      ~Architecture.get_modified_regs_on_write
+      ~Architecture.get_reg_index
+      ~Architecture.get_reg_name
+      ~Architecture.get_view_type_constant
+      ~Architecture.invert_branch
+      ~Architecture.is_always_branch_patch_available
+      ~Architecture.is_invert_branch_patch_available
+      ~Architecture.is_never_branch_patch_available
+      ~Architecture.is_skip_and_return_value_patch_available
+      ~Architecture.is_skip_and_return_zero_patch_available
+      ~Architecture.is_view_type_constant_defined
+      ~Architecture.perform_always_branch
+      ~Architecture.perform_assemble
+      ~Architecture.perform_convert_to_nop
+      ~Architecture.perform_get_associated_arch_by_address
+      ~Architecture.perform_get_flag_condition_low_level_il
+      ~Architecture.perform_get_flag_write_low_level_il
+      ~Architecture.perform_get_instruction_info
+      ~Architecture.perform_get_instruction_low_level_il
+      ~Architecture.perform_get_instruction_text
+      ~Architecture.perform_invert_branch
+      ~Architecture.perform_is_always_branch_patch_available
+      ~Architecture.perform_is_invert_branch_patch_available
+      ~Architecture.perform_is_never_branch_patch_available
+      ~Architecture.perform_is_skip_and_return_value_patch_available
+      ~Architecture.perform_is_skip_and_return_zero_patch_available
+      ~Architecture.perform_skip_and_return_value
+      ~Architecture.register_calling_convention
+      ~Architecture.set_view_type_constant
+      ~Architecture.skip_and_return_value
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Architecture.address_size
+      ~Architecture.calling_conventions
+      ~Architecture.default_int_size
+      ~Architecture.endianness
+      ~Architecture.flag_roles
+      ~Architecture.flag_write_types
+      ~Architecture.flags
+      ~Architecture.flags_required_for_flag_condition
+      ~Architecture.flags_written_by_flag_write_type
+      ~Architecture.full_width_regs
+      ~Architecture.global_regs
+      ~Architecture.link_reg
+      ~Architecture.max_instr_length
+      ~Architecture.name
+      ~Architecture.next_address
+      ~Architecture.opcode_display_length
+      ~Architecture.regs
+      ~Architecture.stack_pointer
+      ~Architecture.standalone_platform
+   
+   

@@ -1,0 +1,39 @@
+binaryninja.enums.LinearDisassemblyLineType
+===========================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: LinearDisassemblyLineType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LinearDisassemblyLineType.BlankLineType
+      ~LinearDisassemblyLineType.CodeDisassemblyLineType
+      ~LinearDisassemblyLineType.DataVariableLineType
+      ~LinearDisassemblyLineType.FunctionContinuationLineType
+      ~LinearDisassemblyLineType.FunctionEndLineType
+      ~LinearDisassemblyLineType.FunctionHeaderEndLineType
+      ~LinearDisassemblyLineType.FunctionHeaderLineType
+      ~LinearDisassemblyLineType.FunctionHeaderStartLineType
+      ~LinearDisassemblyLineType.HexDumpLineType
+      ~LinearDisassemblyLineType.LocalVariableLineType
+      ~LinearDisassemblyLineType.LocalVariableListEndLineType
+      ~LinearDisassemblyLineType.NonContiguousSeparatorLineType
+      ~LinearDisassemblyLineType.NoteEndLineType
+      ~LinearDisassemblyLineType.NoteLineType
+      ~LinearDisassemblyLineType.NoteStartLineType
+      ~LinearDisassemblyLineType.SectionEndLineType
+      ~LinearDisassemblyLineType.SectionSeparatorLineType
+      ~LinearDisassemblyLineType.SectionStartLineType
+   
+   

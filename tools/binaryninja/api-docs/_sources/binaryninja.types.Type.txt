@@ -1,0 +1,69 @@
+binaryninja.types.Type
+======================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: Type
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Type.__init__
+      ~Type.array
+      ~Type.bool
+      ~Type.enumeration_type
+      ~Type.float
+      ~Type.function
+      ~Type.generate_auto_demangled_type_id
+      ~Type.generate_auto_type_id
+      ~Type.get_auto_demanged_type_id_source
+      ~Type.get_string_after_name
+      ~Type.get_string_before_name
+      ~Type.get_tokens
+      ~Type.get_tokens_after_name
+      ~Type.get_tokens_before_name
+      ~Type.int
+      ~Type.named_type
+      ~Type.named_type_from_registered_type
+      ~Type.named_type_from_type
+      ~Type.named_type_from_type_and_id
+      ~Type.pointer
+      ~Type.structure_type
+      ~Type.void
+      ~Type.with_confidence
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Type.alignment
+      ~Type.calling_convention
+      ~Type.can_return
+      ~Type.const
+      ~Type.count
+      ~Type.element_type
+      ~Type.enumeration
+      ~Type.has_variable_arguments
+      ~Type.modified
+      ~Type.named_type_reference
+      ~Type.offset
+      ~Type.parameters
+      ~Type.return_value
+      ~Type.signed
+      ~Type.stack_adjustment
+      ~Type.structure
+      ~Type.target
+      ~Type.tokens
+      ~Type.type_class
+      ~Type.width
+   
+   

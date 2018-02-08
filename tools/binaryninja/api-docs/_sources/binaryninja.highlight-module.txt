@@ -1,0 +1,16 @@
+highlight module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.highlight.HighlightColor
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.highlight
+   :members:
+   :undoc-members:
+   :show-inheritance:

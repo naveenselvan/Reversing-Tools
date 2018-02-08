@@ -1,0 +1,6 @@
+binaryninja.interaction.get_form_input
+======================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: get_form_input

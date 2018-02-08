@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.setting &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.setting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.setting</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+
+
+<div class="viewcode-block" id="Setting"><a class="viewcode-back" href="../../binaryninja.setting.Setting.html#binaryninja.setting.Setting">[docs]</a><span class="k">class</span> <span class="nc">Setting</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Setting.__init__"><a class="viewcode-back" href="../../binaryninja.setting.Setting.html#binaryninja.setting.Setting.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span> <span class="o">=</span> <span class="n">plugin_name</span></div>
+
+<div class="viewcode-block" id="Setting.get_bool"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.get_bool">[docs]</a>	<span class="k">def</span> <span class="nf">get_bool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingGetBool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.get_integer"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.get_integer">[docs]</a>	<span class="k">def</span> <span class="nf">get_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingGetInteger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.get_string"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.get_string">[docs]</a>	<span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingGetString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.get_integer_list"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.get_integer_list">[docs]</a>	<span class="k">def</span> <span class="nf">get_integer_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="p">[]):</span>
+		<span class="n">length</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">length</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">default_value</span><span class="p">)</span>
+		<span class="n">default_list</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_longlong</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">default_value</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">default_value</span><span class="p">)):</span>
+			<span class="n">default_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">default_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingGetIntegerList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_list</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+		<span class="n">out_list</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">length</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">out_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeSettingIntegerList</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">out_list</span></div>
+
+<div class="viewcode-block" id="Setting.get_string_list"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.get_string_list">[docs]</a>	<span class="k">def</span> <span class="nf">get_string_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="p">[]):</span>
+		<span class="n">length</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">length</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">default_value</span><span class="p">)</span>
+		<span class="n">default_list</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">default_value</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">default_value</span><span class="p">)):</span>
+			<span class="n">default_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">default_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingGetStringList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_list</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+		<span class="n">out_list</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">length</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">out_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeStringList</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">out_list</span></div>
+
+<div class="viewcode-block" id="Setting.get_double"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.get_double">[docs]</a>	<span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingGetDouble</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_bool"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_bool">[docs]</a>	<span class="k">def</span> <span class="nf">is_bool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsBool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_integer"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_integer">[docs]</a>	<span class="k">def</span> <span class="nf">is_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsInteger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_string"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_string">[docs]</a>	<span class="k">def</span> <span class="nf">is_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_string_list"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_string_list">[docs]</a>	<span class="k">def</span> <span class="nf">is_string_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsStringList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_integer_list"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_integer_list">[docs]</a>	<span class="k">def</span> <span class="nf">is_integer_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsIntegerList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_double"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_double">[docs]</a>	<span class="k">def</span> <span class="nf">is_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsDouble</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.is_present"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.is_present">[docs]</a>	<span class="k">def</span> <span class="nf">is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingIsPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set_bool"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set_bool">[docs]</a>	<span class="k">def</span> <span class="nf">set_bool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingSetBool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set_integer"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set_integer">[docs]</a>	<span class="k">def</span> <span class="nf">set_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingSetInteger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set_string"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set_string">[docs]</a>	<span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingSetString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set_integer_list"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set_integer_list">[docs]</a>	<span class="k">def</span> <span class="nf">set_integer_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">length</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">length</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="n">default_list</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_longlong</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)):</span>
+			<span class="n">default_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingSetIntegerList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_list</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set_string_list"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set_string_list">[docs]</a>	<span class="k">def</span> <span class="nf">set_string_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">length</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">length</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="n">default_list</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)):</span>
+			<span class="n">default_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingSetStringList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default_list</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set_double"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set_double">[docs]</a>	<span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSettingSetDouble</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.set"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.set">[docs]</a>	<span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_bool</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_integer</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_integer_list</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_integer_list</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_string_list</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_double</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;value is not one of (int, bool, float, str, [int], [str]) types&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.remove_setting_group"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.remove_setting_group">[docs]</a>	<span class="k">def</span> <span class="nf">remove_setting_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSettingRemoveSettingGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.remove_setting"><a class="viewcode-back" href="../../binaryninja.setting-module.html#binaryninja.setting.Setting.remove_setting">[docs]</a>	<span class="k">def</span> <span class="nf">remove_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setting</span><span class="p">,</span> <span class="n">auto_flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSettingRemoveSetting</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">setting</span><span class="p">,</span> <span class="n">auto_flush</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

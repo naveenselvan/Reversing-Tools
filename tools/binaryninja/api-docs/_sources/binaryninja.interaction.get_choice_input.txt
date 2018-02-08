@@ -1,0 +1,6 @@
+binaryninja.interaction.get_choice_input
+========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: get_choice_input

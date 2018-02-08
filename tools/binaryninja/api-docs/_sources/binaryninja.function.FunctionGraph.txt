@@ -1,0 +1,43 @@
+binaryninja.function.FunctionGraph
+==================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: FunctionGraph
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FunctionGraph.__init__
+      ~FunctionGraph.abort
+      ~FunctionGraph.get_blocks_in_region
+      ~FunctionGraph.is_option_set
+      ~FunctionGraph.layout
+      ~FunctionGraph.layout_and_wait
+      ~FunctionGraph.on_complete
+      ~FunctionGraph.set_option
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FunctionGraph.blocks
+      ~FunctionGraph.complete
+      ~FunctionGraph.function
+      ~FunctionGraph.height
+      ~FunctionGraph.horizontal_block_margin
+      ~FunctionGraph.settings
+      ~FunctionGraph.type
+      ~FunctionGraph.vertical_block_margin
+      ~FunctionGraph.width
+   
+   

@@ -1,0 +1,23 @@
+binaryninja.enums.PluginUpdateStatus
+====================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: PluginUpdateStatus
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PluginUpdateStatus.UpToDatePluginStatus
+      ~PluginUpdateStatus.UpdatesAvailablePluginStatus
+   
+   

@@ -1,0 +1,41 @@
+binaryninja.pluginmanager.RepoPlugin
+====================================
+
+.. currentmodule:: binaryninja.pluginmanager
+
+.. autoclass:: RepoPlugin
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RepoPlugin.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RepoPlugin.api
+      ~RepoPlugin.description
+      ~RepoPlugin.enabled
+      ~RepoPlugin.installed
+      ~RepoPlugin.license
+      ~RepoPlugin.license_text
+      ~RepoPlugin.long_description
+      ~RepoPlugin.minimum_version
+      ~RepoPlugin.name
+      ~RepoPlugin.path
+      ~RepoPlugin.plugin_types
+      ~RepoPlugin.update_status
+      ~RepoPlugin.url
+      ~RepoPlugin.version
+   
+   

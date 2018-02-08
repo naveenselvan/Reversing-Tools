@@ -1,0 +1,17 @@
+architecture module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.architecture.Architecture
+   binaryninja.architecture.ReferenceSource
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.architecture
+   :members:
+   :undoc-members:
+   :show-inheritance:

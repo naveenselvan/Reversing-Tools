@@ -1,0 +1,29 @@
+binaryninja.enums.FunctionGraphType
+===================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: FunctionGraphType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FunctionGraphType.LiftedILFunctionGraph
+      ~FunctionGraphType.LowLevelILFunctionGraph
+      ~FunctionGraphType.LowLevelILSSAFormFunctionGraph
+      ~FunctionGraphType.MappedMediumLevelILFunctionGraph
+      ~FunctionGraphType.MappedMediumLevelILSSAFormFunctionGraph
+      ~FunctionGraphType.MediumLevelILFunctionGraph
+      ~FunctionGraphType.MediumLevelILSSAFormFunctionGraph
+      ~FunctionGraphType.NormalFunctionGraph
+   
+   

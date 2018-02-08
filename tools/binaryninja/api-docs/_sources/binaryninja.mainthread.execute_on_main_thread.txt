@@ -1,0 +1,6 @@
+binaryninja.mainthread.execute_on_main_thread
+=============================================
+
+.. currentmodule:: binaryninja.mainthread
+
+.. autofunction:: execute_on_main_thread

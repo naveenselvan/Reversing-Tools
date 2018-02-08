@@ -1,0 +1,25 @@
+binaryninja.enums.MessageBoxIcon
+================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: MessageBoxIcon
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MessageBoxIcon.ErrorIcon
+      ~MessageBoxIcon.InformationIcon
+      ~MessageBoxIcon.QuestionIcon
+      ~MessageBoxIcon.WarningIcon
+   
+   

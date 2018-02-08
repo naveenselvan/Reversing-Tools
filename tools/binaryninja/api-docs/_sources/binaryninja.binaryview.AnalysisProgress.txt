@@ -1,0 +1,22 @@
+binaryninja.binaryview.AnalysisProgress
+=======================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: AnalysisProgress
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnalysisProgress.__init__
+   
+   
+
+   
+   
+   

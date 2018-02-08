@@ -1,0 +1,22 @@
+binaryninja.types.ReferenceTypeWithConfidence
+=============================================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: ReferenceTypeWithConfidence
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ReferenceTypeWithConfidence.__init__
+   
+   
+
+   
+   
+   

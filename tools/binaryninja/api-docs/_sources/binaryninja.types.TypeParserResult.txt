@@ -1,0 +1,22 @@
+binaryninja.types.TypeParserResult
+==================================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: TypeParserResult
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TypeParserResult.__init__
+   
+   
+
+   
+   
+   

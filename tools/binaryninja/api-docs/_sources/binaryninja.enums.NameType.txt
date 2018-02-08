@@ -1,0 +1,99 @@
+binaryninja.enums.NameType
+==========================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: NameType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NameType.ConstructorNameType
+      ~NameType.CopyConstructorClosureNameType
+      ~NameType.DefaultConstructorClosureNameType
+      ~NameType.DestructorNameType
+      ~NameType.EHVectorConstructorIteratorNameType
+      ~NameType.EHVectorDestructorIteratorNameType
+      ~NameType.EHVectorVBaseConstructorIteratorNameType
+      ~NameType.LocalStaticGuardNameType
+      ~NameType.LocalVFTableConstructorClosureNameType
+      ~NameType.LocalVFTableNameType
+      ~NameType.NoNameType
+      ~NameType.OperatorAndEqualNameType
+      ~NameType.OperatorArrayNameType
+      ~NameType.OperatorArrowNameType
+      ~NameType.OperatorArrowStarNameType
+      ~NameType.OperatorAssignNameType
+      ~NameType.OperatorBitAndNameType
+      ~NameType.OperatorBitOrNameType
+      ~NameType.OperatorCommaNameType
+      ~NameType.OperatorDecrementNameType
+      ~NameType.OperatorDeleteArrayNameType
+      ~NameType.OperatorDeleteNameType
+      ~NameType.OperatorDivideEqualNameType
+      ~NameType.OperatorDivideNameType
+      ~NameType.OperatorEqualNameType
+      ~NameType.OperatorGreaterThanEqualNameType
+      ~NameType.OperatorGreaterThanNameType
+      ~NameType.OperatorIncrementNameType
+      ~NameType.OperatorLeftShiftEqualNameType
+      ~NameType.OperatorLeftShiftNameType
+      ~NameType.OperatorLessThanEqualNameType
+      ~NameType.OperatorLessThanNameType
+      ~NameType.OperatorLogicalAndNameType
+      ~NameType.OperatorLogicalOrNameType
+      ~NameType.OperatorMinusEqualNameType
+      ~NameType.OperatorMinusNameType
+      ~NameType.OperatorModulusEqualNameType
+      ~NameType.OperatorModulusNameType
+      ~NameType.OperatorNewArrayNameType
+      ~NameType.OperatorNewNameType
+      ~NameType.OperatorNotEqualNameType
+      ~NameType.OperatorNotNameType
+      ~NameType.OperatorOrEqualNameType
+      ~NameType.OperatorParenthesesNameType
+      ~NameType.OperatorPlusEqualNameType
+      ~NameType.OperatorPlusNameType
+      ~NameType.OperatorReturnTypeNameType
+      ~NameType.OperatorRightShiftEqualNameType
+      ~NameType.OperatorRightShiftNameType
+      ~NameType.OperatorStarEqualNameType
+      ~NameType.OperatorStarNameType
+      ~NameType.OperatorTildeNameType
+      ~NameType.OperatorUnaryBitAndNameType
+      ~NameType.OperatorUnaryMinusNameType
+      ~NameType.OperatorUnaryPlusNameType
+      ~NameType.OperatorUnaryStarNameType
+      ~NameType.OperatorXorEqualNameType
+      ~NameType.OperatorXorNameType
+      ~NameType.PlacementDeleteClosureArrayNameType
+      ~NameType.PlacementDeleteClosureNameType
+      ~NameType.RttiBaseClassArray
+      ~NameType.RttiBaseClassDescriptor
+      ~NameType.RttiClassHeirarchyDescriptor
+      ~NameType.RttiCompleteObjectLocator
+      ~NameType.RttiTypeDescriptor
+      ~NameType.ScalarDeletingDestructorNameType
+      ~NameType.StringNameType
+      ~NameType.TypeofNameType
+      ~NameType.UDTReturningNameType
+      ~NameType.VBTableNameType
+      ~NameType.VBaseDestructorNameType
+      ~NameType.VCallNameType
+      ~NameType.VFTableNameType
+      ~NameType.VectorConstructorIteratorNameType
+      ~NameType.VectorDeletingDestructorNameType
+      ~NameType.VectorDestructorIteratorNameType
+      ~NameType.VectorVBaseConstructorIteratoreNameType
+      ~NameType.VirtualDisplacementMapNameType
+   
+   

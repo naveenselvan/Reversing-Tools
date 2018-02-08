@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.update &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.update</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.update</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">from</span> <span class="nn">enums</span> <span class="k">import</span> <span class="n">UpdateResult</span>
+<span class="kn">import</span> <span class="nn">startup</span>
+<span class="kn">import</span> <span class="nn">log</span>
+
+
+<span class="k">class</span> <span class="nc">_UpdateChannelMetaClass</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">channels</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUpdateChannels</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UpdateChannel</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">latestVersion</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeUpdateChannelList</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">active</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetActiveUpdateChannel</span><span class="p">()</span>
+
+	<span class="nd">@active</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNSetActiveUpdateChannel</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">channels</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUpdateChannels</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">UpdateChannel</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">latestVersion</span><span class="p">)</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeUpdateChannelList</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">type</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">channels</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUpdateChannels</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+				<span class="n">result</span> <span class="o">=</span> <span class="n">UpdateChannel</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">latestVersion</span><span class="p">)</span>
+				<span class="k">break</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeUpdateChannelList</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not a valid channel&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+
+<div class="viewcode-block" id="UpdateProgressCallback"><a class="viewcode-back" href="../../binaryninja.update.UpdateProgressCallback.html#binaryninja.update.UpdateProgressCallback">[docs]</a><span class="k">class</span> <span class="nc">UpdateProgressCallback</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="UpdateProgressCallback.__init__"><a class="viewcode-back" href="../../binaryninja.update.UpdateProgressCallback.html#binaryninja.update.UpdateProgressCallback.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cb</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_bool</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span></div>
+
+<div class="viewcode-block" id="UpdateProgressCallback.callback"><a class="viewcode-back" href="../../binaryninja.update-module.html#binaryninja.update.UpdateProgressCallback.callback">[docs]</a>	<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">progress</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">progress</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span></div></div>
+
+
+<div class="viewcode-block" id="UpdateChannel"><a class="viewcode-back" href="../../binaryninja.update.UpdateChannel.html#binaryninja.update.UpdateChannel">[docs]</a><span class="k">class</span> <span class="nc">UpdateChannel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">_UpdateChannelMetaClass</span>
+
+<div class="viewcode-block" id="UpdateChannel.__init__"><a class="viewcode-back" href="../../binaryninja.update.UpdateChannel.html#binaryninja.update.UpdateChannel.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">ver</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">desc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">latest_version_num</span> <span class="o">=</span> <span class="n">ver</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">versions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of versions (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">versions</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUpdateChannelVersions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UpdateVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">notes</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">time</span><span class="p">))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeUpdateChannelVersionList</span><span class="p">(</span><span class="n">versions</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">latest_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Latest version (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">versions</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetUpdateChannelVersions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">version</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">latest_version_num</span><span class="p">:</span>
+				<span class="n">result</span> <span class="o">=</span> <span class="n">UpdateVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">notes</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+				<span class="k">break</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeUpdateChannelVersionList</span><span class="p">(</span><span class="n">versions</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">updates_available</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Whether updates are available (read-only)&quot;&quot;&quot;</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAreUpdatesAvailable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;channel: </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<div class="viewcode-block" id="UpdateChannel.update_to_latest"><a class="viewcode-back" href="../../binaryninja.update-module.html#binaryninja.update.UpdateChannel.update_to_latest">[docs]</a>	<span class="k">def</span> <span class="nf">update_to_latest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">progress</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="n">cb</span> <span class="o">=</span> <span class="n">UpdateProgressCallback</span><span class="p">(</span><span class="n">progress</span><span class="p">)</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNUpdateToLatestVersion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">cb</span><span class="o">.</span><span class="n">cb</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">UpdateResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="UpdateVersion"><a class="viewcode-back" href="../../binaryninja.update.UpdateVersion.html#binaryninja.update.UpdateVersion">[docs]</a><span class="k">class</span> <span class="nc">UpdateVersion</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="UpdateVersion.__init__"><a class="viewcode-back" href="../../binaryninja.update.UpdateVersion.html#binaryninja.update.UpdateVersion.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">ver</span><span class="p">,</span> <span class="n">notes</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="n">channel</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">ver</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="n">notes</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">t</span></div>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;version: </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span>
+
+<div class="viewcode-block" id="UpdateVersion.update"><a class="viewcode-back" href="../../binaryninja.update-module.html#binaryninja.update.UpdateVersion.update">[docs]</a>	<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">progress</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="n">cb</span> <span class="o">=</span> <span class="n">UpdateProgressCallback</span><span class="p">(</span><span class="n">progress</span><span class="p">)</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNUpdateToVersion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">cb</span><span class="o">.</span><span class="n">cb</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+			<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">UpdateResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="are_auto_updates_enabled"><a class="viewcode-back" href="../../binaryninja.update.are_auto_updates_enabled.html#binaryninja.update.are_auto_updates_enabled">[docs]</a><span class="k">def</span> <span class="nf">are_auto_updates_enabled</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``are_auto_updates_enabled`` queries if auto updates are enabled.</span>
+
+<span class="sd">	:return: boolean True if auto updates are enabled. False if they are disabled.</span>
+<span class="sd">	:rtype: bool</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNAreAutoUpdatesEnabled</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="set_auto_updates_enabled"><a class="viewcode-back" href="../../binaryninja.update.set_auto_updates_enabled.html#binaryninja.update.set_auto_updates_enabled">[docs]</a><span class="k">def</span> <span class="nf">set_auto_updates_enabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``set_auto_updates_enabled`` sets auto update enabled status.</span>
+
+<span class="sd">	:param bool enabled: True to enable update, Flase to disable updates.</span>
+<span class="sd">	:rtype: None</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNSetAutoUpdatesEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_time_since_last_update_check"><a class="viewcode-back" href="../../binaryninja.update.get_time_since_last_update_check.html#binaryninja.update.get_time_since_last_update_check">[docs]</a><span class="k">def</span> <span class="nf">get_time_since_last_update_check</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``get_time_since_last_update_check`` returns the time stamp for the last time updates were checked.</span>
+
+<span class="sd">	:return: time stacmp for last update check</span>
+<span class="sd">	:rtype: int</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetTimeSinceLastUpdateCheck</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="is_update_installation_pending"><a class="viewcode-back" href="../../binaryninja.update.is_update_installation_pending.html#binaryninja.update.is_update_installation_pending">[docs]</a><span class="k">def</span> <span class="nf">is_update_installation_pending</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``is_update_installation_pending`` whether an update has been downloaded and is waiting installation</span>
+
+<span class="sd">	:return: boolean True if an update is pending, false if no update is pending</span>
+<span class="sd">	:rtype: bool</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNIsUpdateInstallationPending</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="install_pending_update"><a class="viewcode-back" href="../../binaryninja.update.install_pending_update.html#binaryninja.update.install_pending_update">[docs]</a><span class="k">def</span> <span class="nf">install_pending_update</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``install_pending_update`` installs any pending updates</span>
+
+<span class="sd">	:rtype: None</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNInstallPendingUpdate</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+		<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+		<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="updates_checked"><a class="viewcode-back" href="../../binaryninja.update.updates_checked.html#binaryninja.update.updates_checked">[docs]</a><span class="k">def</span> <span class="nf">updates_checked</span><span class="p">():</span>
+	<span class="n">core</span><span class="o">.</span><span class="n">BNUpdatesChecked</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+binaryninja.interaction.LabelField
+==================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: LabelField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LabelField.__init__
+   
+   
+
+   
+   
+   

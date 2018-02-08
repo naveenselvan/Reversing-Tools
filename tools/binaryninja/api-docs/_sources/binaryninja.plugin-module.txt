@@ -1,0 +1,21 @@
+plugin module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.plugin.BackgroundTask
+   binaryninja.plugin.BackgroundTaskThread
+   binaryninja.plugin.MainThreadAction
+   binaryninja.plugin.MainThreadActionHandler
+   binaryninja.plugin.PluginCommand
+   binaryninja.plugin.PluginCommandContext
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.plugin
+   :members:
+   :undoc-members:
+   :show-inheritance:

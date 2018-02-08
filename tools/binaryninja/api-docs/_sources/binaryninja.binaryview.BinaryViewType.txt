@@ -1,0 +1,38 @@
+binaryninja.binaryview.BinaryViewType
+=====================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: BinaryViewType
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BinaryViewType.__init__
+      ~BinaryViewType.create
+      ~BinaryViewType.get_arch
+      ~BinaryViewType.get_platform
+      ~BinaryViewType.get_view_of_file
+      ~BinaryViewType.is_valid_for_data
+      ~BinaryViewType.open
+      ~BinaryViewType.register_arch
+      ~BinaryViewType.register_default_platform
+      ~BinaryViewType.register_platform
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BinaryViewType.long_name
+      ~BinaryViewType.name
+   
+   

@@ -1,0 +1,50 @@
+binaryninja.basicblock.BasicBlock
+=================================
+
+.. currentmodule:: binaryninja.basicblock
+
+.. autoclass:: BasicBlock
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BasicBlock.__init__
+      ~BasicBlock.get_disassembly_text
+      ~BasicBlock.get_iterated_dominance_frontier
+      ~BasicBlock.mark_recent_use
+      ~BasicBlock.set_auto_highlight
+      ~BasicBlock.set_user_highlight
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BasicBlock.annotations
+      ~BasicBlock.arch
+      ~BasicBlock.can_exit
+      ~BasicBlock.disassembly_text
+      ~BasicBlock.dominance_frontier
+      ~BasicBlock.dominator_tree_children
+      ~BasicBlock.dominators
+      ~BasicBlock.end
+      ~BasicBlock.function
+      ~BasicBlock.has_undetermined_outgoing_edges
+      ~BasicBlock.highlight
+      ~BasicBlock.immediate_dominator
+      ~BasicBlock.incoming_edges
+      ~BasicBlock.index
+      ~BasicBlock.length
+      ~BasicBlock.outgoing_edges
+      ~BasicBlock.start
+      ~BasicBlock.strict_dominators
+   
+   

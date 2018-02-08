@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.architecture.Architecture &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="architecture module" href="binaryninja.architecture-module.html"/>
+        <link rel="next" title="binaryninja.architecture.ReferenceSource" href="binaryninja.architecture.ReferenceSource.html"/>
+        <link rel="prev" title="architecture module" href="binaryninja.architecture-module.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.architecture.Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.architecture.ReferenceSource.html">binaryninja.architecture.ReferenceSource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.architecture-module.html">architecture module</a> &raquo;</li>
+        
+      <li>binaryninja.architecture.Architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.architecture.Architecture.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-architecture-architecture">
+<h1>binaryninja.architecture.Architecture<a class="headerlink" href="#binaryninja-architecture-architecture" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.architecture.Architecture">
+<em class="property">class </em><code class="descclassname">binaryninja.architecture.</code><code class="descname">Architecture</code><span class="sig-paren">(</span><em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">class</span> <span class="pre">Architecture</span></code> is the parent class for all CPU architectures. Subclasses of Architecture implement assembly,
+disassembly, IL lifting, and patching.</p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">Architecture</span></code> has a <code class="docutils literal"><span class="pre">__metaclass__</span></code> with the additional methods <code class="docutils literal"><span class="pre">register</span></code>, and supports
+iteration:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#List the architectures</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Architecture</span><span class="p">)</span>
+<span class="go">[&lt;arch: aarch64&gt;, &lt;arch: armv7&gt;, &lt;arch: armv7eb&gt;, &lt;arch: mipsel32&gt;, &lt;arch: mips32&gt;, &lt;arch: powerpc&gt;,</span>
+<span class="go">&lt;arch: x86&gt;, &lt;arch: x86_64&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#Register a new Architecture</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyArch</span><span class="p">(</span><span class="n">Architecture</span><span class="p">):</span>
+<span class="gp">... </span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;MyArch&quot;</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">MyArch</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">Architecture</span><span class="p">)</span>
+<span class="go">[&lt;arch: aarch64&gt;, &lt;arch: armv7&gt;, &lt;arch: armv7eb&gt;, &lt;arch: mipsel32&gt;, &lt;arch: mips32&gt;, &lt;arch: powerpc&gt;,</span>
+<span class="go">&lt;arch: x86&gt;, &lt;arch: x86_64&gt;, &lt;arch: MyArch&gt;]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>For the purposes of this documentation the variable <code class="docutils literal"><span class="pre">arch</span></code> will be used in the following context</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binaryninja</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arch</span> <span class="o">=</span> <span class="n">Architecture</span><span class="p">[</span><span class="s1">&#39;x86&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="binaryninja.architecture.Architecture.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/architecture.html#Architecture.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.architecture.Architecture.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.architecture.Architecture.__init__" title="binaryninja.architecture.Architecture.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([handle])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.always_branch" title="binaryninja.architecture.Architecture.always_branch"><code class="xref py py-obj docutils literal"><span class="pre">always_branch</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">always_branch</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of bytes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.assemble" title="binaryninja.architecture.Architecture.assemble"><code class="xref py py-obj docutils literal"><span class="pre">assemble</span></code></a>(code[,&nbsp;addr])</td>
+<td><code class="docutils literal"><span class="pre">assemble</span></code> converts the string of assembly instructions <code class="docutils literal"><span class="pre">code</span></code> loaded at virtual address <code class="docutils literal"><span class="pre">addr</span></code> to the</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.convert_to_nop" title="binaryninja.architecture.Architecture.convert_to_nop"><code class="xref py py-obj docutils literal"><span class="pre">convert_to_nop</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">convert_to_nop</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of nop</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_associated_arch_by_address" title="binaryninja.architecture.Architecture.get_associated_arch_by_address"><code class="xref py py-obj docutils literal"><span class="pre">get_associated_arch_by_address</span></code></a>(addr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_default_flag_condition_low_level_il" title="binaryninja.architecture.Architecture.get_default_flag_condition_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">get_default_flag_condition_low_level_il</span></code></a>(cond,&nbsp;il)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param LowLevelILFlagCondition cond:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_default_flag_write_low_level_il" title="binaryninja.architecture.Architecture.get_default_flag_write_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">get_default_flag_write_low_level_il</span></code></a>(op,&nbsp;...)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param LowLevelILOperation op:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_by_name" title="binaryninja.architecture.Architecture.get_flag_by_name"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_by_name</span></code></a>(flag)</td>
+<td><code class="docutils literal"><span class="pre">get_flag_by_name</span></code> get flag name for flag index.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_condition_low_level_il" title="binaryninja.architecture.Architecture.get_flag_condition_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_condition_low_level_il</span></code></a>(cond,&nbsp;il)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param LowLevelILFlagCondition cond:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_index" title="binaryninja.architecture.Architecture.get_flag_index"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_index</span></code></a>(flag)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_name" title="binaryninja.architecture.Architecture.get_flag_name"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_name</span></code></a>(flag)</td>
+<td><code class="docutils literal"><span class="pre">get_flag_name</span></code> gets a flag name from a flag number.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_write_low_level_il" title="binaryninja.architecture.Architecture.get_flag_write_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_write_low_level_il</span></code></a>(op,&nbsp;size,&nbsp;...)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param LowLevelILOperation op:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_write_type_by_name" title="binaryninja.architecture.Architecture.get_flag_write_type_by_name"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_write_type_by_name</span></code></a>(write_type)</td>
+<td><code class="docutils literal"><span class="pre">get_flag_write_type_by_name</span></code> gets the flag write type name for the flage write type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_flag_write_type_name" title="binaryninja.architecture.Architecture.get_flag_write_type_name"><code class="xref py py-obj docutils literal"><span class="pre">get_flag_write_type_name</span></code></a>(write_type)</td>
+<td><code class="docutils literal"><span class="pre">get_flag_write_type_name</span></code> gets the flag write type name for the given flag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_instruction_info" title="binaryninja.architecture.Architecture.get_instruction_info"><code class="xref py py-obj docutils literal"><span class="pre">get_instruction_info</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">get_instruction_info</span></code> returns an InstructionInfo object for the instruction at the given virtual address</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_instruction_low_level_il" title="binaryninja.architecture.Architecture.get_instruction_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">get_instruction_low_level_il</span></code></a>(data,&nbsp;addr,&nbsp;il)</td>
+<td><code class="docutils literal"><span class="pre">get_instruction_low_level_il</span></code> appends LowLevelILExpr objects to <code class="docutils literal"><span class="pre">il</span></code> for the instruction at the given</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_instruction_low_level_il_instruction" title="binaryninja.architecture.Architecture.get_instruction_low_level_il_instruction"><code class="xref py py-obj docutils literal"><span class="pre">get_instruction_low_level_il_instruction</span></code></a>(bv,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_instruction_text" title="binaryninja.architecture.Architecture.get_instruction_text"><code class="xref py py-obj docutils literal"><span class="pre">get_instruction_text</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">get_instruction_text</span></code> returns a list of InstructionTextToken objects for the instruction at the given virtual</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_low_level_il_from_bytes" title="binaryninja.architecture.Architecture.get_low_level_il_from_bytes"><code class="xref py py-obj docutils literal"><span class="pre">get_low_level_il_from_bytes</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">get_low_level_il_from_bytes</span></code> converts the instruction in bytes to <code class="docutils literal"><span class="pre">il</span></code> at the given virtual address</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_modified_regs_on_write" title="binaryninja.architecture.Architecture.get_modified_regs_on_write"><code class="xref py py-obj docutils literal"><span class="pre">get_modified_regs_on_write</span></code></a>(reg)</td>
+<td><code class="docutils literal"><span class="pre">get_modified_regs_on_write</span></code> returns a list of register names that are modified when <code class="docutils literal"><span class="pre">reg</span></code> is written.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_reg_index" title="binaryninja.architecture.Architecture.get_reg_index"><code class="xref py py-obj docutils literal"><span class="pre">get_reg_index</span></code></a>(reg)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_reg_name" title="binaryninja.architecture.Architecture.get_reg_name"><code class="xref py py-obj docutils literal"><span class="pre">get_reg_name</span></code></a>(reg)</td>
+<td><code class="docutils literal"><span class="pre">get_reg_name</span></code> gets a register name from a register number.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.get_view_type_constant" title="binaryninja.architecture.Architecture.get_view_type_constant"><code class="xref py py-obj docutils literal"><span class="pre">get_view_type_constant</span></code></a>(type_name,&nbsp;const_name)</td>
+<td><code class="docutils literal"><span class="pre">get_view_type_constant</span></code> retrieves the view type constant for the given type_name and const_name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.invert_branch" title="binaryninja.architecture.Architecture.invert_branch"><code class="xref py py-obj docutils literal"><span class="pre">invert_branch</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">invert_branch</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of bytes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.is_always_branch_patch_available" title="binaryninja.architecture.Architecture.is_always_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_always_branch_patch_available</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">is_always_branch_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> can be made to</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.is_invert_branch_patch_available" title="binaryninja.architecture.Architecture.is_invert_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_invert_branch_patch_available</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">is_always_branch_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> can be inverted.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.is_never_branch_patch_available" title="binaryninja.architecture.Architecture.is_never_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_never_branch_patch_available</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">is_never_branch_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> can be made to <strong>never branch</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.is_skip_and_return_value_patch_available" title="binaryninja.architecture.Architecture.is_skip_and_return_value_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_skip_and_return_value_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> is a <em>call-like</em></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.is_skip_and_return_zero_patch_available" title="binaryninja.architecture.Architecture.is_skip_and_return_zero_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">is_skip_and_return_zero_patch_available</span></code> determines if the instruction <code class="docutils literal"><span class="pre">data</span></code> at <code class="docutils literal"><span class="pre">addr</span></code> is a <em>call-like</em></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.is_view_type_constant_defined" title="binaryninja.architecture.Architecture.is_view_type_constant_defined"><code class="xref py py-obj docutils literal"><span class="pre">is_view_type_constant_defined</span></code></a>(type_name,&nbsp;...)</td>
+<td><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param str type_name:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the BinaryView type name of the constant to query</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_always_branch" title="binaryninja.architecture.Architecture.perform_always_branch"><code class="xref py py-obj docutils literal"><span class="pre">perform_always_branch</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_always_branch</span></code> implements a method which converts the branch represented by the bytes in <code class="docutils literal"><span class="pre">data</span></code> to</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_assemble" title="binaryninja.architecture.Architecture.perform_assemble"><code class="xref py py-obj docutils literal"><span class="pre">perform_assemble</span></code></a>(code,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_assemble</span></code> implements a method to convert the string of assembly instructions <code class="docutils literal"><span class="pre">code</span></code> loaded at</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_convert_to_nop" title="binaryninja.architecture.Architecture.perform_convert_to_nop"><code class="xref py py-obj docutils literal"><span class="pre">perform_convert_to_nop</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_convert_to_nop</span></code> implements a method which returns a nop sequence of len(data) bytes long.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_get_associated_arch_by_address" title="binaryninja.architecture.Architecture.perform_get_associated_arch_by_address"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_associated_arch_by_address</span></code></a>(addr)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_get_flag_condition_low_level_il" title="binaryninja.architecture.Architecture.perform_get_flag_condition_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_flag_condition_low_level_il</span></code></a>(cond,&nbsp;il)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_get_flag_write_low_level_il" title="binaryninja.architecture.Architecture.perform_get_flag_write_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_flag_write_low_level_il</span></code></a>(op,&nbsp;...)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Architecture subclasses should implement this method.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_get_instruction_info" title="binaryninja.architecture.Architecture.perform_get_instruction_info"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_instruction_info</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_get_instruction_info</span></code> implements a method which interpretes the bytes passed in <code class="docutils literal"><span class="pre">data</span></code> as an</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_get_instruction_low_level_il" title="binaryninja.architecture.Architecture.perform_get_instruction_low_level_il"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_instruction_low_level_il</span></code></a>(data,&nbsp;...)</td>
+<td><code class="docutils literal"><span class="pre">perform_get_instruction_low_level_il</span></code> implements a method to interpret the bytes passed in <code class="docutils literal"><span class="pre">data</span></code> to</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_get_instruction_text" title="binaryninja.architecture.Architecture.perform_get_instruction_text"><code class="xref py py-obj docutils literal"><span class="pre">perform_get_instruction_text</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_get_instruction_text</span></code> implements a method which interpretes the bytes passed in <code class="docutils literal"><span class="pre">data</span></code> as a</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_invert_branch" title="binaryninja.architecture.Architecture.perform_invert_branch"><code class="xref py py-obj docutils literal"><span class="pre">perform_invert_branch</span></code></a>(data,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">perform_invert_branch</span></code> implements a method which inverts the branch represented by the bytes in <code class="docutils literal"><span class="pre">data</span></code> to</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_is_always_branch_patch_available" title="binaryninja.architecture.Architecture.perform_is_always_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_always_branch_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_always_branch_patch_available</span></code> implements a check to determine if the instruction represented by</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_is_invert_branch_patch_available" title="binaryninja.architecture.Architecture.perform_is_invert_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_invert_branch_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_invert_branch_patch_available</span></code> implements a check to determine if the instruction represented by</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_is_never_branch_patch_available" title="binaryninja.architecture.Architecture.perform_is_never_branch_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_never_branch_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_never_branch_patch_available</span></code> implements a check to determine if the instruction represented by</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_is_skip_and_return_value_patch_available" title="binaryninja.architecture.Architecture.perform_is_skip_and_return_value_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_skip_and_return_value_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_skip_and_return_value_patch_available</span></code> implements a check to determine if the instruction represented by</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_is_skip_and_return_zero_patch_available" title="binaryninja.architecture.Architecture.perform_is_skip_and_return_zero_patch_available"><code class="xref py py-obj docutils literal"><span class="pre">perform_is_skip_and_return_zero_patch_available</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">perform_is_skip_and_return_zero_patch_available</span></code> implements a check to determine if the instruction represented by</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.perform_skip_and_return_value" title="binaryninja.architecture.Architecture.perform_skip_and_return_value"><code class="xref py py-obj docutils literal"><span class="pre">perform_skip_and_return_value</span></code></a>(data,&nbsp;addr,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">perform_skip_and_return_value</span></code> implements a method which converts a <em>call-like</em> instruction represented by</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.register_calling_convention" title="binaryninja.architecture.Architecture.register_calling_convention"><code class="xref py py-obj docutils literal"><span class="pre">register_calling_convention</span></code></a>(cc)</td>
+<td><code class="docutils literal"><span class="pre">register_calling_convention</span></code> registers a new calling convention for the Architecture.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.set_view_type_constant" title="binaryninja.architecture.Architecture.set_view_type_constant"><code class="xref py py-obj docutils literal"><span class="pre">set_view_type_constant</span></code></a>(type_name,&nbsp;...)</td>
+<td><code class="docutils literal"><span class="pre">set_view_type_constant</span></code> creates a new binaryview type constant.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.skip_and_return_value" title="binaryninja.architecture.Architecture.skip_and_return_value"><code class="xref py py-obj docutils literal"><span class="pre">skip_and_return_value</span></code></a>(data,&nbsp;addr,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">skip_and_return_value</span></code> reads the instruction(s) in <code class="docutils literal"><span class="pre">data</span></code> at virtual address <code class="docutils literal"><span class="pre">addr</span></code> and returns a string of</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.address_size" title="binaryninja.architecture.Architecture.address_size"><code class="xref py py-obj docutils literal"><span class="pre">address_size</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.calling_conventions" title="binaryninja.architecture.Architecture.calling_conventions"><code class="xref py py-obj docutils literal"><span class="pre">calling_conventions</span></code></a></td>
+<td>Dict of CallingConvention objects (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.default_int_size" title="binaryninja.architecture.Architecture.default_int_size"><code class="xref py py-obj docutils literal"><span class="pre">default_int_size</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.endianness" title="binaryninja.architecture.Architecture.endianness"><code class="xref py py-obj docutils literal"><span class="pre">endianness</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.flag_roles" title="binaryninja.architecture.Architecture.flag_roles"><code class="xref py py-obj docutils literal"><span class="pre">flag_roles</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.flag_write_types" title="binaryninja.architecture.Architecture.flag_write_types"><code class="xref py py-obj docutils literal"><span class="pre">flag_write_types</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.flags" title="binaryninja.architecture.Architecture.flags"><code class="xref py py-obj docutils literal"><span class="pre">flags</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.flags_required_for_flag_condition" title="binaryninja.architecture.Architecture.flags_required_for_flag_condition"><code class="xref py py-obj docutils literal"><span class="pre">flags_required_for_flag_condition</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.flags_written_by_flag_write_type" title="binaryninja.architecture.Architecture.flags_written_by_flag_write_type"><code class="xref py py-obj docutils literal"><span class="pre">flags_written_by_flag_write_type</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.full_width_regs" title="binaryninja.architecture.Architecture.full_width_regs"><code class="xref py py-obj docutils literal"><span class="pre">full_width_regs</span></code></a></td>
+<td>List of full width register strings (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.global_regs" title="binaryninja.architecture.Architecture.global_regs"><code class="xref py py-obj docutils literal"><span class="pre">global_regs</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.link_reg" title="binaryninja.architecture.Architecture.link_reg"><code class="xref py py-obj docutils literal"><span class="pre">link_reg</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.max_instr_length" title="binaryninja.architecture.Architecture.max_instr_length"><code class="xref py py-obj docutils literal"><span class="pre">max_instr_length</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.name" title="binaryninja.architecture.Architecture.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.next_address" title="binaryninja.architecture.Architecture.next_address"><code class="xref py py-obj docutils literal"><span class="pre">next_address</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.opcode_display_length" title="binaryninja.architecture.Architecture.opcode_display_length"><code class="xref py py-obj docutils literal"><span class="pre">opcode_display_length</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.regs" title="binaryninja.architecture.Architecture.regs"><code class="xref py py-obj docutils literal"><span class="pre">regs</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.stack_pointer" title="binaryninja.architecture.Architecture.stack_pointer"><code class="xref py py-obj docutils literal"><span class="pre">stack_pointer</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.architecture-module.html#binaryninja.architecture.Architecture.standalone_platform" title="binaryninja.architecture.Architecture.standalone_platform"><code class="xref py py-obj docutils literal"><span class="pre">standalone_platform</span></code></a></td>
+<td>Architecture standalone platform (read-only)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.architecture.ReferenceSource.html" class="btn btn-neutral float-right" title="binaryninja.architecture.ReferenceSource" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.architecture-module.html" class="btn btn-neutral" title="architecture module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

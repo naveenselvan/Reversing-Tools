@@ -1,0 +1,27 @@
+binaryninja.enums.NamedTypeReferenceClass
+=========================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: NamedTypeReferenceClass
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NamedTypeReferenceClass.ClassNamedTypeClass
+      ~NamedTypeReferenceClass.EnumNamedTypeClass
+      ~NamedTypeReferenceClass.StructNamedTypeClass
+      ~NamedTypeReferenceClass.TypedefNamedTypeClass
+      ~NamedTypeReferenceClass.UnionNamedTypeClass
+      ~NamedTypeReferenceClass.UnknownNamedTypeClass
+   
+   

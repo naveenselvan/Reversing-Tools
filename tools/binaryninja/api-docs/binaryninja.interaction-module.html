@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>interaction module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.interaction.AddressField" href="binaryninja.interaction.AddressField.html"/>
+        <link rel="prev" title="binaryninja.highlight.HighlightColor" href="binaryninja.highlight.HighlightColor.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.AddressField.html">binaryninja.interaction.AddressField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.ChoiceField.html">binaryninja.interaction.ChoiceField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.DirectoryNameField.html">binaryninja.interaction.DirectoryNameField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.IntegerField.html">binaryninja.interaction.IntegerField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.InteractionHandler.html">binaryninja.interaction.InteractionHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.LabelField.html">binaryninja.interaction.LabelField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.MultilineTextField.html">binaryninja.interaction.MultilineTextField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.OpenFileNameField.html">binaryninja.interaction.OpenFileNameField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.SaveFileNameField.html">binaryninja.interaction.SaveFileNameField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.SeparatorField.html">binaryninja.interaction.SeparatorField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.TextLineField.html">binaryninja.interaction.TextLineField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_address_input.html">binaryninja.interaction.get_address_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_choice_input.html">binaryninja.interaction.get_choice_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_directory_name_input.html">binaryninja.interaction.get_directory_name_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_form_input.html">binaryninja.interaction.get_form_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_int_input.html">binaryninja.interaction.get_int_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_open_filename_input.html">binaryninja.interaction.get_open_filename_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_save_filename_input.html">binaryninja.interaction.get_save_filename_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.get_text_line_input.html">binaryninja.interaction.get_text_line_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.markdown_to_html.html">binaryninja.interaction.markdown_to_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.show_html_report.html">binaryninja.interaction.show_html_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.show_markdown_report.html">binaryninja.interaction.show_markdown_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.show_message_box.html">binaryninja.interaction.show_message_box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.interaction.show_plain_text_report.html">binaryninja.interaction.show_plain_text_report</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>interaction module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.interaction-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="interaction-module">
+<h1>interaction module<a class="headerlink" href="#interaction-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.AddressField.html#binaryninja.interaction.AddressField" title="binaryninja.interaction.AddressField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.AddressField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">AddressField</span></code> prompts the user for an address. By passing the optional view and current_address parameters</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.ChoiceField.html#binaryninja.interaction.ChoiceField" title="binaryninja.interaction.ChoiceField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.ChoiceField</span></code></a>(prompt,&nbsp;...)</td>
+<td><code class="docutils literal"><span class="pre">ChoiceField</span></code> prompts the user to choose from the list of strings provided in <code class="docutils literal"><span class="pre">choices</span></code>. Result is stored</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.DirectoryNameField.html#binaryninja.interaction.DirectoryNameField" title="binaryninja.interaction.DirectoryNameField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.DirectoryNameField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">DirectoryNameField</span></code> prompts the user to specify a directory name to open. Result is stored in self.result as</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.IntegerField.html#binaryninja.interaction.IntegerField" title="binaryninja.interaction.IntegerField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.IntegerField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">IntegerField</span></code> add prompt for integer. Result is stored in self.result as an int.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.InteractionHandler.html#binaryninja.interaction.InteractionHandler" title="binaryninja.interaction.InteractionHandler"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.InteractionHandler</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.LabelField.html#binaryninja.interaction.LabelField" title="binaryninja.interaction.LabelField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.LabelField</span></code></a>(text)</td>
+<td><code class="docutils literal"><span class="pre">LabelField</span></code> adds a text label to the display.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.MultilineTextField.html#binaryninja.interaction.MultilineTextField" title="binaryninja.interaction.MultilineTextField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.MultilineTextField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">MultilineTextField</span></code> add multi-line text string input field. Result is stored in self.result</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.OpenFileNameField.html#binaryninja.interaction.OpenFileNameField" title="binaryninja.interaction.OpenFileNameField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.OpenFileNameField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">OpenFileNameField</span></code> prompts the user to specify a file name to open. Result is stored in self.result as a string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.SaveFileNameField.html#binaryninja.interaction.SaveFileNameField" title="binaryninja.interaction.SaveFileNameField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.SaveFileNameField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">SaveFileNameField</span></code> prompts the user to specify a file name to save. Result is stored in self.result as a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.SeparatorField.html#binaryninja.interaction.SeparatorField" title="binaryninja.interaction.SeparatorField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.SeparatorField</span></code></a></td>
+<td><code class="docutils literal"><span class="pre">SeparatorField</span></code> adds vertical separation to the display.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.TextLineField.html#binaryninja.interaction.TextLineField" title="binaryninja.interaction.TextLineField"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.TextLineField</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">TextLineField</span></code> Adds prompt for text string input. Result is stored in self.result as a string on completion.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.get_address_input.html#binaryninja.interaction.get_address_input" title="binaryninja.interaction.get_address_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_address_input</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">get_address_input</span></code> prompts the user for an address with the given prompt and title.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.get_choice_input.html#binaryninja.interaction.get_choice_input" title="binaryninja.interaction.get_choice_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_choice_input</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">get_choice_input</span></code> prompts the user to select the one of the provided choices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.get_directory_name_input.html#binaryninja.interaction.get_directory_name_input" title="binaryninja.interaction.get_directory_name_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_directory_name_input</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">get_directory_name_input</span></code> prompts the user for a directory name to save as, optionally providing and</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.get_form_input.html#binaryninja.interaction.get_form_input" title="binaryninja.interaction.get_form_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_form_input</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">get_from_input</span></code> Prompts the user for a set of inputs specified in <code class="docutils literal"><span class="pre">fields</span></code> with given title.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.get_int_input.html#binaryninja.interaction.get_int_input" title="binaryninja.interaction.get_int_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_int_input</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">get_int_input</span></code> prompts the user to input a integer with the given prompt and title.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.get_open_filename_input.html#binaryninja.interaction.get_open_filename_input" title="binaryninja.interaction.get_open_filename_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_open_filename_input</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">get_open_filename_input</span></code> prompts the user for a file name to open.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.get_save_filename_input.html#binaryninja.interaction.get_save_filename_input" title="binaryninja.interaction.get_save_filename_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_save_filename_input</span></code></a>(prompt)</td>
+<td><code class="docutils literal"><span class="pre">get_save_filename_input</span></code> prompts the user for a file name to save as, optionally providing a file extension and</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.get_text_line_input.html#binaryninja.interaction.get_text_line_input" title="binaryninja.interaction.get_text_line_input"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.get_text_line_input</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">get_text_line_input</span></code> prompts the user to input a string with the given prompt and title.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.markdown_to_html.html#binaryninja.interaction.markdown_to_html" title="binaryninja.interaction.markdown_to_html"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.markdown_to_html</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">markdown_to_html</span></code> converts the provided markdown to HTML.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.show_html_report.html#binaryninja.interaction.show_html_report" title="binaryninja.interaction.show_html_report"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.show_html_report</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">show_html_report</span></code> displays the html contents in UI applications and plaintext in command line</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.show_markdown_report.html#binaryninja.interaction.show_markdown_report" title="binaryninja.interaction.show_markdown_report"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.show_markdown_report</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">show_markdown_report</span></code> displays the markdown contents in UI applications and plaintext in command line</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.interaction.show_message_box.html#binaryninja.interaction.show_message_box" title="binaryninja.interaction.show_message_box"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.show_message_box</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">show_message_box</span></code> Displays a configurable message box in the UI, or prompts on the console as appropriate</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.interaction.show_plain_text_report.html#binaryninja.interaction.show_plain_text_report" title="binaryninja.interaction.show_plain_text_report"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.interaction.show_plain_text_report</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">show_plain_text_report</span></code> displays contents to the user in the UI or on the command line.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.interaction"></span><dl class="class">
+<dt id="binaryninja.interaction.AddressField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">AddressField</code><span class="sig-paren">(</span><em>prompt</em>, <em>view=None</em>, <em>current_address=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#AddressField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.AddressField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">AddressField</span></code> prompts the user for an address. By passing the optional view and current_address parameters
+offsets can be used instead of just an address. Th reslut is stored as in int in self.result.</p>
+<dl class="docutils">
+<dt>Note: This API currenlty functions differently on the command line, as the view and current_address are</dt>
+<dd>disregarded. Additionally where as in the ui the result defaults to hexidecimal on the command line 0x must be 
+specified.</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.ChoiceField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">ChoiceField</code><span class="sig-paren">(</span><em>prompt</em>, <em>choices</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#ChoiceField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.ChoiceField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">ChoiceField</span></code> prompts the user to choose from the list of strings provided in <code class="docutils literal"><span class="pre">choices</span></code>. Result is stored
+in self.result as an index in to the coices array.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.DirectoryNameField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">DirectoryNameField</code><span class="sig-paren">(</span><em>prompt</em>, <em>default_name=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#DirectoryNameField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.DirectoryNameField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">DirectoryNameField</span></code> prompts the user to specify a directory name to open. Result is stored in self.result as
+a string.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.IntegerField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">IntegerField</code><span class="sig-paren">(</span><em>prompt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#IntegerField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.IntegerField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">IntegerField</span></code> add prompt for integer. Result is stored in self.result as an int.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.InteractionHandler">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">InteractionHandler</code><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_address_input">
+<code class="descname">get_address_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em>, <em>view</em>, <em>current_address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_address_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_address_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_choice_input">
+<code class="descname">get_choice_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em>, <em>choices</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_choice_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_choice_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_directory_name_input">
+<code class="descname">get_directory_name_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>default_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_directory_name_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_directory_name_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_form_input">
+<code class="descname">get_form_input</code><span class="sig-paren">(</span><em>fields</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_form_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_form_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_int_input">
+<code class="descname">get_int_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_int_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_int_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_open_filename_input">
+<code class="descname">get_open_filename_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>ext</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_open_filename_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_open_filename_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_save_filename_input">
+<code class="descname">get_save_filename_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>ext</em>, <em>default_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_save_filename_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_save_filename_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.get_text_line_input">
+<code class="descname">get_text_line_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.get_text_line_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.get_text_line_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.register">
+<code class="descname">register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.show_html_report">
+<code class="descname">show_html_report</code><span class="sig-paren">(</span><em>view</em>, <em>title</em>, <em>contents</em>, <em>plaintext</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.show_html_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.show_html_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.show_markdown_report">
+<code class="descname">show_markdown_report</code><span class="sig-paren">(</span><em>view</em>, <em>title</em>, <em>contents</em>, <em>plaintext</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.show_markdown_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.show_markdown_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.show_message_box">
+<code class="descname">show_message_box</code><span class="sig-paren">(</span><em>title</em>, <em>text</em>, <em>buttons</em>, <em>icon</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.show_message_box"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.show_message_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.interaction.InteractionHandler.show_plain_text_report">
+<code class="descname">show_plain_text_report</code><span class="sig-paren">(</span><em>view</em>, <em>title</em>, <em>contents</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#InteractionHandler.show_plain_text_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.InteractionHandler.show_plain_text_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.LabelField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">LabelField</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#LabelField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.LabelField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">LabelField</span></code> adds a text label to the display.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.MultilineTextField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">MultilineTextField</code><span class="sig-paren">(</span><em>prompt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#MultilineTextField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.MultilineTextField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">MultilineTextField</span></code> add multi-line text string input field. Result is stored in self.result
+as a string. This option is not supported on the command line.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.OpenFileNameField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">OpenFileNameField</code><span class="sig-paren">(</span><em>prompt</em>, <em>ext=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#OpenFileNameField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.OpenFileNameField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">OpenFileNameField</span></code> prompts the user to specify a file name to open. Result is stored in self.result as a string.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.SaveFileNameField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">SaveFileNameField</code><span class="sig-paren">(</span><em>prompt</em>, <em>ext=''</em>, <em>default_name=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#SaveFileNameField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.SaveFileNameField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">SaveFileNameField</span></code> prompts the user to specify a file name to save. Result is stored in self.result as a string.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.SeparatorField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">SeparatorField</code><a class="reference internal" href="_modules/binaryninja/interaction.html#SeparatorField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.SeparatorField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">SeparatorField</span></code> adds vertical separation to the display.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.interaction.TextLineField">
+<em class="property">class </em><code class="descclassname">binaryninja.interaction.</code><code class="descname">TextLineField</code><span class="sig-paren">(</span><em>prompt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#TextLineField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.TextLineField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">TextLineField</span></code> Adds prompt for text string input. Result is stored in self.result as a string on completion.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_address_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_address_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_address_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_address_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_address_input</span></code> prompts the user for an address with the given prompt and title.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; String to prompt with.</li>
+<li><strong>title</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Title of the window when executed in the UI.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">integer value input by the user.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_address_input</span><span class="p">(</span><span class="s2">&quot;PROMPT&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;getinfo&quot;</span><span class="p">)</span>
+<span class="go">PROMPT&gt; 10</span>
+<span class="go">10L</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_choice_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_choice_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em>, <em>choices</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_choice_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_choice_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_choice_input</span></code> prompts the user to select the one of the provided choices.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used. The ui uses a combo box.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; String to prompt with.</li>
+<li><strong>title</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Title of the window when executed in the UI.</li>
+<li><strong>choices</strong> (<em>list</em>) &#8211; A list of strings for the user to choose from.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">integer array index of the selected option</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_choice_input</span><span class="p">(</span><span class="s2">&quot;PROMPT&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;choices&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span> <span class="s2">&quot;Maybe&quot;</span><span class="p">])</span>
+<span class="go">choices</span>
+<span class="go">1) Yes</span>
+<span class="go">2) No</span>
+<span class="go">3) Maybe</span>
+<span class="go">PROMPT&gt; 1</span>
+<span class="go">0L</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_directory_name_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_directory_name_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>default_name=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_directory_name_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_directory_name_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_directory_name_input</span></code> prompts the user for a directory name to save as, optionally providing and
+default_name.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used. The ui uses the native window popup for file selection.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Prompt to display.</li>
+<li><strong>default_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional, default directory name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_directory_name_input</span><span class="p">(</span><span class="s2">&quot;prompt&quot;</span><span class="p">)</span>
+<span class="go">prompt dirname</span>
+<span class="go">&#39;dirname&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_form_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_form_input</code><span class="sig-paren">(</span><em>fields</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_form_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_form_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_from_input</span></code> Prompts the user for a set of inputs specified in <code class="docutils literal"><span class="pre">fields</span></code> with given title.
+The fields parameter is a list which can contain the following types:</p>
+<blockquote>
+<div><ul class="simple">
+<li>str  - an alias for LabelField</li>
+<li>None - an alias for SeparatorField</li>
+<li>LabelField         - Text output</li>
+<li>SeparatorField     - Vertical spacing</li>
+<li>TextLineField      - Prompt for a string value</li>
+<li>MultilineTextField - Prompt for multi-line string value</li>
+<li>IntegerField       - Prompt for an integer</li>
+<li>AddressField       - Prompt for an address</li>
+<li>ChoiceField        - Prompt for a choice from provided options</li>
+<li>OpenFileNameField  - Prompt for file to open</li>
+<li>SaveFileNameField  - Prompt for file to save to</li>
+<li>DirectoryNameField - Prompt for directory name</li>
+</ul>
+</div></blockquote>
+<p>This API is flexible and works both in the UI via a popup dialog and on the command line.
+:params list fields: A list containing of the above specified classes, strings or None
+:params str title: The title of the popup dialog.
+:Example:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">int_f</span> <span class="o">=</span> <span class="n">IntegerField</span><span class="p">(</span><span class="s2">&quot;Specify Integer&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tex_f</span> <span class="o">=</span> <span class="n">TextLineField</span><span class="p">(</span><span class="s2">&quot;Specify name&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">choice_f</span> <span class="o">=</span> <span class="n">ChoiceField</span><span class="p">(</span><span class="s2">&quot;Options&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span> <span class="s2">&quot;Maybe&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_form_input</span><span class="p">([</span><span class="s2">&quot;Get Data&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">int_f</span><span class="p">,</span> <span class="n">tex_f</span><span class="p">,</span> <span class="n">choice_f</span><span class="p">],</span> <span class="s2">&quot;The options&quot;</span><span class="p">)</span>
+<span class="go">Get Data</span>
+</pre></div>
+</div>
+<p>Specify Integer 1337
+Specify name Peter
+The options
+1) Yes
+2) No
+3) Maybe
+Options 1
+&gt;&gt;&gt; True
+&gt;&gt;&gt; print tex_f.result, int_f.result, choice_f.result
+Peter 1337 0</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_int_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_int_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_int_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_int_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_int_input</span></code> prompts the user to input a integer with the given prompt and title.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; String to prompt with.</li>
+<li><strong>title</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Title of the window when executed in the UI.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">integer value input by the user.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_int_input</span><span class="p">(</span><span class="s2">&quot;PROMPT&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;getinfo&quot;</span><span class="p">)</span>
+<span class="go">PROMPT&gt; 10</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_open_filename_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_open_filename_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>ext=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_open_filename_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_open_filename_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_open_filename_input</span></code> prompts the user for a file name to open.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used. The ui uses the native window popup for file selection.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Prompt to display.</li>
+<li><strong>ext</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional, file extension</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_open_filename_input</span><span class="p">(</span><span class="s2">&quot;filename:&quot;</span><span class="p">,</span> <span class="s2">&quot;exe&quot;</span><span class="p">)</span>
+<span class="go">filename: foo.exe</span>
+<span class="go">&#39;foo.exe&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_save_filename_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_save_filename_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>ext=''</em>, <em>default_name=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_save_filename_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_save_filename_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_save_filename_input</span></code> prompts the user for a file name to save as, optionally providing a file extension and
+default_name.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used. The ui uses the native window popup for file selection.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Prompt to display.</li>
+<li><strong>ext</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional, file extension</li>
+<li><strong>default_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional, default file name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_save_filename_input</span><span class="p">(</span><span class="s2">&quot;filename:&quot;</span><span class="p">,</span> <span class="s2">&quot;exe&quot;</span><span class="p">,</span> <span class="s2">&quot;foo.exe&quot;</span><span class="p">)</span>
+<span class="go">filename: foo.exe</span>
+<span class="go">&#39;foo.exe&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.get_text_line_input">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">get_text_line_input</code><span class="sig-paren">(</span><em>prompt</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#get_text_line_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.get_text_line_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_text_line_input</span></code> prompts the user to input a string with the given prompt and title.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prompt</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; String to prompt with.</li>
+<li><strong>title</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Title of the window when executed in the UI.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">string containing the input without trailing newline character.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_text_line_input</span><span class="p">(</span><span class="s2">&quot;PROMPT&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;getinfo&quot;</span><span class="p">)</span>
+<span class="go">PROMPT&gt; Input!</span>
+<span class="go">&#39;Input!&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.markdown_to_html">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">markdown_to_html</code><span class="sig-paren">(</span><em>contents</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#markdown_to_html"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.markdown_to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">markdown_to_html</span></code> converts the provided markdown to HTML.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>contents</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) &#8211; Markdown contents to convert to HTML.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)">string</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">markdown_to_html</span><span class="p">(</span><span class="s2">&quot;##Yay&quot;</span><span class="p">)</span>
+<span class="go">&#39;&lt;h2&gt;Yay&lt;/h2&gt;&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.show_html_report">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">show_html_report</code><span class="sig-paren">(</span><em>title</em>, <em>contents</em>, <em>plaintext=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#show_html_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.show_html_report" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">show_html_report</span></code> displays the html contents in UI applications and plaintext in command line
+applications.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>contents</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; HTML contents to display</li>
+<li><strong>plaintext</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Plain text version to display (used on the command line)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:Example&#8221;</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">show_html_report</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;h1&gt;Contents&lt;/h1&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;Plain text contents&quot;</span><span class="p">)</span>
+<span class="go">Plain text contents</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.show_markdown_report">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">show_markdown_report</code><span class="sig-paren">(</span><em>title</em>, <em>contents</em>, <em>plaintext=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#show_markdown_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.show_markdown_report" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">show_markdown_report</span></code> displays the markdown contents in UI applications and plaintext in command line
+applications.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>contents</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; markdown contents to display</li>
+<li><strong>plaintext</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Plain text version to display (used on the command line)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">show_markdown_report</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;##Contents&quot;</span><span class="p">,</span> <span class="s2">&quot;Plain text contents&quot;</span><span class="p">)</span>
+<span class="go">Plain text contents</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.show_message_box">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">show_message_box</code><span class="sig-paren">(</span><em>title</em>, <em>text</em>, <em>buttons=&lt;MessageBoxButtonSet.OKButtonSet: 0&gt;</em>, <em>icon=&lt;MessageBoxIcon.InformationIcon: 0&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#show_message_box"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.show_message_box" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">show_message_box</span></code> Displays a configurable message box in the UI, or prompts on the console as appropriate
+retrieves a list of all Symbol objects of the provided symbol type in the optionally
+provided range.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Text title for the message box.</li>
+<li><strong>text</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Text for the main body of the message box.</li>
+<li><strong>buttons</strong> (<a class="reference internal" href="binaryninja.enums.MessageBoxButtonSet.html#binaryninja.enums.MessageBoxButtonSet" title="binaryninja.enums.MessageBoxButtonSet"><em>MessageBoxButtonSet</em></a>) &#8211; One of <code class="xref py py-class docutils literal"><span class="pre">MessageBoxButtonSet</span></code></li>
+<li><strong>icon</strong> (<a class="reference internal" href="binaryninja.enums.MessageBoxIcon.html#binaryninja.enums.MessageBoxIcon" title="binaryninja.enums.MessageBoxIcon"><em>MessageBoxIcon</em></a>) &#8211; One of <code class="xref py py-class docutils literal"><span class="pre">MessageBoxIcon</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Which button was selected</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.enums.MessageBoxButtonResult.html#binaryninja.enums.MessageBoxButtonResult" title="binaryninja.enums.MessageBoxButtonResult">MessageBoxButtonResult</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="binaryninja.interaction.show_plain_text_report">
+<code class="descclassname">binaryninja.interaction.</code><code class="descname">show_plain_text_report</code><span class="sig-paren">(</span><em>title</em>, <em>contents</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/interaction.html#show_plain_text_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.interaction.show_plain_text_report" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">show_plain_text_report</span></code> displays contents to the user in the UI or on the command line.</p>
+<dl class="docutils">
+<dt>Note: This API function differently on the command line vs. the UI. In the UI a popup is used. On the commandline</dt>
+<dd>a simple text prompt is used.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; title to display in the UI popup.</li>
+<li><strong>contents</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; plain text contents to display</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">show_plain_text_report</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="p">)</span>
+<span class="go">contents</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.interaction.AddressField.html" class="btn btn-neutral float-right" title="binaryninja.interaction.AddressField" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.highlight.HighlightColor.html" class="btn btn-neutral" title="binaryninja.highlight.HighlightColor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

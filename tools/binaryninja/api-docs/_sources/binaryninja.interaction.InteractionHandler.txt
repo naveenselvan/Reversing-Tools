@@ -1,0 +1,35 @@
+binaryninja.interaction.InteractionHandler
+==========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: InteractionHandler
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~InteractionHandler.__init__
+      ~InteractionHandler.get_address_input
+      ~InteractionHandler.get_choice_input
+      ~InteractionHandler.get_directory_name_input
+      ~InteractionHandler.get_form_input
+      ~InteractionHandler.get_int_input
+      ~InteractionHandler.get_open_filename_input
+      ~InteractionHandler.get_save_filename_input
+      ~InteractionHandler.get_text_line_input
+      ~InteractionHandler.register
+      ~InteractionHandler.show_html_report
+      ~InteractionHandler.show_markdown_report
+      ~InteractionHandler.show_message_box
+      ~InteractionHandler.show_plain_text_report
+   
+   
+
+   
+   
+   

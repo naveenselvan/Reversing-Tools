@@ -1,0 +1,26 @@
+binaryninja.enums.MemberScope
+=============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: MemberScope
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MemberScope.FriendScope
+      ~MemberScope.NoScope
+      ~MemberScope.StaticScope
+      ~MemberScope.ThunkScope
+      ~MemberScope.VirtualScope
+   
+   

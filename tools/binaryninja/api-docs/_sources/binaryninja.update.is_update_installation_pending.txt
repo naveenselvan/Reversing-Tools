@@ -1,0 +1,6 @@
+binaryninja.update.is_update_installation_pending
+=================================================
+
+.. currentmodule:: binaryninja.update
+
+.. autofunction:: is_update_installation_pending

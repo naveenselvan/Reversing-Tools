@@ -1,0 +1,22 @@
+binaryninja.basicblock.BasicBlockEdge
+=====================================
+
+.. currentmodule:: binaryninja.basicblock
+
+.. autoclass:: BasicBlockEdge
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BasicBlockEdge.__init__
+   
+   
+
+   
+   
+   

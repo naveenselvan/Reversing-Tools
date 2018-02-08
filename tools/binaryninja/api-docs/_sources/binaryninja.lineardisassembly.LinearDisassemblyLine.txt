@@ -1,0 +1,22 @@
+binaryninja.lineardisassembly.LinearDisassemblyLine
+===================================================
+
+.. currentmodule:: binaryninja.lineardisassembly
+
+.. autoclass:: LinearDisassemblyLine
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LinearDisassemblyLine.__init__
+   
+   
+
+   
+   
+   

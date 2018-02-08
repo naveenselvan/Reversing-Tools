@@ -1,0 +1,22 @@
+binaryninja.interaction.MultilineTextField
+==========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: MultilineTextField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MultilineTextField.__init__
+   
+   
+
+   
+   
+   

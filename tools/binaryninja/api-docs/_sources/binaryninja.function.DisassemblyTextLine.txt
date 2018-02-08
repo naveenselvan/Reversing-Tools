@@ -1,0 +1,22 @@
+binaryninja.function.DisassemblyTextLine
+========================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: DisassemblyTextLine
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DisassemblyTextLine.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,25 @@
+binaryninja.enums.PluginType
+============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: PluginType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PluginType.ArchitecturePluginType
+      ~PluginType.BinaryViewPluginType
+      ~PluginType.CorePluginType
+      ~PluginType.UiPluginType
+   
+   

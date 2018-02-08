@@ -1,0 +1,6 @@
+binaryninja.interaction.show_html_report
+========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: show_html_report

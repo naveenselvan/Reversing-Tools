@@ -1,0 +1,31 @@
+binaryninja.update.UpdateChannel
+================================
+
+.. currentmodule:: binaryninja.update
+
+.. autoclass:: UpdateChannel
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UpdateChannel.__init__
+      ~UpdateChannel.update_to_latest
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~UpdateChannel.latest_version
+      ~UpdateChannel.updates_available
+      ~UpdateChannel.versions
+   
+   

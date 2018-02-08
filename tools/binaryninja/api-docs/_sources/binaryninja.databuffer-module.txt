@@ -1,0 +1,18 @@
+databuffer module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.databuffer.DataBuffer
+   binaryninja.databuffer.escape_string
+   binaryninja.databuffer.unescape_string
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.databuffer
+   :members:
+   :undoc-members:
+   :show-inheritance:

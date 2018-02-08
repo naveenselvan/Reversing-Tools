@@ -1,0 +1,22 @@
+binaryninja.function.LookupTableEntry
+=====================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: LookupTableEntry
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LookupTableEntry.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,30 @@
+binaryninja.enums.DisassemblyOption
+===================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: DisassemblyOption
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DisassemblyOption.ExpandLongOpcode
+      ~DisassemblyOption.GroupLinearDisassemblyFunctions
+      ~DisassemblyOption.ShowAddress
+      ~DisassemblyOption.ShowCallParameterNames
+      ~DisassemblyOption.ShowDefaultRegisterTypes
+      ~DisassemblyOption.ShowFlagUsage
+      ~DisassemblyOption.ShowOpcode
+      ~DisassemblyOption.ShowVariableTypesWhenAssigned
+      ~DisassemblyOption.ShowVariablesAtTopOfGraph
+   
+   

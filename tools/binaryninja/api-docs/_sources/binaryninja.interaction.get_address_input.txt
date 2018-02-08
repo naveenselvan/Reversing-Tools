@@ -1,0 +1,6 @@
+binaryninja.interaction.get_address_input
+=========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: get_address_input

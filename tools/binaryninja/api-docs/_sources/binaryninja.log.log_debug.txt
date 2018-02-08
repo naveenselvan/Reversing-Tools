@@ -1,0 +1,6 @@
+binaryninja.log.log_debug
+=========================
+
+.. currentmodule:: binaryninja.log
+
+.. autofunction:: log_debug

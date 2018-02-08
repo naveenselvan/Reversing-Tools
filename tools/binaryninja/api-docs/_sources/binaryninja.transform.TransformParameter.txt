@@ -1,0 +1,22 @@
+binaryninja.transform.TransformParameter
+========================================
+
+.. currentmodule:: binaryninja.transform
+
+.. autoclass:: TransformParameter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TransformParameter.__init__
+   
+   
+
+   
+   
+   

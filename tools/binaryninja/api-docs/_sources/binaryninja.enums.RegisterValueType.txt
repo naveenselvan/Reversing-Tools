@@ -1,0 +1,33 @@
+binaryninja.enums.RegisterValueType
+===================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: RegisterValueType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RegisterValueType.ConstantPointerValue
+      ~RegisterValueType.ConstantValue
+      ~RegisterValueType.EntryValue
+      ~RegisterValueType.ImportedAddressValue
+      ~RegisterValueType.InSetOfValues
+      ~RegisterValueType.LookupTableValue
+      ~RegisterValueType.NotInSetOfValues
+      ~RegisterValueType.ReturnAddressValue
+      ~RegisterValueType.SignedRangeValue
+      ~RegisterValueType.StackFrameOffset
+      ~RegisterValueType.UndeterminedValue
+      ~RegisterValueType.UnsignedRangeValue
+   
+   

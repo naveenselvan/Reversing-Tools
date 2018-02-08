@@ -1,0 +1,6 @@
+binaryninja.log.log_alert
+=========================
+
+.. currentmodule:: binaryninja.log
+
+.. autofunction:: log_alert

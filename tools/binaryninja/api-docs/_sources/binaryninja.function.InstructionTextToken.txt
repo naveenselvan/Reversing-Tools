@@ -1,0 +1,22 @@
+binaryninja.function.InstructionTextToken
+=========================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: InstructionTextToken
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~InstructionTextToken.__init__
+   
+   
+
+   
+   
+   

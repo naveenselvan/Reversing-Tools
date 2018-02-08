@@ -1,0 +1,26 @@
+binaryninja.enums.SymbolType
+============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: SymbolType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SymbolType.DataSymbol
+      ~SymbolType.FunctionSymbol
+      ~SymbolType.ImportAddressSymbol
+      ~SymbolType.ImportedDataSymbol
+      ~SymbolType.ImportedFunctionSymbol
+   
+   

@@ -1,0 +1,22 @@
+binaryninja.function.ValueRange
+===============================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: ValueRange
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ValueRange.__init__
+   
+   
+
+   
+   
+   

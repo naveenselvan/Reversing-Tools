@@ -1,0 +1,6 @@
+binaryninja.demangle.demangle_gnu3
+==================================
+
+.. currentmodule:: binaryninja.demangle
+
+.. autofunction:: demangle_gnu3

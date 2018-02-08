@@ -1,0 +1,23 @@
+binaryninja.enums.Endianness
+============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: Endianness
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Endianness.BigEndian
+      ~Endianness.LittleEndian
+   
+   

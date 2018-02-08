@@ -1,0 +1,23 @@
+binaryninja.types.RegisterSet
+=============================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: RegisterSet
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RegisterSet.__init__
+      ~RegisterSet.with_confidence
+   
+   
+
+   
+   
+   

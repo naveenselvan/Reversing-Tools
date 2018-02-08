@@ -1,0 +1,25 @@
+binaryninja.enums.ReferenceType
+===============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: ReferenceType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ReferenceType.NoReference
+      ~ReferenceType.PointerReferenceType
+      ~ReferenceType.RValueReferenceType
+      ~ReferenceType.ReferenceReferenceType
+   
+   

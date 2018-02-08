@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.enums.NameType &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="enums module" href="binaryninja.enums-module.html"/>
+        <link rel="next" title="binaryninja.enums.NamedTypeReferenceClass" href="binaryninja.enums.NamedTypeReferenceClass.html"/>
+        <link rel="prev" title="binaryninja.enums.ModificationStatus" href="binaryninja.enums.ModificationStatus.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.enums-module.html">enums</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ActionType.html">binaryninja.enums.ActionType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.AnalysisState.html">binaryninja.enums.AnalysisState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.BranchType.html">binaryninja.enums.BranchType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.CallingConventionName.html">binaryninja.enums.CallingConventionName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.DisassemblyOption.html">binaryninja.enums.DisassemblyOption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.Endianness.html">binaryninja.enums.Endianness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.FindFlag.html">binaryninja.enums.FindFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.FlagRole.html">binaryninja.enums.FlagRole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.FormInputFieldType.html">binaryninja.enums.FormInputFieldType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.FunctionGraphType.html">binaryninja.enums.FunctionGraphType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.HighlightColorStyle.html">binaryninja.enums.HighlightColorStyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.HighlightStandardColor.html">binaryninja.enums.HighlightStandardColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ILBranchDependence.html">binaryninja.enums.ILBranchDependence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ImplicitRegisterExtend.html">binaryninja.enums.ImplicitRegisterExtend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.InstructionTextTokenContext.html">binaryninja.enums.InstructionTextTokenContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.InstructionTextTokenType.html">binaryninja.enums.InstructionTextTokenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.IntegerDisplayType.html">binaryninja.enums.IntegerDisplayType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.LinearDisassemblyLineType.html">binaryninja.enums.LinearDisassemblyLineType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.LogLevel.html">binaryninja.enums.LogLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.LowLevelILFlagCondition.html">binaryninja.enums.LowLevelILFlagCondition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.LowLevelILOperation.html">binaryninja.enums.LowLevelILOperation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MediumLevelILOperation.html">binaryninja.enums.MediumLevelILOperation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MemberAccess.html">binaryninja.enums.MemberAccess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MemberScope.html">binaryninja.enums.MemberScope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MessageBoxButtonResult.html">binaryninja.enums.MessageBoxButtonResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MessageBoxButtonSet.html">binaryninja.enums.MessageBoxButtonSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MessageBoxIcon.html">binaryninja.enums.MessageBoxIcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.MetadataType.html">binaryninja.enums.MetadataType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ModificationStatus.html">binaryninja.enums.ModificationStatus</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.enums.NameType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.NamedTypeReferenceClass.html">binaryninja.enums.NamedTypeReferenceClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.PluginCommandType.html">binaryninja.enums.PluginCommandType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.PluginLoadOrder.html">binaryninja.enums.PluginLoadOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.PluginOrigin.html">binaryninja.enums.PluginOrigin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.PluginType.html">binaryninja.enums.PluginType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.PluginUpdateStatus.html">binaryninja.enums.PluginUpdateStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.PointerSuffix.html">binaryninja.enums.PointerSuffix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ReferenceType.html">binaryninja.enums.ReferenceType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.RegisterValueType.html">binaryninja.enums.RegisterValueType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ScriptingProviderExecuteResult.html">binaryninja.enums.ScriptingProviderExecuteResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.ScriptingProviderInputReadyState.html">binaryninja.enums.ScriptingProviderInputReadyState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.SectionSemantics.html">binaryninja.enums.SectionSemantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.SegmentFlag.html">binaryninja.enums.SegmentFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.StringType.html">binaryninja.enums.StringType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.StructureType.html">binaryninja.enums.StructureType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.SymbolType.html">binaryninja.enums.SymbolType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.TransformType.html">binaryninja.enums.TransformType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.TypeClass.html">binaryninja.enums.TypeClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.UpdateResult.html">binaryninja.enums.UpdateResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.enums.VariableSourceType.html">binaryninja.enums.VariableSourceType</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.enums-module.html">enums module</a> &raquo;</li>
+        
+      <li>binaryninja.enums.NameType</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.enums.NameType.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-enums-nametype">
+<h1>binaryninja.enums.NameType<a class="headerlink" href="#binaryninja-enums-nametype" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.enums.NameType">
+<em class="property">class </em><code class="descclassname">binaryninja.enums.</code><code class="descname">NameType</code><a class="reference internal" href="_modules/binaryninja/enums.html#NameType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.enums.NameType" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="binaryninja.enums.NameType.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binaryninja.enums.NameType.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+</dd></dl>
+
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.ConstructorNameType" title="binaryninja.enums.NameType.ConstructorNameType"><code class="xref py py-obj docutils literal"><span class="pre">ConstructorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.CopyConstructorClosureNameType" title="binaryninja.enums.NameType.CopyConstructorClosureNameType"><code class="xref py py-obj docutils literal"><span class="pre">CopyConstructorClosureNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.DefaultConstructorClosureNameType" title="binaryninja.enums.NameType.DefaultConstructorClosureNameType"><code class="xref py py-obj docutils literal"><span class="pre">DefaultConstructorClosureNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.DestructorNameType" title="binaryninja.enums.NameType.DestructorNameType"><code class="xref py py-obj docutils literal"><span class="pre">DestructorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.EHVectorConstructorIteratorNameType" title="binaryninja.enums.NameType.EHVectorConstructorIteratorNameType"><code class="xref py py-obj docutils literal"><span class="pre">EHVectorConstructorIteratorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.EHVectorDestructorIteratorNameType" title="binaryninja.enums.NameType.EHVectorDestructorIteratorNameType"><code class="xref py py-obj docutils literal"><span class="pre">EHVectorDestructorIteratorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.EHVectorVBaseConstructorIteratorNameType" title="binaryninja.enums.NameType.EHVectorVBaseConstructorIteratorNameType"><code class="xref py py-obj docutils literal"><span class="pre">EHVectorVBaseConstructorIteratorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.LocalStaticGuardNameType" title="binaryninja.enums.NameType.LocalStaticGuardNameType"><code class="xref py py-obj docutils literal"><span class="pre">LocalStaticGuardNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.LocalVFTableConstructorClosureNameType" title="binaryninja.enums.NameType.LocalVFTableConstructorClosureNameType"><code class="xref py py-obj docutils literal"><span class="pre">LocalVFTableConstructorClosureNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.LocalVFTableNameType" title="binaryninja.enums.NameType.LocalVFTableNameType"><code class="xref py py-obj docutils literal"><span class="pre">LocalVFTableNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.NoNameType" title="binaryninja.enums.NameType.NoNameType"><code class="xref py py-obj docutils literal"><span class="pre">NoNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorAndEqualNameType" title="binaryninja.enums.NameType.OperatorAndEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorAndEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorArrayNameType" title="binaryninja.enums.NameType.OperatorArrayNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorArrayNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorArrowNameType" title="binaryninja.enums.NameType.OperatorArrowNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorArrowNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorArrowStarNameType" title="binaryninja.enums.NameType.OperatorArrowStarNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorArrowStarNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorAssignNameType" title="binaryninja.enums.NameType.OperatorAssignNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorAssignNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorBitAndNameType" title="binaryninja.enums.NameType.OperatorBitAndNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorBitAndNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorBitOrNameType" title="binaryninja.enums.NameType.OperatorBitOrNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorBitOrNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorCommaNameType" title="binaryninja.enums.NameType.OperatorCommaNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorCommaNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorDecrementNameType" title="binaryninja.enums.NameType.OperatorDecrementNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorDecrementNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorDeleteArrayNameType" title="binaryninja.enums.NameType.OperatorDeleteArrayNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorDeleteArrayNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorDeleteNameType" title="binaryninja.enums.NameType.OperatorDeleteNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorDeleteNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorDivideEqualNameType" title="binaryninja.enums.NameType.OperatorDivideEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorDivideEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorDivideNameType" title="binaryninja.enums.NameType.OperatorDivideNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorDivideNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorEqualNameType" title="binaryninja.enums.NameType.OperatorEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorGreaterThanEqualNameType" title="binaryninja.enums.NameType.OperatorGreaterThanEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorGreaterThanEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorGreaterThanNameType" title="binaryninja.enums.NameType.OperatorGreaterThanNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorGreaterThanNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorIncrementNameType" title="binaryninja.enums.NameType.OperatorIncrementNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorIncrementNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorLeftShiftEqualNameType" title="binaryninja.enums.NameType.OperatorLeftShiftEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorLeftShiftEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorLeftShiftNameType" title="binaryninja.enums.NameType.OperatorLeftShiftNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorLeftShiftNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorLessThanEqualNameType" title="binaryninja.enums.NameType.OperatorLessThanEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorLessThanEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorLessThanNameType" title="binaryninja.enums.NameType.OperatorLessThanNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorLessThanNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorLogicalAndNameType" title="binaryninja.enums.NameType.OperatorLogicalAndNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorLogicalAndNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorLogicalOrNameType" title="binaryninja.enums.NameType.OperatorLogicalOrNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorLogicalOrNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorMinusEqualNameType" title="binaryninja.enums.NameType.OperatorMinusEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorMinusEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorMinusNameType" title="binaryninja.enums.NameType.OperatorMinusNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorMinusNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorModulusEqualNameType" title="binaryninja.enums.NameType.OperatorModulusEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorModulusEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorModulusNameType" title="binaryninja.enums.NameType.OperatorModulusNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorModulusNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorNewArrayNameType" title="binaryninja.enums.NameType.OperatorNewArrayNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorNewArrayNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorNewNameType" title="binaryninja.enums.NameType.OperatorNewNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorNewNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorNotEqualNameType" title="binaryninja.enums.NameType.OperatorNotEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorNotEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorNotNameType" title="binaryninja.enums.NameType.OperatorNotNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorNotNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorOrEqualNameType" title="binaryninja.enums.NameType.OperatorOrEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorOrEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorParenthesesNameType" title="binaryninja.enums.NameType.OperatorParenthesesNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorParenthesesNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorPlusEqualNameType" title="binaryninja.enums.NameType.OperatorPlusEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorPlusEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorPlusNameType" title="binaryninja.enums.NameType.OperatorPlusNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorPlusNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorReturnTypeNameType" title="binaryninja.enums.NameType.OperatorReturnTypeNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorReturnTypeNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorRightShiftEqualNameType" title="binaryninja.enums.NameType.OperatorRightShiftEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorRightShiftEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorRightShiftNameType" title="binaryninja.enums.NameType.OperatorRightShiftNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorRightShiftNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorStarEqualNameType" title="binaryninja.enums.NameType.OperatorStarEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorStarEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorStarNameType" title="binaryninja.enums.NameType.OperatorStarNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorStarNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorTildeNameType" title="binaryninja.enums.NameType.OperatorTildeNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorTildeNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorUnaryBitAndNameType" title="binaryninja.enums.NameType.OperatorUnaryBitAndNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorUnaryBitAndNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorUnaryMinusNameType" title="binaryninja.enums.NameType.OperatorUnaryMinusNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorUnaryMinusNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorUnaryPlusNameType" title="binaryninja.enums.NameType.OperatorUnaryPlusNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorUnaryPlusNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorUnaryStarNameType" title="binaryninja.enums.NameType.OperatorUnaryStarNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorUnaryStarNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorXorEqualNameType" title="binaryninja.enums.NameType.OperatorXorEqualNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorXorEqualNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.OperatorXorNameType" title="binaryninja.enums.NameType.OperatorXorNameType"><code class="xref py py-obj docutils literal"><span class="pre">OperatorXorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.PlacementDeleteClosureArrayNameType" title="binaryninja.enums.NameType.PlacementDeleteClosureArrayNameType"><code class="xref py py-obj docutils literal"><span class="pre">PlacementDeleteClosureArrayNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.PlacementDeleteClosureNameType" title="binaryninja.enums.NameType.PlacementDeleteClosureNameType"><code class="xref py py-obj docutils literal"><span class="pre">PlacementDeleteClosureNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.RttiBaseClassArray" title="binaryninja.enums.NameType.RttiBaseClassArray"><code class="xref py py-obj docutils literal"><span class="pre">RttiBaseClassArray</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.RttiBaseClassDescriptor" title="binaryninja.enums.NameType.RttiBaseClassDescriptor"><code class="xref py py-obj docutils literal"><span class="pre">RttiBaseClassDescriptor</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.RttiClassHeirarchyDescriptor" title="binaryninja.enums.NameType.RttiClassHeirarchyDescriptor"><code class="xref py py-obj docutils literal"><span class="pre">RttiClassHeirarchyDescriptor</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.RttiCompleteObjectLocator" title="binaryninja.enums.NameType.RttiCompleteObjectLocator"><code class="xref py py-obj docutils literal"><span class="pre">RttiCompleteObjectLocator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.RttiTypeDescriptor" title="binaryninja.enums.NameType.RttiTypeDescriptor"><code class="xref py py-obj docutils literal"><span class="pre">RttiTypeDescriptor</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.ScalarDeletingDestructorNameType" title="binaryninja.enums.NameType.ScalarDeletingDestructorNameType"><code class="xref py py-obj docutils literal"><span class="pre">ScalarDeletingDestructorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.StringNameType" title="binaryninja.enums.NameType.StringNameType"><code class="xref py py-obj docutils literal"><span class="pre">StringNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.TypeofNameType" title="binaryninja.enums.NameType.TypeofNameType"><code class="xref py py-obj docutils literal"><span class="pre">TypeofNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.UDTReturningNameType" title="binaryninja.enums.NameType.UDTReturningNameType"><code class="xref py py-obj docutils literal"><span class="pre">UDTReturningNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VBTableNameType" title="binaryninja.enums.NameType.VBTableNameType"><code class="xref py py-obj docutils literal"><span class="pre">VBTableNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VBaseDestructorNameType" title="binaryninja.enums.NameType.VBaseDestructorNameType"><code class="xref py py-obj docutils literal"><span class="pre">VBaseDestructorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VCallNameType" title="binaryninja.enums.NameType.VCallNameType"><code class="xref py py-obj docutils literal"><span class="pre">VCallNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VFTableNameType" title="binaryninja.enums.NameType.VFTableNameType"><code class="xref py py-obj docutils literal"><span class="pre">VFTableNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VectorConstructorIteratorNameType" title="binaryninja.enums.NameType.VectorConstructorIteratorNameType"><code class="xref py py-obj docutils literal"><span class="pre">VectorConstructorIteratorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VectorDeletingDestructorNameType" title="binaryninja.enums.NameType.VectorDeletingDestructorNameType"><code class="xref py py-obj docutils literal"><span class="pre">VectorDeletingDestructorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VectorDestructorIteratorNameType" title="binaryninja.enums.NameType.VectorDestructorIteratorNameType"><code class="xref py py-obj docutils literal"><span class="pre">VectorDestructorIteratorNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VectorVBaseConstructorIteratoreNameType" title="binaryninja.enums.NameType.VectorVBaseConstructorIteratoreNameType"><code class="xref py py-obj docutils literal"><span class="pre">VectorVBaseConstructorIteratoreNameType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.enums-module.html#binaryninja.enums.NameType.VirtualDisplacementMapNameType" title="binaryninja.enums.NameType.VirtualDisplacementMapNameType"><code class="xref py py-obj docutils literal"><span class="pre">VirtualDisplacementMapNameType</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.enums.NamedTypeReferenceClass.html" class="btn btn-neutral float-right" title="binaryninja.enums.NamedTypeReferenceClass" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.enums.ModificationStatus.html" class="btn btn-neutral" title="binaryninja.enums.ModificationStatus" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

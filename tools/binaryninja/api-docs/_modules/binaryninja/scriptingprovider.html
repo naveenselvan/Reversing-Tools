@@ -1,0 +1,883 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.scriptingprovider &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.scriptingprovider</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.scriptingprovider</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+
+<span class="kn">import</span> <span class="nn">code</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Binary Ninja Components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">from</span> <span class="nn">enums</span> <span class="k">import</span> <span class="n">ScriptingProviderExecuteResult</span><span class="p">,</span> <span class="n">ScriptingProviderInputReadyState</span>
+<span class="kn">import</span> <span class="nn">binaryview</span>
+<span class="kn">import</span> <span class="nn">function</span>
+<span class="kn">import</span> <span class="nn">basicblock</span>
+<span class="kn">import</span> <span class="nn">startup</span>
+<span class="kn">import</span> <span class="nn">log</span>
+
+
+<span class="k">class</span> <span class="nc">_ThreadActionContext</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">_actions</span> <span class="o">=</span> <span class="p">[]</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="s2">&quot;value&quot;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">_actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">)(</span><span class="k">lambda</span> <span class="n">ctxt</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">old_interpreter</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="s2">&quot;value&quot;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="p">):</span>
+			<span class="n">old_interpreter</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">old_interpreter</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">_actions</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ScriptingOutputListener"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.ScriptingOutputListener.html#binaryninja.scriptingprovider.ScriptingOutputListener">[docs]</a><span class="k">class</span> <span class="nc">ScriptingOutputListener</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">_register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNScriptingOutputListener</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">inputReadyStateChanged</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">inputReadyStateChanged</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_input_ready_state_changed</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterScriptingInstanceOutputListener</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_unregister</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNUnregisterScriptingInstanceOutputListener</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">notify_output</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">notify_error</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_input_ready_state_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">notify_input_ready_state_changed</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+<div class="viewcode-block" id="ScriptingOutputListener.notify_output"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingOutputListener.notify_output">[docs]</a>	<span class="k">def</span> <span class="nf">notify_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ScriptingOutputListener.notify_error"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingOutputListener.notify_error">[docs]</a>	<span class="k">def</span> <span class="nf">notify_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ScriptingOutputListener.notify_input_ready_state_changed"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingOutputListener.notify_input_ready_state_changed">[docs]</a>	<span class="k">def</span> <span class="nf">notify_input_ready_state_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+		<span class="k">pass</span></div></div>
+
+
+<div class="viewcode-block" id="ScriptingInstance"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.ScriptingInstance.html#binaryninja.scriptingprovider.ScriptingInstance">[docs]</a><span class="k">class</span> <span class="nc">ScriptingInstance</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="ScriptingInstance.__init__"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.ScriptingInstance.html#binaryninja.scriptingprovider.ScriptingInstance.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNScriptingInstanceCallbacks</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destroyInstance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">destroyInstance</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_destroy_instance</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">executeScriptInput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">executeScriptInput</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_execute_script_input</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentBinaryView</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentBinaryView</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_current_binary_view</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentFunction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentFunction</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_current_function</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentBasicBlock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentBasicBlock</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_current_basic_block</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentAddress</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentAddress</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_current_address</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentSelection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">setCurrentSelection</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_current_selection</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNInitScriptingInstance</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">handle_of_type</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNScriptingInstance</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">listeners</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeScriptingInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_destroy_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">perform_destroy_instance</span><span class="p">()</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_execute_script_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">perform_execute_script_input</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+			<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">InvalidScriptInput</span>
+
+	<span class="k">def</span> <span class="nf">_set_current_binary_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">view</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewViewReference</span><span class="p">(</span><span class="n">view</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">perform_set_current_binary_view</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_set_current_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">func</span><span class="p">:</span>
+				<span class="n">func</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetFunctionData</span><span class="p">(</span><span class="n">func</span><span class="p">)),</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewFunctionReference</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">func</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">perform_set_current_function</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_set_current_basic_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">block</span><span class="p">:</span>
+				<span class="n">func</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetBasicBlockFunction</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">block</span> <span class="o">=</span> <span class="kc">None</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">block</span> <span class="o">=</span> <span class="n">basicblock</span><span class="o">.</span><span class="n">BasicBlock</span><span class="p">(</span><span class="n">binaryview</span><span class="o">.</span><span class="n">BinaryView</span><span class="p">(</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetFunctionData</span><span class="p">(</span><span class="n">func</span><span class="p">)),</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewBasicBlockReference</span><span class="p">(</span><span class="n">block</span><span class="p">))</span>
+					<span class="n">core</span><span class="o">.</span><span class="n">BNFreeFunction</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">block</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">perform_set_current_basic_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_set_current_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">perform_set_current_address</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">_set_current_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">perform_set_current_selection</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_destroy_instance"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_destroy_instance">[docs]</a>	<span class="k">def</span> <span class="nf">perform_destroy_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_execute_script_input"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_execute_script_input">[docs]</a>	<span class="k">def</span> <span class="nf">perform_execute_script_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">InvalidScriptInput</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_set_current_binary_view"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_set_current_binary_view">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_binary_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_set_current_function"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_set_current_function">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_set_current_basic_block"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_set_current_basic_block">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_basic_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_set_current_address"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_set_current_address">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="ScriptingInstance.perform_set_current_selection"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.perform_set_current_selection">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">input_ready_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetScriptingInstanceInputReadyState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@input_ready_state</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">input_ready_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNNotifyInputReadyStateForScriptingInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ScriptingInstance.output"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.output">[docs]</a>	<span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNNotifyOutputForScriptingInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.error"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.error">[docs]</a>	<span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNNotifyErrorForScriptingInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.execute_script_input"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.execute_script_input">[docs]</a>	<span class="k">def</span> <span class="nf">execute_script_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNExecuteScriptInput</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.set_current_binary_view"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.set_current_binary_view">[docs]</a>	<span class="k">def</span> <span class="nf">set_current_binary_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">view</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetScriptingInstanceCurrentBinaryView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">view</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.set_current_function"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.set_current_function">[docs]</a>	<span class="k">def</span> <span class="nf">set_current_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">func</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetScriptingInstanceCurrentFunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.set_current_basic_block"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.set_current_basic_block">[docs]</a>	<span class="k">def</span> <span class="nf">set_current_basic_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">block</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">block</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">handle</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetScriptingInstanceCurrentBasicBlock</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.set_current_address"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.set_current_address">[docs]</a>	<span class="k">def</span> <span class="nf">set_current_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetScriptingInstanceCurrentAddress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.set_current_selection"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.set_current_selection">[docs]</a>	<span class="k">def</span> <span class="nf">set_current_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetScriptingInstanceCurrentSelection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.register_output_listener"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.register_output_listener">[docs]</a>	<span class="k">def</span> <span class="nf">register_output_listener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listener</span><span class="p">):</span>
+		<span class="n">listener</span><span class="o">.</span><span class="n">_register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">listeners</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingInstance.unregister_output_listener"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingInstance.unregister_output_listener">[docs]</a>	<span class="k">def</span> <span class="nf">unregister_output_listener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listener</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">listener</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">listeners</span><span class="p">:</span>
+			<span class="n">listener</span><span class="o">.</span><span class="n">_unregister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">listeners</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">_ScriptingProviderMetaclass</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List all ScriptingProvider types (read-only)&quot;&quot;&quot;</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">types</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetScriptingProviderList</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ScriptingProvider</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeScriptingProviderList</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">types</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetScriptingProviderList</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">ScriptingProvider</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreeScriptingProviderList</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">provider</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetScriptingProviderByName</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">provider</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not a valid scripting provider&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">ScriptingProvider</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">type</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ScriptingProvider"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.ScriptingProvider.html#binaryninja.scriptingprovider.ScriptingProvider">[docs]</a><span class="k">class</span> <span class="nc">ScriptingProvider</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">_ScriptingProviderMetaclass</span>
+
+	<span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">instance_class</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">_registered_providers</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="ScriptingProvider.__init__"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.ScriptingProvider.html#binaryninja.scriptingprovider.ScriptingProvider.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">handle_of_type</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNScriptingProvider</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetScriptingProviderName</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ScriptingProvider.register"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingProvider.register">[docs]</a>	<span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNScriptingProviderCallbacks</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">createInstance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="o">.</span><span class="n">createInstance</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_create_instance</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNRegisterScriptingProvider</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cb</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">_registered_providers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">_create_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">instance_class</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">None</span>
+			<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewScriptingInstanceReference</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">handle</span><span class="p">),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+			<span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="ScriptingProvider.create_instance"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.ScriptingProvider.create_instance">[docs]</a>	<span class="k">def</span> <span class="nf">create_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreateScriptingProviderInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">ScriptingInstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">result</span><span class="p">)</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">_PythonScriptingInstanceOutput</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">is_error</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">orig</span> <span class="o">=</span> <span class="n">orig</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">is_error</span> <span class="o">=</span> <span class="n">is_error</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;PythonScriptingInstanceOutput&#39;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">newlines</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">closed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">isatty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;File not open for reading&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;File not open for reading&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">readinto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;File not open for reading&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">readlines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;File not open for reading&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">sofspace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="mi">0</span>
+
+	<span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">orig</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+
+	<span class="k">def</span> <span class="nf">writelines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+
+	<span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+		<span class="n">interpreter</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="s2">&quot;value&quot;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="p">):</span>
+			<span class="n">interpreter</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span>
+
+		<span class="k">if</span> <span class="n">interpreter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">log</span><span class="o">.</span><span class="n">is_output_redirected_to_log</span><span class="p">():</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">+=</span> <span class="n">data</span>
+				<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+					<span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+					<span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+						<span class="k">break</span>
+					<span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+
+					<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_error</span><span class="p">:</span>
+						<span class="n">log</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">log</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">orig</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_error</span><span class="p">:</span>
+					<span class="n">interpreter</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">interpreter</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+			<span class="k">finally</span><span class="p">:</span>
+				<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">interpreter</span>
+
+
+<span class="k">class</span> <span class="nc">_PythonScriptingInstanceInput</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">orig</span> <span class="o">=</span> <span class="n">orig</span>
+
+	<span class="k">def</span> <span class="nf">isatty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+		<span class="n">interpreter</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="s2">&quot;value&quot;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="p">):</span>
+			<span class="n">interpreter</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span>
+
+		<span class="k">if</span> <span class="n">interpreter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">orig</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">result</span> <span class="o">=</span> <span class="n">interpreter</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+			<span class="k">finally</span><span class="p">:</span>
+				<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">interpreter</span>
+			<span class="k">return</span> <span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">interpreter</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="s2">&quot;value&quot;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="p">):</span>
+			<span class="n">interpreter</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span>
+
+		<span class="k">if</span> <span class="n">interpreter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">orig</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="n">data</span> <span class="o">=</span> <span class="n">interpreter</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+				<span class="n">result</span> <span class="o">+=</span> <span class="n">data</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+					<span class="k">break</span>
+			<span class="k">return</span> <span class="n">result</span>
+
+
+<div class="viewcode-block" id="PythonScriptingInstance"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.PythonScriptingInstance.html#binaryninja.scriptingprovider.PythonScriptingInstance">[docs]</a><span class="k">class</span> <span class="nc">PythonScriptingInstance</span><span class="p">(</span><span class="n">ScriptingInstance</span><span class="p">):</span>
+	<span class="n">_interpreter</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">local</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread">[docs]</a>	<span class="k">class</span> <span class="nc">InterpreterThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+		<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+			<span class="nb">super</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">InterpreterThread</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">locals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span> <span class="s2">&quot;__console__&quot;</span><span class="p">,</span> <span class="s2">&quot;__doc__&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;binaryninja&quot;</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">]}</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">InteractiveInterpreter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+
+			<span class="c1"># Latest selections from UI</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">current_view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">current_func</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">current_block</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">current_addr</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">current_selection_begin</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">current_selection_end</span> <span class="o">=</span> <span class="mi">0</span>
+
+			<span class="c1"># Selections that were current as of last issued command</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">active_view</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">active_func</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">active_block</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">active_addr</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">active_selection_end</span> <span class="o">=</span> <span class="mi">0</span>
+
+			<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;get_selected_data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_data</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;write_at_cursor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_at_cursor</span>
+
+			<span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+			<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">runsource</span><span class="p">(</span><span class="s2">&quot;from binaryninja import *</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.execute"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.execute">[docs]</a>		<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.add_input"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.add_input">[docs]</a>		<span class="k">def</span> <span class="nf">add_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">+=</span> <span class="n">data</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.end"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.end">[docs]</a>		<span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.read"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.read">[docs]</a>		<span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+			<span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">:</span>
+					<span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[:</span><span class="n">size</span><span class="p">]</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="n">size</span><span class="p">:]</span>
+					<span class="k">return</span> <span class="n">result</span>
+				<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+					<span class="k">return</span> <span class="n">result</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">=</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">ReadyForScriptProgramInput</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+			<span class="k">return</span> <span class="s2">&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.run"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.run">[docs]</a>		<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">:</span>
+					<span class="k">break</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">=</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">NotReadyForInput</span>
+					<span class="n">code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="kc">None</span>
+
+					<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">active_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_view</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">active_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_func</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">active_block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_block</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">active_addr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_addr</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_selection_begin</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">active_selection_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_selection_end</span>
+
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;bv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_function&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_func</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_basic_block&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_block</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_address&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_addr</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;here&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_addr</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_selection&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_selection_end</span><span class="p">)</span>
+
+						<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">runsource</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+
+						<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;here&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_addr</span><span class="p">:</span>
+							<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;here&quot;</span><span class="p">]):</span>
+								<span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Address 0x</span><span class="si">%x</span><span class="s2"> is not valid for the current view</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;here&quot;</span><span class="p">])</span>
+						<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_address&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_addr</span><span class="p">:</span>
+							<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_address&quot;</span><span class="p">]):</span>
+								<span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Address 0x</span><span class="si">%x</span><span class="s2"> is not valid for the current view</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">[</span><span class="s2">&quot;current_address&quot;</span><span class="p">])</span>
+					<span class="k">except</span><span class="p">:</span>
+						<span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+					<span class="k">finally</span><span class="p">:</span>
+						<span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">_interpreter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">=</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">ReadyForScriptExecution</span></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.get_selected_data"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.get_selected_data">[docs]</a>		<span class="k">def</span> <span class="nf">get_selected_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">None</span>
+			<span class="n">length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_selection_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.InterpreterThread.write_at_cursor"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.InterpreterThread.write_at_cursor">[docs]</a>		<span class="k">def</span> <span class="nf">write_at_cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">return</span> <span class="mi">0</span>
+			<span class="n">selected_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_selection_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="n">selected_length</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">selected_length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span><span class="p">,</span> <span class="n">selected_length</span><span class="p">)</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_selection_begin</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="PythonScriptingInstance.__init__"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.PythonScriptingInstance.html#binaryninja.scriptingprovider.PythonScriptingInstance.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">PythonScriptingInstance</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span><span class="o">.</span><span class="n">InterpreterThread</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">queued_input</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">=</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">ReadyForScriptExecution</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_destroy_instance"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_destroy_instance">[docs]</a>	<span class="k">def</span> <span class="nf">perform_destroy_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">end</span><span class="p">()</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_execute_script_input"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_execute_script_input">[docs]</a>	<span class="k">def</span> <span class="nf">perform_execute_script_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">==</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">NotReadyForInput</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">InvalidScriptInput</span>
+
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">==</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">ReadyForScriptProgramInput</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">SuccessfulScriptExecution</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">=</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">NotReadyForInput</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">add_input</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">SuccessfulScriptExecution</span>
+
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">compile_command</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
+
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># Command is not complete, ask for more input</span>
+			<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">IncompleteScriptInput</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">input_ready_state</span> <span class="o">=</span> <span class="n">ScriptingProviderInputReadyState</span><span class="o">.</span><span class="n">NotReadyForInput</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">ScriptingProviderExecuteResult</span><span class="o">.</span><span class="n">SuccessfulScriptExecution</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_set_current_binary_view"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_set_current_binary_view">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_binary_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">current_view</span> <span class="o">=</span> <span class="n">view</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_set_current_function"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_set_current_function">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">current_func</span> <span class="o">=</span> <span class="n">func</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_set_current_basic_block"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_set_current_basic_block">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_basic_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">current_block</span> <span class="o">=</span> <span class="n">block</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_set_current_address"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_set_current_address">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">current_addr</span> <span class="o">=</span> <span class="n">addr</span></div>
+
+	<span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<div class="viewcode-block" id="PythonScriptingInstance.perform_set_current_selection"><a class="viewcode-back" href="../../binaryninja.scriptingprovider-module.html#binaryninja.scriptingprovider.PythonScriptingInstance.perform_set_current_selection">[docs]</a>	<span class="k">def</span> <span class="nf">perform_set_current_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">current_selection_begin</span> <span class="o">=</span> <span class="n">begin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="o">.</span><span class="n">current_selection_end</span> <span class="o">=</span> <span class="n">end</span></div></div>
+
+
+<div class="viewcode-block" id="PythonScriptingProvider"><a class="viewcode-back" href="../../binaryninja.scriptingprovider.PythonScriptingProvider.html#binaryninja.scriptingprovider.PythonScriptingProvider">[docs]</a><span class="k">class</span> <span class="nc">PythonScriptingProvider</span><span class="p">(</span><span class="n">ScriptingProvider</span><span class="p">):</span>
+	<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+	<span class="n">instance_class</span> <span class="o">=</span> <span class="n">PythonScriptingInstance</span></div>
+
+
+<span class="n">PythonScriptingProvider</span><span class="p">()</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+<span class="c1"># Wrap stdin/stdout/stderr for Python scripting provider implementation</span>
+<span class="n">original_stdin</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span>
+<span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+<span class="n">original_stderr</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="n">_PythonScriptingInstanceInput</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">_PythonScriptingInstanceOutput</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">_PythonScriptingInstanceOutput</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

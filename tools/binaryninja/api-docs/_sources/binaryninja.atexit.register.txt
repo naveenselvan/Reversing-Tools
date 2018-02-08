@@ -1,0 +1,6 @@
+binaryninja.atexit.register
+===========================
+
+.. currentmodule:: binaryninja.atexit
+
+.. autofunction:: register

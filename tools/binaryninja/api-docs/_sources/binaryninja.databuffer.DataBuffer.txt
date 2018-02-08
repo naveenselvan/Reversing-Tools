@@ -1,0 +1,28 @@
+binaryninja.databuffer.DataBuffer
+=================================
+
+.. currentmodule:: binaryninja.databuffer
+
+.. autoclass:: DataBuffer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataBuffer.__init__
+      ~DataBuffer.base64_decode
+      ~DataBuffer.base64_encode
+      ~DataBuffer.escape
+      ~DataBuffer.unescape
+      ~DataBuffer.zlib_compress
+      ~DataBuffer.zlib_decompress
+   
+   
+
+   
+   
+   

@@ -1,0 +1,111 @@
+binaryninja.enums.LowLevelILOperation
+=====================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: LowLevelILOperation
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LowLevelILOperation.LLIL_ADC
+      ~LowLevelILOperation.LLIL_ADD
+      ~LowLevelILOperation.LLIL_ADD_OVERFLOW
+      ~LowLevelILOperation.LLIL_AND
+      ~LowLevelILOperation.LLIL_ASR
+      ~LowLevelILOperation.LLIL_BOOL_TO_INT
+      ~LowLevelILOperation.LLIL_BP
+      ~LowLevelILOperation.LLIL_CALL
+      ~LowLevelILOperation.LLIL_CALL_OUTPUT_SSA
+      ~LowLevelILOperation.LLIL_CALL_PARAM_SSA
+      ~LowLevelILOperation.LLIL_CALL_SSA
+      ~LowLevelILOperation.LLIL_CALL_STACK_ADJUST
+      ~LowLevelILOperation.LLIL_CALL_STACK_SSA
+      ~LowLevelILOperation.LLIL_CMP_E
+      ~LowLevelILOperation.LLIL_CMP_NE
+      ~LowLevelILOperation.LLIL_CMP_SGE
+      ~LowLevelILOperation.LLIL_CMP_SGT
+      ~LowLevelILOperation.LLIL_CMP_SLE
+      ~LowLevelILOperation.LLIL_CMP_SLT
+      ~LowLevelILOperation.LLIL_CMP_UGE
+      ~LowLevelILOperation.LLIL_CMP_UGT
+      ~LowLevelILOperation.LLIL_CMP_ULE
+      ~LowLevelILOperation.LLIL_CMP_ULT
+      ~LowLevelILOperation.LLIL_CONST
+      ~LowLevelILOperation.LLIL_CONST_PTR
+      ~LowLevelILOperation.LLIL_DIVS
+      ~LowLevelILOperation.LLIL_DIVS_DP
+      ~LowLevelILOperation.LLIL_DIVU
+      ~LowLevelILOperation.LLIL_DIVU_DP
+      ~LowLevelILOperation.LLIL_FLAG
+      ~LowLevelILOperation.LLIL_FLAG_BIT
+      ~LowLevelILOperation.LLIL_FLAG_BIT_SSA
+      ~LowLevelILOperation.LLIL_FLAG_COND
+      ~LowLevelILOperation.LLIL_FLAG_PHI
+      ~LowLevelILOperation.LLIL_FLAG_SSA
+      ~LowLevelILOperation.LLIL_GOTO
+      ~LowLevelILOperation.LLIL_IF
+      ~LowLevelILOperation.LLIL_JUMP
+      ~LowLevelILOperation.LLIL_JUMP_TO
+      ~LowLevelILOperation.LLIL_LOAD
+      ~LowLevelILOperation.LLIL_LOAD_SSA
+      ~LowLevelILOperation.LLIL_LOW_PART
+      ~LowLevelILOperation.LLIL_LSL
+      ~LowLevelILOperation.LLIL_LSR
+      ~LowLevelILOperation.LLIL_MEM_PHI
+      ~LowLevelILOperation.LLIL_MODS
+      ~LowLevelILOperation.LLIL_MODS_DP
+      ~LowLevelILOperation.LLIL_MODU
+      ~LowLevelILOperation.LLIL_MODU_DP
+      ~LowLevelILOperation.LLIL_MUL
+      ~LowLevelILOperation.LLIL_MULS_DP
+      ~LowLevelILOperation.LLIL_MULU_DP
+      ~LowLevelILOperation.LLIL_NEG
+      ~LowLevelILOperation.LLIL_NOP
+      ~LowLevelILOperation.LLIL_NORET
+      ~LowLevelILOperation.LLIL_NOT
+      ~LowLevelILOperation.LLIL_OR
+      ~LowLevelILOperation.LLIL_POP
+      ~LowLevelILOperation.LLIL_PUSH
+      ~LowLevelILOperation.LLIL_REG
+      ~LowLevelILOperation.LLIL_REG_PHI
+      ~LowLevelILOperation.LLIL_REG_SPLIT_DEST_SSA
+      ~LowLevelILOperation.LLIL_REG_SSA
+      ~LowLevelILOperation.LLIL_REG_SSA_PARTIAL
+      ~LowLevelILOperation.LLIL_RET
+      ~LowLevelILOperation.LLIL_RLC
+      ~LowLevelILOperation.LLIL_ROL
+      ~LowLevelILOperation.LLIL_ROR
+      ~LowLevelILOperation.LLIL_RRC
+      ~LowLevelILOperation.LLIL_SBB
+      ~LowLevelILOperation.LLIL_SET_FLAG
+      ~LowLevelILOperation.LLIL_SET_FLAG_SSA
+      ~LowLevelILOperation.LLIL_SET_REG
+      ~LowLevelILOperation.LLIL_SET_REG_SPLIT
+      ~LowLevelILOperation.LLIL_SET_REG_SPLIT_SSA
+      ~LowLevelILOperation.LLIL_SET_REG_SSA
+      ~LowLevelILOperation.LLIL_SET_REG_SSA_PARTIAL
+      ~LowLevelILOperation.LLIL_STORE
+      ~LowLevelILOperation.LLIL_STORE_SSA
+      ~LowLevelILOperation.LLIL_SUB
+      ~LowLevelILOperation.LLIL_SX
+      ~LowLevelILOperation.LLIL_SYSCALL
+      ~LowLevelILOperation.LLIL_SYSCALL_SSA
+      ~LowLevelILOperation.LLIL_TEST_BIT
+      ~LowLevelILOperation.LLIL_TRAP
+      ~LowLevelILOperation.LLIL_UNDEF
+      ~LowLevelILOperation.LLIL_UNIMPL
+      ~LowLevelILOperation.LLIL_UNIMPL_MEM
+      ~LowLevelILOperation.LLIL_XOR
+      ~LowLevelILOperation.LLIL_ZX
+   
+   

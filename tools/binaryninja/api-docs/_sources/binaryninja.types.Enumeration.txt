@@ -1,0 +1,31 @@
+binaryninja.types.Enumeration
+=============================
+
+.. currentmodule:: binaryninja.types
+
+.. autoclass:: Enumeration
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Enumeration.__init__
+      ~Enumeration.append
+      ~Enumeration.remove
+      ~Enumeration.replace
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Enumeration.members
+   
+   

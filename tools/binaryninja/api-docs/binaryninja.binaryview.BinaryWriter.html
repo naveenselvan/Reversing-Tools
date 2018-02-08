@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.binaryview.BinaryWriter &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="binaryview module" href="binaryninja.binaryview-module.html"/>
+        <link rel="next" title="binaryninja.binaryview.DataVariable" href="binaryninja.binaryview.DataVariable.html"/>
+        <link rel="prev" title="binaryninja.binaryview.BinaryViewType" href="binaryninja.binaryview.BinaryViewType.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.AddressRange.html">binaryninja.binaryview.AddressRange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.AnalysisCompletionEvent.html">binaryninja.binaryview.AnalysisCompletionEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.AnalysisProgress.html">binaryninja.binaryview.AnalysisProgress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryDataNotification.html">binaryninja.binaryview.BinaryDataNotification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryDataNotificationCallbacks.html">binaryninja.binaryview.BinaryDataNotificationCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryReader.html">binaryninja.binaryview.BinaryReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryView.html">binaryninja.binaryview.BinaryView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.BinaryViewType.html">binaryninja.binaryview.BinaryViewType</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.binaryview.BinaryWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.DataVariable.html">binaryninja.binaryview.DataVariable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.Section.html">binaryninja.binaryview.Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.Segment.html">binaryninja.binaryview.Segment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.binaryview.StringReference.html">binaryninja.binaryview.StringReference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.binaryview-module.html">binaryview module</a> &raquo;</li>
+        
+      <li>binaryninja.binaryview.BinaryWriter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.binaryview.BinaryWriter.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-binaryview-binarywriter">
+<h1>binaryninja.binaryview.BinaryWriter<a class="headerlink" href="#binaryninja-binaryview-binarywriter" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.binaryview.BinaryWriter">
+<em class="property">class </em><code class="descclassname">binaryninja.binaryview.</code><code class="descname">BinaryWriter</code><span class="sig-paren">(</span><em>view</em>, <em>endian=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/binaryview.html#BinaryWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.binaryview.BinaryWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">class</span> <span class="pre">BinaryWriter</span></code> is a convenience class for writing binary data.</p>
+<p>BinaryWriter can be instantiated as follows and the rest of the document will start from this context</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binaryninja</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span> <span class="o">=</span> <span class="n">BinaryViewType</span><span class="p">[</span><span class="s1">&#39;Mach-O&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/bin/ls&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">br</span> <span class="o">=</span> <span class="n">BinaryReader</span><span class="p">(</span><span class="n">bv</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bw</span> <span class="o">=</span> <span class="n">BinaryWriter</span><span class="p">(</span><span class="n">bv</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Or using the optional endian parameter</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binaryninja</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">br</span> <span class="o">=</span> <span class="n">BinaryReader</span><span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="n">Endianness</span><span class="o">.</span><span class="n">BigEndian</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bw</span> <span class="o">=</span> <span class="n">BinaryWriter</span><span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="n">Endianness</span><span class="o">.</span><span class="n">BigEndian</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="binaryninja.binaryview.BinaryWriter.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>view</em>, <em>endian=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/binaryview.html#BinaryWriter.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.binaryview.BinaryWriter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.binaryview.BinaryWriter.__init__" title="binaryninja.binaryview.BinaryWriter.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(view[,&nbsp;endian])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.seek" title="binaryninja.binaryview.BinaryWriter.seek"><code class="xref py py-obj docutils literal"><span class="pre">seek</span></code></a>(offset)</td>
+<td><code class="docutils literal"><span class="pre">seek</span></code> update internal offset to <code class="docutils literal"><span class="pre">offset</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.seek_relative" title="binaryninja.binaryview.BinaryWriter.seek_relative"><code class="xref py py-obj docutils literal"><span class="pre">seek_relative</span></code></a>(offset)</td>
+<td><code class="docutils literal"><span class="pre">seek_relative</span></code> updates the internal offset by <code class="docutils literal"><span class="pre">offset</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write" title="binaryninja.binaryview.BinaryWriter.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write</span></code> writes <code class="docutils literal"><span class="pre">len(value)</span></code> bytes to the internal offset, without regard to endianness.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write16" title="binaryninja.binaryview.BinaryWriter.write16"><code class="xref py py-obj docutils literal"><span class="pre">write16</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write16</span></code> writes the lowest order two bytes from the integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset, using internal endianness.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write16be" title="binaryninja.binaryview.BinaryWriter.write16be"><code class="xref py py-obj docutils literal"><span class="pre">write16be</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write16be</span></code> writes the lowest order two bytes from the big endian integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write16le" title="binaryninja.binaryview.BinaryWriter.write16le"><code class="xref py py-obj docutils literal"><span class="pre">write16le</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write16le</span></code> writes the lowest order two bytes from the little endian integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write32" title="binaryninja.binaryview.BinaryWriter.write32"><code class="xref py py-obj docutils literal"><span class="pre">write32</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write32</span></code> writes the lowest order four bytes from the integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset, using internal endianness.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write32be" title="binaryninja.binaryview.BinaryWriter.write32be"><code class="xref py py-obj docutils literal"><span class="pre">write32be</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write32be</span></code> writes the lowest order four bytes from the big endian integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write32le" title="binaryninja.binaryview.BinaryWriter.write32le"><code class="xref py py-obj docutils literal"><span class="pre">write32le</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write32le</span></code> writes the lowest order four bytes from the little endian integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write64" title="binaryninja.binaryview.BinaryWriter.write64"><code class="xref py py-obj docutils literal"><span class="pre">write64</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write64</span></code> writes the lowest order eight bytes from the integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset, using internal endianness.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write64be" title="binaryninja.binaryview.BinaryWriter.write64be"><code class="xref py py-obj docutils literal"><span class="pre">write64be</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write64be</span></code> writes the lowest order eight bytes from the big endian integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write64le" title="binaryninja.binaryview.BinaryWriter.write64le"><code class="xref py py-obj docutils literal"><span class="pre">write64le</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write64le</span></code> writes the lowest order eight bytes from the little endian integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.write8" title="binaryninja.binaryview.BinaryWriter.write8"><code class="xref py py-obj docutils literal"><span class="pre">write8</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">write8</span></code> lowest order byte from the integer <code class="docutils literal"><span class="pre">value</span></code> to the current offset.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.endianness" title="binaryninja.binaryview.BinaryWriter.endianness"><code class="xref py py-obj docutils literal"><span class="pre">endianness</span></code></a></td>
+<td>The Endianness to written data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.binaryview-module.html#binaryninja.binaryview.BinaryWriter.offset" title="binaryninja.binaryview.BinaryWriter.offset"><code class="xref py py-obj docutils literal"><span class="pre">offset</span></code></a></td>
+<td>The current write offset (read/write).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.binaryview.DataVariable.html" class="btn btn-neutral float-right" title="binaryninja.binaryview.DataVariable" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.binaryview.BinaryViewType.html" class="btn btn-neutral" title="binaryninja.binaryview.BinaryViewType" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.lowlevelil.LowLevelILFunction &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="up" title="lowlevelil module" href="binaryninja.lowlevelil-module.html"/>
+        <link rel="next" title="binaryninja.lowlevelil.LowLevelILInstruction" href="binaryninja.lowlevelil.LowLevelILInstruction.html"/>
+        <link rel="prev" title="binaryninja.lowlevelil.LowLevelILExpr" href="binaryninja.lowlevelil.LowLevelILExpr.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.ILFlag.html">binaryninja.lowlevelil.ILFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.ILRegister.html">binaryninja.lowlevelil.ILRegister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILBasicBlock.html">binaryninja.lowlevelil.LowLevelILBasicBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILExpr.html">binaryninja.lowlevelil.LowLevelILExpr</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">binaryninja.lowlevelil.LowLevelILFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILInstruction.html">binaryninja.lowlevelil.LowLevelILInstruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILLabel.html">binaryninja.lowlevelil.LowLevelILLabel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILOperationAndSize.html">binaryninja.lowlevelil.LowLevelILOperationAndSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.SSAFlag.html">binaryninja.lowlevelil.SSAFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.SSARegister.html">binaryninja.lowlevelil.SSARegister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LLIL_GET_TEMP_REG_INDEX.html">binaryninja.lowlevelil.LLIL_GET_TEMP_REG_INDEX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LLIL_REG_IS_TEMP.html">binaryninja.lowlevelil.LLIL_REG_IS_TEMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.lowlevelil.LLIL_TEMP.html">binaryninja.lowlevelil.LLIL_TEMP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="binaryninja.lowlevelil-module.html">lowlevelil module</a> &raquo;</li>
+        
+      <li>binaryninja.lowlevelil.LowLevelILFunction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.lowlevelil.LowLevelILFunction.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binaryninja-lowlevelil-lowlevelilfunction">
+<h1>binaryninja.lowlevelil.LowLevelILFunction<a class="headerlink" href="#binaryninja-lowlevelil-lowlevelilfunction" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="binaryninja.lowlevelil.LowLevelILFunction">
+<em class="property">class </em><code class="descclassname">binaryninja.lowlevelil.</code><code class="descname">LowLevelILFunction</code><span class="sig-paren">(</span><em>arch</em>, <em>handle=None</em>, <em>source_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/lowlevelil.html#LowLevelILFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.lowlevelil.LowLevelILFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">class</span> <span class="pre">LowLevelILFunction</span></code> contains the list of LowLevelILExpr objects that make up a function. LowLevelILExpr
+objects can be added to the LowLevelILFunction by calling <code class="docutils literal"><span class="pre">append</span></code> and passing the result of the various class
+methods which return LowLevelILExpr objects.</p>
+<p>LowLevelILFlagCondition values used as parameters in the <code class="docutils literal"><span class="pre">flag_condition</span></code> method.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="16%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">LowLevelILFlagCondition</th>
+<th class="head">Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LLFC_E</td>
+<td>==</td>
+<td>Equal</td>
+</tr>
+<tr class="row-odd"><td>LLFC_NE</td>
+<td>!=</td>
+<td>Not equal</td>
+</tr>
+<tr class="row-even"><td>LLFC_SLT</td>
+<td>s&lt;</td>
+<td>Signed less than</td>
+</tr>
+<tr class="row-odd"><td>LLFC_ULT</td>
+<td>u&lt;</td>
+<td>Unsigned less than</td>
+</tr>
+<tr class="row-even"><td>LLFC_SLE</td>
+<td>s&lt;=</td>
+<td>Signed less than or equal</td>
+</tr>
+<tr class="row-odd"><td>LLFC_ULE</td>
+<td>u&lt;=</td>
+<td>Unsigned less than or equal</td>
+</tr>
+<tr class="row-even"><td>LLFC_SGE</td>
+<td>s&gt;=</td>
+<td>Signed greater than or equal</td>
+</tr>
+<tr class="row-odd"><td>LLFC_UGE</td>
+<td>u&gt;=</td>
+<td>Unsigned greater than or equal</td>
+</tr>
+<tr class="row-even"><td>LLFC_SGT</td>
+<td>s&gt;</td>
+<td>Signed greather than</td>
+</tr>
+<tr class="row-odd"><td>LLFC_UGT</td>
+<td>u&gt;</td>
+<td>Unsigned greater than</td>
+</tr>
+<tr class="row-even"><td>LLFC_NEG</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Negative</td>
+</tr>
+<tr class="row-odd"><td>LLFC_POS</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Positive</td>
+</tr>
+<tr class="row-even"><td>LLFC_O</td>
+<td>overflow</td>
+<td>Overflow</td>
+</tr>
+<tr class="row-odd"><td>LLFC_NO</td>
+<td>!overflow</td>
+<td>No overflow</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="method">
+<dt id="binaryninja.lowlevelil.LowLevelILFunction.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>arch</em>, <em>handle=None</em>, <em>source_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/lowlevelil.html#LowLevelILFunction.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.lowlevelil.LowLevelILFunction.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#binaryninja.lowlevelil.LowLevelILFunction.__init__" title="binaryninja.lowlevelil.LowLevelILFunction.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(arch[,&nbsp;handle,&nbsp;source_func])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.add" title="binaryninja.lowlevelil.LowLevelILFunction.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">add</span></code> adds expression <code class="docutils literal"><span class="pre">a</span></code> to expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code> and returning</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.add_carry" title="binaryninja.lowlevelil.LowLevelILFunction.add_carry"><code class="xref py py-obj docutils literal"><span class="pre">add_carry</span></code></a>(size,&nbsp;a,&nbsp;b,&nbsp;carry[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">add_carry</span></code> adds with carry expression <code class="docutils literal"><span class="pre">a</span></code> to expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code> and</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.add_label_for_address" title="binaryninja.lowlevelil.LowLevelILFunction.add_label_for_address"><code class="xref py py-obj docutils literal"><span class="pre">add_label_for_address</span></code></a>(arch,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">add_label_for_address</span></code> adds a low-level IL label for the given architecture <code class="docutils literal"><span class="pre">arch</span></code> at the given virtual</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.add_label_list" title="binaryninja.lowlevelil.LowLevelILFunction.add_label_list"><code class="xref py py-obj docutils literal"><span class="pre">add_label_list</span></code></a>(labels)</td>
+<td><code class="docutils literal"><span class="pre">add_label_list</span></code> returns a label list expression for the given list of LowLevelILLabel objects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.add_operand_list" title="binaryninja.lowlevelil.LowLevelILFunction.add_operand_list"><code class="xref py py-obj docutils literal"><span class="pre">add_operand_list</span></code></a>(operands)</td>
+<td><code class="docutils literal"><span class="pre">add_operand_list</span></code> returns an operand list expression for the given list of integer operands.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.and_expr" title="binaryninja.lowlevelil.LowLevelILFunction.and_expr"><code class="xref py py-obj docutils literal"><span class="pre">and_expr</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">and_expr</span></code> bitwise and&#8217;s expression <code class="docutils literal"><span class="pre">a</span></code> and expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.append" title="binaryninja.lowlevelil.LowLevelILFunction.append"><code class="xref py py-obj docutils literal"><span class="pre">append</span></code></a>(expr)</td>
+<td><code class="docutils literal"><span class="pre">append</span></code> adds the LowLevelILExpr <code class="docutils literal"><span class="pre">expr</span></code> to the current LowLevelILFunction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.arith_shift_right" title="binaryninja.lowlevelil.LowLevelILFunction.arith_shift_right"><code class="xref py py-obj docutils literal"><span class="pre">arith_shift_right</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">arith_shift_right</span></code> shifts arithmatic right expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code>  potentially setting flags</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.breakpoint" title="binaryninja.lowlevelil.LowLevelILFunction.breakpoint"><code class="xref py py-obj docutils literal"><span class="pre">breakpoint</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">breakpoint</span></code> returns a processor breakpoint expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.call" title="binaryninja.lowlevelil.LowLevelILFunction.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(dest)</td>
+<td><code class="docutils literal"><span class="pre">call</span></code> returns an expression which first pushes the address of the next instruction onto the stack then jumps</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.call_stack_adjust" title="binaryninja.lowlevelil.LowLevelILFunction.call_stack_adjust"><code class="xref py py-obj docutils literal"><span class="pre">call_stack_adjust</span></code></a>(dest,&nbsp;stack_adjust)</td>
+<td><code class="docutils literal"><span class="pre">call_stack_adjust</span></code> returns an expression which first pushes the address of the next instruction onto the stack</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.clear_indirect_branches" title="binaryninja.lowlevelil.LowLevelILFunction.clear_indirect_branches"><code class="xref py py-obj docutils literal"><span class="pre">clear_indirect_branches</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_equal" title="binaryninja.lowlevelil.LowLevelILFunction.compare_equal"><code class="xref py py-obj docutils literal"><span class="pre">compare_equal</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_equal</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is equal to</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_not_equal" title="binaryninja.lowlevelil.LowLevelILFunction.compare_not_equal"><code class="xref py py-obj docutils literal"><span class="pre">compare_not_equal</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_not_equal</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is not equal to</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_signed_greater_equal" title="binaryninja.lowlevelil.LowLevelILFunction.compare_signed_greater_equal"><code class="xref py py-obj docutils literal"><span class="pre">compare_signed_greater_equal</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_signed_greater_equal</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_signed_greater_than" title="binaryninja.lowlevelil.LowLevelILFunction.compare_signed_greater_than"><code class="xref py py-obj docutils literal"><span class="pre">compare_signed_greater_than</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_signed_greater_than</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_signed_less_equal" title="binaryninja.lowlevelil.LowLevelILFunction.compare_signed_less_equal"><code class="xref py py-obj docutils literal"><span class="pre">compare_signed_less_equal</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_signed_less_equal</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_signed_less_than" title="binaryninja.lowlevelil.LowLevelILFunction.compare_signed_less_than"><code class="xref py py-obj docutils literal"><span class="pre">compare_signed_less_than</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_signed_less_than</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_greater_equal" title="binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_greater_equal"><code class="xref py py-obj docutils literal"><span class="pre">compare_unsigned_greater_equal</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_unsigned_greater_equal</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_greater_than" title="binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_greater_than"><code class="xref py py-obj docutils literal"><span class="pre">compare_unsigned_greater_than</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_unsigned_greater_than</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_less_equal" title="binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_less_equal"><code class="xref py py-obj docutils literal"><span class="pre">compare_unsigned_less_equal</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_unsigned_less_equal</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_less_than" title="binaryninja.lowlevelil.LowLevelILFunction.compare_unsigned_less_than"><code class="xref py py-obj docutils literal"><span class="pre">compare_unsigned_less_than</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td><code class="docutils literal"><span class="pre">compare_unsigned_less_than</span></code> returns comparison expression of size <code class="docutils literal"><span class="pre">size</span></code> checking if expression <code class="docutils literal"><span class="pre">a</span></code> is</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.const" title="binaryninja.lowlevelil.LowLevelILFunction.const"><code class="xref py py-obj docutils literal"><span class="pre">const</span></code></a>(size,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">const</span></code> returns an expression for the constant integer <code class="docutils literal"><span class="pre">value</span></code> with size <code class="docutils literal"><span class="pre">size</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.const_pointer" title="binaryninja.lowlevelil.LowLevelILFunction.const_pointer"><code class="xref py py-obj docutils literal"><span class="pre">const_pointer</span></code></a>(size,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">const_pointer</span></code> returns an expression for the constant pointer <code class="docutils literal"><span class="pre">value</span></code> with size <code class="docutils literal"><span class="pre">size</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.div_double_prec_signed" title="binaryninja.lowlevelil.LowLevelILFunction.div_double_prec_signed"><code class="xref py py-obj docutils literal"><span class="pre">div_double_prec_signed</span></code></a>(size,&nbsp;hi,&nbsp;lo,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">div_double_prec_signed</span></code> signed double precision divide using expression <code class="docutils literal"><span class="pre">hi</span></code> and expression <code class="docutils literal"><span class="pre">lo</span></code> as a</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.div_double_prec_unsigned" title="binaryninja.lowlevelil.LowLevelILFunction.div_double_prec_unsigned"><code class="xref py py-obj docutils literal"><span class="pre">div_double_prec_unsigned</span></code></a>(size,&nbsp;hi,&nbsp;lo,&nbsp;b[,&nbsp;...])</td>
+<td><code class="docutils literal"><span class="pre">div_double_prec_unsigned</span></code> unsigned double precision divide using expression <code class="docutils literal"><span class="pre">hi</span></code> and expression <code class="docutils literal"><span class="pre">lo</span></code> as</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.div_signed" title="binaryninja.lowlevelil.LowLevelILFunction.div_signed"><code class="xref py py-obj docutils literal"><span class="pre">div_signed</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">div_signed</span></code> signed divide expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.div_unsigned" title="binaryninja.lowlevelil.LowLevelILFunction.div_unsigned"><code class="xref py py-obj docutils literal"><span class="pre">div_unsigned</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">div_unsigned</span></code> unsigned divide expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.expr" title="binaryninja.lowlevelil.LowLevelILFunction.expr"><code class="xref py py-obj docutils literal"><span class="pre">expr</span></code></a>(operation[,&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;d,&nbsp;size,&nbsp;flags])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.finalize" title="binaryninja.lowlevelil.LowLevelILFunction.finalize"><code class="xref py py-obj docutils literal"><span class="pre">finalize</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">finalize</span></code> ends the function and computes the list of basic blocks.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.flag" title="binaryninja.lowlevelil.LowLevelILFunction.flag"><code class="xref py py-obj docutils literal"><span class="pre">flag</span></code></a>(reg)</td>
+<td><code class="docutils literal"><span class="pre">flag</span></code> returns a flag expression for the given flag name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.flag_bit" title="binaryninja.lowlevelil.LowLevelILFunction.flag_bit"><code class="xref py py-obj docutils literal"><span class="pre">flag_bit</span></code></a>(size,&nbsp;reg,&nbsp;bit)</td>
+<td><code class="docutils literal"><span class="pre">flag_bit</span></code> sets the flag named <code class="docutils literal"><span class="pre">reg</span></code> and size <code class="docutils literal"><span class="pre">size</span></code> to the constant integer value <code class="docutils literal"><span class="pre">bit</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.flag_condition" title="binaryninja.lowlevelil.LowLevelILFunction.flag_condition"><code class="xref py py-obj docutils literal"><span class="pre">flag_condition</span></code></a>(cond)</td>
+<td><code class="docutils literal"><span class="pre">flag_condition</span></code> returns a flag_condition expression for the given LowLevelILFlagCondition</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_instruction_start" title="binaryninja.lowlevelil.LowLevelILFunction.get_instruction_start"><code class="xref py py-obj docutils literal"><span class="pre">get_instruction_start</span></code></a>(addr[,&nbsp;arch])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_label_for_address" title="binaryninja.lowlevelil.LowLevelILFunction.get_label_for_address"><code class="xref py py-obj docutils literal"><span class="pre">get_label_for_address</span></code></a>(arch,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">get_label_for_address</span></code> returns the LowLevelILLabel for the given Architecture <code class="docutils literal"><span class="pre">arch</span></code> and IL address <code class="docutils literal"><span class="pre">addr</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_mapped_medium_level_il_expr_index" title="binaryninja.lowlevelil.LowLevelILFunction.get_mapped_medium_level_il_expr_index"><code class="xref py py-obj docutils literal"><span class="pre">get_mapped_medium_level_il_expr_index</span></code></a>(expr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_mapped_medium_level_il_instruction_index" title="binaryninja.lowlevelil.LowLevelILFunction.get_mapped_medium_level_il_instruction_index"><code class="xref py py-obj docutils literal"><span class="pre">get_mapped_medium_level_il_instruction_index</span></code></a>(instr)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_medium_level_il_expr_index" title="binaryninja.lowlevelil.LowLevelILFunction.get_medium_level_il_expr_index"><code class="xref py py-obj docutils literal"><span class="pre">get_medium_level_il_expr_index</span></code></a>(expr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_medium_level_il_instruction_index" title="binaryninja.lowlevelil.LowLevelILFunction.get_medium_level_il_instruction_index"><code class="xref py py-obj docutils literal"><span class="pre">get_medium_level_il_instruction_index</span></code></a>(instr)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_non_ssa_instruction_index" title="binaryninja.lowlevelil.LowLevelILFunction.get_non_ssa_instruction_index"><code class="xref py py-obj docutils literal"><span class="pre">get_non_ssa_instruction_index</span></code></a>(instr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_flag_definition" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_flag_definition"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_flag_definition</span></code></a>(flag_ssa)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_flag_uses" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_flag_uses"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_flag_uses</span></code></a>(flag_ssa)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_flag_value" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_flag_value"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_flag_value</span></code></a>(flag_ssa)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_instruction_index" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_instruction_index"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_instruction_index</span></code></a>(instr)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_memory_definition" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_memory_definition"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_memory_definition</span></code></a>(index)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_memory_uses" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_memory_uses"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_memory_uses</span></code></a>(index)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_reg_definition" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_reg_definition"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_reg_definition</span></code></a>(reg_ssa)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_reg_uses" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_reg_uses"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_reg_uses</span></code></a>(reg_ssa)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.get_ssa_reg_value" title="binaryninja.lowlevelil.LowLevelILFunction.get_ssa_reg_value"><code class="xref py py-obj docutils literal"><span class="pre">get_ssa_reg_value</span></code></a>(reg_ssa)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.goto" title="binaryninja.lowlevelil.LowLevelILFunction.goto"><code class="xref py py-obj docutils literal"><span class="pre">goto</span></code></a>(label)</td>
+<td><code class="docutils literal"><span class="pre">goto</span></code> returns a goto expression which jumps to the provided LowLevelILLabel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.if_expr" title="binaryninja.lowlevelil.LowLevelILFunction.if_expr"><code class="xref py py-obj docutils literal"><span class="pre">if_expr</span></code></a>(operand,&nbsp;t,&nbsp;f)</td>
+<td><code class="docutils literal"><span class="pre">if_expr</span></code> returns the <code class="docutils literal"><span class="pre">if</span></code> expression which depending on condition <code class="docutils literal"><span class="pre">operand</span></code> jumps to the LowLevelILLabel</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.jump" title="binaryninja.lowlevelil.LowLevelILFunction.jump"><code class="xref py py-obj docutils literal"><span class="pre">jump</span></code></a>(dest)</td>
+<td><code class="docutils literal"><span class="pre">jump</span></code> returns an expression which jumps (branches) to the expression <code class="docutils literal"><span class="pre">dest</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.load" title="binaryninja.lowlevelil.LowLevelILFunction.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(size,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">laod</span></code> Reads <code class="docutils literal"><span class="pre">size</span></code> bytes from the expression <code class="docutils literal"><span class="pre">addr</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.logical_shift_right" title="binaryninja.lowlevelil.LowLevelILFunction.logical_shift_right"><code class="xref py py-obj docutils literal"><span class="pre">logical_shift_right</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">logical_shift_right</span></code> shifts logically right expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.low_part" title="binaryninja.lowlevelil.LowLevelILFunction.low_part"><code class="xref py py-obj docutils literal"><span class="pre">low_part</span></code></a>(size,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">low_part</span></code> truncates <code class="docutils literal"><span class="pre">value</span></code> to <code class="docutils literal"><span class="pre">size</span></code> bytes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mark_label" title="binaryninja.lowlevelil.LowLevelILFunction.mark_label"><code class="xref py py-obj docutils literal"><span class="pre">mark_label</span></code></a>(label)</td>
+<td><code class="docutils literal"><span class="pre">mark_label</span></code> assigns a LowLevelILLabel to the current IL address.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mod_double_prec_signed" title="binaryninja.lowlevelil.LowLevelILFunction.mod_double_prec_signed"><code class="xref py py-obj docutils literal"><span class="pre">mod_double_prec_signed</span></code></a>(size,&nbsp;hi,&nbsp;lo,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">mod_double_prec_signed</span></code> signed double precision modulus using expression <code class="docutils literal"><span class="pre">hi</span></code> and expression <code class="docutils literal"><span class="pre">lo</span></code> as a single</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mod_double_prec_unsigned" title="binaryninja.lowlevelil.LowLevelILFunction.mod_double_prec_unsigned"><code class="xref py py-obj docutils literal"><span class="pre">mod_double_prec_unsigned</span></code></a>(size,&nbsp;hi,&nbsp;lo,&nbsp;b[,&nbsp;...])</td>
+<td><code class="docutils literal"><span class="pre">mod_double_prec_unsigned</span></code> unsigned double precision modulus using expression <code class="docutils literal"><span class="pre">hi</span></code> and expression <code class="docutils literal"><span class="pre">lo</span></code> as</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mod_signed" title="binaryninja.lowlevelil.LowLevelILFunction.mod_signed"><code class="xref py py-obj docutils literal"><span class="pre">mod_signed</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">mod_signed</span></code> signed modulus expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mod_unsigned" title="binaryninja.lowlevelil.LowLevelILFunction.mod_unsigned"><code class="xref py py-obj docutils literal"><span class="pre">mod_unsigned</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">mod_unsigned</span></code> unsigned modulus expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mult" title="binaryninja.lowlevelil.LowLevelILFunction.mult"><code class="xref py py-obj docutils literal"><span class="pre">mult</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">mult</span></code> multiplies expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code> and returning an</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mult_double_prec_signed" title="binaryninja.lowlevelil.LowLevelILFunction.mult_double_prec_signed"><code class="xref py py-obj docutils literal"><span class="pre">mult_double_prec_signed</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">mult_double_prec_signed</span></code> multiplies signed with double precision expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mult_double_prec_unsigned" title="binaryninja.lowlevelil.LowLevelILFunction.mult_double_prec_unsigned"><code class="xref py py-obj docutils literal"><span class="pre">mult_double_prec_unsigned</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">mult_double_prec_unsigned</span></code> multiplies unsigned with double precision expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.neg_expr" title="binaryninja.lowlevelil.LowLevelILFunction.neg_expr"><code class="xref py py-obj docutils literal"><span class="pre">neg_expr</span></code></a>(size,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">neg_expr</span></code> two&#8217;s complement sign negation of expression <code class="docutils literal"><span class="pre">value</span></code> of size <code class="docutils literal"><span class="pre">size</span></code> potentially setting flags</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.no_ret" title="binaryninja.lowlevelil.LowLevelILFunction.no_ret"><code class="xref py py-obj docutils literal"><span class="pre">no_ret</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">no_ret</span></code> returns an expression halts disassembly</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.nop" title="binaryninja.lowlevelil.LowLevelILFunction.nop"><code class="xref py py-obj docutils literal"><span class="pre">nop</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">nop</span></code> no operation, this instruction does nothing</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.not_expr" title="binaryninja.lowlevelil.LowLevelILFunction.not_expr"><code class="xref py py-obj docutils literal"><span class="pre">not_expr</span></code></a>(size,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">not_expr</span></code> bitwise inverse of expression <code class="docutils literal"><span class="pre">value</span></code> of size <code class="docutils literal"><span class="pre">size</span></code> potentially setting flags</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.operand" title="binaryninja.lowlevelil.LowLevelILFunction.operand"><code class="xref py py-obj docutils literal"><span class="pre">operand</span></code></a>(n,&nbsp;expr)</td>
+<td><code class="docutils literal"><span class="pre">operand</span></code> sets the operand number of the expression <code class="docutils literal"><span class="pre">expr</span></code> and passes back <code class="docutils literal"><span class="pre">expr</span></code> without modification.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.or_expr" title="binaryninja.lowlevelil.LowLevelILFunction.or_expr"><code class="xref py py-obj docutils literal"><span class="pre">or_expr</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">or_expr</span></code> bitwise or&#8217;s expression <code class="docutils literal"><span class="pre">a</span></code> and expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.pop" title="binaryninja.lowlevelil.LowLevelILFunction.pop"><code class="xref py py-obj docutils literal"><span class="pre">pop</span></code></a>(size)</td>
+<td><code class="docutils literal"><span class="pre">pop</span></code> reads <code class="docutils literal"><span class="pre">size</span></code> bytes from the stack, adjusting the stack by <code class="docutils literal"><span class="pre">size</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.push" title="binaryninja.lowlevelil.LowLevelILFunction.push"><code class="xref py py-obj docutils literal"><span class="pre">push</span></code></a>(size,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">push</span></code> writes <code class="docutils literal"><span class="pre">size</span></code> bytes from expression <code class="docutils literal"><span class="pre">value</span></code> to the stack, adjusting the stack by <code class="docutils literal"><span class="pre">size</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.reg" title="binaryninja.lowlevelil.LowLevelILFunction.reg"><code class="xref py py-obj docutils literal"><span class="pre">reg</span></code></a>(size,&nbsp;reg)</td>
+<td><code class="docutils literal"><span class="pre">reg</span></code> returns a register of size <code class="docutils literal"><span class="pre">size</span></code> with name <code class="docutils literal"><span class="pre">name</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.ret" title="binaryninja.lowlevelil.LowLevelILFunction.ret"><code class="xref py py-obj docutils literal"><span class="pre">ret</span></code></a>(dest)</td>
+<td><code class="docutils literal"><span class="pre">ret</span></code> returns an expression which jumps (branches) to the expression <code class="docutils literal"><span class="pre">dest</span></code>. <code class="docutils literal"><span class="pre">ret</span></code> is a special alias for</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.rotate_left" title="binaryninja.lowlevelil.LowLevelILFunction.rotate_left"><code class="xref py py-obj docutils literal"><span class="pre">rotate_left</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">rotate_left</span></code> bitwise rotates left expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.rotate_left_carry" title="binaryninja.lowlevelil.LowLevelILFunction.rotate_left_carry"><code class="xref py py-obj docutils literal"><span class="pre">rotate_left_carry</span></code></a>(size,&nbsp;a,&nbsp;b,&nbsp;carry[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">rotate_left_carry</span></code> bitwise rotates left with carry expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.rotate_right" title="binaryninja.lowlevelil.LowLevelILFunction.rotate_right"><code class="xref py py-obj docutils literal"><span class="pre">rotate_right</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">rotate_right</span></code> bitwise rotates right expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.rotate_right_carry" title="binaryninja.lowlevelil.LowLevelILFunction.rotate_right_carry"><code class="xref py py-obj docutils literal"><span class="pre">rotate_right_carry</span></code></a>(size,&nbsp;a,&nbsp;b,&nbsp;carry[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">rotate_right_carry</span></code> bitwise rotates right with carry expression <code class="docutils literal"><span class="pre">a</span></code> by expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.set_current_address" title="binaryninja.lowlevelil.LowLevelILFunction.set_current_address"><code class="xref py py-obj docutils literal"><span class="pre">set_current_address</span></code></a>(value[,&nbsp;arch])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.set_flag" title="binaryninja.lowlevelil.LowLevelILFunction.set_flag"><code class="xref py py-obj docutils literal"><span class="pre">set_flag</span></code></a>(flag,&nbsp;value)</td>
+<td><code class="docutils literal"><span class="pre">set_flag</span></code> sets the flag <code class="docutils literal"><span class="pre">flag</span></code> to the LowLevelILExpr <code class="docutils literal"><span class="pre">value</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.set_indirect_branches" title="binaryninja.lowlevelil.LowLevelILFunction.set_indirect_branches"><code class="xref py py-obj docutils literal"><span class="pre">set_indirect_branches</span></code></a>(branches)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.set_reg" title="binaryninja.lowlevelil.LowLevelILFunction.set_reg"><code class="xref py py-obj docutils literal"><span class="pre">set_reg</span></code></a>(size,&nbsp;reg,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">set_reg</span></code> sets the register <code class="docutils literal"><span class="pre">reg</span></code> of size <code class="docutils literal"><span class="pre">size</span></code> to the expression <code class="docutils literal"><span class="pre">value</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.set_reg_split" title="binaryninja.lowlevelil.LowLevelILFunction.set_reg_split"><code class="xref py py-obj docutils literal"><span class="pre">set_reg_split</span></code></a>(size,&nbsp;hi,&nbsp;lo,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">set_reg_split</span></code> uses <code class="docutils literal"><span class="pre">hi</span></code> and <code class="docutils literal"><span class="pre">lo</span></code> as a single extended register setting <code class="docutils literal"><span class="pre">hi:lo</span></code> to the expression</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.shift_left" title="binaryninja.lowlevelil.LowLevelILFunction.shift_left"><code class="xref py py-obj docutils literal"><span class="pre">shift_left</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">shift_left</span></code> subtracts with borrow expression <code class="docutils literal"><span class="pre">b</span></code> from expression <code class="docutils literal"><span class="pre">a</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.sign_extend" title="binaryninja.lowlevelil.LowLevelILFunction.sign_extend"><code class="xref py py-obj docutils literal"><span class="pre">sign_extend</span></code></a>(size,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">sign_extend</span></code> two&#8217;s complement sign-extends the expression in <code class="docutils literal"><span class="pre">value</span></code> to <code class="docutils literal"><span class="pre">size</span></code> bytes</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.store" title="binaryninja.lowlevelil.LowLevelILFunction.store"><code class="xref py py-obj docutils literal"><span class="pre">store</span></code></a>(size,&nbsp;addr,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">store</span></code> Writes <code class="docutils literal"><span class="pre">size</span></code> bytes to expression <code class="docutils literal"><span class="pre">addr</span></code> read from expression <code class="docutils literal"><span class="pre">value</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.sub" title="binaryninja.lowlevelil.LowLevelILFunction.sub"><code class="xref py py-obj docutils literal"><span class="pre">sub</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">sub</span></code> subtracts expression <code class="docutils literal"><span class="pre">b</span></code> from expression <code class="docutils literal"><span class="pre">a</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code> and returning</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.sub_borrow" title="binaryninja.lowlevelil.LowLevelILFunction.sub_borrow"><code class="xref py py-obj docutils literal"><span class="pre">sub_borrow</span></code></a>(size,&nbsp;a,&nbsp;b,&nbsp;carry[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">sub_borrow</span></code> subtracts with borrow expression <code class="docutils literal"><span class="pre">b</span></code> from expression <code class="docutils literal"><span class="pre">a</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.system_call" title="binaryninja.lowlevelil.LowLevelILFunction.system_call"><code class="xref py py-obj docutils literal"><span class="pre">system_call</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">system_call</span></code> return a system call expression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.test_bit" title="binaryninja.lowlevelil.LowLevelILFunction.test_bit"><code class="xref py py-obj docutils literal"><span class="pre">test_bit</span></code></a>(size,&nbsp;a,&nbsp;b)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.trap" title="binaryninja.lowlevelil.LowLevelILFunction.trap"><code class="xref py py-obj docutils literal"><span class="pre">trap</span></code></a>(value)</td>
+<td><code class="docutils literal"><span class="pre">trap</span></code> returns a processor trap (interrupt) expression of the given integer <code class="docutils literal"><span class="pre">value</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.undefined" title="binaryninja.lowlevelil.LowLevelILFunction.undefined"><code class="xref py py-obj docutils literal"><span class="pre">undefined</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">undefined</span></code> returns the undefined expression. This should be used for instructions which perform functions but</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.unimplemented" title="binaryninja.lowlevelil.LowLevelILFunction.unimplemented"><code class="xref py py-obj docutils literal"><span class="pre">unimplemented</span></code></a>()</td>
+<td><code class="docutils literal"><span class="pre">unimplemented</span></code> returns the unimplemented expression. This should be used for all instructions which aren&#8217;t</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.unimplemented_memory_ref" title="binaryninja.lowlevelil.LowLevelILFunction.unimplemented_memory_ref"><code class="xref py py-obj docutils literal"><span class="pre">unimplemented_memory_ref</span></code></a>(size,&nbsp;addr)</td>
+<td><code class="docutils literal"><span class="pre">unimplemented_memory_ref</span></code> a memory reference to expression <code class="docutils literal"><span class="pre">addr</span></code> of size <code class="docutils literal"><span class="pre">size</span></code> with unimplemented operation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.xor_expr" title="binaryninja.lowlevelil.LowLevelILFunction.xor_expr"><code class="xref py py-obj docutils literal"><span class="pre">xor_expr</span></code></a>(size,&nbsp;a,&nbsp;b[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">xor_expr</span></code> xor&#8217;s expression <code class="docutils literal"><span class="pre">a</span></code> with expression <code class="docutils literal"><span class="pre">b</span></code> potentially setting flags <code class="docutils literal"><span class="pre">flags</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.zero_extend" title="binaryninja.lowlevelil.LowLevelILFunction.zero_extend"><code class="xref py py-obj docutils literal"><span class="pre">zero_extend</span></code></a>(size,&nbsp;value[,&nbsp;flags])</td>
+<td><code class="docutils literal"><span class="pre">zero_extend</span></code> zero-extends the expression in <code class="docutils literal"><span class="pre">value</span></code> to <code class="docutils literal"><span class="pre">size</span></code> bytes</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.basic_blocks" title="binaryninja.lowlevelil.LowLevelILFunction.basic_blocks"><code class="xref py py-obj docutils literal"><span class="pre">basic_blocks</span></code></a></td>
+<td>list of LowLevelILBasicBlock objects (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.current_address" title="binaryninja.lowlevelil.LowLevelILFunction.current_address"><code class="xref py py-obj docutils literal"><span class="pre">current_address</span></code></a></td>
+<td>Current IL Address (read/write)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.mapped_medium_level_il" title="binaryninja.lowlevelil.LowLevelILFunction.mapped_medium_level_il"><code class="xref py py-obj docutils literal"><span class="pre">mapped_medium_level_il</span></code></a></td>
+<td>Medium level IL with mappings between low level IL and medium level IL.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.medium_level_il" title="binaryninja.lowlevelil.LowLevelILFunction.medium_level_il"><code class="xref py py-obj docutils literal"><span class="pre">medium_level_il</span></code></a></td>
+<td>Medium level IL for this low level IL.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.non_ssa_form" title="binaryninja.lowlevelil.LowLevelILFunction.non_ssa_form"><code class="xref py py-obj docutils literal"><span class="pre">non_ssa_form</span></code></a></td>
+<td>Low level IL in non-SSA (default) form (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.ssa_form" title="binaryninja.lowlevelil.LowLevelILFunction.ssa_form"><code class="xref py py-obj docutils literal"><span class="pre">ssa_form</span></code></a></td>
+<td>Low level IL in SSA form (read-only)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.temp_flag_count" title="binaryninja.lowlevelil.LowLevelILFunction.temp_flag_count"><code class="xref py py-obj docutils literal"><span class="pre">temp_flag_count</span></code></a></td>
+<td>Number of temporary flags (read-only)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.lowlevelil-module.html#binaryninja.lowlevelil.LowLevelILFunction.temp_reg_count" title="binaryninja.lowlevelil.LowLevelILFunction.temp_reg_count"><code class="xref py py-obj docutils literal"><span class="pre">temp_reg_count</span></code></a></td>
+<td>Number of temporary registers (read-only)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.lowlevelil.LowLevelILInstruction.html" class="btn btn-neutral float-right" title="binaryninja.lowlevelil.LowLevelILInstruction" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.lowlevelil.LowLevelILExpr.html" class="btn btn-neutral" title="binaryninja.lowlevelil.LowLevelILExpr" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

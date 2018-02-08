@@ -1,0 +1,30 @@
+types module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.types.BoolWithConfidence
+   binaryninja.types.Enumeration
+   binaryninja.types.EnumerationMember
+   binaryninja.types.FunctionParameter
+   binaryninja.types.NamedTypeReference
+   binaryninja.types.QualifiedName
+   binaryninja.types.ReferenceTypeWithConfidence
+   binaryninja.types.RegisterSet
+   binaryninja.types.SizeWithConfidence
+   binaryninja.types.Structure
+   binaryninja.types.StructureMember
+   binaryninja.types.Symbol
+   binaryninja.types.Type
+   binaryninja.types.TypeParserResult
+   binaryninja.types.preprocess_source
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.types
+   :members:
+   :undoc-members:
+   :show-inheritance:

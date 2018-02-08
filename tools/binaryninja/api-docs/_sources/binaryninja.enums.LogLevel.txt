@@ -1,0 +1,26 @@
+binaryninja.enums.LogLevel
+==========================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: LogLevel
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LogLevel.AlertLog
+      ~LogLevel.DebugLog
+      ~LogLevel.ErrorLog
+      ~LogLevel.InfoLog
+      ~LogLevel.WarningLog
+   
+   

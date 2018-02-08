@@ -1,0 +1,16 @@
+metadata module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.metadata.Metadata
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:

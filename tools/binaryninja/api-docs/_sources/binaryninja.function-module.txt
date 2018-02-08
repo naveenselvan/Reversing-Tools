@@ -1,0 +1,35 @@
+function module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.function.AdvancedFunctionAnalysisDataRequestor
+   binaryninja.function.ConstantReference
+   binaryninja.function.DisassemblySettings
+   binaryninja.function.DisassemblyTextLine
+   binaryninja.function.Function
+   binaryninja.function.FunctionGraph
+   binaryninja.function.FunctionGraphBlock
+   binaryninja.function.FunctionGraphEdge
+   binaryninja.function.IndirectBranchInfo
+   binaryninja.function.InstructionBranch
+   binaryninja.function.InstructionInfo
+   binaryninja.function.InstructionTextToken
+   binaryninja.function.LookupTableEntry
+   binaryninja.function.ParameterVariables
+   binaryninja.function.PossibleValueSet
+   binaryninja.function.RegisterInfo
+   binaryninja.function.RegisterValue
+   binaryninja.function.StackVariableReference
+   binaryninja.function.ValueRange
+   binaryninja.function.Variable
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.function
+   :members:
+   :undoc-members:
+   :show-inheritance:

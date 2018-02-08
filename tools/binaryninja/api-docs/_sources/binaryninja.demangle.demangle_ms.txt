@@ -1,0 +1,6 @@
+binaryninja.demangle.demangle_ms
+================================
+
+.. currentmodule:: binaryninja.demangle
+
+.. autofunction:: demangle_ms

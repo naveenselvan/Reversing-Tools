@@ -1,0 +1,31 @@
+binaryninja.enums.HighlightStandardColor
+========================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: HighlightStandardColor
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~HighlightStandardColor.BlackHighlightColor
+      ~HighlightStandardColor.BlueHighlightColor
+      ~HighlightStandardColor.CyanHighlightColor
+      ~HighlightStandardColor.GreenHighlightColor
+      ~HighlightStandardColor.MagentaHighlightColor
+      ~HighlightStandardColor.NoHighlightColor
+      ~HighlightStandardColor.OrangeHighlightColor
+      ~HighlightStandardColor.RedHighlightColor
+      ~HighlightStandardColor.WhiteHighlightColor
+      ~HighlightStandardColor.YellowHighlightColor
+   
+   

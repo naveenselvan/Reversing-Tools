@@ -1,0 +1,22 @@
+binaryninja.binaryview.StringReference
+======================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: StringReference
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~StringReference.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,49 @@
+binaryninja.lowlevelil.LowLevelILInstruction
+============================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autoclass:: LowLevelILInstruction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LowLevelILInstruction.__init__
+      ~LowLevelILInstruction.get_flag_value
+      ~LowLevelILInstruction.get_flag_value_after
+      ~LowLevelILInstruction.get_possible_flag_values
+      ~LowLevelILInstruction.get_possible_flag_values_after
+      ~LowLevelILInstruction.get_possible_reg_values
+      ~LowLevelILInstruction.get_possible_reg_values_after
+      ~LowLevelILInstruction.get_possible_stack_contents
+      ~LowLevelILInstruction.get_possible_stack_contents_after
+      ~LowLevelILInstruction.get_reg_value
+      ~LowLevelILInstruction.get_reg_value_after
+      ~LowLevelILInstruction.get_stack_contents
+      ~LowLevelILInstruction.get_stack_contents_after
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LowLevelILInstruction.ILOperations
+      ~LowLevelILInstruction.mapped_medium_level_il
+      ~LowLevelILInstruction.medium_level_il
+      ~LowLevelILInstruction.non_ssa_form
+      ~LowLevelILInstruction.possible_values
+      ~LowLevelILInstruction.postfix_operands
+      ~LowLevelILInstruction.prefix_operands
+      ~LowLevelILInstruction.ssa_form
+      ~LowLevelILInstruction.tokens
+      ~LowLevelILInstruction.value
+   
+   

@@ -1,0 +1,17 @@
+basicblock module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.basicblock.BasicBlock
+   binaryninja.basicblock.BasicBlockEdge
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.basicblock
+   :members:
+   :undoc-members:
+   :show-inheritance:

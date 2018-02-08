@@ -1,0 +1,1441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>function module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.function.AdvancedFunctionAnalysisDataRequestor" href="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.html"/>
+        <link rel="prev" title="binaryninja.filemetadata.NavigationHandler" href="binaryninja.filemetadata.NavigationHandler.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.html">binaryninja.function.AdvancedFunctionAnalysisDataRequestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.ConstantReference.html">binaryninja.function.ConstantReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.DisassemblySettings.html">binaryninja.function.DisassemblySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.DisassemblyTextLine.html">binaryninja.function.DisassemblyTextLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.Function.html">binaryninja.function.Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.FunctionGraph.html">binaryninja.function.FunctionGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.FunctionGraphBlock.html">binaryninja.function.FunctionGraphBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.FunctionGraphEdge.html">binaryninja.function.FunctionGraphEdge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.IndirectBranchInfo.html">binaryninja.function.IndirectBranchInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.InstructionBranch.html">binaryninja.function.InstructionBranch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.InstructionInfo.html">binaryninja.function.InstructionInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.InstructionTextToken.html">binaryninja.function.InstructionTextToken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.LookupTableEntry.html">binaryninja.function.LookupTableEntry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.ParameterVariables.html">binaryninja.function.ParameterVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.PossibleValueSet.html">binaryninja.function.PossibleValueSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.RegisterInfo.html">binaryninja.function.RegisterInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.RegisterValue.html">binaryninja.function.RegisterValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.StackVariableReference.html">binaryninja.function.StackVariableReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.ValueRange.html">binaryninja.function.ValueRange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.function.Variable.html">binaryninja.function.Variable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>function module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.function-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="function-module">
+<h1>function module<a class="headerlink" href="#function-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.html#binaryninja.function.AdvancedFunctionAnalysisDataRequestor" title="binaryninja.function.AdvancedFunctionAnalysisDataRequestor"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.AdvancedFunctionAnalysisDataRequestor</span></code></a>([func])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.ConstantReference.html#binaryninja.function.ConstantReference" title="binaryninja.function.ConstantReference"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.ConstantReference</span></code></a>(val,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.DisassemblySettings.html#binaryninja.function.DisassemblySettings" title="binaryninja.function.DisassemblySettings"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.DisassemblySettings</span></code></a>([...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.DisassemblyTextLine.html#binaryninja.function.DisassemblyTextLine" title="binaryninja.function.DisassemblyTextLine"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.DisassemblyTextLine</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.Function.html#binaryninja.function.Function" title="binaryninja.function.Function"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.Function</span></code></a>(view,&nbsp;handle)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.FunctionGraph.html#binaryninja.function.FunctionGraph" title="binaryninja.function.FunctionGraph"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.FunctionGraph</span></code></a>(view,&nbsp;handle)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.FunctionGraphBlock.html#binaryninja.function.FunctionGraphBlock" title="binaryninja.function.FunctionGraphBlock"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.FunctionGraphBlock</span></code></a>(handle)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.FunctionGraphEdge.html#binaryninja.function.FunctionGraphEdge" title="binaryninja.function.FunctionGraphEdge"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.FunctionGraphEdge</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.IndirectBranchInfo.html#binaryninja.function.IndirectBranchInfo" title="binaryninja.function.IndirectBranchInfo"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.IndirectBranchInfo</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.InstructionBranch.html#binaryninja.function.InstructionBranch" title="binaryninja.function.InstructionBranch"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.InstructionBranch</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.InstructionInfo.html#binaryninja.function.InstructionInfo" title="binaryninja.function.InstructionInfo"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.InstructionInfo</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.InstructionTextToken.html#binaryninja.function.InstructionTextToken" title="binaryninja.function.InstructionTextToken"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.InstructionTextToken</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">class</span> <span class="pre">InstructionTextToken</span></code> is used to tell the core about the various components in the disassembly views.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.LookupTableEntry.html#binaryninja.function.LookupTableEntry" title="binaryninja.function.LookupTableEntry"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.LookupTableEntry</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.ParameterVariables.html#binaryninja.function.ParameterVariables" title="binaryninja.function.ParameterVariables"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.ParameterVariables</span></code></a>(var_list)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.PossibleValueSet.html#binaryninja.function.PossibleValueSet" title="binaryninja.function.PossibleValueSet"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.PossibleValueSet</span></code></a>(arch,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.RegisterInfo.html#binaryninja.function.RegisterInfo" title="binaryninja.function.RegisterInfo"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.RegisterInfo</span></code></a>(...[,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.RegisterValue.html#binaryninja.function.RegisterValue" title="binaryninja.function.RegisterValue"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.RegisterValue</span></code></a>([arch,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.StackVariableReference.html#binaryninja.function.StackVariableReference" title="binaryninja.function.StackVariableReference"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.StackVariableReference</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.function.ValueRange.html#binaryninja.function.ValueRange" title="binaryninja.function.ValueRange"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.ValueRange</span></code></a>(start,&nbsp;end,&nbsp;step)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.function.Variable.html#binaryninja.function.Variable" title="binaryninja.function.Variable"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.function.Variable</span></code></a>(func,&nbsp;...[,&nbsp;...])</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.function"></span><dl class="class">
+<dt id="binaryninja.function.AdvancedFunctionAnalysisDataRequestor">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">AdvancedFunctionAnalysisDataRequestor</code><span class="sig-paren">(</span><em>func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#AdvancedFunctionAnalysisDataRequestor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.AdvancedFunctionAnalysisDataRequestor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#AdvancedFunctionAnalysisDataRequestor.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.AdvancedFunctionAnalysisDataRequestor.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.function">
+<code class="descname">function</code><a class="headerlink" href="#binaryninja.function.AdvancedFunctionAnalysisDataRequestor.function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.ConstantReference">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">ConstantReference</code><span class="sig-paren">(</span><em>val</em>, <em>size</em>, <em>ptr</em>, <em>intermediate</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#ConstantReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.ConstantReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.DisassemblySettings">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">DisassemblySettings</code><span class="sig-paren">(</span><em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#DisassemblySettings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.DisassemblySettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.function.DisassemblySettings.is_option_set">
+<code class="descname">is_option_set</code><span class="sig-paren">(</span><em>option</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#DisassemblySettings.is_option_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.DisassemblySettings.is_option_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.DisassemblySettings.max_symbol_width">
+<code class="descname">max_symbol_width</code><a class="headerlink" href="#binaryninja.function.DisassemblySettings.max_symbol_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.DisassemblySettings.set_option">
+<code class="descname">set_option</code><span class="sig-paren">(</span><em>option</em>, <em>state=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#DisassemblySettings.set_option"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.DisassemblySettings.set_option" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.DisassemblySettings.width">
+<code class="descname">width</code><a class="headerlink" href="#binaryninja.function.DisassemblySettings.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.DisassemblyTextLine">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">DisassemblyTextLine</code><span class="sig-paren">(</span><em>addr</em>, <em>tokens</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#DisassemblyTextLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.DisassemblyTextLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.Function">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">Function</code><span class="sig-paren">(</span><em>view</em>, <em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="binaryninja.function.Function.analysis_performance_info">
+<code class="descname">analysis_performance_info</code><a class="headerlink" href="#binaryninja.function.Function.analysis_performance_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.apply_auto_discovered_type">
+<code class="descname">apply_auto_discovered_type</code><span class="sig-paren">(</span><em>func_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.apply_auto_discovered_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.apply_auto_discovered_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.apply_imported_types">
+<code class="descname">apply_imported_types</code><span class="sig-paren">(</span><em>sym</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.apply_imported_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.apply_imported_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.arch">
+<code class="descname">arch</code><a class="headerlink" href="#binaryninja.function.Function.arch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function architecture (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.auto">
+<code class="descname">auto</code><a class="headerlink" href="#binaryninja.function.Function.auto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether function was automatically discovered (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.basic_blocks">
+<code class="descname">basic_blocks</code><a class="headerlink" href="#binaryninja.function.Function.basic_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of basic blocks (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.calling_convention">
+<code class="descname">calling_convention</code><a class="headerlink" href="#binaryninja.function.Function.calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling convention used by the function</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.can_return">
+<code class="descname">can_return</code><a class="headerlink" href="#binaryninja.function.Function.can_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether function can return</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.clobbered_regs">
+<code class="descname">clobbered_regs</code><a class="headerlink" href="#binaryninja.function.Function.clobbered_regs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers that are modified by this function</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.comment">
+<code class="descname">comment</code><a class="headerlink" href="#binaryninja.function.Function.comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the comment for the current function</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.comments">
+<code class="descname">comments</code><a class="headerlink" href="#binaryninja.function.Function.comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of comments (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.create_auto_stack_var">
+<code class="descname">create_auto_stack_var</code><span class="sig-paren">(</span><em>offset</em>, <em>var_type</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.create_auto_stack_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.create_auto_stack_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.create_auto_var">
+<code class="descname">create_auto_var</code><span class="sig-paren">(</span><em>var</em>, <em>var_type</em>, <em>name</em>, <em>ignore_disjoint_uses=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.create_auto_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.create_auto_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.create_graph">
+<code class="descname">create_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.create_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.create_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.create_user_stack_var">
+<code class="descname">create_user_stack_var</code><span class="sig-paren">(</span><em>offset</em>, <em>var_type</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.create_user_stack_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.create_user_stack_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.create_user_var">
+<code class="descname">create_user_var</code><span class="sig-paren">(</span><em>var</em>, <em>var_type</em>, <em>name</em>, <em>ignore_disjoint_uses=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.create_user_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.create_user_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.delete_auto_stack_var">
+<code class="descname">delete_auto_stack_var</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.delete_auto_stack_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.delete_auto_stack_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.delete_auto_var">
+<code class="descname">delete_auto_var</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.delete_auto_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.delete_auto_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.delete_user_stack_var">
+<code class="descname">delete_user_stack_var</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.delete_user_stack_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.delete_user_stack_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.delete_user_var">
+<code class="descname">delete_user_var</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.delete_user_var"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.delete_user_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.explicitly_defined_type">
+<code class="descname">explicitly_defined_type</code><a class="headerlink" href="#binaryninja.function.Function.explicitly_defined_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether function has explicitly defined types (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.function_type">
+<code class="descname">function_type</code><a class="headerlink" href="#binaryninja.function.Function.function_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function type object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_basic_block_at">
+<code class="descname">get_basic_block_at</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_basic_block_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_basic_block_at" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_basic_block_at</span></code> returns the BasicBlock of the optionally specified Architecture <code class="docutils literal"><span class="pre">arch</span></code> at the given
+address <code class="docutils literal"><span class="pre">addr</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; Address of the BasicBlock to retrieve.</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture of the basic block if different from the Function&#8217;s self.arch</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_function</span><span class="o">.</span><span class="n">get_basic_block_at</span><span class="p">(</span><span class="n">current_function</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+<span class="go">&lt;block: x86_64@0x100000f30-0x100000f50&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_block_annotations">
+<code class="descname">get_block_annotations</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_block_annotations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_block_annotations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_comment_at">
+<code class="descname">get_comment_at</code><span class="sig-paren">(</span><em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_comment_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_comment_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_constants_referenced_by">
+<code class="descname">get_constants_referenced_by</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_constants_referenced_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_constants_referenced_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_flags_read_by_lifted_il_instruction">
+<code class="descname">get_flags_read_by_lifted_il_instruction</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_flags_read_by_lifted_il_instruction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_flags_read_by_lifted_il_instruction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_flags_written_by_lifted_il_instruction">
+<code class="descname">get_flags_written_by_lifted_il_instruction</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_flags_written_by_lifted_il_instruction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_flags_written_by_lifted_il_instruction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_indirect_branches_at">
+<code class="descname">get_indirect_branches_at</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_indirect_branches_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_indirect_branches_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_instr_highlight">
+<code class="descname">get_instr_highlight</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_instr_highlight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_instr_highlight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_function</span><span class="o">.</span><span class="n">set_user_instr_highlight</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="mh">0xff</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mh">0xff</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_function</span><span class="o">.</span><span class="n">get_instr_highlight</span><span class="p">(</span><span class="n">here</span><span class="p">)</span>
+<span class="go">&lt;color: #ff00ff&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_int_display_type">
+<code class="descname">get_int_display_type</code><span class="sig-paren">(</span><em>instr_addr</em>, <em>value</em>, <em>operand</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_int_display_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_int_display_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_lifted_il_at">
+<code class="descname">get_lifted_il_at</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_lifted_il_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_lifted_il_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_lifted_il_flag_definitions_for_use">
+<code class="descname">get_lifted_il_flag_definitions_for_use</code><span class="sig-paren">(</span><em>i</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_lifted_il_flag_definitions_for_use"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_lifted_il_flag_definitions_for_use" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_lifted_il_flag_uses_for_definition">
+<code class="descname">get_lifted_il_flag_uses_for_definition</code><span class="sig-paren">(</span><em>i</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_lifted_il_flag_uses_for_definition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_lifted_il_flag_uses_for_definition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_low_level_il_at">
+<code class="descname">get_low_level_il_at</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_low_level_il_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_low_level_il_at" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_low_level_il_at</span></code> gets the LowLevelILInstruction corresponding to the given virtual address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the function to be queried</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture for the given function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.lowlevelil.LowLevelILInstruction.html#binaryninja.lowlevelil.LowLevelILInstruction" title="binaryninja.lowlevelil.LowLevelILInstruction">LowLevelILInstruction</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">bv</span><span class="o">.</span><span class="n">functions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="o">.</span><span class="n">get_low_level_il_at</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+<span class="go">&lt;il: push(rbp)&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_low_level_il_exits_at">
+<code class="descname">get_low_level_il_exits_at</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_low_level_il_exits_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_low_level_il_exits_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_parameter_at">
+<code class="descname">get_parameter_at</code><span class="sig-paren">(</span><em>addr</em>, <em>func_type</em>, <em>i</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_parameter_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_parameter_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_parameter_at_low_level_il_instruction">
+<code class="descname">get_parameter_at_low_level_il_instruction</code><span class="sig-paren">(</span><em>instr</em>, <em>func_type</em>, <em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_parameter_at_low_level_il_instruction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_parameter_at_low_level_il_instruction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_reg_value_after">
+<code class="descname">get_reg_value_after</code><span class="sig-paren">(</span><em>addr</em>, <em>reg</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_reg_value_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_reg_value_after" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_reg_value_after</span></code> gets the value instruction address corresponding to the given virtual address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the instruction to query</li>
+<li><strong>reg</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; string value of native register to query</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture for the given function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.function.RegisterValue.html#binaryninja.function.RegisterValue" title="binaryninja.function.RegisterValue">function.RegisterValue</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="o">.</span><span class="n">get_reg_value_after</span><span class="p">(</span><span class="mh">0x400dbe</span><span class="p">,</span> <span class="s1">&#39;rdi&#39;</span><span class="p">)</span>
+<span class="go">&lt;undetermined&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_reg_value_at">
+<code class="descname">get_reg_value_at</code><span class="sig-paren">(</span><em>addr</em>, <em>reg</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_reg_value_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_reg_value_at" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_reg_value_at</span></code> gets the value the provided string register address corresponding to the given virtual address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the instruction to query</li>
+<li><strong>reg</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; string value of native register to query</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture for the given function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="binaryninja.function.RegisterValue.html#binaryninja.function.RegisterValue" title="binaryninja.function.RegisterValue">function.RegisterValue</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="o">.</span><span class="n">get_reg_value_at</span><span class="p">(</span><span class="mh">0x400dbe</span><span class="p">,</span> <span class="s1">&#39;rdi&#39;</span><span class="p">)</span>
+<span class="go">&lt;const 0x2&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_reg_value_at_exit">
+<code class="descname">get_reg_value_at_exit</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_reg_value_at_exit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_reg_value_at_exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_regs_read_by">
+<code class="descname">get_regs_read_by</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_regs_read_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_regs_read_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_regs_written_by">
+<code class="descname">get_regs_written_by</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_regs_written_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_regs_written_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_stack_contents_after">
+<code class="descname">get_stack_contents_after</code><span class="sig-paren">(</span><em>addr</em>, <em>offset</em>, <em>size</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_stack_contents_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_stack_contents_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_stack_contents_at">
+<code class="descname">get_stack_contents_at</code><span class="sig-paren">(</span><em>addr</em>, <em>offset</em>, <em>size</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_stack_contents_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_stack_contents_at" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">get_stack_contents_at</span></code> returns the RegisterValue for the item on the stack in the current function at the
+given virtual address <code class="docutils literal"><span class="pre">addr</span></code>, stack offset <code class="docutils literal"><span class="pre">offset</span></code> and size of <code class="docutils literal"><span class="pre">size</span></code>. Optionally specifying the architecture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the instruction to query</li>
+<li><strong>offset</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; stack offset base of stack</li>
+<li><strong>size</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; size of memory to query</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture for the given function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.function.RegisterValue.html#binaryninja.function.RegisterValue" title="binaryninja.function.RegisterValue">function.RegisterValue</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Stack base is zero on entry into the function unless the architecture places the return address on the</p>
+</div>
+<p>stack as in (x86/x86_64) where the stack base will start at address_size</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="o">.</span><span class="n">get_stack_contents_at</span><span class="p">(</span><span class="mh">0x400fad</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">&lt;range: 0x8 to 0xffffffff&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_stack_var_at_frame_offset">
+<code class="descname">get_stack_var_at_frame_offset</code><span class="sig-paren">(</span><em>offset</em>, <em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_stack_var_at_frame_offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_stack_var_at_frame_offset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_stack_vars_referenced_by">
+<code class="descname">get_stack_vars_referenced_by</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_stack_vars_referenced_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_stack_vars_referenced_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.get_type_tokens">
+<code class="descname">get_type_tokens</code><span class="sig-paren">(</span><em>settings=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.get_type_tokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.get_type_tokens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.global_pointer_value">
+<code class="descname">global_pointer_value</code><a class="headerlink" href="#binaryninja.function.Function.global_pointer_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discovered value of the global pointer register, if the function uses one (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.has_variable_arguments">
+<code class="descname">has_variable_arguments</code><a class="headerlink" href="#binaryninja.function.Function.has_variable_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the function takes a variable number of arguments</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.indirect_branches">
+<code class="descname">indirect_branches</code><a class="headerlink" href="#binaryninja.function.Function.indirect_branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of indirect branches (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.lifted_il">
+<code class="descname">lifted_il</code><a class="headerlink" href="#binaryninja.function.Function.lifted_il" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns LowLevelILFunction used to represent lifted IL (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.low_level_il">
+<code class="descname">low_level_il</code><a class="headerlink" href="#binaryninja.function.Function.low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns LowLevelILFunction used to represent Function low level IL (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.mark_recent_use">
+<code class="descname">mark_recent_use</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.mark_recent_use"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.mark_recent_use" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.medium_level_il">
+<code class="descname">medium_level_il</code><a class="headerlink" href="#binaryninja.function.Function.medium_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function medium level IL (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.name">
+<code class="descname">name</code><a class="headerlink" href="#binaryninja.function.Function.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Symbol name for the function</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.needs_update">
+<code class="descname">needs_update</code><a class="headerlink" href="#binaryninja.function.Function.needs_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the function has analysis that needs to be updated (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.parameter_vars">
+<code class="descname">parameter_vars</code><a class="headerlink" href="#binaryninja.function.Function.parameter_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of variables for the incoming function parameters</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.platform">
+<code class="descname">platform</code><a class="headerlink" href="#binaryninja.function.Function.platform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function platform (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.reanalyze">
+<code class="descname">reanalyze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.reanalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.reanalyze" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">reanalyze</span></code> causes this functions to be reanalyzed. This function does not wait for the analysis to finish.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.release_advanced_analysis_data">
+<code class="descname">release_advanced_analysis_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.release_advanced_analysis_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.release_advanced_analysis_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.request_advanced_analysis_data">
+<code class="descname">request_advanced_analysis_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.request_advanced_analysis_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.request_advanced_analysis_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.return_type">
+<code class="descname">return_type</code><a class="headerlink" href="#binaryninja.function.Function.return_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return type of the function</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.session_data">
+<code class="descname">session_data</code><a class="headerlink" href="#binaryninja.function.Function.session_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary object where plugins can store arbitrary data associated with the function</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_calling_convention">
+<code class="descname">set_auto_calling_convention</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_calling_convention"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_calling_convention" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_can_return">
+<code class="descname">set_auto_can_return</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_can_return"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_can_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_clobbered_regs">
+<code class="descname">set_auto_clobbered_regs</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_clobbered_regs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_clobbered_regs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_has_variable_arguments">
+<code class="descname">set_auto_has_variable_arguments</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_has_variable_arguments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_has_variable_arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_indirect_branches">
+<code class="descname">set_auto_indirect_branches</code><span class="sig-paren">(</span><em>source</em>, <em>branches</em>, <em>source_arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_indirect_branches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_indirect_branches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_instr_highlight">
+<code class="descname">set_auto_instr_highlight</code><span class="sig-paren">(</span><em>addr</em>, <em>color</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_instr_highlight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_instr_highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">set_auto_instr_highlight</span></code> highlights the instruction at the specified address with the supplied color</p>
+<p>..warning:: Use only in analysis plugins. Do not use in regular plugins, as colors won&#8217;t be saved to the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the instruction to be highlighted</li>
+<li><strong>or highlight.HighlightColor color</strong> (<a class="reference internal" href="binaryninja.enums.HighlightStandardColor.html#binaryninja.enums.HighlightStandardColor" title="binaryninja.enums.HighlightStandardColor"><em>HighlightStandardColor</em></a>) &#8211; Color value to use for highlighting</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture of the instruction if different from self.arch</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_parameter_vars">
+<code class="descname">set_auto_parameter_vars</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_parameter_vars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_parameter_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_return_type">
+<code class="descname">set_auto_return_type</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_return_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_return_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_stack_adjustment">
+<code class="descname">set_auto_stack_adjustment</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_stack_adjustment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_stack_adjustment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_auto_type">
+<code class="descname">set_auto_type</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_auto_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_auto_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_comment">
+<code class="descname">set_comment</code><span class="sig-paren">(</span><em>addr</em>, <em>comment</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated use set_comment_at instead</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_comment_at">
+<code class="descname">set_comment_at</code><span class="sig-paren">(</span><em>addr</em>, <em>comment</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_comment_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_comment_at" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">set_comment_at</span></code> sets a comment for the current function at the address specified</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>int</strong> (<em>addr</em>) &#8211; virtual address within the current function to apply the comment to</li>
+<li><strong>str</strong> (<a class="reference internal" href="#binaryninja.function.Function.comment" title="binaryninja.function.Function.comment"><em>comment</em></a>) &#8211; string comment to apply</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_function</span><span class="o">.</span><span class="n">set_comment_at</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.function.Function.set_default_session_data">
+<em class="property">classmethod </em><code class="descname">set_default_session_data</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_default_session_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_default_session_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_int_display_type">
+<code class="descname">set_int_display_type</code><span class="sig-paren">(</span><em>instr_addr</em>, <em>value</em>, <em>operand</em>, <em>display_type</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_int_display_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_int_display_type" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instr_addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>value</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>operand</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>display_type</strong> (<a class="reference internal" href="binaryninja.enums.IntegerDisplayType.html#binaryninja.enums.IntegerDisplayType" title="binaryninja.enums.IntegerDisplayType"><em>enums.IntegerDisplayType</em></a>) &#8211; </li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_user_indirect_branches">
+<code class="descname">set_user_indirect_branches</code><span class="sig-paren">(</span><em>source</em>, <em>branches</em>, <em>source_arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_user_indirect_branches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_user_indirect_branches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_user_instr_highlight">
+<code class="descname">set_user_instr_highlight</code><span class="sig-paren">(</span><em>addr</em>, <em>color</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_user_instr_highlight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_user_instr_highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">set_user_instr_highlight</span></code> highlights the instruction at the specified address with the supplied color</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>addr</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; virtual address of the instruction to be highlighted</li>
+<li><strong>or highlight.HighlightColor color</strong> (<a class="reference internal" href="binaryninja.enums.HighlightStandardColor.html#binaryninja.enums.HighlightStandardColor" title="binaryninja.enums.HighlightStandardColor"><em>HighlightStandardColor</em></a>) &#8211; Color value to use for highlighting</li>
+<li><strong>arch</strong> (<a class="reference internal" href="binaryninja.architecture.Architecture.html#binaryninja.architecture.Architecture" title="binaryninja.architecture.Architecture"><em>Architecture</em></a>) &#8211; (optional) Architecture of the instruction if different from self.arch</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_function</span><span class="o">.</span><span class="n">set_user_instr_highlight</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">HighlightStandardColor</span><span class="o">.</span><span class="n">BlueHighlightColor</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_function</span><span class="o">.</span><span class="n">set_user_instr_highlight</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">highlight</span><span class="o">.</span><span class="n">HighlightColor</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="mh">0xff</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mh">0xff</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.Function.set_user_type">
+<code class="descname">set_user_type</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Function.set_user_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Function.set_user_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.stack_adjustment">
+<code class="descname">stack_adjustment</code><a class="headerlink" href="#binaryninja.function.Function.stack_adjustment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bytes removed from the stack after return</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.stack_layout">
+<code class="descname">stack_layout</code><a class="headerlink" href="#binaryninja.function.Function.stack_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of function stack variables (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.start">
+<code class="descname">start</code><a class="headerlink" href="#binaryninja.function.Function.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function start (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.symbol">
+<code class="descname">symbol</code><a class="headerlink" href="#binaryninja.function.Function.symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function symbol(read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.type_tokens">
+<code class="descname">type_tokens</code><a class="headerlink" href="#binaryninja.function.Function.type_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text tokens for this function&#8217;s prototype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.vars">
+<code class="descname">vars</code><a class="headerlink" href="#binaryninja.function.Function.vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of function variables (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.Function.view">
+<code class="descname">view</code><a class="headerlink" href="#binaryninja.function.Function.view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function view (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.FunctionGraph">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">FunctionGraph</code><span class="sig-paren">(</span><em>view</em>, <em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.abort">
+<code class="descname">abort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.abort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.abort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.blocks">
+<code class="descname">blocks</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of basic blocks in function (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.complete">
+<code class="descname">complete</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether function graph layout is complete (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.function">
+<code class="descname">function</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for a function graph (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.get_blocks_in_region">
+<code class="descname">get_blocks_in_region</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.get_blocks_in_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.get_blocks_in_region" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.height">
+<code class="descname">height</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph height (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.horizontal_block_margin">
+<code class="descname">horizontal_block_margin</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.horizontal_block_margin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.is_option_set">
+<code class="descname">is_option_set</code><span class="sig-paren">(</span><em>option</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.is_option_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.is_option_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.layout">
+<code class="descname">layout</code><span class="sig-paren">(</span><em>graph_type=&lt;FunctionGraphType.NormalFunctionGraph: 0&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.layout_and_wait">
+<code class="descname">layout_and_wait</code><span class="sig-paren">(</span><em>graph_type=&lt;FunctionGraphType.NormalFunctionGraph: 0&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.layout_and_wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.layout_and_wait" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.on_complete">
+<code class="descname">on_complete</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.on_complete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.on_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.function.FunctionGraph.set_option">
+<code class="descname">set_option</code><span class="sig-paren">(</span><em>option</em>, <em>state=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraph.set_option"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraph.set_option" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.settings">
+<code class="descname">settings</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.type">
+<code class="descname">type</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph type (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.vertical_block_margin">
+<code class="descname">vertical_block_margin</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.vertical_block_margin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraph.width">
+<code class="descname">width</code><a class="headerlink" href="#binaryninja.function.FunctionGraph.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph width (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.FunctionGraphBlock">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">FunctionGraphBlock</code><span class="sig-paren">(</span><em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraphBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.arch">
+<code class="descname">arch</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.arch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block architecture (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.basic_block">
+<code class="descname">basic_block</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.basic_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic block associated with this part of the function graph (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.end">
+<code class="descname">end</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block end (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.height">
+<code class="descname">height</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block height (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.lines">
+<code class="descname">lines</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block list of lines (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.outgoing_edges">
+<code class="descname">outgoing_edges</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.outgoing_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block list of outgoing edges (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.start">
+<code class="descname">start</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block start (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.width">
+<code class="descname">width</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block width (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.x">
+<code class="descname">x</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block X (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.function.FunctionGraphBlock.y">
+<code class="descname">y</code><a class="headerlink" href="#binaryninja.function.FunctionGraphBlock.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function graph block Y (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.FunctionGraphEdge">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">FunctionGraphEdge</code><span class="sig-paren">(</span><em>branch_type</em>, <em>source</em>, <em>target</em>, <em>points</em>, <em>back_edge</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#FunctionGraphEdge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.FunctionGraphEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.IndirectBranchInfo">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">IndirectBranchInfo</code><span class="sig-paren">(</span><em>source_arch</em>, <em>source_addr</em>, <em>dest_arch</em>, <em>dest_addr</em>, <em>auto_defined</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#IndirectBranchInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.IndirectBranchInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.InstructionBranch">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">InstructionBranch</code><span class="sig-paren">(</span><em>branch_type</em>, <em>target=0</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#InstructionBranch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.InstructionBranch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.InstructionInfo">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">InstructionInfo</code><a class="reference internal" href="_modules/binaryninja/function.html#InstructionInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.InstructionInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.function.InstructionInfo.add_branch">
+<code class="descname">add_branch</code><span class="sig-paren">(</span><em>branch_type</em>, <em>target=0</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#InstructionInfo.add_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.InstructionInfo.add_branch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.InstructionTextToken">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">InstructionTextToken</code><span class="sig-paren">(</span><em>token_type</em>, <em>text</em>, <em>value=0</em>, <em>size=0</em>, <em>operand=4294967295</em>, <em>context=&lt;InstructionTextTokenContext.NoTokenContext: 0&gt;</em>, <em>address=0</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#InstructionTextToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.InstructionTextToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">InstructionTextToken</span></code> is used to tell the core about the various components in the disassembly views.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">InstructionTextTokenType</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TextToken</td>
+<td>Text that doesn&#8217;t fit into the other tokens</td>
+</tr>
+<tr class="row-odd"><td>InstructionToken</td>
+<td>The instruction mnemonic</td>
+</tr>
+<tr class="row-even"><td>OperandSeparatorToken</td>
+<td>The comma or whatever else separates tokens</td>
+</tr>
+<tr class="row-odd"><td>RegisterToken</td>
+<td>Registers</td>
+</tr>
+<tr class="row-even"><td>IntegerToken</td>
+<td>Integers</td>
+</tr>
+<tr class="row-odd"><td>PossibleAddressToken</td>
+<td>Integers that are likely addresses</td>
+</tr>
+<tr class="row-even"><td>BeginMemoryOperandToken</td>
+<td>The start of memory operand</td>
+</tr>
+<tr class="row-odd"><td>EndMemoryOperandToken</td>
+<td>The end of a memory operand</td>
+</tr>
+<tr class="row-even"><td>FloatingPointToken</td>
+<td>Floating point number</td>
+</tr>
+<tr class="row-odd"><td>AnnotationToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>CodeRelativeAddressToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>StackVariableTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>DataVariableTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>FunctionReturnTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>FunctionAttributeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>ArgumentTypeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>ArgumentNameToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>HexDumpByteValueToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>HexDumpSkippedByteToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>HexDumpInvalidByteToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>HexDumpTextToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>OpcodeToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>StringToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>CharacterConstantToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>CodeSymbolToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>DataSymbolToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>StackVariableToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-odd"><td>ImportToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+<tr class="row-even"><td>AddressDisplayToken</td>
+<td><strong>For internal use only</strong></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.LookupTableEntry">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">LookupTableEntry</code><span class="sig-paren">(</span><em>from_values</em>, <em>to_value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#LookupTableEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.LookupTableEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.ParameterVariables">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">ParameterVariables</code><span class="sig-paren">(</span><em>var_list</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#ParameterVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.ParameterVariables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="binaryninja.function.ParameterVariables.with_confidence">
+<code class="descname">with_confidence</code><span class="sig-paren">(</span><em>confidence</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#ParameterVariables.with_confidence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.ParameterVariables.with_confidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.PossibleValueSet">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">PossibleValueSet</code><span class="sig-paren">(</span><em>arch</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#PossibleValueSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.PossibleValueSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.RegisterInfo">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">RegisterInfo</code><span class="sig-paren">(</span><em>full_width_reg</em>, <em>size</em>, <em>offset=0</em>, <em>extend=&lt;ImplicitRegisterExtend.NoExtend: 0&gt;</em>, <em>index=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#RegisterInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.RegisterInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.RegisterValue">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">RegisterValue</code><span class="sig-paren">(</span><em>arch=None</em>, <em>value=None</em>, <em>confidence=255</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#RegisterValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.RegisterValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.StackVariableReference">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">StackVariableReference</code><span class="sig-paren">(</span><em>src_operand</em>, <em>t</em>, <em>name</em>, <em>var</em>, <em>ref_ofs</em>, <em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#StackVariableReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.StackVariableReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.ValueRange">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">ValueRange</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>step</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#ValueRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.ValueRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.function.Variable">
+<em class="property">class </em><code class="descclassname">binaryninja.function.</code><code class="descname">Variable</code><span class="sig-paren">(</span><em>func</em>, <em>source_type</em>, <em>index</em>, <em>storage</em>, <em>name=None</em>, <em>var_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Variable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="classmethod">
+<dt id="binaryninja.function.Variable.from_identifier">
+<em class="property">classmethod </em><code class="descname">from_identifier</code><span class="sig-paren">(</span><em>func</em>, <em>identifier</em>, <em>name=None</em>, <em>var_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/function.html#Variable.from_identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.function.Variable.from_identifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.function.AdvancedFunctionAnalysisDataRequestor.html" class="btn btn-neutral float-right" title="binaryninja.function.AdvancedFunctionAnalysisDataRequestor" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.filemetadata.NavigationHandler.html" class="btn btn-neutral" title="binaryninja.filemetadata.NavigationHandler" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

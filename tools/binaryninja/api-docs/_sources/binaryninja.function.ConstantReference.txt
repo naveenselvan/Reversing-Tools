@@ -1,0 +1,22 @@
+binaryninja.function.ConstantReference
+======================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: ConstantReference
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ConstantReference.__init__
+   
+   
+
+   
+   
+   

@@ -1,0 +1,27 @@
+log module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.log.close_logs
+   binaryninja.log.is_output_redirected_to_log
+   binaryninja.log.log
+   binaryninja.log.log_alert
+   binaryninja.log.log_debug
+   binaryninja.log.log_error
+   binaryninja.log.log_info
+   binaryninja.log.log_to_file
+   binaryninja.log.log_to_stderr
+   binaryninja.log.log_to_stdout
+   binaryninja.log.log_warn
+   binaryninja.log.redirect_output_to_log
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.log
+   :members:
+   :undoc-members:
+   :show-inheritance:

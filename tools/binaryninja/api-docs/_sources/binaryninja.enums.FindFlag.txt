@@ -1,0 +1,23 @@
+binaryninja.enums.FindFlag
+==========================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: FindFlag
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FindFlag.FindCaseInsensitive
+      ~FindFlag.NoFindFlags
+   
+   

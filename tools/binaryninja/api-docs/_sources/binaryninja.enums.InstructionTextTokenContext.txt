@@ -1,0 +1,25 @@
+binaryninja.enums.InstructionTextTokenContext
+=============================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: InstructionTextTokenContext
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~InstructionTextTokenContext.DataVariableTokenContext
+      ~InstructionTextTokenContext.FunctionReturnTokenContext
+      ~InstructionTextTokenContext.LocalVariableTokenContext
+      ~InstructionTextTokenContext.NoTokenContext
+   
+   

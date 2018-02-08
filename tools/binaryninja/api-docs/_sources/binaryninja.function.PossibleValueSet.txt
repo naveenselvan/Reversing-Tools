@@ -1,0 +1,22 @@
+binaryninja.function.PossibleValueSet
+=====================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: PossibleValueSet
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PossibleValueSet.__init__
+   
+   
+
+   
+   
+   

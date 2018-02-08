@@ -1,0 +1,22 @@
+binaryninja.interaction.AddressField
+====================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: AddressField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AddressField.__init__
+   
+   
+
+   
+   
+   

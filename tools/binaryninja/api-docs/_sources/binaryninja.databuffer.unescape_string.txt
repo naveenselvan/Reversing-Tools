@@ -1,0 +1,6 @@
+binaryninja.databuffer.unescape_string
+======================================
+
+.. currentmodule:: binaryninja.databuffer
+
+.. autofunction:: unescape_string

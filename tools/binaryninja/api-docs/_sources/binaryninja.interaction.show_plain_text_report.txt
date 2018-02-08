@@ -1,0 +1,6 @@
+binaryninja.interaction.show_plain_text_report
+==============================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autofunction:: show_plain_text_report

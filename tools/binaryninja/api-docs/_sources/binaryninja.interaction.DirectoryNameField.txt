@@ -1,0 +1,22 @@
+binaryninja.interaction.DirectoryNameField
+==========================================
+
+.. currentmodule:: binaryninja.interaction
+
+.. autoclass:: DirectoryNameField
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DirectoryNameField.__init__
+   
+   
+
+   
+   
+   

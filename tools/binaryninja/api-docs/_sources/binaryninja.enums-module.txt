@@ -1,0 +1,65 @@
+enums module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.enums.ActionType
+   binaryninja.enums.AnalysisState
+   binaryninja.enums.BranchType
+   binaryninja.enums.CallingConventionName
+   binaryninja.enums.DisassemblyOption
+   binaryninja.enums.Endianness
+   binaryninja.enums.FindFlag
+   binaryninja.enums.FlagRole
+   binaryninja.enums.FormInputFieldType
+   binaryninja.enums.FunctionGraphType
+   binaryninja.enums.HighlightColorStyle
+   binaryninja.enums.HighlightStandardColor
+   binaryninja.enums.ILBranchDependence
+   binaryninja.enums.ImplicitRegisterExtend
+   binaryninja.enums.InstructionTextTokenContext
+   binaryninja.enums.InstructionTextTokenType
+   binaryninja.enums.IntegerDisplayType
+   binaryninja.enums.LinearDisassemblyLineType
+   binaryninja.enums.LogLevel
+   binaryninja.enums.LowLevelILFlagCondition
+   binaryninja.enums.LowLevelILOperation
+   binaryninja.enums.MediumLevelILOperation
+   binaryninja.enums.MemberAccess
+   binaryninja.enums.MemberScope
+   binaryninja.enums.MessageBoxButtonResult
+   binaryninja.enums.MessageBoxButtonSet
+   binaryninja.enums.MessageBoxIcon
+   binaryninja.enums.MetadataType
+   binaryninja.enums.ModificationStatus
+   binaryninja.enums.NameType
+   binaryninja.enums.NamedTypeReferenceClass
+   binaryninja.enums.PluginCommandType
+   binaryninja.enums.PluginLoadOrder
+   binaryninja.enums.PluginOrigin
+   binaryninja.enums.PluginType
+   binaryninja.enums.PluginUpdateStatus
+   binaryninja.enums.PointerSuffix
+   binaryninja.enums.ReferenceType
+   binaryninja.enums.RegisterValueType
+   binaryninja.enums.ScriptingProviderExecuteResult
+   binaryninja.enums.ScriptingProviderInputReadyState
+   binaryninja.enums.SectionSemantics
+   binaryninja.enums.SegmentFlag
+   binaryninja.enums.StringType
+   binaryninja.enums.StructureType
+   binaryninja.enums.SymbolType
+   binaryninja.enums.TransformType
+   binaryninja.enums.TypeClass
+   binaryninja.enums.UpdateResult
+   binaryninja.enums.VariableSourceType
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.enums
+   :members:
+   :undoc-members:
+   :show-inheritance:

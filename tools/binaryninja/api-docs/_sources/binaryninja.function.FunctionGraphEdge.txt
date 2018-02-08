@@ -1,0 +1,22 @@
+binaryninja.function.FunctionGraphEdge
+======================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: FunctionGraphEdge
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FunctionGraphEdge.__init__
+   
+   
+
+   
+   
+   

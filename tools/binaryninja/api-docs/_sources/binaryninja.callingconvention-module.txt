@@ -1,0 +1,16 @@
+callingconvention module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.callingconvention.CallingConvention
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.callingconvention
+   :members:
+   :undoc-members:
+   :show-inheritance:

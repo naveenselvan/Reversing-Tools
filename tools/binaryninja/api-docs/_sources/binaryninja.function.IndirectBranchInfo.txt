@@ -1,0 +1,22 @@
+binaryninja.function.IndirectBranchInfo
+=======================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: IndirectBranchInfo
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IndirectBranchInfo.__init__
+   
+   
+
+   
+   
+   

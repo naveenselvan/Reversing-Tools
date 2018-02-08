@@ -1,0 +1,22 @@
+binaryninja.mediumlevelil.MediumLevelILOperationAndSize
+=======================================================
+
+.. currentmodule:: binaryninja.mediumlevelil
+
+.. autoclass:: MediumLevelILOperationAndSize
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MediumLevelILOperationAndSize.__init__
+   
+   
+
+   
+   
+   

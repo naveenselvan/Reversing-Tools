@@ -1,0 +1,6 @@
+binaryninja.types.preprocess_source
+===================================
+
+.. currentmodule:: binaryninja.types
+
+.. autofunction:: preprocess_source

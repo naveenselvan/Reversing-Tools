@@ -1,0 +1,23 @@
+binaryninja.function.ParameterVariables
+=======================================
+
+.. currentmodule:: binaryninja.function
+
+.. autoclass:: ParameterVariables
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ParameterVariables.__init__
+      ~ParameterVariables.with_confidence
+   
+   
+
+   
+   
+   

@@ -1,0 +1,25 @@
+binaryninja.enums.ActionType
+============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: ActionType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ActionType.AnalysisAction
+      ~ActionType.DataModificationAction
+      ~ActionType.DataModificationAndAnalysisAction
+      ~ActionType.TemporaryAction
+   
+   

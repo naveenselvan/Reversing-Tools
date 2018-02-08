@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>binaryninja.platform &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="binaryninja" href="../binaryninja.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../binaryninja.html">binaryninja</a> &raquo;</li>
+        
+      <li>binaryninja.platform</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for binaryninja.platform</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2015-2017 Vector 35 LLC</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to</span>
+<span class="c1"># deal in the Software without restriction, including without limitation the</span>
+<span class="c1"># rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="c1"># sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="c1"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="c1"># IN THE SOFTWARE.</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+
+<span class="c1"># Binary Ninja components</span>
+<span class="kn">import</span> <span class="nn">_binaryninjacore</span> <span class="k">as</span> <span class="nn">core</span>
+<span class="kn">import</span> <span class="nn">startup</span>
+<span class="kn">import</span> <span class="nn">architecture</span>
+<span class="kn">import</span> <span class="nn">callingconvention</span>
+<span class="kn">import</span> <span class="nn">types</span>
+
+
+<span class="k">class</span> <span class="nc">_PlatformMetaClass</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">platforms</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformList</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Platform</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewPlatformReference</span><span class="p">(</span><span class="n">platforms</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreePlatformList</span><span class="p">(</span><span class="n">platforms</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">os_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">platforms</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformOSList</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">platforms</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreePlatformOSList</span><span class="p">(</span><span class="n">platforms</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">platforms</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformList</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">Platform</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewPlatformReference</span><span class="p">(</span><span class="n">platforms</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="n">core</span><span class="o">.</span><span class="n">BNFreePlatformList</span><span class="p">(</span><span class="n">platforms</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">type</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">platform</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformByName</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">platform</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not a valid platform&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">Platform</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">platform</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">get_list</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">os</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">arch</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="n">startup</span><span class="o">.</span><span class="n">_init_plugins</span><span class="p">()</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">os</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platforms</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformList</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">arch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">platforms</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformListByOS</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">platforms</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformListByArchitecture</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="n">arch</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Platform</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">BNNewPlatformReference</span><span class="p">(</span><span class="n">platforms</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreePlatformList</span><span class="p">(</span><span class="n">platforms</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+
+<div class="viewcode-block" id="Platform"><a class="viewcode-back" href="../../binaryninja.platform.Platform.html#binaryninja.platform.Platform">[docs]</a><span class="k">class</span> <span class="nc">Platform</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	``class Platform`` contains all information releated to the execution environment of the binary, mainly the</span>
+<span class="sd">	calling conventions used.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">_PlatformMetaClass</span>
+	<span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Platform.__init__"><a class="viewcode-back" href="../../binaryninja.platform.Platform.html#binaryninja.platform.Platform.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">arch</span> <span class="o">=</span> <span class="n">arch</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNCreatePlatform</span><span class="p">(</span><span class="n">arch</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">handle</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">arch</span> <span class="o">=</span> <span class="n">architecture</span><span class="o">.</span><span class="n">Architecture</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformArchitecture</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span></div>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreePlatform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Platform</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Platform</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">addressof</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">default_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Default calling convention.</span>
+
+<span class="sd">		:getter: returns a CallingConvention object for the default calling convention.</span>
+<span class="sd">		:setter: sets the default calling convention</span>
+<span class="sd">		:type: CallingConvention</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformDefaultCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@default_calling_convention</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">default_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterPlatformDefaultCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">cdecl_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Cdecl calling convention.</span>
+
+<span class="sd">		:getter: returns a CallingConvention object for the cdecl calling convention.</span>
+<span class="sd">		:setter sets the cdecl calling convention</span>
+<span class="sd">		:type: CallingConvention</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformCdeclCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@cdecl_calling_convention</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">cdecl_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterPlatformCdeclCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">stdcall_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Stdcall calling convention.</span>
+
+<span class="sd">		:getter: returns a CallingConvention object for the stdcall calling convention.</span>
+<span class="sd">		:setter sets the stdcall calling convention</span>
+<span class="sd">		:type: CallingConvention</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformStdcallCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@stdcall_calling_convention</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">stdcall_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterPlatformStdcallCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">fastcall_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Fastcall calling convention.</span>
+
+<span class="sd">		:getter: returns a CallingConvention object for the fastcall calling convention.</span>
+<span class="sd">		:setter sets the fastcall calling convention</span>
+<span class="sd">		:type: CallingConvention</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformFastcallCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@fastcall_calling_convention</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">fastcall_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterPlatformFastcallCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">system_call_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		System call convention.</span>
+
+<span class="sd">		:getter: returns a CallingConvention object for the system call convention.</span>
+<span class="sd">		:setter sets the system call convention</span>
+<span class="sd">		:type: CallingConvention</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformSystemCallConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+
+	<span class="nd">@system_call_convention</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">system_call_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNSetPlatformSystemCallConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">calling_conventions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		List of platform CallingConvention objects (read-only)</span>
+
+<span class="sd">		:getter: returns the list of supported CallingConvention objects</span>
+<span class="sd">		:type: list(CallingConvention)</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">cc</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformCallingConventions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">callingconvention</span><span class="o">.</span><span class="n">CallingConvention</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewCallingConventionReference</span><span class="p">(</span><span class="n">cc</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeCallingConventionList</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of platform-specific types (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">type_list</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformTypes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">type_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">result</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">type_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTypeList</span><span class="p">(</span><span class="n">type_list</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of platform-specific variable definitions (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">type_list</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformVariables</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">type_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">result</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">type_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTypeList</span><span class="p">(</span><span class="n">type_list</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of platform-specific function definitions (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">type_list</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformFunctions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">type_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">result</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">type_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTypeList</span><span class="p">(</span><span class="n">type_list</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">system_calls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;List of system calls for this platform (read-only)&quot;&quot;&quot;</span>
+		<span class="n">count</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">call_list</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformSystemCalls</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">call_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">call_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+			<span class="n">result</span><span class="p">[</span><span class="n">call_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeSystemCallList</span><span class="p">(</span><span class="n">call_list</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+
+	<span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="nb">object</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;</span><span class="si">%s</span><span class="s2">&#39; is read only&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;platform: </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<div class="viewcode-block" id="Platform.register"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.register">[docs]</a>	<span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">os</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``register`` registers the platform for given OS name.</span>
+
+<span class="sd">		:param str os: OS name to register</span>
+<span class="sd">		:rtype: None</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterPlatform</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.register_calling_convention"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.register_calling_convention">[docs]</a>	<span class="k">def</span> <span class="nf">register_calling_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``register_calling_convention`` register a new calling convention.</span>
+
+<span class="sd">		:param CallingConvention cc: a CallingConvention object to register</span>
+<span class="sd">		:rtype: None</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNRegisterPlatformCallingConvention</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_related_platform"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_related_platform">[docs]</a>	<span class="k">def</span> <span class="nf">get_related_platform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arch</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetRelatedPlatform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">arch</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">Platform</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">result</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.add_related_platform"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.add_related_platform">[docs]</a>	<span class="k">def</span> <span class="nf">add_related_platform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">platform</span><span class="p">):</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNAddRelatedPlatform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">arch</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_associated_platform_by_address"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_associated_platform_by_address">[docs]</a>	<span class="k">def</span> <span class="nf">get_associated_platform_by_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">):</span>
+		<span class="n">new_addr</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulonglong</span><span class="p">()</span>
+		<span class="n">new_addr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">addr</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetAssociatedPlatformByAddress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">new_addr</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">Platform</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">result</span><span class="p">),</span> <span class="n">new_addr</span><span class="o">.</span><span class="n">value</span></div>
+
+<div class="viewcode-block" id="Platform.get_type_by_name"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_type_by_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_type_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformTypeByName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_variable_by_name"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_variable_by_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_variable_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformVariableByName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_function_by_name"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_function_by_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_function_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformFunctionByName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_system_call_name"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_system_call_name">[docs]</a>	<span class="k">def</span> <span class="nf">get_system_call_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformSystemCallName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_system_call_type"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_system_call_type">[docs]</a>	<span class="k">def</span> <span class="nf">get_system_call_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetPlatformSystemCallType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.generate_auto_platform_type_id"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.generate_auto_platform_type_id">[docs]</a>	<span class="k">def</span> <span class="nf">generate_auto_platform_type_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">_get_core_struct</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGenerateAutoPlatformTypeId</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.generate_auto_platform_type_ref"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.generate_auto_platform_type_ref">[docs]</a>	<span class="k">def</span> <span class="nf">generate_auto_platform_type_ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_class</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">type_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_auto_platform_type_id</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">NamedTypeReference</span><span class="p">(</span><span class="n">type_class</span><span class="p">,</span> <span class="n">type_id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.get_auto_platform_type_id_source"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.get_auto_platform_type_id_source">[docs]</a>	<span class="k">def</span> <span class="nf">get_auto_platform_type_id_source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">core</span><span class="o">.</span><span class="n">BNGetAutoPlatformTypeIdSource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.parse_types_from_source"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.parse_types_from_source">[docs]</a>	<span class="k">def</span> <span class="nf">parse_types_from_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_dirs</span><span class="o">=</span><span class="p">[],</span> <span class="n">auto_type_source</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``parse_types_from_source`` parses the source string and any needed headers searching for them in</span>
+<span class="sd">		the optional list of directories provided in ``include_dirs``.</span>
+
+<span class="sd">		:param str source: source string to be parsed</span>
+<span class="sd">		:param str filename: optional source filename</span>
+<span class="sd">		:param list(str) include_dirs: optional list of string filename include directories</span>
+<span class="sd">		:param str auto_type_source: optional source of types if used for automatically generated types</span>
+<span class="sd">		:return: :py:class:`TypeParserResult` (a SyntaxError is thrown on parse error)</span>
+<span class="sd">		:rtype: TypeParserResult</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; platform.parse_types_from_source(&#39;int foo;\\nint bar(int x);\\nstruct bas{int x,y;};\\n&#39;)</span>
+<span class="sd">			({types: {&#39;bas&#39;: &lt;type: struct bas&gt;}, variables: {&#39;foo&#39;: &lt;type: int32_t&gt;}, functions:{&#39;bar&#39;:</span>
+<span class="sd">			&lt;type: int32_t(int32_t x)&gt;}}, &#39;&#39;)</span>
+<span class="sd">			&gt;&gt;&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;input&quot;</span>
+		<span class="n">dir_buf</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">)):</span>
+			<span class="n">dir_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="n">parse</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeParserResult</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNParseTypesFromSource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">dir_buf</span><span class="p">,</span>
+			<span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">),</span> <span class="n">auto_type_source</span><span class="p">)</span>
+		<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="n">type_dict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">variables</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">functions</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">typeCount</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">type_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">variableCount</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">functionCount</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">functions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">functions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">functions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTypeParserResult</span><span class="p">(</span><span class="n">parse</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">TypeParserResult</span><span class="p">(</span><span class="n">type_dict</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">functions</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Platform.parse_types_from_source_file"><a class="viewcode-back" href="../../binaryninja.platform-module.html#binaryninja.platform.Platform.parse_types_from_source_file">[docs]</a>	<span class="k">def</span> <span class="nf">parse_types_from_source_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">include_dirs</span><span class="o">=</span><span class="p">[],</span> <span class="n">auto_type_source</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		``parse_types_from_source_file`` parses the source file ``filename`` and any needed headers searching for them in</span>
+<span class="sd">		the optional list of directories provided in ``include_dirs``.</span>
+
+<span class="sd">		:param str filename: filename of file to be parsed</span>
+<span class="sd">		:param list(str) include_dirs: optional list of string filename include directories</span>
+<span class="sd">		:param str auto_type_source: optional source of types if used for automatically generated types</span>
+<span class="sd">		:return: :py:class:`TypeParserResult` (a SyntaxError is thrown on parse error)</span>
+<span class="sd">		:rtype: TypeParserResult</span>
+<span class="sd">		:Example:</span>
+
+<span class="sd">			&gt;&gt;&gt; file = &quot;/Users/binja/tmp.c&quot;</span>
+<span class="sd">			&gt;&gt;&gt; open(file).read()</span>
+<span class="sd">			&#39;int foo;\\nint bar(int x);\\nstruct bas{int x,y;};\\n&#39;</span>
+<span class="sd">			&gt;&gt;&gt; platform.parse_types_from_source_file(file)</span>
+<span class="sd">			({types: {&#39;bas&#39;: &lt;type: struct bas&gt;}, variables: {&#39;foo&#39;: &lt;type: int32_t&gt;}, functions:</span>
+<span class="sd">			{&#39;bar&#39;: &lt;type: int32_t(int32_t x)&gt;}}, &#39;&#39;)</span>
+<span class="sd">			&gt;&gt;&gt;</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">dir_buf</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">))()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">)):</span>
+			<span class="n">dir_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="n">parse</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNTypeParserResult</span><span class="p">()</span>
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">()</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BNParseTypesFromSourceFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">dir_buf</span><span class="p">,</span>
+			<span class="nb">len</span><span class="p">(</span><span class="n">include_dirs</span><span class="p">),</span> <span class="n">auto_type_source</span><span class="p">)</span>
+		<span class="n">error_str</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeString</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_byte</span><span class="p">)))</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
+		<span class="n">type_dict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">variables</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">functions</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">typeCount</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">type_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">variableCount</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">functionCount</span><span class="p">):</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">QualifiedName</span><span class="o">.</span><span class="n">_from_core_struct</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">functions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+			<span class="n">functions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Type</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">BNNewTypeReference</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">functions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">platform</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">core</span><span class="o">.</span><span class="n">BNFreeTypeParserResult</span><span class="p">(</span><span class="n">parse</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">TypeParserResult</span><span class="p">(</span><span class="n">type_dict</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">functions</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

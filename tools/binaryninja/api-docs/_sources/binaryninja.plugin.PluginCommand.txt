@@ -1,0 +1,29 @@
+binaryninja.plugin.PluginCommand
+================================
+
+.. currentmodule:: binaryninja.plugin
+
+.. autoclass:: PluginCommand
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PluginCommand.__init__
+      ~PluginCommand.execute
+      ~PluginCommand.get_valid_list
+      ~PluginCommand.is_valid
+      ~PluginCommand.register
+      ~PluginCommand.register_for_address
+      ~PluginCommand.register_for_function
+      ~PluginCommand.register_for_range
+   
+   
+
+   
+   
+   

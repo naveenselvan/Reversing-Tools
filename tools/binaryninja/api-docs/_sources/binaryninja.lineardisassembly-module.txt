@@ -1,0 +1,17 @@
+lineardisassembly module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.lineardisassembly.LinearDisassemblyLine
+   binaryninja.lineardisassembly.LinearDisassemblyPosition
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.lineardisassembly
+   :members:
+   :undoc-members:
+   :show-inheritance:

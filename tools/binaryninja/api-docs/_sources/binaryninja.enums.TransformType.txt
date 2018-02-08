@@ -1,0 +1,30 @@
+binaryninja.enums.TransformType
+===============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: TransformType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TransformType.BinaryCodecTransform
+      ~TransformType.BinaryEncodeTransform
+      ~TransformType.DecodeTransform
+      ~TransformType.EncryptTransform
+      ~TransformType.HashTransform
+      ~TransformType.InvertingTransform
+      ~TransformType.TextCodecTransform
+      ~TransformType.TextEncodeTransform
+      ~TransformType.UnicodeCodecTransform
+   
+   

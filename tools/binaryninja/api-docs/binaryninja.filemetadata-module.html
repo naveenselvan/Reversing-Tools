@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>filemetadata module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.filemetadata.FileMetadata" href="binaryninja.filemetadata.FileMetadata.html"/>
+        <link rel="prev" title="binaryninja.fileaccessor.FileAccessor" href="binaryninja.fileaccessor.FileAccessor.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">filemetadata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.filemetadata.FileMetadata.html">binaryninja.filemetadata.FileMetadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.filemetadata.NavigationHandler.html">binaryninja.filemetadata.NavigationHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>filemetadata module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.filemetadata-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filemetadata-module">
+<h1>filemetadata module<a class="headerlink" href="#filemetadata-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.filemetadata.FileMetadata.html#binaryninja.filemetadata.FileMetadata" title="binaryninja.filemetadata.FileMetadata"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.filemetadata.FileMetadata</span></code></a>([...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.filemetadata.NavigationHandler.html#binaryninja.filemetadata.NavigationHandler" title="binaryninja.filemetadata.NavigationHandler"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.filemetadata.NavigationHandler</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.filemetadata"></span><dl class="class">
+<dt id="binaryninja.filemetadata.FileMetadata">
+<em class="property">class </em><code class="descclassname">binaryninja.filemetadata.</code><code class="descname">FileMetadata</code><span class="sig-paren">(</span><em>filename=None</em>, <em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.analysis_changed">
+<code class="descname">analysis_changed</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.analysis_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean result of whether the auto-analysis results have changed (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.begin_undo_actions">
+<code class="descname">begin_undo_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.begin_undo_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.begin_undo_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">begin_undo_actions</span></code> start recording actions taken so the can be undone at some point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">begin_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">convert_to_nop</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">commit_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;nop&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">undo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the underlying file handle. It is recommended that this is done in a
+<cite>finally</cite> clause to avoid handle leaks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.commit_undo_actions">
+<code class="descname">commit_undo_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.commit_undo_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.commit_undo_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">commit_undo_actions</span></code> commit the actions taken since the last commit to the undo database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">begin_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">convert_to_nop</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">commit_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;nop&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">undo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.create_database">
+<code class="descname">create_database</code><span class="sig-paren">(</span><em>filename</em>, <em>progress_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.create_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.create_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.filename">
+<code class="descname">filename</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the file (read/write)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.get_view_of_type">
+<code class="descname">get_view_of_type</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.get_view_of_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.get_view_of_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.has_database">
+<code class="descname">has_database</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.has_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the FileMetadata is backed by a database (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.modified">
+<code class="descname">modified</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean result of whether the file is modified (Inverse of &#8216;saved&#8217; property) (read/write)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.navigate">
+<code class="descname">navigate</code><span class="sig-paren">(</span><em>view</em>, <em>offset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.navigate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.navigate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.navigation">
+<code class="descname">navigation</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.navigation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.offset">
+<code class="descname">offset</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current offset into the file (read/write)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.open_existing_database">
+<code class="descname">open_existing_database</code><span class="sig-paren">(</span><em>filename</em>, <em>progress_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.open_existing_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.open_existing_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.raw">
+<code class="descname">raw</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the &#8220;Raw&#8221; BinaryView of the file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.redo">
+<code class="descname">redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.redo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.redo" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">redo</span></code> redo the last commited action in the undo database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">begin_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">convert_to_nop</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">commit_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;nop&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">undo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">redo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;nop&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.save_auto_snapshot">
+<code class="descname">save_auto_snapshot</code><span class="sig-paren">(</span><em>progress_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.save_auto_snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.save_auto_snapshot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.saved">
+<code class="descname">saved</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.saved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean result of whether the file has been saved (Inverse of &#8216;modified&#8217; property) (read/write)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.session_data">
+<code class="descname">session_data</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.session_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary object where plugins can store arbitrary data associated with the file</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="binaryninja.filemetadata.FileMetadata.set_default_session_data">
+<em class="property">classmethod </em><code class="descname">set_default_session_data</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.set_default_session_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.set_default_session_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.filemetadata.FileMetadata.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/filemetadata.html#FileMetadata.undo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">undo</span></code> undo the last commited action in the undo database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">begin_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">convert_to_nop</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">commit_undo_actions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;nop&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">undo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;xor     eax, eax&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">redo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv</span><span class="o">.</span><span class="n">get_disassembly</span><span class="p">(</span><span class="mh">0x100012f1</span><span class="p">)</span>
+<span class="go">&#39;nop&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.filemetadata.FileMetadata.view">
+<code class="descname">view</code><a class="headerlink" href="#binaryninja.filemetadata.FileMetadata.view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.filemetadata.NavigationHandler">
+<em class="property">class </em><code class="descclassname">binaryninja.filemetadata.</code><code class="descname">NavigationHandler</code><a class="reference internal" href="_modules/binaryninja/filemetadata.html#NavigationHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.filemetadata.NavigationHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.filemetadata.FileMetadata.html" class="btn btn-neutral float-right" title="binaryninja.filemetadata.FileMetadata" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.fileaccessor.FileAccessor.html" class="btn btn-neutral" title="binaryninja.fileaccessor.FileAccessor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

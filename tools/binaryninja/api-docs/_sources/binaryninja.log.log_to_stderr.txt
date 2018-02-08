@@ -1,0 +1,6 @@
+binaryninja.log.log_to_stderr
+=============================
+
+.. currentmodule:: binaryninja.log
+
+.. autofunction:: log_to_stderr

@@ -1,0 +1,35 @@
+binaryninja.enums.LowLevelILFlagCondition
+=========================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: LowLevelILFlagCondition
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~LowLevelILFlagCondition.LLFC_E
+      ~LowLevelILFlagCondition.LLFC_NE
+      ~LowLevelILFlagCondition.LLFC_NEG
+      ~LowLevelILFlagCondition.LLFC_NO
+      ~LowLevelILFlagCondition.LLFC_O
+      ~LowLevelILFlagCondition.LLFC_POS
+      ~LowLevelILFlagCondition.LLFC_SGE
+      ~LowLevelILFlagCondition.LLFC_SGT
+      ~LowLevelILFlagCondition.LLFC_SLE
+      ~LowLevelILFlagCondition.LLFC_SLT
+      ~LowLevelILFlagCondition.LLFC_UGE
+      ~LowLevelILFlagCondition.LLFC_UGT
+      ~LowLevelILFlagCondition.LLFC_ULE
+      ~LowLevelILFlagCondition.LLFC_ULT
+   
+   

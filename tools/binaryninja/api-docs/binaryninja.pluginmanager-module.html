@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pluginmanager module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.pluginmanager.RepoPlugin" href="binaryninja.pluginmanager.RepoPlugin.html"/>
+        <link rel="prev" title="binaryninja.plugin.PluginCommandContext" href="binaryninja.plugin.PluginCommandContext.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mediumlevelil-module.html">mediumlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pluginmanager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.pluginmanager.RepoPlugin.html">binaryninja.pluginmanager.RepoPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.pluginmanager.Repository.html">binaryninja.pluginmanager.Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.pluginmanager.RepositoryManager.html">binaryninja.pluginmanager.RepositoryManager</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>pluginmanager module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.pluginmanager-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pluginmanager-module">
+<h1>pluginmanager module<a class="headerlink" href="#pluginmanager-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.pluginmanager.RepoPlugin.html#binaryninja.pluginmanager.RepoPlugin" title="binaryninja.pluginmanager.RepoPlugin"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.pluginmanager.RepoPlugin</span></code></a>(handle)</td>
+<td><a href="#id1"><span class="problematic" id="id2">``</span></a>RepoPlugin` is mostly read-only, however you can install/uninstall enable/disable plugins. RepoPlugins are</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.pluginmanager.Repository.html#binaryninja.pluginmanager.Repository" title="binaryninja.pluginmanager.Repository"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.pluginmanager.Repository</span></code></a>(handle)</td>
+<td><code class="docutils literal"><span class="pre">Repository</span></code> is a read-only class. Use RepositoryManager to Enable/Disable/Install/Uninstall plugins.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.pluginmanager.RepositoryManager.html#binaryninja.pluginmanager.RepositoryManager" title="binaryninja.pluginmanager.RepositoryManager"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.pluginmanager.RepositoryManager</span></code></a>([...])</td>
+<td><code class="docutils literal"><span class="pre">RepositoryManager</span></code> Keeps track of all the repositories and keeps the enabled_plugins.json file coherent with</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.pluginmanager"></span><dl class="class">
+<dt id="binaryninja.pluginmanager.RepoPlugin">
+<em class="property">class </em><code class="descclassname">binaryninja.pluginmanager.</code><code class="descname">RepoPlugin</code><span class="sig-paren">(</span><em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepoPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a>RepoPlugin` is mostly read-only, however you can install/uninstall enable/disable plugins. RepoPlugins are
+created by parsing the plugins.json in a plugin repository.</p>
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.api">
+<code class="descname">api</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.api" title="Permalink to this definition">¶</a></dt>
+<dd><p>string indicating the api used by the plugin</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.description">
+<code class="descname">description</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>String short description of the plugin</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.enabled">
+<code class="descname">enabled</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean True if the plugin is currently enabled, False otherwise</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.installed">
+<code class="descname">installed</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean True if the plugin is installed, False otherwise</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.license">
+<code class="descname">license</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.license" title="Permalink to this definition">¶</a></dt>
+<dd><p>String short license description (ie MIT, BSD, GPLv2, etc)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.license_text">
+<code class="descname">license_text</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.license_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>String complete license text for the given plugin</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.long_description">
+<code class="descname">long_description</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.long_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>String long description of the plugin</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.minimum_version">
+<code class="descname">minimum_version</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.minimum_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>String minimum version the plugin was tested on</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.name">
+<code class="descname">name</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>String name of the plugin</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.path">
+<code class="descname">path</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative path from the base of the repository to the actual plugin</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.plugin_types">
+<code class="descname">plugin_types</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.plugin_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of PluginType enumeration objects indicating the plugin type(s)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.update_status">
+<code class="descname">update_status</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.update_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>PluginUpdateStatus enumeration indicating if the plugin is up to date or not</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.url">
+<code class="descname">url</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>String url of the plugin&#8217;s git repository</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepoPlugin.version">
+<code class="descname">version</code><a class="headerlink" href="#binaryninja.pluginmanager.RepoPlugin.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>String version of the plugin</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.pluginmanager.Repository">
+<em class="property">class </em><code class="descclassname">binaryninja.pluginmanager.</code><code class="descname">Repository</code><span class="sig-paren">(</span><em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#Repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.Repository" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">Repository</span></code> is a read-only class. Use RepositoryManager to Enable/Disable/Install/Uninstall plugins.</p>
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.full_path">
+<code class="descname">full_path</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.full_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>String full path the repository</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.initialized">
+<code class="descname">initialized</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.initialized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean True when the repository has been initialized</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.local_reference">
+<code class="descname">local_reference</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.local_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>String for the local git reference (ie &#8216;master&#8217;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.path">
+<code class="descname">path</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>String local path to store the given plugin repository</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.plugins">
+<code class="descname">plugins</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of RepoPlugin objects contained within this repository</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.remote_reference">
+<code class="descname">remote_reference</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.remote_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>String for the remote git reference (ie &#8216;origin&#8217;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.Repository.url">
+<code class="descname">url</code><a class="headerlink" href="#binaryninja.pluginmanager.Repository.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>String url of the git repository where the plugin repository&#8217;s are stored</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.pluginmanager.RepositoryManager">
+<em class="property">class </em><code class="descclassname">binaryninja.pluginmanager.</code><code class="descname">RepositoryManager</code><span class="sig-paren">(</span><em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">RepositoryManager</span></code> Keeps track of all the repositories and keeps the enabled_plugins.json file coherent with
+the plugins that are installed/unstalled enabled/disabled</p>
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.add_repository">
+<code class="descname">add_repository</code><span class="sig-paren">(</span><em>url=None</em>, <em>repopath=None</em>, <em>localreference='master'</em>, <em>remotereference='origin'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.add_repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.add_repository" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">add_repository</span></code> adds a new plugin repository for the manager to track.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Url to the git repository where the plugins are stored.</li>
+<li><strong>repopath</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; path to where the repository will be stored on disk locally</li>
+<li><strong>localreference</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional reference to the local tracking branch typically &#8220;master&#8221;</li>
+<li><strong>remotereference</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional reference to the remote tracking branch typically &#8220;origin&#8221;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Boolean value True if the repository was successfully added, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Boolean</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span><span class="o">.</span><span class="n">add_repository</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/vector35/community-plugins.git&quot;</span><span class="p">,</span>
+<span class="go">                       repopath=&quot;myrepo&quot;,</span>
+<span class="go">                       repomanifest=&quot;plugins&quot;,</span>
+<span class="go">                       localreference=&quot;master&quot;, remotereference=&quot;origin&quot;)</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.check_for_updates">
+<code class="descname">check_for_updates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.check_for_updates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.check_for_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for updates for all managed Repository objects</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepositoryManager.default_repository">
+<code class="descname">default_repository</code><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.default_repository" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the default Repository</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.disable_plugin">
+<code class="descname">disable_plugin</code><span class="sig-paren">(</span><em>plugin</em>, <em>repo=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.disable_plugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.disable_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">disable_plugin</span></code> Disable the specified plugin, pluginpath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>or str repo</strong> (<a class="reference internal" href="binaryninja.pluginmanager.Repository.html#binaryninja.pluginmanager.Repository" title="binaryninja.pluginmanager.Repository"><em>Repository</em></a>) &#8211; Repository containing the plugin to disable</li>
+<li><strong>or str plugin</strong> (<a class="reference internal" href="binaryninja.pluginmanager.RepoPlugin.html#binaryninja.pluginmanager.RepoPlugin" title="binaryninja.pluginmanager.RepoPlugin"><em>RepoPlugin</em></a>) &#8211; RepoPlugin to disable</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Boolean value True if the plugin was successfully disabled, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Boolean</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span><span class="o">.</span><span class="n">disable_plugin</span><span class="p">(</span><span class="s1">&#39;binaryninja-bookmarks&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.enable_plugin">
+<code class="descname">enable_plugin</code><span class="sig-paren">(</span><em>plugin</em>, <em>install=True</em>, <em>repo=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.enable_plugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.enable_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">enable_plugin</span></code> Enables the installed plugin &#8216;plugin&#8217;, optionally installing the plugin if <cite>install</cite> is set to
+True (default), and optionally using the non-default repository.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Name of the plugin to enable</li>
+<li><strong>install</strong> (<em>Boolean</em>) &#8211; Optionally install the repo, defaults to True.</li>
+<li><strong>repo</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Optional, specify a repository other than the default repository.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Boolean value True if the plugin was successfully enabled, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Boolean</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span><span class="o">.</span><span class="n">enable_plugin</span><span class="p">(</span><span class="s1">&#39;binaryninja-bookmarks&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.install_plugin">
+<code class="descname">install_plugin</code><span class="sig-paren">(</span><em>plugin</em>, <em>repo=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.install_plugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.install_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">install_plugin</span></code> install the specified plugin, pluginpath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>or str repo</strong> (<a class="reference internal" href="binaryninja.pluginmanager.Repository.html#binaryninja.pluginmanager.Repository" title="binaryninja.pluginmanager.Repository"><em>Repository</em></a>) &#8211; Repository containing the plugin to install</li>
+<li><strong>or str plugin</strong> (<a class="reference internal" href="binaryninja.pluginmanager.RepoPlugin.html#binaryninja.pluginmanager.RepoPlugin" title="binaryninja.pluginmanager.RepoPlugin"><em>RepoPlugin</em></a>) &#8211; RepoPlugin to install</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Boolean value True if the plugin was successfully installed, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Boolean</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span><span class="o">.</span><span class="n">install_plugin</span><span class="p">(</span><span class="s1">&#39;binaryninja-bookmarks&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepositoryManager.plugins">
+<code class="descname">plugins</code><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of all RepoPlugins in each repository</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.pluginmanager.RepositoryManager.repositories">
+<code class="descname">repositories</code><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.repositories" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of Repository objects being managed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.uninstall_plugin">
+<code class="descname">uninstall_plugin</code><span class="sig-paren">(</span><em>plugin</em>, <em>repo=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.uninstall_plugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.uninstall_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">uninstall_plugin</span></code> uninstall the specified plugin, pluginpath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>or str repo</strong> (<a class="reference internal" href="binaryninja.pluginmanager.Repository.html#binaryninja.pluginmanager.Repository" title="binaryninja.pluginmanager.Repository"><em>Repository</em></a>) &#8211; Repository containing the plugin to uninstall</li>
+<li><strong>or str plugin</strong> (<a class="reference internal" href="binaryninja.pluginmanager.RepoPlugin.html#binaryninja.pluginmanager.RepoPlugin" title="binaryninja.pluginmanager.RepoPlugin"><em>RepoPlugin</em></a>) &#8211; RepoPlugin to uninstall</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Boolean value True if the plugin was successfully uninstalled, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Boolean</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span><span class="o">.</span><span class="n">uninstall_plugin</span><span class="p">(</span><span class="s1">&#39;binaryninja-bookmarks&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.pluginmanager.RepositoryManager.update_plugin">
+<code class="descname">update_plugin</code><span class="sig-paren">(</span><em>plugin</em>, <em>repo=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/pluginmanager.html#RepositoryManager.update_plugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.pluginmanager.RepositoryManager.update_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">update_plugin</span></code> update the specified plugin, pluginpath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>or str repo</strong> (<a class="reference internal" href="binaryninja.pluginmanager.Repository.html#binaryninja.pluginmanager.Repository" title="binaryninja.pluginmanager.Repository"><em>Repository</em></a>) &#8211; Repository containing the plugin to update</li>
+<li><strong>or str plugin</strong> (<a class="reference internal" href="binaryninja.pluginmanager.RepoPlugin.html#binaryninja.pluginmanager.RepoPlugin" title="binaryninja.pluginmanager.RepoPlugin"><em>RepoPlugin</em></a>) &#8211; RepoPlugin to update</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Boolean value True if the plugin was successfully updated, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Boolean</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">RepositoryManager</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span><span class="o">.</span><span class="n">update_plugin</span><span class="p">(</span><span class="s1">&#39;binaryninja-bookmarks&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.pluginmanager.RepoPlugin.html" class="btn btn-neutral float-right" title="binaryninja.pluginmanager.RepoPlugin" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.plugin.PluginCommandContext.html" class="btn btn-neutral" title="binaryninja.plugin.PluginCommandContext" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

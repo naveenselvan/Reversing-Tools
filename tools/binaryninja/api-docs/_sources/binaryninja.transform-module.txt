@@ -1,0 +1,17 @@
+transform module
+=====================
+
+.. autosummary::
+   :toctree:
+
+   binaryninja.transform.Transform
+   binaryninja.transform.TransformParameter
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. automodule:: binaryninja.transform
+   :members:
+   :undoc-members:
+   :show-inheritance:

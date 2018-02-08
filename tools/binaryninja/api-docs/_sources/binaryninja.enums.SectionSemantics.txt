@@ -1,0 +1,25 @@
+binaryninja.enums.SectionSemantics
+==================================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: SectionSemantics
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SectionSemantics.DefaultSectionSemantics
+      ~SectionSemantics.ReadOnlyCodeSectionSemantics
+      ~SectionSemantics.ReadOnlyDataSectionSemantics
+      ~SectionSemantics.ReadWriteDataSectionSemantics
+   
+   

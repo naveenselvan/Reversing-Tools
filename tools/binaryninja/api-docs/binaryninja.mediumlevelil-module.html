@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mediumlevelil module &mdash; Binary Ninja API 1.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/other.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Binary Ninja API 1.1.0 documentation" href="index.html"/>
+        <link rel="next" title="binaryninja.mediumlevelil.MediumLevelILBasicBlock" href="binaryninja.mediumlevelil.MediumLevelILBasicBlock.html"/>
+        <link rel="prev" title="binaryninja.mainthread.worker_priority_enqueue" href="binaryninja.mainthread.worker_priority_enqueue.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Binary Ninja API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.architecture-module.html">architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.atexit-module.html">atexit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.basicblock-module.html">basicblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.binaryview-module.html">binaryview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.callingconvention-module.html">callingconvention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.databuffer-module.html">databuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.demangle-module.html">demangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.enums-module.html">enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.fileaccessor-module.html">fileaccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.filemetadata-module.html">filemetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.function-module.html">function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.functionrecognizer-module.html">functionrecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.highlight-module.html">highlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.interaction-module.html">interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lineardisassembly-module.html">lineardisassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.log-module.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.lowlevelil-module.html">lowlevelil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.mainthread-module.html">mainthread</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">mediumlevelil</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILBasicBlock.html">binaryninja.mediumlevelil.MediumLevelILBasicBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html">binaryninja.mediumlevelil.MediumLevelILExpr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILFunction.html">binaryninja.mediumlevelil.MediumLevelILFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILInstruction.html">binaryninja.mediumlevelil.MediumLevelILInstruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILLabel.html">binaryninja.mediumlevelil.MediumLevelILLabel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILOperationAndSize.html">binaryninja.mediumlevelil.MediumLevelILOperationAndSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryninja.mediumlevelil.SSAVariable.html">binaryninja.mediumlevelil.SSAVariable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.metadata-module.html">metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.platform-module.html">platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.plugin-module.html">plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.pluginmanager-module.html">pluginmanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.scriptingprovider-module.html">scriptingprovider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.setting-module.html">setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.transform-module.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.types-module.html">types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.undoaction-module.html">undoaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryninja.update-module.html">update</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Binary Ninja API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>mediumlevelil module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binaryninja.mediumlevelil-module.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mediumlevelil-module">
+<h1>mediumlevelil module<a class="headerlink" href="#mediumlevelil-module" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILBasicBlock.html#binaryninja.mediumlevelil.MediumLevelILBasicBlock" title="binaryninja.mediumlevelil.MediumLevelILBasicBlock"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.MediumLevelILBasicBlock</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.MediumLevelILExpr</span></code></a>(index)</td>
+<td><code class="docutils literal"><span class="pre">class</span> <span class="pre">MediumLevelILExpr</span></code> hold the index of IL Expressions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILFunction.html#binaryninja.mediumlevelil.MediumLevelILFunction" title="binaryninja.mediumlevelil.MediumLevelILFunction"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.MediumLevelILFunction</span></code></a>(arch)</td>
+<td><code class="docutils literal"><span class="pre">class</span> <span class="pre">MediumLevelILFunction</span></code> contains the list of MediumLevelILExpr objects that make up a function. MediumLevelILExpr</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILInstruction.html#binaryninja.mediumlevelil.MediumLevelILInstruction" title="binaryninja.mediumlevelil.MediumLevelILInstruction"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.MediumLevelILInstruction</span></code></a>(...)</td>
+<td><code class="docutils literal"><span class="pre">class</span> <span class="pre">MediumLevelILInstruction</span></code> Medium Level Intermediate Language Instructions are infinite length tree-based</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILLabel.html#binaryninja.mediumlevelil.MediumLevelILLabel" title="binaryninja.mediumlevelil.MediumLevelILLabel"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.MediumLevelILLabel</span></code></a>([...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILOperationAndSize.html#binaryninja.mediumlevelil.MediumLevelILOperationAndSize" title="binaryninja.mediumlevelil.MediumLevelILOperationAndSize"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.MediumLevelILOperationAndSize</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="binaryninja.mediumlevelil.SSAVariable.html#binaryninja.mediumlevelil.SSAVariable" title="binaryninja.mediumlevelil.SSAVariable"><code class="xref py py-obj docutils literal"><span class="pre">binaryninja.mediumlevelil.SSAVariable</span></code></a>(var,&nbsp;...)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-binaryninja.mediumlevelil"></span><dl class="class">
+<dt id="binaryninja.mediumlevelil.MediumLevelILBasicBlock">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">MediumLevelILBasicBlock</code><span class="sig-paren">(</span><em>view</em>, <em>handle</em>, <em>owner</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILBasicBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILBasicBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="binaryninja.basicblock.BasicBlock.html#binaryninja.basicblock.BasicBlock" title="binaryninja.basicblock.BasicBlock"><code class="xref py py-class docutils literal"><span class="pre">binaryninja.basicblock.BasicBlock</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.mediumlevelil.MediumLevelILExpr">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">MediumLevelILExpr</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILExpr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILExpr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">MediumLevelILExpr</span></code> hold the index of IL Expressions.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This class shouldn&#8217;t be instantiated directly. Rather the helper members of MediumLevelILFunction should be   used instead.</p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">MediumLevelILFunction</code><span class="sig-paren">(</span><em>arch</em>, <em>handle=None</em>, <em>source_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">MediumLevelILFunction</span></code> contains the list of MediumLevelILExpr objects that make up a function. MediumLevelILExpr
+objects can be added to the MediumLevelILFunction by calling <code class="docutils literal"><span class="pre">append</span></code> and passing the result of the various class
+methods which return MediumLevelILExpr objects.</p>
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.add_label_list">
+<code class="descname">add_label_list</code><span class="sig-paren">(</span><em>labels</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.add_label_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.add_label_list" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">add_label_list</span></code> returns a label list expression for the given list of MediumLevelILLabel objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lables</strong> (<em>list(MediumLevelILLabel)</em>) &#8211; the list of MediumLevelILLabel to get a label list expression from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the label list expression</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr">MediumLevelILExpr</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.add_operand_list">
+<code class="descname">add_operand_list</code><span class="sig-paren">(</span><em>operands</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.add_operand_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.add_operand_list" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">add_operand_list</span></code> returns an operand list expression for the given list of integer operands.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>operands</strong> (<em>list(int)</em>) &#8211; list of operand numbers</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an operand list expression</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr">MediumLevelILExpr</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.append" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">append</span></code> adds the MediumLevelILExpr <code class="docutils literal"><span class="pre">expr</span></code> to the current MediumLevelILFunction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expr</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr"><em>MediumLevelILExpr</em></a>) &#8211; the MediumLevelILExpr to add to the current MediumLevelILFunction</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">number of MediumLevelILExpr in the current function</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.basic_blocks">
+<code class="descname">basic_blocks</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.basic_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of MediumLevelILBasicBlock objects (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.current_address">
+<code class="descname">current_address</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.current_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current IL Address (read/write)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.expr">
+<code class="descname">expr</code><span class="sig-paren">(</span><em>operation</em>, <em>a=0</em>, <em>b=0</em>, <em>c=0</em>, <em>d=0</em>, <em>e=0</em>, <em>size=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.expr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.expr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.finalize">
+<code class="descname">finalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.finalize" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">finalize</span></code> ends the function and computes the list of basic blocks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_instruction_start">
+<code class="descname">get_instruction_start</code><span class="sig-paren">(</span><em>addr</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_instruction_start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_instruction_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_low_level_il_expr_index">
+<code class="descname">get_low_level_il_expr_index</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_low_level_il_expr_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_low_level_il_expr_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_low_level_il_instruction_index">
+<code class="descname">get_low_level_il_instruction_index</code><span class="sig-paren">(</span><em>instr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_low_level_il_instruction_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_low_level_il_instruction_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_non_ssa_instruction_index">
+<code class="descname">get_non_ssa_instruction_index</code><span class="sig-paren">(</span><em>instr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_non_ssa_instruction_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_non_ssa_instruction_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_instruction_index">
+<code class="descname">get_ssa_instruction_index</code><span class="sig-paren">(</span><em>instr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_ssa_instruction_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_instruction_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_memory_definition">
+<code class="descname">get_ssa_memory_definition</code><span class="sig-paren">(</span><em>version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_ssa_memory_definition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_memory_definition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_memory_uses">
+<code class="descname">get_ssa_memory_uses</code><span class="sig-paren">(</span><em>version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_ssa_memory_uses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_memory_uses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_var_definition">
+<code class="descname">get_ssa_var_definition</code><span class="sig-paren">(</span><em>ssa_var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_ssa_var_definition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_var_definition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_var_uses">
+<code class="descname">get_ssa_var_uses</code><span class="sig-paren">(</span><em>ssa_var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_ssa_var_uses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_var_uses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_var_value">
+<code class="descname">get_ssa_var_value</code><span class="sig-paren">(</span><em>ssa_var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_ssa_var_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_ssa_var_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_var_definitions">
+<code class="descname">get_var_definitions</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_var_definitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_var_definitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.get_var_uses">
+<code class="descname">get_var_uses</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.get_var_uses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.get_var_uses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.goto">
+<code class="descname">goto</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.goto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.goto" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">goto</span></code> returns a goto expression which jumps to the provided MediumLevelILLabel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>label</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILLabel.html#binaryninja.mediumlevelil.MediumLevelILLabel" title="binaryninja.mediumlevelil.MediumLevelILLabel"><em>MediumLevelILLabel</em></a>) &#8211; Label to jump to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the MediumLevelILExpr that jumps to the provided label</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr">MediumLevelILExpr</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.if_expr">
+<code class="descname">if_expr</code><span class="sig-paren">(</span><em>operand</em>, <em>t</em>, <em>f</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.if_expr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.if_expr" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">if_expr</span></code> returns the <code class="docutils literal"><span class="pre">if</span></code> expression which depending on condition <code class="docutils literal"><span class="pre">operand</span></code> jumps to the MediumLevelILLabel
+<code class="docutils literal"><span class="pre">t</span></code> when the condition expression <code class="docutils literal"><span class="pre">operand</span></code> is non-zero and <code class="docutils literal"><span class="pre">f</span></code> when it&#8217;s zero.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>operand</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr"><em>MediumLevelILExpr</em></a>) &#8211; comparison expression to evaluate.</li>
+<li><strong>t</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILLabel.html#binaryninja.mediumlevelil.MediumLevelILLabel" title="binaryninja.mediumlevelil.MediumLevelILLabel"><em>MediumLevelILLabel</em></a>) &#8211; Label for the true branch</li>
+<li><strong>f</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILLabel.html#binaryninja.mediumlevelil.MediumLevelILLabel" title="binaryninja.mediumlevelil.MediumLevelILLabel"><em>MediumLevelILLabel</em></a>) &#8211; Label for the false branch</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the MediumLevelILExpr for the if expression</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr">MediumLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.low_level_il">
+<code class="descname">low_level_il</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low level IL for this function</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.mark_label">
+<code class="descname">mark_label</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.mark_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.mark_label" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">mark_label</span></code> assigns a MediumLevelILLabel to the current IL address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>label</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILLabel.html#binaryninja.mediumlevelil.MediumLevelILLabel" title="binaryninja.mediumlevelil.MediumLevelILLabel"><em>MediumLevelILLabel</em></a>) &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.non_ssa_form">
+<code class="descname">non_ssa_form</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.non_ssa_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Medium level IL in non-SSA (default) form (read-only)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.operand">
+<code class="descname">operand</code><span class="sig-paren">(</span><em>n</em>, <em>expr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.operand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.operand" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">operand</span></code> sets the operand number of the expression <code class="docutils literal"><span class="pre">expr</span></code> and passes back <code class="docutils literal"><span class="pre">expr</span></code> without modification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>n</strong> (<a class="reference internal" href="binaryninja.types-module.html#binaryninja.types.Type.int" title="binaryninja.types.Type.int"><em>int</em></a>) &#8211; </li>
+<li><strong>expr</strong> (<a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr"><em>MediumLevelILExpr</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns the expression <code class="docutils literal"><span class="pre">expr</span></code> unmodified</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="binaryninja.mediumlevelil.MediumLevelILExpr.html#binaryninja.mediumlevelil.MediumLevelILExpr" title="binaryninja.mediumlevelil.MediumLevelILExpr">MediumLevelILExpr</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.set_current_address">
+<code class="descname">set_current_address</code><span class="sig-paren">(</span><em>value</em>, <em>arch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILFunction.set_current_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.set_current_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILFunction.ssa_form">
+<code class="descname">ssa_form</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILFunction.ssa_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Medium level IL in SSA form (read-only)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">MediumLevelILInstruction</code><span class="sig-paren">(</span><em>func</em>, <em>expr_index</em>, <em>instr_index=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p><code class="docutils literal"><span class="pre">class</span> <span class="pre">MediumLevelILInstruction</span></code> Medium Level Intermediate Language Instructions are infinite length tree-based
+instructions. Tree-based instructions use infix notation with the left hand operand being the destination operand.
+Infix notation is thus more natural to read than other notations (e.g. x86 <code class="docutils literal"><span class="pre">mov</span> <span class="pre">eax,</span> <span class="pre">0</span></code> vs. MLIL <code class="docutils literal"><span class="pre">eax</span> <span class="pre">=</span> <span class="pre">0</span></code>).</p>
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.ILOperations">
+<code class="descname">ILOperations</code><em class="property"> = {&lt;MediumLevelILOperation.MLIL_NOP: 0&gt;: [], &lt;MediumLevelILOperation.MLIL_SET_VAR: 1&gt;: [('dest', 'var'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_FIELD: 2&gt;: [('dest', 'var'), ('offset', 'int'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_SPLIT: 3&gt;: [('high', 'var'), ('low', 'var'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_LOAD: 4&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_LOAD_STRUCT: 5&gt;: [('src', 'expr'), ('offset', 'int')], &lt;MediumLevelILOperation.MLIL_STORE: 6&gt;: [('dest', 'expr'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_STORE_STRUCT: 7&gt;: [('dest', 'expr'), ('offset', 'int'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_VAR: 8&gt;: [('src', 'var')], &lt;MediumLevelILOperation.MLIL_VAR_FIELD: 9&gt;: [('src', 'var'), ('offset', 'int')], &lt;MediumLevelILOperation.MLIL_ADDRESS_OF: 10&gt;: [('src', 'var')], &lt;MediumLevelILOperation.MLIL_ADDRESS_OF_FIELD: 11&gt;: [('src', 'var'), ('offset', 'int')], &lt;MediumLevelILOperation.MLIL_CONST: 12&gt;: [('constant', 'int')], &lt;MediumLevelILOperation.MLIL_CONST_PTR: 13&gt;: [('constant', 'int')], &lt;MediumLevelILOperation.MLIL_IMPORT: 14&gt;: [('constant', 'int')], &lt;MediumLevelILOperation.MLIL_ADD: 15&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_ADC: 16&gt;: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], &lt;MediumLevelILOperation.MLIL_SUB: 17&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_SBB: 18&gt;: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], &lt;MediumLevelILOperation.MLIL_AND: 19&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_OR: 20&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_XOR: 21&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_LSL: 22&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_LSR: 23&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_ASR: 24&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_ROL: 25&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_RLC: 26&gt;: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], &lt;MediumLevelILOperation.MLIL_ROR: 27&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_RRC: 28&gt;: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], &lt;MediumLevelILOperation.MLIL_MUL: 29&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_MULU_DP: 30&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_MULS_DP: 31&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_DIVU: 32&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_DIVU_DP: 33&gt;: [('hi', 'expr'), ('lo', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_DIVS: 34&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_DIVS_DP: 35&gt;: [('hi', 'expr'), ('lo', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_MODU: 36&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_MODU_DP: 37&gt;: [('hi', 'expr'), ('lo', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_MODS: 38&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_MODS_DP: 39&gt;: [('hi', 'expr'), ('lo', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_NEG: 40&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_NOT: 41&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SX: 42&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_ZX: 43&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_LOW_PART: 44&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_JUMP: 45&gt;: [('dest', 'expr')], &lt;MediumLevelILOperation.MLIL_JUMP_TO: 46&gt;: [('dest', 'expr'), ('targets', 'int_list')], &lt;MediumLevelILOperation.MLIL_CALL: 47&gt;: [('output', 'var_list'), ('dest', 'expr'), ('params', 'expr_list')], &lt;MediumLevelILOperation.MLIL_CALL_UNTYPED: 48&gt;: [('output', 'expr'), ('dest', 'expr'), ('params', 'expr'), ('stack', 'expr')], &lt;MediumLevelILOperation.MLIL_CALL_OUTPUT: 49&gt;: [('dest', 'var_list')], &lt;MediumLevelILOperation.MLIL_CALL_PARAM: 50&gt;: [('src', 'var_list')], &lt;MediumLevelILOperation.MLIL_RET: 51&gt;: [('src', 'expr_list')], &lt;MediumLevelILOperation.MLIL_NORET: 52&gt;: [], &lt;MediumLevelILOperation.MLIL_IF: 53&gt;: [('condition', 'expr'), ('true', 'int'), ('false', 'int')], &lt;MediumLevelILOperation.MLIL_GOTO: 54&gt;: [('dest', 'int')], &lt;MediumLevelILOperation.MLIL_CMP_E: 55&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_NE: 56&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_SLT: 57&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_ULT: 58&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_SLE: 59&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_ULE: 60&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_SGE: 61&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_UGE: 62&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_SGT: 63&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_CMP_UGT: 64&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_TEST_BIT: 65&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_BOOL_TO_INT: 66&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_ADD_OVERFLOW: 67&gt;: [('left', 'expr'), ('right', 'expr')], &lt;MediumLevelILOperation.MLIL_SYSCALL: 68&gt;: [('output', 'var_list'), ('params', 'expr_list')], &lt;MediumLevelILOperation.MLIL_SYSCALL_UNTYPED: 69&gt;: [('output', 'expr'), ('params', 'expr'), ('stack', 'expr')], &lt;MediumLevelILOperation.MLIL_BP: 70&gt;: [], &lt;MediumLevelILOperation.MLIL_TRAP: 71&gt;: [('vector', 'int')], &lt;MediumLevelILOperation.MLIL_UNDEF: 72&gt;: [], &lt;MediumLevelILOperation.MLIL_UNIMPL: 73&gt;: [], &lt;MediumLevelILOperation.MLIL_UNIMPL_MEM: 74&gt;: [('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_SSA: 75&gt;: [('dest', 'var_ssa'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_SSA_FIELD: 76&gt;: [('prev', 'var_ssa_dest_and_src'), ('offset', 'int'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_SPLIT_SSA: 77&gt;: [('high', 'var_ssa'), ('low', 'var_ssa'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_ALIASED: 78&gt;: [('prev', 'var_ssa_dest_and_src'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_SET_VAR_ALIASED_FIELD: 79&gt;: [('prev', 'var_ssa_dest_and_src'), ('offset', 'int'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_VAR_SSA: 80&gt;: [('src', 'var_ssa')], &lt;MediumLevelILOperation.MLIL_VAR_SSA_FIELD: 81&gt;: [('src', 'var_ssa'), ('offset', 'int')], &lt;MediumLevelILOperation.MLIL_VAR_ALIASED: 82&gt;: [('src', 'var_ssa')], &lt;MediumLevelILOperation.MLIL_VAR_ALIASED_FIELD: 83&gt;: [('src', 'var_ssa'), ('offset', 'int')], &lt;MediumLevelILOperation.MLIL_CALL_SSA: 84&gt;: [('output', 'expr'), ('dest', 'expr'), ('params', 'expr_list'), ('src_memory', 'int')], &lt;MediumLevelILOperation.MLIL_CALL_UNTYPED_SSA: 85&gt;: [('output', 'expr'), ('dest', 'expr'), ('params', 'expr'), ('stack', 'expr')], &lt;MediumLevelILOperation.MLIL_SYSCALL_SSA: 86&gt;: [('output', 'expr'), ('params', 'expr_list'), ('src_memory', 'int')], &lt;MediumLevelILOperation.MLIL_SYSCALL_UNTYPED_SSA: 87&gt;: [('output', 'expr'), ('params', 'expr'), ('stack', 'expr')], &lt;MediumLevelILOperation.MLIL_CALL_PARAM_SSA: 88&gt;: [('src_memory', 'int'), ('src', 'var_ssa_list')], &lt;MediumLevelILOperation.MLIL_CALL_OUTPUT_SSA: 89&gt;: [('dest_memory', 'int'), ('dest', 'var_ssa_list')], &lt;MediumLevelILOperation.MLIL_LOAD_SSA: 90&gt;: [('src', 'expr'), ('src_memory', 'int')], &lt;MediumLevelILOperation.MLIL_LOAD_STRUCT_SSA: 91&gt;: [('src', 'expr'), ('offset', 'int'), ('src_memory', 'int')], &lt;MediumLevelILOperation.MLIL_STORE_SSA: 92&gt;: [('dest', 'expr'), ('dest_memory', 'int'), ('src_memory', 'int'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_STORE_STRUCT_SSA: 93&gt;: [('dest', 'expr'), ('offset', 'int'), ('dest_memory', 'int'), ('src_memory', 'int'), ('src', 'expr')], &lt;MediumLevelILOperation.MLIL_VAR_PHI: 94&gt;: [('dest', 'var_ssa'), ('src', 'var_ssa_list')], &lt;MediumLevelILOperation.MLIL_MEM_PHI: 95&gt;: [('dest_memory', 'int'), ('src_memory', 'int_list')]}</em><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.ILOperations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.branch_dependence">
+<code class="descname">branch_dependence</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.branch_dependence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set of branching instructions that must take the true or false path to reach this instruction</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.expr_type">
+<code class="descname">expr_type</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.expr_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of expression</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_branch_dependence">
+<code class="descname">get_branch_dependence</code><span class="sig-paren">(</span><em>branch_instr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_branch_dependence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_branch_dependence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_flag_value">
+<code class="descname">get_flag_value</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_flag_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_flag_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_flag_value_after">
+<code class="descname">get_flag_value_after</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_flag_value_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_flag_value_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_flag_values">
+<code class="descname">get_possible_flag_values</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_possible_flag_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_flag_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_flag_values_after">
+<code class="descname">get_possible_flag_values_after</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_possible_flag_values_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_flag_values_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_reg_values">
+<code class="descname">get_possible_reg_values</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_possible_reg_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_reg_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_reg_values_after">
+<code class="descname">get_possible_reg_values_after</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_possible_reg_values_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_reg_values_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_stack_contents">
+<code class="descname">get_possible_stack_contents</code><span class="sig-paren">(</span><em>offset</em>, <em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_possible_stack_contents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_stack_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_stack_contents_after">
+<code class="descname">get_possible_stack_contents_after</code><span class="sig-paren">(</span><em>offset</em>, <em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_possible_stack_contents_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_possible_stack_contents_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_reg_value">
+<code class="descname">get_reg_value</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_reg_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_reg_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_reg_value_after">
+<code class="descname">get_reg_value_after</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_reg_value_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_reg_value_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_ssa_var_possible_values">
+<code class="descname">get_ssa_var_possible_values</code><span class="sig-paren">(</span><em>ssa_var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_ssa_var_possible_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_ssa_var_possible_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_ssa_var_version">
+<code class="descname">get_ssa_var_version</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_ssa_var_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_ssa_var_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_stack_contents">
+<code class="descname">get_stack_contents</code><span class="sig-paren">(</span><em>offset</em>, <em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_stack_contents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_stack_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_stack_contents_after">
+<code class="descname">get_stack_contents_after</code><span class="sig-paren">(</span><em>offset</em>, <em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_stack_contents_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_stack_contents_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_var_for_flag">
+<code class="descname">get_var_for_flag</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_var_for_flag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_var_for_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_var_for_reg">
+<code class="descname">get_var_for_reg</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_var_for_reg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_var_for_reg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.get_var_for_stack_location">
+<code class="descname">get_var_for_stack_location</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILInstruction.get_var_for_stack_location"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.get_var_for_stack_location" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.low_level_il">
+<code class="descname">low_level_il</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.low_level_il" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low level IL form of this expression</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.non_ssa_form">
+<code class="descname">non_ssa_form</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.non_ssa_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Non-SSA form of expression (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.possible_values">
+<code class="descname">possible_values</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.possible_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible values of expression using path-sensitive static data flow analysis (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.postfix_operands">
+<code class="descname">postfix_operands</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.postfix_operands" title="Permalink to this definition">¶</a></dt>
+<dd><p>All operands in the expression tree in postfix order</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.prefix_operands">
+<code class="descname">prefix_operands</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.prefix_operands" title="Permalink to this definition">¶</a></dt>
+<dd><p>All operands in the expression tree in prefix order</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.ssa_form">
+<code class="descname">ssa_form</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.ssa_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>SSA form of expression (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.ssa_memory_version">
+<code class="descname">ssa_memory_version</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.ssa_memory_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version of active memory contents in SSA form for this instruction</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.tokens">
+<code class="descname">tokens</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>MLIL tokens (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.value">
+<code class="descname">value</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Value of expression if constant or a known value (read-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.vars_read">
+<code class="descname">vars_read</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.vars_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of variables read by instruction</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binaryninja.mediumlevelil.MediumLevelILInstruction.vars_written">
+<code class="descname">vars_written</code><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILInstruction.vars_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of variables written by instruction</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.mediumlevelil.MediumLevelILLabel">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">MediumLevelILLabel</code><span class="sig-paren">(</span><em>handle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILLabel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.mediumlevelil.MediumLevelILOperationAndSize">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">MediumLevelILOperationAndSize</code><span class="sig-paren">(</span><em>operation</em>, <em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#MediumLevelILOperationAndSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.MediumLevelILOperationAndSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binaryninja.mediumlevelil.SSAVariable">
+<em class="property">class </em><code class="descclassname">binaryninja.mediumlevelil.</code><code class="descname">SSAVariable</code><span class="sig-paren">(</span><em>var</em>, <em>version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/binaryninja/mediumlevelil.html#SSAVariable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#binaryninja.mediumlevelil.SSAVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="binaryninja.mediumlevelil.MediumLevelILBasicBlock.html" class="btn btn-neutral float-right" title="binaryninja.mediumlevelil.MediumLevelILBasicBlock" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="binaryninja.mainthread.worker_priority_enqueue.html" class="btn btn-neutral" title="binaryninja.mainthread.worker_priority_enqueue" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Vector 35 LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

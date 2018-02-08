@@ -1,0 +1,28 @@
+binaryninja.enums.SegmentFlag
+=============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: SegmentFlag
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SegmentFlag.SegmentContainsCode
+      ~SegmentFlag.SegmentContainsData
+      ~SegmentFlag.SegmentDenyExecute
+      ~SegmentFlag.SegmentDenyWrite
+      ~SegmentFlag.SegmentExecutable
+      ~SegmentFlag.SegmentReadable
+      ~SegmentFlag.SegmentWritable
+   
+   

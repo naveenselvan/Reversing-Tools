@@ -1,0 +1,54 @@
+binaryninja.mediumlevelil.MediumLevelILFunction
+===============================================
+
+.. currentmodule:: binaryninja.mediumlevelil
+
+.. autoclass:: MediumLevelILFunction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MediumLevelILFunction.__init__
+      ~MediumLevelILFunction.add_label_list
+      ~MediumLevelILFunction.add_operand_list
+      ~MediumLevelILFunction.append
+      ~MediumLevelILFunction.expr
+      ~MediumLevelILFunction.finalize
+      ~MediumLevelILFunction.get_instruction_start
+      ~MediumLevelILFunction.get_low_level_il_expr_index
+      ~MediumLevelILFunction.get_low_level_il_instruction_index
+      ~MediumLevelILFunction.get_non_ssa_instruction_index
+      ~MediumLevelILFunction.get_ssa_instruction_index
+      ~MediumLevelILFunction.get_ssa_memory_definition
+      ~MediumLevelILFunction.get_ssa_memory_uses
+      ~MediumLevelILFunction.get_ssa_var_definition
+      ~MediumLevelILFunction.get_ssa_var_uses
+      ~MediumLevelILFunction.get_ssa_var_value
+      ~MediumLevelILFunction.get_var_definitions
+      ~MediumLevelILFunction.get_var_uses
+      ~MediumLevelILFunction.goto
+      ~MediumLevelILFunction.if_expr
+      ~MediumLevelILFunction.mark_label
+      ~MediumLevelILFunction.operand
+      ~MediumLevelILFunction.set_current_address
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MediumLevelILFunction.basic_blocks
+      ~MediumLevelILFunction.current_address
+      ~MediumLevelILFunction.low_level_il
+      ~MediumLevelILFunction.non_ssa_form
+      ~MediumLevelILFunction.ssa_form
+   
+   

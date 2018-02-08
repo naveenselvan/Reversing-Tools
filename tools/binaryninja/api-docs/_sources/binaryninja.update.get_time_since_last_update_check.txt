@@ -1,0 +1,6 @@
+binaryninja.update.get_time_since_last_update_check
+===================================================
+
+.. currentmodule:: binaryninja.update
+
+.. autofunction:: get_time_since_last_update_check

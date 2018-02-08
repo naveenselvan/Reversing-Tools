@@ -1,0 +1,26 @@
+binaryninja.enums.PointerSuffix
+===============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: PointerSuffix
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PointerSuffix.LvalueSuffix
+      ~PointerSuffix.Ptr64Suffix
+      ~PointerSuffix.ReferenceSuffix
+      ~PointerSuffix.RestrictSuffix
+      ~PointerSuffix.UnalignedSuffix
+   
+   

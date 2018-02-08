@@ -1,0 +1,102 @@
+// ---------------------------------------------------------------------------------------------------------
+
+//              PECompact 1.x / 2.x / 3.x OEP Finder
+
+//      Simple OEP finder for PECompact, tested with versions:
+
+//       - 1.76
+
+//       - 2.99
+	
+//       - 3.3.23
+
+//
+
+//              Enable The Following Exception Options
+
+//               - Ingore memory access violations in KERNEL32
+
+//               - INT3 breaks
+
+//               - Memory access violation
+
+//
+
+//	            Author: JJHACKER / Team-REPT
+
+//              WEB : http://www.Team-REPT.com
+
+//              Date:   9.6.2012
+
+//
+
+// ---------------------------------------------------------------------------------------------------------
+
+
+        BC
+        BPMC
+        BPHWC
+        DBH
+
+	cmp $VERSION, "1.70"
+	jb version_above
+	
+	ask "PECompact, Select Version (1 = 1.x <> 2 = 2.x and 3.x)"
+	cmp $RESULT, 1
+	je VER1X
+ 	cmp $RESULT, 2
+	je VER2AND3	
+	msg "Error, please enter a value between 1 and 2"
+	RET
+	
+VER1X:
+	var addr   
+	sto   
+	sto
+ 	sto     
+	mov addr,esp 
+	bphws addr,"r"
+	run
+	sti
+	sti
+	sti
+	sti
+	BPHWC addr
+	an eip	
+  cmt eip,"OEP ,Please dumped it,Enjoy!"
+	RET
+	
+VER2AND3:
+
+        ESTEP
+	ESTEP
+        BPHWS esp, "w"
+        ERUN
+        BPHWC
+        FIND eip, #8BC65A5E5F595B5DFFE0#
+        CMP $RESULT, 0
+        JE Failed
+        MOV temp2, $RESULT
+        ADD temp2, 08
+        BP temp2
+        RUN
+	esti
+	an eip	
+        MOV temp3, eip
+
+        MSG "OEP Found Or Nearby"
+
+        CMT temp3, "<=== OEP Or Nearby !!!!!!!!!"
+
+  	RET
+
+version_above:
+    	
+	msg "Error, olly script version must be 1.70 or newer"
+	ret
+	
+Failed:
+
+	msg "Error, Unknown"	
+        ret
+

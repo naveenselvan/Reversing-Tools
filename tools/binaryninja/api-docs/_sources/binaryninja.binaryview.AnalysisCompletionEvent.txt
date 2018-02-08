@@ -1,0 +1,23 @@
+binaryninja.binaryview.AnalysisCompletionEvent
+==============================================
+
+.. currentmodule:: binaryninja.binaryview
+
+.. autoclass:: AnalysisCompletionEvent
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnalysisCompletionEvent.__init__
+      ~AnalysisCompletionEvent.cancel
+   
+   
+
+   
+   
+   

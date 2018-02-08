@@ -1,0 +1,40 @@
+binaryninja.metadata.Metadata
+=============================
+
+.. currentmodule:: binaryninja.metadata
+
+.. autoclass:: Metadata
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Metadata.__init__
+      ~Metadata.get_dict
+      ~Metadata.remove
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Metadata.is_array
+      ~Metadata.is_boolean
+      ~Metadata.is_dict
+      ~Metadata.is_float
+      ~Metadata.is_integer
+      ~Metadata.is_raw
+      ~Metadata.is_signed_integer
+      ~Metadata.is_string
+      ~Metadata.is_unsigned_integer
+      ~Metadata.type
+      ~Metadata.value
+   
+   

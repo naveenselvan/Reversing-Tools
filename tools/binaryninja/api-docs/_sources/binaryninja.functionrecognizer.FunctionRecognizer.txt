@@ -1,0 +1,25 @@
+binaryninja.functionrecognizer.FunctionRecognizer
+=================================================
+
+.. currentmodule:: binaryninja.functionrecognizer
+
+.. autoclass:: FunctionRecognizer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FunctionRecognizer.__init__
+      ~FunctionRecognizer.recognize_low_level_il
+      ~FunctionRecognizer.register_arch
+      ~FunctionRecognizer.register_global
+   
+   
+
+   
+   
+   

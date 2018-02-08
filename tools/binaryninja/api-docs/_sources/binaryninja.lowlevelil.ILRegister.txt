@@ -1,0 +1,28 @@
+binaryninja.lowlevelil.ILRegister
+=================================
+
+.. currentmodule:: binaryninja.lowlevelil
+
+.. autoclass:: ILRegister
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ILRegister.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ILRegister.info
+   
+   

@@ -1,0 +1,30 @@
+binaryninja.enums.MetadataType
+==============================
+
+.. currentmodule:: binaryninja.enums
+
+.. autoclass:: MetadataType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MetadataType.ArrayDataType
+      ~MetadataType.BooleanDataType
+      ~MetadataType.DoubleDataType
+      ~MetadataType.InvalidDataType
+      ~MetadataType.KeyValueDataType
+      ~MetadataType.RawDataType
+      ~MetadataType.SignedIntegerDataType
+      ~MetadataType.StringDataType
+      ~MetadataType.UnsignedIntegerDataType
+   
+   
