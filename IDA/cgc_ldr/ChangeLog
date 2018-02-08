@@ -1,5 +1,0 @@
-
-05 Dec 2014 - Better handling of data offsets
-              Fixed bug that created oversize sections
-
-01 Nov 2014 - Correctly set inf.beginEA to address of _start (program entry point)
